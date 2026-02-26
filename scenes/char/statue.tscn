@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://j4k766di8pxc"]
+
+[ext_resource type="Script" uid="uid://colp3haerdlg4" path="res://scenes/char/statue.gd" id="1_gsdjt"]
+[ext_resource type="Texture2D" uid="uid://cp1vw7g68g7d8" path="res://assets/graphics/characters/roguelikeChar_transparent.png" id="2_kr50t"]
+[ext_resource type="Texture2D" uid="uid://c4of0xcfn0cpy" path="res://assets/graphics/characters/sword_slash.png" id="3_3lyig"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gsdjt"]
+radius = 9.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_em1bs"]
+atlas = ExtResource("3_3lyig")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rn35"]
+atlas = ExtResource("3_3lyig")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjrfb"]
+atlas = ExtResource("3_3lyig")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se30j"]
+atlas = ExtResource("3_3lyig")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktwa8"]
+atlas = ExtResource("3_3lyig")
+region = Rect2(0, 512, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_157ky"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_em1bs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rn35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjrfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se30j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktwa8")
+}],
+"loop": false,
+"name": &"default",
+"speed": 18.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gf1f2"]
+radius = 12.0
+height = 52.0
+
+[node name="Statue" type="CharacterBody2D" unique_id=1621395168]
+scale = Vector2(1.3, 1.3)
+collision_layer = 32
+collision_mask = 39
+motion_mode = 1
+script = ExtResource("1_gsdjt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1979045908]
+shape = SubResource("CircleShape2D_gsdjt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=263212809]
+texture_filter = 1
+texture = ExtResource("2_kr50t")
+region_enabled = true
+region_rect = Rect2(0, 187, 16, 16)
+
+[node name="Attack Cooldown" type="Timer" parent="." unique_id=223839649]
+wait_time = 1.2
+one_shot = true
+
+[node name="Attacks" type="Node2D" parent="." unique_id=1079925921]
+
+[node name="UpAttack" type="Area2D" parent="Attacks" unique_id=2090244952]
+position = Vector2(-1, -17)
+scale = Vector2(0.7, 0.7)
+collision_layer = 16
+collision_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Attacks/UpAttack" unique_id=1885311191]
+visible = false
+texture_filter = 1
+position = Vector2(5, 7)
+rotation = -0.6981317
+scale = Vector2(0.49999997, 0.49999997)
+sprite_frames = SubResource("SpriteFrames_157ky")
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attacks/UpAttack" unique_id=340201463]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_gf1f2")
+disabled = true
+
+[node name="LeftAttack" type="Area2D" parent="Attacks" unique_id=27814525]
+position = Vector2(-17, -1)
+rotation = -1.5707964
+scale = Vector2(0.7, 0.7)
+collision_layer = 16
+collision_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Attacks/LeftAttack" unique_id=1366985047]
+visible = false
+texture_filter = 1
+position = Vector2(5, 7)
+rotation = -0.6981317
+scale = Vector2(0.49999997, 0.49999997)
+sprite_frames = SubResource("SpriteFrames_157ky")
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attacks/LeftAttack" unique_id=1045373008]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_gf1f2")
+disabled = true
+
+[node name="DownAttack" type="Area2D" parent="Attacks" unique_id=1575399067]
+position = Vector2(1, 17)
+rotation = -3.1415925
+scale = Vector2(0.7, 0.7)
+collision_layer = 16
+collision_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Attacks/DownAttack" unique_id=1768580853]
+visible = false
+texture_filter = 1
+position = Vector2(5, 7)
+rotation = -0.6981317
+scale = Vector2(0.49999997, 0.49999997)
+sprite_frames = SubResource("SpriteFrames_157ky")
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attacks/DownAttack" unique_id=372119609]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_gf1f2")
+disabled = true
+
+[node name="RightAttack" type="Area2D" parent="Attacks" unique_id=2048513301]
+position = Vector2(17, -1)
+rotation = 1.5707964
+scale = Vector2(0.7, 0.7)
+collision_layer = 16
+collision_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Attacks/RightAttack" unique_id=1423338352]
+visible = false
+texture_filter = 1
+position = Vector2(5, 7)
+rotation = -0.6981317
+scale = Vector2(0.49999997, 0.49999997)
+sprite_frames = SubResource("SpriteFrames_157ky")
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attacks/RightAttack" unique_id=58310129]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_gf1f2")
+disabled = true
+
+[connection signal="body_entered" from="Attacks/UpAttack" to="." method="_on_atk_body_entered"]
+[connection signal="animation_finished" from="Attacks/UpAttack/AnimatedSprite2D" to="." method="_on_up_atk_anim_finished"]
+[connection signal="body_entered" from="Attacks/LeftAttack" to="." method="_on_atk_body_entered"]
+[connection signal="animation_finished" from="Attacks/LeftAttack/AnimatedSprite2D" to="." method="_on_left_atk_anim_finished"]
+[connection signal="body_entered" from="Attacks/DownAttack" to="." method="_on_atk_body_entered"]
+[connection signal="animation_finished" from="Attacks/DownAttack/AnimatedSprite2D" to="." method="_on_down_atk_anim_finished"]
+[connection signal="body_entered" from="Attacks/RightAttack" to="." method="_on_atk_body_entered"]
+[connection signal="animation_finished" from="Attacks/RightAttack/AnimatedSprite2D" to="." method="_on_right_atk_anim_finished"]

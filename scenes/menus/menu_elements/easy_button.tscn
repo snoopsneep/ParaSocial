@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgg2n4qrwjnwx"]
+
+[ext_resource type="Theme" uid="uid://cksxsyva51k6f" path="res://assets/godot_resources/main_menu_theme.tres" id="1_0jb48"]
+[ext_resource type="Script" path="res://scenes/menus/menu_elements/easy_button.gd" id="2_yac3u"]
+
+[node name="EasyButton" type="Button"]
+offset_right = 514.0
+offset_bottom = 200.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("1_0jb48")
+text = "Button"
+script = ExtResource("2_yac3u")
+
+[connection signal="button_up" from="." to="." method="_on_click"]
+[connection signal="mouse_entered" from="." to="." method="_on_hover" binds= [true]]
+[connection signal="mouse_exited" from="." to="." method="_on_hover" binds= [false]]

@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://cpbtvdndcgubt"]
+
+[ext_resource type="Script" uid="uid://c5h8bawe0eb5d" path="res://scenes/main/main_menu/main_menu.gd" id="1_0ois2"]
+[ext_resource type="Texture2D" uid="uid://blylkdbevv6nc" path="res://assets/graphics/menu/title_bg.png" id="2_u4fmi"]
+[ext_resource type="Texture2D" uid="uid://81pc0b8rhcno" path="res://assets/graphics/menu/ska.png" id="3_exb7t"]
+[ext_resource type="FontFile" uid="uid://dpckyyj14vjhg" path="res://assets/fonts/comic_sans.ttf" id="4_rpmxm"]
+[ext_resource type="Texture2D" uid="uid://mkolw4cwdxel" path="res://assets/graphics/ui/loading.png" id="5_8uibp"]
+[ext_resource type="AudioStream" uid="uid://bdnhnggbbvm8e" path="res://assets/audio/menu/menu_hover.mp3" id="6_gdjki"]
+[ext_resource type="PackedScene" uid="uid://cgg2n4qrwjnwx" path="res://scenes/menus/menu_elements/easy_button.tscn" id="7_shrk6"]
+[ext_resource type="Script" uid="uid://ds0kw44pabgsw" path="res://scenes/main/main_menu/buttons/menu_button.gd" id="8_e8axc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hdiax"]
+font = ExtResource("4_rpmxm")
+font_size = 90
+font_color = Color(1, 0.729412, 0, 1)
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ql6wo"]
+load_path = "res://.godot/imported/nine_patch_rect_hover.png-9d1b72632d6d236d361e55d9d609862f.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fqgxy"]
+content_margin_left = 50.0
+content_margin_top = 41.0
+content_margin_right = 50.0
+content_margin_bottom = 41.0
+texture = SubResource("CompressedTexture2D_ql6wo")
+texture_margin_left = 68.0
+texture_margin_top = 68.0
+texture_margin_right = 68.0
+texture_margin_bottom = 68.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vh1yl"]
+radius = 10.6168
+height = 24.0615
+
+[node name="MainMenu" type="Node2D" unique_id=993920172]
+script = ExtResource("1_0ois2")
+
+[node name="MenuCamera" type="Camera2D" parent="." unique_id=487724482]
+anchor_mode = 0
+
+[node name="StaticGraphics" type="Node2D" parent="." unique_id=1417863734]
+scale = Vector2(1.5, 1.5)
+
+[node name="Background" type="TextureRect" parent="StaticGraphics" unique_id=1654334426]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_u4fmi")
+expand_mode = 1
+
+[node name="FunGraphic" type="Sprite2D" parent="StaticGraphics" unique_id=1607239023]
+position = Vector2(957, 261)
+rotation = -0.1309
+scale = Vector2(2, 2)
+texture = ExtResource("3_exb7t")
+region_enabled = true
+region_rect = Rect2(0, 0, 300, 400)
+
+[node name="GameTitle" type="Label" parent="StaticGraphics" unique_id=1072823134]
+offset_left = 100.0
+offset_top = 80.0
+offset_right = 612.0
+offset_bottom = 207.0
+rotation = 0.1309
+text = "Game Name!"
+label_settings = SubResource("LabelSettings_hdiax")
+
+[node name="LoadingIcon" type="Sprite2D" parent="StaticGraphics" unique_id=552505213]
+visible = false
+position = Vector2(1240, 680)
+texture = ExtResource("5_8uibp")
+
+[node name="MenuButtons" type="Node2D" parent="." unique_id=1524989220]
+position = Vector2(0, 33)
+scale = Vector2(1.5, 1.5)
+
+[node name="NewGame" parent="MenuButtons" unique_id=1973496921 instance=ExtResource("7_shrk6")]
+offset_left = 88.0
+offset_top = 269.0
+offset_right = 602.0
+offset_bottom = 469.0
+text = "New Game"
+script = ExtResource("8_e8axc")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="MenuButtons/NewGame" unique_id=1168084686]
+stream = ExtResource("6_gdjki")
+volume_db = -5.0
+
+[node name="Continue" parent="MenuButtons" unique_id=1892595680 instance=ExtResource("7_shrk6")]
+modulate = Color(0.813258, 0.813258, 0.813258, 0.694118)
+offset_left = 314.0
+offset_top = 409.0
+offset_right = 828.0
+offset_bottom = 609.0
+theme_override_colors/font_pressed_color = Color(0.588235, 0.917647, 0.94902, 1)
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fqgxy")
+text = "Continue"
+script = ExtResource("8_e8axc")
+metadata/_edit_group_ = true
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="MenuButtons/Continue" unique_id=874226492]
+stream = ExtResource("6_gdjki")
+volume_db = -5.0
+
+[node name="SkaNose" type="Area2D" parent="MenuButtons" unique_id=1149544941]
+position = Vector2(955, 258)
+rotation = 0.61386
+metadata/_edit_group_ = true
+
+[node name="NoseCollision" type="CollisionShape2D" parent="MenuButtons/SkaNose" unique_id=2001822165]
+z_index = 1
+rotation = 1.36442
+shape = SubResource("CapsuleShape2D_vh1yl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=695291468]
+offset_left = 69.0
+offset_top = 658.0
+offset_right = 406.0
+offset_bottom = 790.0
+color = Color(1, 0.615686, 0.243137, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1198193617]
+offset_left = 69.0
+offset_top = 781.0
+offset_right = 406.0
+offset_bottom = 913.0
+color = Color(0.0705882, 0.0823529, 0.101961, 1)
+
+[connection signal="button_up" from="MenuButtons/NewGame" to="." method="_on_new_game"]

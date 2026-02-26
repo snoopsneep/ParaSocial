@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://c7xo8tm0m3aop"]
+
+[ext_resource type="Script" uid="uid://dlvjtln05lyyn" path="res://scenes/char/parasite.gd" id="1_3wf0h"]
+[ext_resource type="Texture2D" uid="uid://cp1vw7g68g7d8" path="res://assets/graphics/characters/roguelikeChar_transparent.png" id="2_bvfi0"]
+[ext_resource type="Texture2D" uid="uid://v0xgld7q1r7k" path="res://assets/graphics/characters/warning.png" id="3_gpx1o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gsdjt"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3wf0h"]
+radius = 19.116278
+
+[node name="Parasite" type="CharacterBody2D" unique_id=1621395168]
+scale = Vector2(0.9, 0.9)
+collision_mask = 7
+motion_mode = 1
+script = ExtResource("1_3wf0h")
+
+[node name="GameCamera" type="Camera2D" parent="." unique_id=1168402197]
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1979045908]
+shape = SubResource("CircleShape2D_gsdjt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=263212809]
+texture_filter = 1
+texture = ExtResource("2_bvfi0")
+region_enabled = true
+region_rect = Rect2(0, 86, 16, 16)
+
+[node name="Warning" type="Sprite2D" parent="." unique_id=895458960]
+visible = false
+texture_filter = 1
+position = Vector2(0, -15.833333)
+texture = ExtResource("3_gpx1o")
+
+[node name="Sight" type="Area2D" parent="." unique_id=906534543]
+scale = Vector2(2.5, 2.5)
+collision_layer = 16
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=2075484704]
+shape = SubResource("CircleShape2D_3wf0h")
+
+[node name="Death Timer" type="Timer" parent="." unique_id=980533802]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Death Timer" to="." method="_on_death"]

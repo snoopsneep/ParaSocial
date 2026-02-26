@@ -1,0 +1,60 @@
+[gd_resource type="Theme" format=3 uid="uid://cksxsyva51k6f"]
+
+[ext_resource type="FontFile" uid="uid://dpckyyj14vjhg" path="res://assets/fonts/comic_sans.ttf" id="3_fxun5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_afcv2"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u0li1"]
+load_path = "res://.godot/imported/nine_patch_rect_hover.png-9d1b72632d6d236d361e55d9d609862f.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fokes"]
+content_margin_left = 50.0
+content_margin_top = 41.0
+content_margin_right = 50.0
+content_margin_bottom = 41.0
+texture = SubResource("CompressedTexture2D_u0li1")
+texture_margin_left = 68.0
+texture_margin_top = 68.0
+texture_margin_right = 68.0
+texture_margin_bottom = 68.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_siru5"]
+load_path = "res://.godot/imported/nine_patch_rect.png-f142a431dfd8e01d09c36da1b25358b5.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fb1lv"]
+content_margin_left = 50.0
+content_margin_top = 41.0
+content_margin_right = 50.0
+content_margin_bottom = 41.0
+texture = SubResource("CompressedTexture2D_siru5")
+texture_margin_left = 68.0
+texture_margin_top = 68.0
+texture_margin_right = 68.0
+texture_margin_bottom = 68.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ldwu1"]
+load_path = "res://.godot/imported/nine_patch_rect.png-f142a431dfd8e01d09c36da1b25358b5.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nv0ky"]
+content_margin_left = 50.0
+content_margin_top = 41.0
+content_margin_right = 50.0
+content_margin_bottom = 41.0
+texture = SubResource("CompressedTexture2D_ldwu1")
+texture_margin_left = 68.0
+texture_margin_top = 68.0
+texture_margin_right = 68.0
+texture_margin_bottom = 68.0
+modulate_color = Color(0.89059, 0.89059, 0.89059, 1)
+
+[resource]
+default_font = ExtResource("3_fxun5")
+default_font_size = 16
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0.588235, 0.917647, 0.94902, 1)
+Button/colors/font_pressed_color = Color(0.844728, 0.720607, 0.843396, 1)
+Button/font_sizes/font_size = 84
+Button/styles/focus = SubResource("StyleBoxEmpty_afcv2")
+Button/styles/hover = SubResource("StyleBoxTexture_fokes")
+Button/styles/normal = SubResource("StyleBoxTexture_fb1lv")
+Button/styles/pressed = SubResource("StyleBoxTexture_nv0ky")
