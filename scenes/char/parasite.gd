@@ -1,28 +1,37 @@
-extends CharacterBody2D
+class_name Parasite extends Vessel
+## The Parasite vessel - even MORE of the default
 
-var health: int = 2
-@export var max_health: int = 2
-var speed: float = 250
-var is_vessel = true
-var can_vessel: bool = true
-var is_aggro: bool = true
+## Reference variable to the parasite's capture range
 @onready var sight = $Sight
+
+## Reference variable to the parasite's death timer
 @onready var death_timer = $"Death Timer"
+
+## Reference variable to the little warning graphic (DEBUG)
 @onready var warning = $Warning
-signal hurt(hp,max_hp)
+
+## Signal that emits when the parasite picks the new body to capture
 signal new_vessel(body)
-signal boot
+
+# set variables on initialization
+func _ready():
+	health = max_health
+	speed = 175.0
 
 func _physics_process(_delta):
+	# if there's 1 - 1.75 seconds left before it dies and you can't see the warning yet
 	if ((1 < death_timer.time_left) && (death_timer.time_left < 1.75)) && !warning.visible:
-		warning.visible = true
+		warning.visible = true # show the warning
 
+## Slightly edited hit method actually kills the player rather than booting them out
 func hit():
 	health -= 1
 	if health == 0:
 		_on_death()
 	hurt.emit(health,max_health)
 
+## Finds the closest valid vessel and emits [signal Parasite.new_vessel] to tell the
+## player script to switch em'
 func possess():
 	if sight.has_overlapping_bodies():
 		var closest_body
@@ -34,6 +43,8 @@ func possess():
 		new_vessel.emit(closest_body)
 		queue_free()
 
+# TODO: when you die as the parasite, you can still press the capture button
+# to "come back to life" if something's within capture range
 func _on_death():
 	$Sprite2D.visible = false
 	warning.visible = false

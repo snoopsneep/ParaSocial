@@ -3,7 +3,7 @@ extends RigidBody2D
 var direction
 var is_evil
 
-const SPEED = 300.0
+@export var speed: float = 300.0
 
 func _ready():
 	if is_evil:
@@ -12,7 +12,7 @@ func _ready():
 		set_collision_mask_value(2,true)
 
 func _physics_process(delta):
-	var collision = move_and_collide(direction * SPEED * delta)
+	var collision = move_and_collide(direction * speed * delta)
 	if collision != null:
 		var body = collision.get_collider()
 		if "hit" in body:

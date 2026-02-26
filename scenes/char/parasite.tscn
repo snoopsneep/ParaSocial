@@ -1,49 +1,45 @@
 [gd_scene format=3 uid="uid://c7xo8tm0m3aop"]
 
 [ext_resource type="Script" uid="uid://dlvjtln05lyyn" path="res://scenes/char/parasite.gd" id="1_3wf0h"]
+[ext_resource type="PackedScene" uid="uid://03s4l0q2exir" path="res://scenes/generic/vessel.tscn" id="1_gpx1o"]
 [ext_resource type="Texture2D" uid="uid://cp1vw7g68g7d8" path="res://assets/graphics/characters/roguelikeChar_transparent.png" id="2_bvfi0"]
 [ext_resource type="Texture2D" uid="uid://v0xgld7q1r7k" path="res://assets/graphics/characters/warning.png" id="3_gpx1o"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gsdjt"]
-radius = 6.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_hqyxe"]
+radius = 9.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3wf0h"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_bvfi0"]
 radius = 19.116278
 
-[node name="Parasite" type="CharacterBody2D" unique_id=1621395168]
-scale = Vector2(0.9, 0.9)
-collision_mask = 7
+[node name="Parasite" unique_id=517857439 instance=ExtResource("1_gpx1o")]
+collision_layer = 1
 motion_mode = 1
 script = ExtResource("1_3wf0h")
+max_health = 2
 
-[node name="GameCamera" type="Camera2D" parent="." unique_id=1168402197]
-zoom = Vector2(4, 4)
-position_smoothing_enabled = true
+[node name="CollisionShape2D" parent="." index="0" unique_id=137211241]
+shape = SubResource("CircleShape2D_hqyxe")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1979045908]
-shape = SubResource("CircleShape2D_gsdjt")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=263212809]
-texture_filter = 1
+[node name="Sprite2D" parent="." index="1" unique_id=416849066]
 texture = ExtResource("2_bvfi0")
 region_enabled = true
 region_rect = Rect2(0, 86, 16, 16)
 
-[node name="Warning" type="Sprite2D" parent="." unique_id=895458960]
+[node name="Warning" type="Sprite2D" parent="." index="2" unique_id=1973401424]
 visible = false
 texture_filter = 1
 position = Vector2(0, -15.833333)
 texture = ExtResource("3_gpx1o")
 
-[node name="Sight" type="Area2D" parent="." unique_id=906534543]
+[node name="Sight" type="Area2D" parent="." index="3" unique_id=1445018850]
 scale = Vector2(2.5, 2.5)
 collision_layer = 16
 collision_mask = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=2075484704]
-shape = SubResource("CircleShape2D_3wf0h")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" index="0" unique_id=1601376997]
+shape = SubResource("CircleShape2D_bvfi0")
 
-[node name="Death Timer" type="Timer" parent="." unique_id=980533802]
+[node name="Death Timer" type="Timer" parent="." index="4" unique_id=566696470]
 wait_time = 3.0
 one_shot = true
 autostart = true

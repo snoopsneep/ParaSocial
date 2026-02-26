@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://03s4l0q2exir"]
+
+[ext_resource type="Script" uid="uid://hjootcnsb0l" path="res://scenes/generic/vessel.gd" id="1_mdnlw"]
+
+[node name="Vessel" type="CharacterBody2D" unique_id=517857439]
+collision_layer = 34
+collision_mask = 7
+motion_mode = 1
+script = ExtResource("1_mdnlw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=137211241]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=416849066]
+texture_filter = 1
+region_rect = Rect2(0, 187, 16, 16)
