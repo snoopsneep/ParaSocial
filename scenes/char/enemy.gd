@@ -22,6 +22,11 @@ signal attack(pos,dir,is_evil)
 ## If [code]true[/code], this enemy is currently unconscious
 var dead = false
 
+## While seeking true, raycast to player
+var seeking = false
+## While aggro true, attack player
+var aggro = false
+
 # set variables on initialization
 func _ready():
 	health = max_health
@@ -29,6 +34,10 @@ func _ready():
 	is_aggro = false
 
 func _physics_process(_delta):
+	## call seeking function while seeking
+	if seeking:
+		_seeking()
+	
 	# set collision layer & mask and modulate
 	if is_vessel:
 		set_collision_layer_value(1, true)
@@ -59,7 +68,7 @@ func _physics_process(_delta):
 		# make it slow
 		speed = 60.0
 		# if there's a target who is aggro'd (and you're not dead)
-		if target != null and !dead and target.is_aggro:
+		if target != null and !dead and aggro:
 			# move towards the target
 			var direction = (target.position - position).normalized()
 			velocity = direction * speed
@@ -106,11 +115,14 @@ func hit():
 # when it has a target
 func _on_range_body_entered(body):
 	target = body # assign the thing in range to target
-	$Range.scale = Vector2(3.5,3.5) # make the range bigger
+	if target.is_vessel: # If target is aggro...
+		seeking = true # ...set me to seeking.
 
 # when the target leaves its range
 func _on_range_body_exited(_body):
 	target = null # unassign the target
+	seeking = false
+	aggro = false
 	$Range.scale = Vector2(2.5,2.5) # make the range smaller
 
 # when the death timer runs out and the enemy wakes back up
@@ -124,3 +136,21 @@ func _on_revive():
 	else: # if he has health (if he's been revived by the player)
 		if is_vessel: # if he's the player's CURRENT vessel
 			boot.emit() # boot the player out of the vessel!!
+
+func _seeking():
+	## loop while seeking but not aggro
+	var space_state = get_world_2d().direct_space_state # Pulls required info for raycast
+	## this decides the start and end pos of the ray. Enemy POS, player POS.
+	var query = PhysicsRayQueryParameters2D.create(position, target.position)
+	var result = space_state.intersect_ray(query) # call the raycast
+	
+	if "collider" in result:
+		## check if obj hit is player...
+		if result.collider == target and target.is_aggro:
+			## bugtest stuff
+			print("I SEE YOU")
+			print(result.collider)
+			
+			## ...change state to aggro
+			aggro = true
+			$Range.scale = Vector2(3.5,3.5) # make the range bigger
