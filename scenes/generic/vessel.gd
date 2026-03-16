@@ -25,6 +25,7 @@ signal hurt(hp,max_hp)
 ## Emits when the vessel kicks the player out.
 signal boot
 
+## Triggers when the Vessel takes damage.
 func hit():
 	health -= 1
 	if health == 0:
@@ -32,3 +33,16 @@ func hit():
 		$CollisionShape2D.disabled = true
 		boot.emit()
 	hurt.emit(health,max_health)
+
+## Triggers when the player hits the interact button.
+func interact():
+	var int_arr: Array = $InteractRange.get_overlapping_areas()
+	var interaction: Event = null
+	if int_arr.is_empty():
+		return
+	for i in int_arr:
+		# if there's no interaction or if the current interaction is CLOSER than the one selected
+		if interaction == null or (i.position.distance_to(position) < interaction.position.distance_to(position)):
+			if i is Event: # make sure it's actually an event
+				interaction = i # select the current interaction
+	interaction.trigger()

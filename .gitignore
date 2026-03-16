@@ -1,3 +1,15 @@
+# IAN MICHAEL SOUSA'S STUFF
+
+# stops all the image files from backing up
+Assets/**/*.png
+
+# stops the audio files from backing up
+Assets/Audio/**/*.wav
+Assets/Audio/**/*.mp3
+Assets/Audio/**/*.ogg
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 # Godot 4+ specific ignores
 .godot/
 

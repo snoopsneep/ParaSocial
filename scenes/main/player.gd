@@ -11,6 +11,7 @@ class_name Player extends Node2D
 ## Holds a reference to whatever vessel the player starts in. Exported, so you
 ## should set it in the Inspector.
 @export var first_vessel: CharacterBody2D
+@onready var statue = $"../Characters/Statue"
 
 ## Holds a reference to the vessel the player is currently controlling.
 var curr_vessel: CharacterBody2D
@@ -20,7 +21,7 @@ var curr_vessel: CharacterBody2D
 var is_parasite: bool = false
 
 signal parasite(pos,vel) ## Emits when the parasite is spawned.
-signal hurt(hp,max_hp) ## Emits when the player
+signal hurt(hp,max_hp) ## Emits when the player takes damage.
 
 func _ready():
 	# sets the player into the first vessel. allows you to start in whatever vessel
@@ -50,6 +51,10 @@ func _physics_process(_delta):
 				leave_vessel() # leave the vessel they're in
 			else: # if they ARE currently just the parasite
 				curr_vessel.possess() # run the parasite's possess function
+
+		# if the player presses interact (and isn't the parasite rn)
+		if Input.is_action_just_pressed("Interact") and not is_parasite:
+			curr_vessel.interact()
 
 		# always set the Player node's position (and the camera's position by extension)
 		# to the current vessel's position

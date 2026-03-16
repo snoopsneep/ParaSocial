@@ -3,7 +3,7 @@ extends Panel
 
 signal tree_built # used for debugging
 
-const Todo := preload("res://addons/Todo_Manager/todo_class.gd")
+const Todo := preload("res://Addons/Todo_Manager/todo_class.gd")
 
 var _sort_alphabetical := true
 var _full_path := false
@@ -26,7 +26,7 @@ func build_tree(todo_items : Array, ignore_paths : Array, patterns : Array, case
 			if script_path.begins_with(ignore_path) or script_path.begins_with("res://" + ignore_path) or script_path.begins_with("res:///" + ignore_path):
 				ignore = true
 				break
-		if ignore: 
+		if ignore:
 			continue
 		var script := tree.create_item(root)
 		if full_path:

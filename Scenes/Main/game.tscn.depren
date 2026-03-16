@@ -1,0 +1,445 @@
+[gd_scene format=3 uid="uid://cbqhcm0bqm5ud"]
+
+[ext_resource type="Script" uid="uid://pvrk3c2x4ieh" path="res://Scenes/Main/game.gd" id="1_rikws"]
+[ext_resource type="Texture2D" uid="uid://dktc1sw45jpbq" path="res://Assets/Graphics/Environments/Church/Dining Room/diningRoom_floor.png" id="2_157ky"]
+[ext_resource type="Texture2D" uid="uid://duel1dafwslyr" path="res://Assets/Graphics/Environments/Church/Kitchen/kitchen_stones.PNG" id="2_swbjq"]
+[ext_resource type="PackedScene" uid="uid://j4k766di8pxc" path="res://Scenes/Characters/Statue/statue.tscn" id="3_e3dby"]
+[ext_resource type="Script" uid="uid://bom3mrngq86x2" path="res://Scenes/Main/player.gd" id="3_em1bs"]
+[ext_resource type="Texture2D" uid="uid://bml7gex12kv6s" path="res://Assets/Graphics/Environments/Church/Kitchen/kitchendoor.PNG" id="3_uuwcm"]
+[ext_resource type="Texture2D" uid="uid://dfwmkvepjhu8d" path="res://Assets/Graphics/Environments/Church/Dining Room/diningRoom_floor_doorClosed.png" id="3_y58yt"]
+[ext_resource type="Texture2D" uid="uid://bys77jkjbaqes" path="res://Assets/Graphics/Environments/Church/Dining Room/diningRoom_leftWall_openDoor.png" id="4_5j5yt"]
+[ext_resource type="FontFile" uid="uid://dpckyyj14vjhg" path="res://Assets/# OLD - GET RID OF ASAP/comic_sans.ttf" id="5_gf1f2"]
+[ext_resource type="Texture2D" uid="uid://lv3fdg0awtkt" path="res://Assets/Graphics/Environments/Church/Dining Room/diningRoom_leftWall.png" id="5_kb4no"]
+[ext_resource type="Texture2D" uid="uid://crxpxi2bcp4ir" path="res://Assets/Graphics/Environments/Church/Dining Room/diningRoom_rightWall_openDoor.png" id="6_cgagh"]
+[ext_resource type="Texture2D" uid="uid://uplw67lfbiir" path="res://Assets/Graphics/Environments/Church/Dining Room/diningRoom_rightWall.png" id="7_c8nfc"]
+[ext_resource type="Texture2D" uid="uid://bqqo2b6gaof50" path="res://Assets/Graphics/Environments/Church/Main Hall/rafters_bottomBeams.png" id="9_c8nfc"]
+[ext_resource type="Texture2D" uid="uid://0c2vljjcy6yq" path="res://Assets/Graphics/Environments/Church/Hallway/halldoorless.png" id="10_g8xql"]
+[ext_resource type="Texture2D" uid="uid://d01rqhjdkdjdo" path="res://Assets/Graphics/Environments/Church/Main Hall/rafters_topBeams.png" id="10_oxcik"]
+[ext_resource type="Texture2D" uid="uid://0bx000718utt" path="res://Assets/Graphics/Environments/Church/Main Hall/full_rafters.png" id="11_obhq2"]
+[ext_resource type="Texture2D" uid="uid://ksh6yuu7o503" path="res://Assets/Graphics/Environments/Church/Hallway/closeddoors.png" id="11_uuwcm"]
+[ext_resource type="Texture2D" uid="uid://3y4jan38er1m" path="res://Assets/Graphics/Environments/Church/Chapel/chapel_floor_2.png" id="12_oxav3"]
+[ext_resource type="Texture2D" uid="uid://cd6qrr7trp017" path="res://Assets/Graphics/Environments/Church/Chapel/chapel_rightWall.png" id="13_6lv7u"]
+[ext_resource type="Texture2D" uid="uid://cvcb36pr31x8i" path="res://Assets/Graphics/Environments/Church/Chapel/chapel_leftWall_doorOpen.png" id="14_8k4wh"]
+[ext_resource type="Texture2D" uid="uid://cnjmvgws4nnyx" path="res://Assets/Graphics/Environments/Church/Chapel/chapel_leftWall.png" id="15_mg4hm"]
+[ext_resource type="Texture2D" uid="uid://bkgsmswg623x5" path="res://Assets/Graphics/Environments/Church/Main Hall/mainHall_floor_2.png" id="16_10dg2"]
+[ext_resource type="Texture2D" uid="uid://pbd8tgvoifdb" path="res://Assets/Graphics/Environments/Church/Chapel/chapel_fullRafters.png" id="16_x53fh"]
+[ext_resource type="Texture2D" uid="uid://enyr48br2da4" path="res://Assets/Graphics/Environments/Church/Chapel/chapel_beamOverlap.png" id="17_2txet"]
+[ext_resource type="Texture2D" uid="uid://cmgptic3loxyw" path="res://Assets/Graphics/Environments/Church/Main Hall/mainHall_benches.png" id="17_uuwcm"]
+[ext_resource type="Texture2D" uid="uid://fx3hafs03oin" path="res://Assets/Graphics/Environments/Church/Main Hall/mainHall_leftWall_doorOpen.png" id="17_x53fh"]
+[ext_resource type="Texture2D" uid="uid://dl1p67yf35lsk" path="res://Assets/Graphics/Environments/Church/Main Hall/mainHall_leftWall_3.png" id="18_2txet"]
+[ext_resource type="Texture2D" uid="uid://b3xxvdjm55147" path="res://Assets/Graphics/Environments/Church/Chapel/plank light.png" id="18_xonmi"]
+[ext_resource type="Texture2D" uid="uid://byuk1v0iix8x0" path="res://Assets/Graphics/Environments/Church/Chapel/plank dark.png" id="19_ky3ym"]
+[ext_resource type="Texture2D" uid="uid://3441cf0p6yat" path="res://Assets/Graphics/Environments/Church/Main Hall/mainHall_rightWall_openDoor.png" id="19_xonmi"]
+[ext_resource type="Texture2D" uid="uid://6w6g3qb88qi8" path="res://Assets/Graphics/Environments/Church/Main Hall/mainHall_rightWall_2.png" id="20_ky3ym"]
+[ext_resource type="PackedScene" uid="uid://cfivdlgkt4jbt" path="res://Scenes/UI/HUD/dialog.tscn" id="32_x53fh"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_x53fh"]
+a = Vector2(1307.3682, 246.3158)
+b = Vector2(513.6836, -208.42114)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2txet"]
+a = Vector2(1307.3682, 246.3158)
+b = Vector2(513.6836, -208.42114)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xonmi"]
+a = Vector2(1307.3682, 246.3158)
+b = Vector2(1311.5781, 1372.6316)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ky3ym"]
+a = Vector2(511.57813, -221.05273)
+b = Vector2(-583.1582, 271.57886)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_exrwk"]
+a = Vector2(-941.05273, 69.47363)
+b = Vector2(-583.1582, 271.57886)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qvtjy"]
+a = Vector2(-941.05273, 69.47363)
+b = Vector2(-5322.1055, 2608.421)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tpf3c"]
+a = Vector2(-2400.001, 4284.2104)
+b = Vector2(-5322.1055, 2608.421)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_icp8a"]
+a = Vector2(-2400.001, 4284.2104)
+b = Vector2(1987.3682, 1766.3159)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_w6ucw"]
+a = Vector2(1309.4736, 1370.5264)
+b = Vector2(1987.3682, 1766.3159)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x53fh"]
+radius = 115.37764
+
+[sub_resource type="LabelSettings" id="LabelSettings_em1bs"]
+font = ExtResource("5_gf1f2")
+font_size = 90
+font_color = Color(1, 0.20784314, 0, 1)
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Game" type="Node2D" unique_id=1670642794 node_paths=PackedStringArray("curr_room")]
+script = ExtResource("1_rikws")
+curr_room = NodePath("Map/Chapel")
+
+[node name="Map" type="Node2D" parent="." unique_id=1823456355]
+
+[node name="Kitchen" type="Node2D" parent="Map" unique_id=1619801898]
+position = Vector2(-1466, -5262)
+
+[node name="Floor + Walls" type="Sprite2D" parent="Map/Kitchen" unique_id=371954194]
+scale = Vector2(0.475, 0.475)
+texture = ExtResource("2_swbjq")
+
+[node name="BottomDoor" type="Sprite2D" parent="Map/Kitchen/Floor + Walls" unique_id=1127428116]
+texture = ExtResource("3_uuwcm")
+region_rect = Rect2(1160, 1448, 568, 756)
+
+[node name="Colliders" type="Node2D" parent="Map/Kitchen" unique_id=1140757318]
+
+[node name="TopRightWall" type="StaticBody2D" parent="Map/Kitchen/Colliders" unique_id=239672082]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Kitchen/Colliders/TopRightWall" unique_id=392588128]
+shape = SubResource("SegmentShape2D_x53fh")
+
+[node name="TopLeftWall" type="StaticBody2D" parent="Map/Kitchen/Colliders" unique_id=476287356]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Kitchen/Colliders/TopLeftWall" unique_id=1027516112]
+shape = SubResource("SegmentShape2D_x53fh")
+
+[node name="BottomRightWall" type="StaticBody2D" parent="Map/Kitchen/Colliders" unique_id=695918967]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Kitchen/Colliders/BottomRightWall" unique_id=1418476667]
+position = Vector2(1458.9474, 850.5263)
+shape = SubResource("SegmentShape2D_x53fh")
+
+[node name="BottomLeftWall1" type="StaticBody2D" parent="Map/Kitchen/Colliders" unique_id=948372614]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Kitchen/Colliders/BottomLeftWall1" unique_id=542485344]
+position = Vector2(-1993.6842, 1157.8948)
+shape = SubResource("SegmentShape2D_x53fh")
+
+[node name="BottomLeftWall2" type="StaticBody2D" parent="Map/Kitchen/Colliders" unique_id=612643678]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Kitchen/Colliders/BottomLeftWall2" unique_id=1780068652]
+position = Vector2(-1103.1578, 1677.8948)
+shape = SubResource("SegmentShape2D_x53fh")
+
+[node name="Table" type="StaticBody2D" parent="Map/Kitchen/Colliders" unique_id=1774815703]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Kitchen/Colliders/Table" unique_id=588670881]
+polygon = PackedVector2Array(816.84204, 604.21094, 172.63159, 985.2637, -204.21045, 762.10547, 440, 383.1582)
+
+[node name="Dining Room" type="Node2D" parent="Map" unique_id=1380382872]
+position = Vector2(-4976, -3215.9998)
+scale = Vector2(0.8, 0.8)
+
+[node name="Floor" type="Sprite2D" parent="Map/Dining Room" unique_id=1009044691]
+texture = ExtResource("2_157ky")
+
+[node name="BottomDoor" type="Sprite2D" parent="Map/Dining Room/Floor" unique_id=403257253]
+texture = ExtResource("3_y58yt")
+region_rect = Rect2(1160, 1448, 568, 756)
+
+[node name="LeftWall" type="Sprite2D" parent="Map/Dining Room" unique_id=2057573062]
+texture = ExtResource("4_5j5yt")
+
+[node name="LeftDoor" type="Sprite2D" parent="Map/Dining Room/LeftWall" unique_id=187369463]
+texture = ExtResource("5_kb4no")
+region_rect = Rect2(1160, 1448, 568, 756)
+
+[node name="RightWall" type="Sprite2D" parent="Map/Dining Room" unique_id=672321989]
+texture = ExtResource("6_cgagh")
+
+[node name="RightDoor" type="Sprite2D" parent="Map/Dining Room/RightWall" unique_id=1583271401]
+texture = ExtResource("7_c8nfc")
+region_rect = Rect2(1160, 1448, 568, 756)
+
+[node name="Hallway" type="Node2D" parent="Map" unique_id=1299980803]
+position = Vector2(1611, 449)
+scale = Vector2(0.26, 0.26)
+
+[node name="Floor + Walls" type="Sprite2D" parent="Map/Hallway" unique_id=1433188477]
+position = Vector2(-3046.1553, -2423.0767)
+scale = Vector2(1.43, 1.43)
+texture = ExtResource("10_g8xql")
+
+[node name="Doors" type="Sprite2D" parent="Map/Hallway/Floor + Walls" unique_id=861706490]
+texture = ExtResource("11_uuwcm")
+
+[node name="Chapel" type="Node2D" parent="Map" unique_id=1748118598]
+position = Vector2(3064, 2785)
+
+[node name="Floor" type="Sprite2D" parent="Map/Chapel" unique_id=1612319555]
+texture = ExtResource("12_oxav3")
+
+[node name="RightWall" type="Sprite2D" parent="Map/Chapel" unique_id=728660148]
+texture = ExtResource("13_6lv7u")
+
+[node name="LeftWall" type="Sprite2D" parent="Map/Chapel" unique_id=956080290]
+texture = ExtResource("14_8k4wh")
+
+[node name="LeftDoor" type="Sprite2D" parent="Map/Chapel/LeftWall" unique_id=1211869875]
+visible = false
+texture = ExtResource("15_mg4hm")
+
+[node name="Rafters" type="Node2D" parent="Map/Chapel" unique_id=1229867403]
+visible = false
+
+[node name="Supports" type="Sprite2D" parent="Map/Chapel/Rafters" unique_id=1745707037]
+modulate = Color(1, 1, 1, 0.48235294)
+texture = ExtResource("16_x53fh")
+
+[node name="RaftersIntersections" type="Sprite2D" parent="Map/Chapel/Rafters" unique_id=2099032650]
+texture = ExtResource("17_2txet")
+
+[node name="PlankLight" type="Sprite2D" parent="Map/Chapel/Rafters" unique_id=1277511203]
+position = Vector2(140, 57)
+texture = ExtResource("18_xonmi")
+region_enabled = true
+region_rect = Rect2(0, 0, 275, 190)
+
+[node name="PlankDark" type="Sprite2D" parent="Map/Chapel/Rafters" unique_id=98489915]
+position = Vector2(151, -91)
+texture = ExtResource("19_ky3ym")
+region_enabled = true
+region_rect = Rect2(0, 0, 240, 150)
+
+[node name="Colliders" type="Node2D" parent="Map/Chapel" unique_id=731562658]
+
+[node name="TopRightWall" type="StaticBody2D" parent="Map/Chapel/Colliders" unique_id=1767243852]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Chapel/Colliders/TopRightWall" unique_id=500204719]
+position = Vector2(134.73685, -77.89474)
+shape = SubResource("SegmentShape2D_x53fh")
+
+[node name="TopLeftWall" type="StaticBody2D" parent="Map/Chapel/Colliders" unique_id=757319210]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Chapel/Colliders/TopLeftWall" unique_id=1577161425]
+shape = SubResource("SegmentShape2D_x53fh")
+
+[node name="BottomRightWall" type="StaticBody2D" parent="Map/Chapel/Colliders" unique_id=324944050]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Chapel/Colliders/BottomRightWall" unique_id=519009624]
+position = Vector2(1458.9474, 850.5263)
+shape = SubResource("SegmentShape2D_x53fh")
+
+[node name="BottomLeftWall1" type="StaticBody2D" parent="Map/Chapel/Colliders" unique_id=1791161252]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Chapel/Colliders/BottomLeftWall1" unique_id=204537832]
+position = Vector2(-1993.6842, 1157.8948)
+shape = SubResource("SegmentShape2D_x53fh")
+
+[node name="BottomLeftWall2" type="StaticBody2D" parent="Map/Chapel/Colliders" unique_id=158507874]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Chapel/Colliders/BottomLeftWall2" unique_id=149642086]
+position = Vector2(-1103.1578, 1677.8948)
+shape = SubResource("SegmentShape2D_x53fh")
+
+[node name="Table" type="StaticBody2D" parent="Map/Chapel/Colliders" unique_id=416479542]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Chapel/Colliders/Table" unique_id=1276265713]
+polygon = PackedVector2Array(816.84204, 604.21094, 172.63159, 985.2637, -204.21045, 762.10547, 440, 383.1582)
+
+[node name="Main Hall" type="Node2D" parent="Map" unique_id=1643553789]
+position = Vector2(-5704, 1268)
+
+[node name="Floor" type="Sprite2D" parent="Map/Main Hall" unique_id=1124619745]
+texture = ExtResource("16_10dg2")
+
+[node name="Benches" type="Sprite2D" parent="Map/Main Hall" unique_id=725208122]
+visible = false
+z_index = 5
+texture = ExtResource("17_uuwcm")
+
+[node name="LeftWall" type="Sprite2D" parent="Map/Main Hall" unique_id=1675820687]
+texture = ExtResource("17_x53fh")
+
+[node name="LeftDoor" type="Sprite2D" parent="Map/Main Hall/LeftWall" unique_id=2103970690]
+texture = ExtResource("18_2txet")
+
+[node name="RightWall" type="Sprite2D" parent="Map/Main Hall" unique_id=1033722666]
+texture = ExtResource("19_xonmi")
+
+[node name="RightDoor" type="Sprite2D" parent="Map/Main Hall/RightWall" unique_id=1790959942]
+texture = ExtResource("20_ky3ym")
+
+[node name="Rafters" type="Node2D" parent="Map/Main Hall" unique_id=935040568]
+visible = false
+
+[node name="RaftersBottomBeams" type="Sprite2D" parent="Map/Main Hall/Rafters" unique_id=2034717285]
+texture = ExtResource("9_c8nfc")
+
+[node name="RaftersTopBeams" type="Sprite2D" parent="Map/Main Hall/Rafters" unique_id=820128897]
+texture = ExtResource("10_oxcik")
+
+[node name="FullRafters" type="Sprite2D" parent="Map/Main Hall/Rafters" unique_id=1518092366]
+texture = ExtResource("11_obhq2")
+
+[node name="Colliders" type="Node2D" parent="Map/Main Hall" unique_id=1528410733]
+
+[node name="TopRightWall2" type="StaticBody2D" parent="Map/Main Hall/Colliders" unique_id=860309889]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Main Hall/Colliders/TopRightWall2" unique_id=626857192]
+position = Vector2(1709.4738, -928.42114)
+shape = SubResource("SegmentShape2D_2txet")
+
+[node name="TopRightWall3" type="StaticBody2D" parent="Map/Main Hall/Colliders" unique_id=1635607713]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Main Hall/Colliders/TopRightWall3" unique_id=1846560262]
+position = Vector2(1709.4738, -928.42114)
+shape = SubResource("SegmentShape2D_xonmi")
+
+[node name="TopRightWall4" type="StaticBody2D" parent="Map/Main Hall/Colliders" unique_id=2007848037]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Main Hall/Colliders/TopRightWall4" unique_id=1105546106]
+position = Vector2(1709.4738, -928.42114)
+shape = SubResource("SegmentShape2D_ky3ym")
+
+[node name="TopRightWall5" type="StaticBody2D" parent="Map/Main Hall/Colliders" unique_id=316692206]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Main Hall/Colliders/TopRightWall5" unique_id=1321620901]
+position = Vector2(1709.4738, -928.42114)
+shape = SubResource("SegmentShape2D_exrwk")
+
+[node name="TopRightWall6" type="StaticBody2D" parent="Map/Main Hall/Colliders" unique_id=274592622]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Main Hall/Colliders/TopRightWall6" unique_id=232378476]
+position = Vector2(1709.4738, -928.42114)
+shape = SubResource("SegmentShape2D_qvtjy")
+
+[node name="TopRightWall7" type="StaticBody2D" parent="Map/Main Hall/Colliders" unique_id=2006325002]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Main Hall/Colliders/TopRightWall7" unique_id=720080080]
+position = Vector2(1709.4738, -928.42114)
+shape = SubResource("SegmentShape2D_tpf3c")
+
+[node name="TopRightWall8" type="StaticBody2D" parent="Map/Main Hall/Colliders" unique_id=1348754412]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Main Hall/Colliders/TopRightWall8" unique_id=8260167]
+position = Vector2(1709.4738, -928.42114)
+shape = SubResource("SegmentShape2D_icp8a")
+
+[node name="TopRightWall9" type="StaticBody2D" parent="Map/Main Hall/Colliders" unique_id=1780768132]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Main Hall/Colliders/TopRightWall9" unique_id=1984122905]
+position = Vector2(1709.4738, -928.42114)
+shape = SubResource("SegmentShape2D_icp8a")
+
+[node name="TopRightWall10" type="StaticBody2D" parent="Map/Main Hall/Colliders" unique_id=909212464]
+scale = Vector2(0.475, 0.475)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Main Hall/Colliders/TopRightWall10" unique_id=1357848301]
+position = Vector2(1709.4738, -928.42114)
+shape = SubResource("SegmentShape2D_w6ucw")
+
+[node name="Interactables" type="Node2D" parent="Map/Main Hall" unique_id=1449132677]
+
+[node name="HallDoor" type="Area2D" parent="Map/Main Hall/Interactables" unique_id=1148708762]
+position = Vector2(1563, 280)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Main Hall/Interactables/HallDoor" unique_id=851824701]
+position = Vector2(-35, 41)
+shape = SubResource("CircleShape2D_x53fh")
+
+[node name="Player" type="Node2D" parent="." unique_id=714933004 node_paths=PackedStringArray("first_vessel")]
+script = ExtResource("3_em1bs")
+first_vessel = NodePath("../Characters/Statue")
+
+[node name="GameCamera" type="Camera2D" parent="Player" unique_id=424989339]
+zoom = Vector2(0.8, 0.8)
+position_smoothing_enabled = true
+
+[node name="Characters" type="Node2D" parent="." unique_id=1287138766]
+
+[node name="Statue" parent="Characters" unique_id=1731815557 instance=ExtResource("3_e3dby")]
+position = Vector2(-4526, 1459)
+
+[node name="Projectiles" type="Node2D" parent="." unique_id=458874184]
+
+[node name="UI Layer" type="CanvasLayer" parent="." unique_id=1325080115]
+
+[node name="UI" type="Control" parent="UI Layer" unique_id=1444161011]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI Layer/UI" unique_id=232348890]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 23.0
+text = "15/15 HP"
+label_settings = SubResource("LabelSettings_em1bs")
+
+[node name="Dialog" parent="UI Layer" unique_id=156659926 instance=ExtResource("32_x53fh")]
+
+[connection signal="hurt" from="Player" to="." method="_on_update_hp"]
+[connection signal="parasite" from="Player" to="." method="spawn_parasite"]
