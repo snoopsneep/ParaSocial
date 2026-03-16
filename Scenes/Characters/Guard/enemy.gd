@@ -68,7 +68,8 @@ func _physics_process(_delta):
 		# make it slow
 		speed = 250.0
 		# if there's a target who is aggro'd (and you're not dead)
-		if seeking and !dead and aggro:
+
+		if seeking != null and !dead and aggro:
 			# move towards the target
 			var direction = (target.position - position).normalized()
 			velocity = direction * speed
@@ -144,14 +145,12 @@ func _seeking():
 	## this decides the start and end pos of the ray. Enemy POS, player POS.
 	var query = PhysicsRayQueryParameters2D.create(position, target.position)
 	var result = space_state.intersect_ray(query) # call the raycast
-
 	if "collider" in result:
 		## check if obj hit is player...
 		if result.collider == target and target.is_aggro:
 			## bugtest stuff
 			print("I SEE YOU")
 			print(result.collider)
-
 			## ...change state to aggro
 			aggro = true
 			$Range.scale = Vector2(3.5,3.5) # make the range bigger
