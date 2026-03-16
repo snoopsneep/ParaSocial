@@ -1,7 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://dlj40uugp24a7"]
 
-[ext_resource type="Texture2D" uid="uid://dskddkafnnmn5" path="res://Assets/Resources/dialog/Box_Orange_Rounded.png" id="1_p46k5"]
-[ext_resource type="SystemFont" uid="uid://cfp4mh82o1qwg" path="res://Assets/Resources/dialog/new_system_font.tres" id="2_kmrm1"]
+[ext_resource type="SystemFont" uid="uid://cfp4mh82o1qwg" path="res://scenes/Level/Assets/Resources/dialog/new_system_font.tres" id="2_kmrm1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trtic"]
 
@@ -18,7 +17,6 @@ font_names = PackedStringArray("Mario Party Hudson")
 subpixel_positioning = 0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kvpfn"]
-texture = ExtResource("1_p46k5")
 texture_margin_left = 256.0
 texture_margin_top = 256.0
 texture_margin_right = 256.0

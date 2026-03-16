@@ -55,8 +55,8 @@ func _physics_process(_delta):
 			$Sprite2D.region_rect = Rect2(2142,0,1071,829)
 
 ## Slightly edited hit method actually kills the player rather than booting them out
-func hit():
-	health -= 1
+func hit(dmg = 1):
+	health -= dmg
 	if health == 0:
 		_on_death()
 	hurt.emit(health,max_health)

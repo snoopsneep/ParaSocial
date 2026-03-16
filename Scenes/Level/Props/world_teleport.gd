@@ -1,4 +1,4 @@
-class_name WorldTeleport extends Event
+class_name WorldTeleport extends WorldEvent
 
 @export var destination: Vector2
 

@@ -13,6 +13,14 @@ class_name Enemy extends Vessel
 ## Reference to (DEBUG) warning graphic
 @onready var warning = $Warning
 
+# a bunch of private reference variables to the attack nodes
+#region attack access variables
+@onready var _attack = $Attack
+@onready var _attack_collider = $Attack/CollisionShape2D
+@onready var _attack_sprite = $Attack/AnimatedSprite2D
+
+#endregion
+
 ## Stores a reference to the player when they're in range
 var target: Node2D
 
@@ -44,14 +52,14 @@ func _physics_process(_delta):
 		set_collision_layer_value(2, false)
 		set_collision_mask_value(1, true)
 		set_collision_mask_value(2, true)
-		modulate = Color(1, 1, 1)
+		# modulate = Color(1, 1, 1)
 	else:
 		if !dead:
 			set_collision_layer_value(1, false)
 			set_collision_layer_value(2, true)
 			set_collision_mask_value(1, true)
 			set_collision_mask_value(2, true)
-			modulate = Color(1, 1, 1)
+			# modulate = Color(1, 1, 1)
 		else:
 			modulate = Color(0.561, 0.0, 0.549)
 			set_collision_layer_value(1, false)
@@ -75,10 +83,11 @@ func _physics_process(_delta):
 			velocity = direction * speed
 			# if the attack isn't on cooldown
 			if atk_cooldown.is_stopped():
-				print("a")
-				# throw a projectile towards the player (with is_evil set to true)
-				attack.emit(position,direction,true)
-				# start the attack cooldown
+				_attack.look_at(target.position)
+				_attack_collider.disabled = false # un-disable (enable) the attack collider
+				_attack_sprite.visible = true # make the sprite visible
+				_attack_sprite.play("default") # make the sprite animation play
+				# start the attack cooasldown
 				atk_cooldown.start()
 		else: # if this IS an enemy but it doesn't have a target
 			velocity = Vector2(0,0) # don't move
@@ -90,19 +99,17 @@ func _physics_process(_delta):
 		# if the player uses the primary action
 		if Input.is_action_just_pressed("Primary Action"):
 			if atk_cooldown.is_stopped(): # and the attack isn't on cooldown
-				# set the attack to go towards the mouse
-				var atk_dir = (get_global_mouse_position() - position).normalized()
-				# shoot the projectile (with is_evil set to false)
-				attack.emit(position,atk_dir,false)
-				atk_cooldown.start() # start the attack cooldown
-				is_aggro = true # make enemies aggro on you
+				_attack.look_at(get_global_mouse_position())
+				_attack_collider.disabled = false # un-disable (enable) the attack collider
+				_attack_sprite.visible = true # make the sprite visible
+				_attack_sprite.play("default") # make the sprite animation play
 
 ## Customized hit function deletes the vessel if it dies with the player in it,
 ## but knocks the enemy unconscious if it's killed as an enemy.
-func hit():
+func hit(dmg = 1):
 	if dmg_cooldown.is_stopped():
-		health -= 1
-		if health == 0:
+		health -= dmg
+		if health <= 0:
 			if is_vessel:
 				boot.emit()
 				queue_free()
@@ -153,4 +160,18 @@ func _seeking():
 			print(result.collider)
 			## ...change state to aggro
 			aggro = true
+			seeking = false
 			$Range.scale = Vector2(3.5,3.5) # make the range bigger
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	_attack_collider.disabled = true # re-disable the attack collider
+	_attack_sprite.stop() # stop the sprite animation (just in case)
+	_attack_sprite.visible = false # make the attack sprite invisible again
+
+
+func _on_attack_body_entered(body: Node2D) -> void:
+	# if the node detected is (inherits from) a Vessel
+	if body is Vessel and body != self:
+		# run that "hit" function
+		body.hit(2)

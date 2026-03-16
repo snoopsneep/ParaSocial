@@ -50,7 +50,7 @@ func spawn_parasite(source):
 	$Characters.add_child(new_para)
 	player.new_vessel(new_para,true)
 
-func start_event(event: Event):
+func start_event(event: WorldEvent):
 	if event is WorldTeleport:
 		$Player.curr_vessel.position = event.destination
 	event.run_event($EventManager)

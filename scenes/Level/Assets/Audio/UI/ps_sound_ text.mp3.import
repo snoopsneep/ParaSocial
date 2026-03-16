@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jd7gkneqh5ea"
+path="res://.godot/imported/ps_sound_ text.mp3-c3217d523765e6e0fd722493dd46ecab.mp3str"
+
+[deps]
+
+source_file="res://scenes/Level/Assets/Audio/UI/ps_sound_ text.mp3"
+dest_files=["res://.godot/imported/ps_sound_ text.mp3-c3217d523765e6e0fd722493dd46ecab.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

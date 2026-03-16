@@ -1,4 +1,4 @@
-class_name Event extends Area2D
+class_name WorldEvent extends Area2D
 ## Generic Event node to extend when building in-world interactions with props and/or NPCs.
 
 ## Dictates how the Event will be triggered.
@@ -11,7 +11,7 @@ class_name Event extends Area2D
 @export var one_shot: bool = false
 
 ## Emits when the event is triggered.
-signal triggered(this_event: Event)
+signal triggered(this_event: WorldEvent)
 
 ## Emits when the event is completely over.
 signal end_event
