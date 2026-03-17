@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv5xvetlcvoqg"
-path="res://.godot/imported/Instruct1.png-698c6faa3ef3ac4960807faa3e028bd6.ctex"
+uid="uid://bmgioyy6vs4de"
+path="res://.godot/imported/Box_Orange_Rounded.png-ee1c5b02d50cf4875a0fcce634d77077.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/Todo_Manager/doc/images/Instruct1.png"
-dest_files=["res://.godot/imported/Instruct1.png-698c6faa3ef3ac4960807faa3e028bd6.ctex"]
+source_file="res://assets/# OLD - GET RID OF ASAP/Box_Orange_Rounded.png"
+dest_files=["res://.godot/imported/Box_Orange_Rounded.png-ee1c5b02d50cf4875a0fcce634d77077.ctex"]
 
 [params]
 

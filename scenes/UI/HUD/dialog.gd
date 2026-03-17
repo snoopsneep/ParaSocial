@@ -18,6 +18,8 @@ var _speaker_name: String
 var _curr_line: int = 0
 # how long the typing animation has been playing
 var _typing_time: float = 0
+# how fast the letters are typed
+@export var typing_speed: float = 1.5
 
 # obligatory handy @onready variables
 @onready var _speaker: Label = $MarginContainer/VBoxContainer/Name
@@ -40,8 +42,6 @@ func next_line():
 	_dialog.visible_characters = 0
 	# opens the dialog box, making it actually visible
 	open()
-	# grab focus with the continue button, so controller users can skip the text
-	_continue.grab_focus()
 	# while loop that increases the visible characters until they're all visible
 	while _dialog.visible_characters < _dialog.get_total_character_count():
 		# typing time adds delta time every frame, effectively storing how long the typing has gone on
@@ -49,8 +49,7 @@ func next_line():
 		# this warning was useless and annoying. i probably shouldn't do this but oh well
 		@warning_ignore("narrowing_conversion")
 		# visible characters are set based on the text speed (from the settings) and the typing time
-		# TODO: "File" not declared in current scope.
-		# _dialog.visible_characters = File.settings.text_speed * _typing_time
+		_dialog.visible_characters = typing_speed * _typing_time
 		# wait for the next frame, allowing other stuff to run in the background
 		await get_tree().process_frame
 	# reset _typing_time after the loop
@@ -72,6 +71,7 @@ func display_line(line: String, speaker: String = "") -> Signal:
 	# return the signal that will emit after the text box is closed
 	return finished
 
+# TODO: this method isn't actually implemented yet. fuck you, past ian.
 ## Displays multiple lines of text in a row, with a single speaker's name as an optional parameter. [br][br]
 ## Returns a signal that emits when the dialog box closes.
 func display_multiline(lines, speaker: String = "") -> Signal:

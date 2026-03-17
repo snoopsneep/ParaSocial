@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://vuvidyufolfg"]
+
+[ext_resource type="Script" uid="uid://uumty3q3wxvh" path="res://Scenes/Level/Props/room_transition.gd" id="1_l03ml"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7ig6f"]
+a = Vector2(83, 45)
+b = Vector2(-79, -46)
+
+[node name="RoomTransition" type="Area2D" unique_id=549578245]
+collision_layer = 16
+collision_mask = 43
+script = ExtResource("1_l03ml")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=40191430]
+shape = SubResource("SegmentShape2D_7ig6f")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1258179268]
+position = Vector2(45, -45)
+
+[node name="Marker2D2" type="Marker2D" parent="." unique_id=786649644]
+position = Vector2(-45, 45)
+
+[connection signal="body_exited" from="." to="." method="trigger"]

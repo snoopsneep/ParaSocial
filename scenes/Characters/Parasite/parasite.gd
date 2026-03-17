@@ -67,11 +67,20 @@ func possess():
 	if sight.has_overlapping_bodies():
 		var closest_body
 		var closest_dist: float = 9999999.0
+		# TODO: make this function raycast towards its target,
+		# so you can't just possess enemies through walls.
 		for i in sight.get_overlapping_bodies():
 			if (position.distance_to(i.position) < closest_dist):
 				closest_dist = position.distance_to(i.position)
 				closest_body = i
 		new_vessel.emit(closest_body)
+
+		# fixes a bug where rooms don't transition if you capture over them
+		for i in sight.get_overlapping_areas():
+			if i is RoomTransition:
+				i.trigger(closest_body)
+
+		# deletes the parasite
 		queue_free()
 
 # TODO: when you die as the parasite, you can still press the capture button

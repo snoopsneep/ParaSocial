@@ -1,10 +1,10 @@
 @tool
 extends EditorPlugin
 
-const DockScene := preload("res://Addons/Todo_Manager/UI/Dock.tscn")
-const Dock := preload("res://Addons/Todo_Manager/Dock.gd")
-const Todo := preload("res://Addons/Todo_Manager/todo_class.gd")
-const TodoItem := preload("res://Addons/Todo_Manager/todoItem_class.gd")
+const DockScene := preload("res://addons/Todo_Manager/UI/Dock.tscn")
+const Dock := preload("res://addons/Todo_Manager/Dock.gd")
+const Todo := preload("res://addons/Todo_Manager/todo_class.gd")
+const TodoItem := preload("res://addons/Todo_Manager/todoItem_class.gd")
 
 var _dockUI : Dock
 
@@ -26,7 +26,7 @@ var refresh_lock := false # makes sure _on_filesystem_changed only triggers once
 
 func _enter_tree() -> void:
 	_dockUI = DockScene.instantiate() as Control
-	add_control_to_bottom_panel(_dockUI, "TODO")
+	add_control_to_bottom_panel(_dockUI, "Todo")
 	get_editor_interface().get_resource_filesystem().connect("filesystem_changed",
 			_on_filesystem_changed)
 	get_editor_interface().get_file_system_dock().connect("file_removed", queue_remove)
@@ -34,8 +34,11 @@ func _enter_tree() -> void:
 			_on_active_script_changed)
 	_dockUI.plugin = self
 
-	combined_pattern = combine_patterns(_dockUI.patterns)
-	find_tokens_from_path(find_scripts())
+	var filtered_patterns = _dockUI.patterns.filter(func (p): return p[3] == true)
+	if filtered_patterns.size() > 0:
+		combined_pattern = combine_patterns(filtered_patterns)
+		find_tokens_from_path(find_scripts())
+	count_todos()
 	_dockUI.build_tree()
 
 
@@ -49,7 +52,6 @@ func queue_remove(file: String):
 	for i in _dockUI.todo_items.size() - 1:
 		if _dockUI.todo_items[i].script_path == file:
 			_dockUI.todo_items.remove_at(i)
-
 
 func find_tokens_from_path(scripts: Array[String]) -> void:
 	for script_path in scripts:
@@ -213,12 +215,14 @@ func get_cached_todos(script_path: String) -> Array:
 func get_dir_contents(dir: DirAccess, scripts: Array[String], directory_queue: Array[String]) -> void:
 	dir.include_navigational = false
 	dir.include_hidden = false
+	if dir_has_gdignore(dir):
+		return
 	dir.list_dir_begin()
 	var file_name : String = dir.get_next()
 
 	while file_name != "":
 		if dir.current_is_dir():
-			if file_name == ".import" or file_name == ".mono": # Skip .import folder which should never have scripts
+			if file_name.begins_with('.'): # Skip folders which should never have scripts
 				pass
 			else:
 				directory_queue.append(dir.get_current_dir().path_join(file_name))
@@ -228,14 +232,23 @@ func get_dir_contents(dir: DirAccess, scripts: Array[String], directory_queue: A
 			or ((file_name.ends_with(".tscn") and _dockUI.builtin_enabled)):
 				scripts.append(dir.get_current_dir().path_join(file_name))
 		file_name = dir.get_next()
+	dir.list_dir_end()
 
+func dir_has_gdignore(dir: DirAccess) -> bool:
+	var files = dir.get_files()
+	return files.has(".gdignore")
 
 func rescan_files(clear_cache: bool) -> void:
 	_dockUI.todo_items.clear()
 	if clear_cache:
 		todo_cache.clear()
-	combined_pattern = combine_patterns(_dockUI.patterns)
-	find_tokens_from_path(find_scripts())
+	var filtered_patterns = _dockUI.patterns.filter(func (p): return p[3] == true)
+
+	if filtered_patterns.size() > 0:
+		combined_pattern = combine_patterns(filtered_patterns)
+		find_tokens_from_path(find_scripts())
+
+	count_todos()
 	_dockUI.build_tree()
 
 
@@ -248,17 +261,15 @@ func combine_patterns(patterns: Array) -> String:
 		else:
 			cased_patterns.append("(" + pattern[0] + ")")
 
-	if patterns.size() == 1:
-		return cased_patterns[0]
-	else:
-		var pattern_string := "((\\/\\*)|(#|\\/\\/))\\s*("
-		for i in range(patterns.size()):
-			if i == 0:
-				pattern_string += cased_patterns[i]
-			else:
-				pattern_string += "|" + cased_patterns[i]
-		pattern_string += ")(?(2)[\\s\\S]*?\\*\\/|.*)"
-		return pattern_string
+
+	var pattern_string := "((\\/\\*)|(#|\\/\\/))\\s*("
+	for i in range(patterns.size()):
+		if i == 0:
+			pattern_string += cased_patterns[i]
+		else:
+			pattern_string += "|" + cased_patterns[i]
+	pattern_string += ")(?(2)[\\s\\S]*?\\*\\/|.*)"
+	return pattern_string
 
 
 func create_todo(todo_string: String, script_path: String) -> Todo:
@@ -278,6 +289,15 @@ func create_todo(todo_string: String, script_path: String) -> Todo:
 	todo.content = todo_string
 	todo.script_path = script_path
 	return todo
+
+func count_todos() -> void:
+	if _dockUI.show_count:
+		var count : int = 0
+		for i in _dockUI.todo_items.size():
+			count += _dockUI.todo_items[i].todos.size()
+		_dockUI.get_parent().title = "Todo (%01d)" % [count]
+	else:
+		_dockUI.get_parent().title = "Todo"
 
 
 func _on_active_script_changed(script) -> void:

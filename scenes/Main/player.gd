@@ -31,7 +31,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
-	if curr_vessel != null: # only process if there IS a vessel
+	if curr_vessel != null and !Global.player_disabled: # only process if there IS a vessel
 		# this variable assignment also gets the player's input vector
 		var direction = Input.get_vector("left","right","up","down")
 		# if direction isn't 0,0 (aka "if the player is inputting movement")

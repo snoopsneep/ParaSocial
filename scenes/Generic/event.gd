@@ -31,6 +31,6 @@ func trigger():
 ## Contains the actual scripting of the event. Is called from [Game] after verifying that it's valid
 ##
 ## Override to implement the event. If not overridden, will push an error that says "Invalid event!"
-func run_event(manager: EventManager):
+func run_event(_manager: EventManager):
 	push_warning("Invalid event!")
 	end_event.emit()

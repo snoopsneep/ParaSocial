@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dlvjtln05lyyn" path="res://scenes/Characters/Parasite/parasite.gd" id="1_3wf0h"]
 [ext_resource type="PackedScene" uid="uid://03s4l0q2exir" path="res://scenes/Generic/vessel.tscn" id="1_gpx1o"]
-[ext_resource type="Texture2D" uid="uid://dckc2i7ynyq8a" path="res://assets//Graphics/Sprites/Characters/Parasite/paragirl.png" id="3_bvfi0"]
-[ext_resource type="Texture2D" uid="uid://v0xgld7q1r7k" path="res://assets//Graphics/Miscellaneous/warning.png" id="3_gpx1o"]
+[ext_resource type="Texture2D" uid="uid://dckc2i7ynyq8a" path="res://assets/Graphics/Sprites/Characters/Parasite/paragirl.png" id="3_bvfi0"]
+[ext_resource type="Texture2D" uid="uid://v0xgld7q1r7k" path="res://assets/Graphics/Miscellaneous/warning.png" id="3_gpx1o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hqyxe"]
 radius = 382.01178
@@ -44,7 +44,7 @@ autostart = true
 [node name="Sight" type="Area2D" parent="." index="4" unique_id=222762200]
 scale = Vector2(2.5, 2.5)
 collision_layer = 16
-collision_mask = 32
+collision_mask = 48
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" index="0" unique_id=787595796]
 shape = SubResource("CircleShape2D_bvfi0")

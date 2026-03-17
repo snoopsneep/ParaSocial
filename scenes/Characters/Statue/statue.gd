@@ -95,6 +95,7 @@ func _on_up_atk_anim_finished():
 	# reset attack logic vars
 	atk_ready = true
 	atk_chrg = 1
+	modulate = Color(1,1,1,1)
 
 # func that triggers when something collides with any of the attack colliders
 func _on_atk_body_entered(body):
@@ -106,7 +107,6 @@ func _on_atk_body_entered(body):
 func _wind_up():
 	# So that this function doesnt get called several times
 	atk_ready = false
-
 	# set and start time
 	if atk_chrg == 1 or atk_chrg == 2:
 		atk_cooldown.wait_time = 1
@@ -118,6 +118,7 @@ func _on_attack_cooldown_timeout() -> void:
 	# if charge less than max, add 1 to charge and re-call wind up
 	if atk_chrg < 3:
 		atk_chrg += 1
+		modulate = Color(1.0, (1.0 - (atk_chrg*0.15)), (1.0 - (atk_chrg*0.15)), 1.0)
 		_wind_up()
 	print("\nAnd your charge is: ", atk_chrg, "!\n")
 

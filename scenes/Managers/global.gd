@@ -10,6 +10,9 @@ var menu: PackedScene = preload("res://scenes/UI/Title/main_menu.tscn")
 # save file/progression related variables
 var level: int = 0
 
+# if true, the player's movement is disabled.
+var player_disabled: bool = false
+
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("Debug Action 2"):
 		get_tree().paused = !get_tree().paused

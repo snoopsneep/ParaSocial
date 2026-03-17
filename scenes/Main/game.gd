@@ -17,6 +17,25 @@ var para_scene: PackedScene = preload("res://scenes/Characters/Parasite/parasite
 @onready var player: Player = $Player
 
 func _ready():
+	#region set up room debug values
+	$Map/Kitchen.modulate = Color(1,1,1,0)
+	$Map/Kitchen.visible = true
+	$"Map/Dining Room".modulate = Color(1,1,1,0.5)
+	$"Map/Dining Room".visible = true
+	$"Map/Main Hall".modulate = Color(1,1,1,1)
+	$"Map/Main Hall".visible = true
+	$Map/Hallway.modulate = Color(1,1,1,0.5)
+	$Map/Hallway.visible = true
+	$Map/Chapel.modulate = Color(1,1,1,0)
+	$Map/Chapel.visible = true
+	for i in $Characters.get_children():
+		if i.name == "Captain":
+			i.z_index = 2
+		else:
+			i.z_index = 3
+	#endregion
+
+	# set up event triggers
 	for i in get_tree().get_nodes_in_group("Events"):
 		i.triggered.connect(start_event)
 		i.end_event.connect(end_event)
@@ -53,10 +72,11 @@ func spawn_parasite(source):
 func start_event(event: WorldEvent):
 	if event is WorldTeleport:
 		$Player.curr_vessel.position = event.destination
+	Global.player_disabled = true # TODO: make this optional! with a parameter!!
 	event.run_event($EventManager)
 
 func end_event():
-	pass
+	Global.player_disabled = false
 
 # recieves signals to update the hp display, and then does that.
 func _on_update_hp(hp,max_hp):

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://colp3haerdlg4" path="res://scenes/Characters/Statue/statue.gd" id="1_gsdjt"]
 [ext_resource type="PackedScene" uid="uid://03s4l0q2exir" path="res://scenes/Generic/vessel.tscn" id="1_kr50t"]
-[ext_resource type="Texture2D" uid="uid://bicwgv05172br" path="res://assets//Graphics/Sprites/Characters/Statue/colorgirl.png" id="3_kr50t"]
+[ext_resource type="Texture2D" uid="uid://bicwgv05172br" path="res://assets/Graphics/Sprites/Characters/Statue/colorgirl.png" id="3_kr50t"]
 [ext_resource type="Texture2D" uid="uid://clwrdj6plutcb" path="res://assets/Graphics/Sprites/Characters/Statue/statue_downleft.png" id="3_rtj1y"]
 [ext_resource type="Texture2D" uid="uid://crd0qp1b5wcf8" path="res://assets/Graphics/Sprites/Characters/Statue/statue_downright.png" id="4_f0itt"]
-[ext_resource type="Texture2D" uid="uid://dd4aas64383m2" path="res://assets//Graphics/Sprites/Characters/Statue/sword_slash.png" id="4_kr50t"]
+[ext_resource type="Texture2D" uid="uid://dd4aas64383m2" path="res://assets/Graphics/Sprites/Characters/Statue/sword_slash.png" id="4_kr50t"]
 [ext_resource type="Texture2D" uid="uid://lwtxk4x1ads7" path="res://assets/Graphics/Sprites/Characters/Statue/statue_upleft.png" id="5_su1lb"]
 [ext_resource type="Texture2D" uid="uid://cyjg4eg6u0ql5" path="res://assets/Graphics/Sprites/Characters/Statue/statue_upright.png" id="6_6iguu"]
 

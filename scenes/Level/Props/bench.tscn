@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://fqp8x2ofqjst"]
+
+[ext_resource type="Texture2D" uid="uid://dqc745ktc8wyg" path="res://assets/Graphics/Environments/Church/Main Hall/bench1.png" id="1_o8cjk"]
+
+[node name="Bench" type="StaticBody2D" unique_id=70036307]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1697843649]
+texture = ExtResource("1_o8cjk")
+offset = Vector2(-425, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1741669492]
