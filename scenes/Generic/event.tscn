@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dvm0l187x12a4"]
+
+[ext_resource type="Script" uid="uid://8vwqmnh3qiee" path="res://scenes/Generic/event.gd" id="1_wkl86"]
+
+[node name="Event" type="Area2D" unique_id=753610390 groups=["Events"]]
+collision_layer = 16
+script = ExtResource("1_wkl86")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=18997285]
