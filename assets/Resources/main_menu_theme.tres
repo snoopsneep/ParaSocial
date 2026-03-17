@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://cksxsyva51k6f"]
 
-[ext_resource type="FontFile" uid="uid://dpckyyj14vjhg" path="res://Scenes/Level/Assets/# OLD - GET RID OF ASAP/comic_sans.ttf" id="3_fxun5"]
+[ext_resource type="FontFile" uid="uid://dpckyyj14vjhg" path="res://assets/# OLD - GET RID OF ASAP/comic_sans.ttf" id="3_fxun5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_afcv2"]
 

@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Para-Social"
 config/version="1.0"
-run/main_scene="uid://cbqhcm0bqm5ud"
+run/main_scene="uid://cvy2uhs0vm4mn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=60
 config/icon="res://Assets/# OLD - GET RID OF ASAP/icon.svg"
