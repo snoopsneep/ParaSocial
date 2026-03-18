@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmi1jfjq7t1et"
-path="res://.godot/imported/kitchendoor.PNG-3a3ebeda23113693d4c3fb74d10b2043.ctex"
+uid="uid://txmtddfpdvpv"
+path="res://.godot/imported/kitchen_nostones.PNG-8ccddc4f8debc99ec5a7458ff2b94cee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Church/Kitchen/kitchendoor.PNG"
-dest_files=["res://.godot/imported/kitchendoor.PNG-3a3ebeda23113693d4c3fb74d10b2043.ctex"]
+source_file="res://assets/Graphics/Environments/Church/Kitchen/Final colors/kitchen_nostones.PNG"
+dest_files=["res://.godot/imported/kitchen_nostones.PNG-8ccddc4f8debc99ec5a7458ff2b94cee.ctex"]
 
 [params]
 

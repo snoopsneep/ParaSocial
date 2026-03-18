@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d34pp0m7tgc84"
-path="res://.godot/imported/Kitchen_no_table.PNG-b1b26003df6ca2da07dcfea303cd35e2.ctex"
+path="res://.godot/imported/Kitchen_no_table.PNG-f97f0d4678817d78198db8874f2cc120.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Church/Kitchen/Kitchen_no_table.PNG"
-dest_files=["res://.godot/imported/Kitchen_no_table.PNG-b1b26003df6ca2da07dcfea303cd35e2.ctex"]
+source_file="res://assets/Graphics/Environments/Church/Kitchen/Final colors/Kitchen_no_table.PNG"
+dest_files=["res://.godot/imported/Kitchen_no_table.PNG-f97f0d4678817d78198db8874f2cc120.ctex"]
 
 [params]
 

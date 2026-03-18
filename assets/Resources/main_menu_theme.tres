@@ -5,7 +5,6 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_afcv2"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u0li1"]
-load_path = "res://.godot/imported/nine_patch_rect_hover.png-9d1b72632d6d236d361e55d9d609862f.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fokes"]
 content_margin_left = 50.0
@@ -19,7 +18,6 @@ texture_margin_right = 68.0
 texture_margin_bottom = 68.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_siru5"]
-load_path = "res://.godot/imported/nine_patch_rect.png-f142a431dfd8e01d09c36da1b25358b5.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fb1lv"]
 content_margin_left = 50.0
@@ -33,7 +31,6 @@ texture_margin_right = 68.0
 texture_margin_bottom = 68.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ldwu1"]
-load_path = "res://.godot/imported/nine_patch_rect.png-f142a431dfd8e01d09c36da1b25358b5.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nv0ky"]
 content_margin_left = 50.0
