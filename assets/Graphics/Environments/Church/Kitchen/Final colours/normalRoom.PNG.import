@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fhwl6pry4x6f"
-path="res://.godot/imported/normalRoom.PNG-dc5435714ca8a297c93728863d7aff2d.ctex"
+uid="uid://30l1od0148ss"
+path="res://.godot/imported/normalRoom.PNG-1138ca9f03e6c8ab89ce15696abbace2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Church/Kitchen/Final colours/normalRoom.PNG"
-dest_files=["res://.godot/imported/normalRoom.PNG-dc5435714ca8a297c93728863d7aff2d.ctex"]
+source_file="res://assets/Graphics/Environments/Church/Kitchen/Final colors/normalRoom.PNG"
+dest_files=["res://.godot/imported/normalRoom.PNG-1138ca9f03e6c8ab89ce15696abbace2.ctex"]
 
 [params]
 

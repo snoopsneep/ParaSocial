@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp37538l53dt8"
-path="res://.godot/imported/Door.PNG-7ad565d22f11de2cc34b2c8767d84095.ctex"
+uid="uid://dq0muy44ft3x6"
+path="res://.godot/imported/Door.PNG-94c0b4c9405a9f005df73801a271f48a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Church/Kitchen/Final colours/Door.PNG"
-dest_files=["res://.godot/imported/Door.PNG-7ad565d22f11de2cc34b2c8767d84095.ctex"]
+source_file="res://assets/Graphics/Environments/Church/Kitchen/Final colors/Door.PNG"
+dest_files=["res://.godot/imported/Door.PNG-94c0b4c9405a9f005df73801a271f48a.ctex"]
 
 [params]
 

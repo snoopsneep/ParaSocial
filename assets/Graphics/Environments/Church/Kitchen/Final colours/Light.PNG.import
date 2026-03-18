@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dugc0hx4o014j"
-path="res://.godot/imported/Light.PNG-e00f35111bc90a8c862a80d1e1dd3620.ctex"
+uid="uid://cbfcxug7g4quh"
+path="res://.godot/imported/Light.PNG-62a2e3ef61234d4a0902510c70580868.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Church/Kitchen/Final colours/Light.PNG"
-dest_files=["res://.godot/imported/Light.PNG-e00f35111bc90a8c862a80d1e1dd3620.ctex"]
+source_file="res://assets/Graphics/Environments/Church/Kitchen/Final colors/Light.PNG"
+dest_files=["res://.godot/imported/Light.PNG-62a2e3ef61234d4a0902510c70580868.ctex"]
 
 [params]
 
