@@ -107,14 +107,16 @@ collision_layer = 32
 script = ExtResource("1_gsdjt")
 max_health = 30
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0" unique_id=932714013]
+[node name="Sprite2D2" type="Sprite2D" parent="." index="0" unique_id=306618643]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=932714013]
 position = Vector2(2.2499962, -107)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_s0wl0")
 animation = &"UpRight"
 speed_scale = 0.0
 
-[node name="Sprite2D" parent="." index="1" unique_id=416849066]
+[node name="Sprite2D" parent="." index="2" unique_id=416849066]
 visible = false
 position = Vector2(0, -89.965)
 scale = Vector2(0.1, 0.1)
@@ -122,12 +124,13 @@ texture = ExtResource("3_kr50t")
 region_enabled = true
 region_rect = Rect2(2450, 0, 2450, 4200)
 
-[node name="CollisionShape2D" parent="." index="2" unique_id=137211241]
+[node name="CollisionShape2D" parent="." index="3" unique_id=137211241]
+visible = false
 position = Vector2(1.25, 26)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_kr50t")
 
-[node name="Attack" type="Area2D" parent="." index="3" unique_id=3543164]
+[node name="Attack" type="Area2D" parent="." index="4" unique_id=3543164]
 position = Vector2(-4.000001, -28.999985)
 scale = Vector2(6.2999997, 6.2999997)
 collision_layer = 16
@@ -148,15 +151,16 @@ rotation = 3.1415927
 shape = SubResource("CapsuleShape2D_qqac2")
 disabled = true
 
-[node name="Attack Cooldown" type="Timer" parent="." index="4" unique_id=450909245]
+[node name="Attack Cooldown" type="Timer" parent="." index="5" unique_id=450909245]
 wait_time = 0.5
 one_shot = true
 
-[node name="Damage Cooldown" type="Timer" parent="." index="5" unique_id=582312198]
+[node name="Damage Cooldown" type="Timer" parent="." index="6" unique_id=582312198]
 wait_time = 0.3
 one_shot = true
 
-[node name="InteractRange" parent="." index="6" unique_id=768744904]
+[node name="InteractRange" parent="." index="7" unique_id=768744904]
+visible = false
 position = Vector2(3, 26)
 
 [node name="CollisionShape2D" parent="InteractRange" index="0" unique_id=2035168185]

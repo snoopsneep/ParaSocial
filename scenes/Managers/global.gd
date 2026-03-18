@@ -13,6 +13,26 @@ var level: int = 0
 # if true, the player's movement is disabled.
 var player_disabled: bool = false
 
+#region progress flags
+# if true, the potato has been collected
+var got_potato: bool = false
+
+# if true, potato has been put in pot
+var used_potato: bool = false
+
+# if true, the cheese has been collected
+var got_cheese: bool = false
+
+# if true, cheese has been put in pot
+var used_cheese: bool = false
+
+# if true, pot in the kitchen is lit
+var lit_pot: bool = false
+
+# if true, food has been cooked in the pot
+var food_cooked: bool = false
+#endregion
+
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("Debug Action 2"):
 		get_tree().paused = !get_tree().paused

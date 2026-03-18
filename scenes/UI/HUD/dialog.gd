@@ -22,10 +22,16 @@ var _typing_time: float = 0
 @export var typing_speed: float = 1.5
 
 # obligatory handy @onready variables
-@onready var _speaker: Label = $MarginContainer/VBoxContainer/Name
-@onready var _dialog: RichTextLabel = $MarginContainer/VBoxContainer/Dialog
-@onready var _continue: Button = $Box/Continue
-@onready var _choice_buttons: Array[Node] = $MarginContainer/Choices.get_children()
+@onready var _speaker: Label = $Box/MarginContainer/VBoxContainer/Name
+@onready var _dialog: RichTextLabel = $Box/MarginContainer/VBoxContainer/Dialog
+@onready var _choice_buttons: Array[Node] = $Box/MarginContainer/Choices.get_children()
+
+func _input(_event: InputEvent):
+	if (Global.player_disabled # if player control is disabled
+		and Input.is_action_just_pressed("Primary Action")
+	):
+		# you can click or press E to advance text
+		advance_text()
 
 ## Applies the speaker name and current line to the dialog box and handles the typing animation.
 func next_line():
@@ -100,7 +106,6 @@ func display_choices(line: String, choices) -> int:
 	next_line()
 	# wait until it finishes animating
 	await finished_typing
-	_continue.visible = false
 	for i in _choice_buttons.size():
 		if i < choices.size():
 			_choice_buttons[i].text = choices[i]
@@ -120,14 +125,13 @@ func display_choices(line: String, choices) -> int:
 ## Opens the dialog box, making it visible.
 func open():
 	visible = true
-	$Box/Continue.visible = true
 
 ## Closes the dialog box, hiding it.
 func close():
 	visible = false
 
-# triggered when hitting the lil arrow button on the dialog box
-func _on_continue_pressed():
+# advance the text, skipping the animation or closing the box.
+func advance_text():
 	# if the animation isn't done yet
 	if _dialog.visible_characters < _dialog.get_total_character_count():
 		# skips the typing animation

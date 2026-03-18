@@ -43,7 +43,7 @@ func _physics_process(_delta):
 		is_aggro = false # make enemies not attack it
 
 	# if the player is in this vessel (yes again. sorry. you can fix it if you want)
-	if is_vessel:
+	if is_vessel and !Global.player_disabled:
 		# checks if the player hits an attack direction, and does the attack.
 		if Input.is_action_just_pressed("Primary Action") and atk_ready:
 			# Wind up triggers attack logic.

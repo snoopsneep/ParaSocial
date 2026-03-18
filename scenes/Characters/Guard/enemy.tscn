@@ -60,6 +60,7 @@ region_enabled = true
 region_rect = Rect2(2556, 24, 1704, 2932)
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=137211241]
+visible = false
 position = Vector2(-19, 113)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_7x6ft")
@@ -71,6 +72,7 @@ position = Vector2(-19, -129)
 texture = ExtResource("3_bec6a")
 
 [node name="Range" type="Area2D" parent="." index="3" unique_id=2111126379]
+visible = false
 position = Vector2(-18.999998, 19.999998)
 scale = Vector2(2.5, 2.5)
 collision_layer = 16
