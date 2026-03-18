@@ -6,11 +6,11 @@
 [ext_resource type="Script" uid="uid://ym6qrkr1fd6j" path="res://scenes/Level/Props/room.gd" id="3_7ig6f"]
 [ext_resource type="PackedScene" uid="uid://j4k766di8pxc" path="res://scenes/Characters/Statue/statue.tscn" id="3_e3dby"]
 [ext_resource type="Script" uid="uid://bom3mrngq86x2" path="res://scenes/Main/player.gd" id="3_em1bs"]
-[ext_resource type="Texture2D" uid="uid://d34pp0m7tgc84" path="res://assets/Graphics/Environments/Church/Kitchen/Final colors/Kitchen_no_table.PNG" id="4_3lby3"]
+[ext_resource type="Texture2D" uid="uid://30l1od0148ss" path="res://assets/Graphics/Environments/Church/Kitchen/Final colors/normalRoom.PNG" id="4_3lby3"]
 [ext_resource type="FontFile" uid="uid://dpckyyj14vjhg" path="res://assets/# OLD - GET RID OF ASAP/comic_sans.ttf" id="5_gf1f2"]
 [ext_resource type="Texture2D" uid="uid://cj430dtqfy61j" path="res://assets/Graphics/Environments/Church/Dining Room/diningRoom_leftWall.png" id="5_kb4no"]
-[ext_resource type="Texture2D" uid="uid://cmi1jfjq7t1et" path="res://assets/Graphics/Environments/Church/Kitchen/Final colors/kitchendoor.PNG" id="5_x2ju3"]
-[ext_resource type="Texture2D" path="res://assets/Graphics/Environments/Church/Kitchen/Table.PNG" id="6_lm4ja"]
+[ext_resource type="Texture2D" uid="uid://dq0muy44ft3x6" path="res://assets/Graphics/Environments/Church/Kitchen/Final colors/Door.PNG" id="5_x2ju3"]
+[ext_resource type="Texture2D" uid="uid://cbfcxug7g4quh" path="res://assets/Graphics/Environments/Church/Kitchen/Final colors/Light.PNG" id="6_rcjdb"]
 [ext_resource type="Texture2D" uid="uid://cqhs4hoqtwftq" path="res://assets/Graphics/Environments/Church/Dining Room/diningRoom_rightWall.png" id="7_c8nfc"]
 [ext_resource type="Texture2D" uid="uid://bl5hfyxlrm4g5" path="res://assets/Graphics/Environments/Church/Dining Room/diningRoom_mainHall_door.png" id="7_ocr4w"]
 [ext_resource type="Texture2D" uid="uid://dlq8rb5c2d1j3" path="res://assets/Graphics/Environments/Church/Hallway/halldoors.png" id="9_iw1bi"]
@@ -204,6 +204,7 @@ connected_rooms = [NodePath("../Dining Room")]
 [node name="Graphics" type="Node2D" parent="Map/Kitchen" unique_id=1084068543]
 
 [node name="Floor + Walls" type="Sprite2D" parent="Map/Kitchen/Graphics" unique_id=371954194]
+position = Vector2(-8.75, 50)
 scale = Vector2(0.475, 0.475)
 texture = ExtResource("4_3lby3")
 
@@ -211,6 +212,11 @@ texture = ExtResource("4_3lby3")
 visible = false
 texture = ExtResource("5_x2ju3")
 region_rect = Rect2(1160, 1448, 568, 756)
+
+[node name="Light" type="Sprite2D" parent="Map/Kitchen/Graphics" unique_id=783765501]
+position = Vector2(-8.75, 50)
+scale = Vector2(0.475, 0.475)
+texture = ExtResource("6_rcjdb")
 
 [node name="Colliders" type="Node2D" parent="Map/Kitchen" unique_id=982935111]
 
@@ -266,7 +272,6 @@ collision_mask = 15
 polygon = PackedVector2Array(816.84204, 604.21094, 172.63159, 985.2637, -204.21045, 762.10547, 440, 383.1582)
 
 [node name="Sprite2D" type="Sprite2D" parent="Map/Kitchen/Colliders/Table" unique_id=1082251506]
-texture = ExtResource("6_lm4ja")
 
 [node name="Events" type="Node2D" parent="Map/Kitchen" unique_id=660990849]
 
