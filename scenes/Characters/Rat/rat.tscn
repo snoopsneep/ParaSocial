@@ -2,16 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://03s4l0q2exir" path="res://scenes/Generic/vessel.tscn" id="1_kv8t8"]
 [ext_resource type="Script" uid="uid://b6gekfcngs8rt" path="res://scenes/Characters/Rat/rat.gd" id="1_r0al0"]
-[ext_resource type="Texture2D" uid="uid://gggrfdakrly3" path="res://assets//Graphics/Sprites/Characters/Rat/colorratgirl.png" id="3_d0t3x"]
+[ext_resource type="Texture2D" uid="uid://gggrfdakrly3" path="res://assets/Graphics/Sprites/Characters/Rat/colorratgirl.png" id="3_d0t3x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ukx8"]
 radius = 53.6
 height = 165.59998
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d0t3x"]
-radius = 177.20045
+radius = 670.64
 
 [node name="Rat" unique_id=517857439 instance=ExtResource("1_kv8t8")]
+scale = Vector2(0.25, 0.25)
 collision_layer = 32
 script = ExtResource("1_r0al0")
 max_health = 4
@@ -27,7 +28,13 @@ rotation = 1.5707964
 scale = Vector2(2.5, 2.5)
 shape = SubResource("CapsuleShape2D_6ukx8")
 
-[node name="CollisionShape2D" parent="InteractRange" parent_id_path=PackedInt32Array(768744904) index="0" unique_id=2035168185]
+[node name="InteractRange" parent="." index="2" unique_id=768744904]
+collision_mask = 1
+
+[node name="CollisionShape2D" parent="InteractRange" index="0" unique_id=2035168185]
 position = Vector2(88, 0)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("CircleShape2D_d0t3x")
+
+[connection signal="body_entered" from="InteractRange" to="." method="_on_interact_range_body_entered"]
+[connection signal="body_exited" from="InteractRange" to="." method="_on_interact_range_body_exited"]

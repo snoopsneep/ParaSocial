@@ -5,6 +5,7 @@ class_name Statue extends Vessel
 
 ## Reference variable to the attack cooldown timer.
 @onready var atk_cooldown = $"Attack Cooldown"
+@onready var atk_delay = $"Attack Delay"
 @onready var dmg_cooldown = $"Damage Cooldown"
 
 # some variables for making the sprite display nice
@@ -48,7 +49,7 @@ func _physics_process(_delta):
 		if Input.is_action_just_pressed("Primary Action") and atk_ready:
 			# Wind up triggers attack logic.
 			_wind_up()
-		if Input.is_action_just_released("Primary Action"):
+		if Input.is_action_just_released("Primary Action") and atk_delay.is_stopped():
 			# Run the attack
 			_attack.look_at(get_global_mouse_position())
 			_attack_collider.disabled = false # un-disable (enable) the attack collider
@@ -93,9 +94,11 @@ func _on_up_atk_anim_finished():
 	_attack_sprite.stop() # stop the sprite animation (just in case)
 	_attack_sprite.visible = false # make the attack sprite invisible again
 	# reset attack logic vars
-	atk_ready = true
 	atk_chrg = 1
 	modulate = Color(1,1,1,1)
+	
+	# delay between attacks is called
+	atk_delay.start()
 
 # func that triggers when something collides with any of the attack colliders
 func _on_atk_body_entered(body):
@@ -133,3 +136,8 @@ func hit(dmg = 1):
 				modulate = Color(0.561, 0.0, 0.549)
 		dmg_cooldown.start()
 		hurt.emit(health,max_health)
+
+
+func _on_attack_delay_timeout() -> void:
+	# This will tell the statue it can attack again
+	atk_ready = true

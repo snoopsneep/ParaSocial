@@ -52,14 +52,14 @@ func _physics_process(_delta):
 		set_collision_layer_value(2, false)
 		set_collision_mask_value(1, true)
 		set_collision_mask_value(2, true)
-		# modulate = Color(1, 1, 1)
+		modulate = Color(1, 1, 1)
 	else:
 		if !dead:
 			set_collision_layer_value(1, false)
 			set_collision_layer_value(2, true)
 			set_collision_mask_value(1, true)
 			set_collision_mask_value(2, true)
-			# modulate = Color(1, 1, 1)
+			modulate = Color(1, 1, 1)
 		else:
 			modulate = Color(0.561, 0.0, 0.549)
 			set_collision_layer_value(1, false)
@@ -74,7 +74,7 @@ func _physics_process(_delta):
 	# if it's an enemy
 	if !is_vessel:
 		# make it slow
-		speed = 250.0
+		speed = 300.0
 		# if there's a target who is aggro'd (and you're not dead)
 
 		if seeking != null and !dead and aggro:
@@ -93,16 +93,18 @@ func _physics_process(_delta):
 			velocity = Vector2(0,0) # don't move
 		move_and_slide() # apply velocity & collisions to move
 	else: # if it's being controlled by the player
-		# make it fast
-		speed = 300.0
+		# make it normal speed
+		speed = 400.0
 
 		# if the player uses the primary action
-		if Input.is_action_just_pressed("Primary Action"):
+		if Input.is_action_just_pressed("Primary Action") and atk_cooldown.is_stopped():
 			if atk_cooldown.is_stopped(): # and the attack isn't on cooldown
 				_attack.look_at(get_global_mouse_position())
 				_attack_collider.disabled = false # un-disable (enable) the attack collider
 				_attack_sprite.visible = true # make the sprite visible
 				_attack_sprite.play("default") # make the sprite animation play
+				# start the attack cooasldown
+				atk_cooldown.start()
 
 ## Customized hit function deletes the vessel if it dies with the player in it,
 ## but knocks the enemy unconscious if it's killed as an enemy.
@@ -120,6 +122,7 @@ func hit(dmg = 1):
 				death_timer.start()
 		dmg_cooldown.start()
 		hurt.emit(health,max_health)
+		aggro = true
 
 # when it has a target
 func _on_range_body_entered(body):
@@ -162,6 +165,7 @@ func _seeking():
 			aggro = true
 			seeking = false
 			$Range.scale = Vector2(3.5,3.5) # make the range bigger
+			_shout()
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
@@ -175,3 +179,6 @@ func _on_attack_body_entered(body: Node2D) -> void:
 	if body is Vessel and body != self:
 		# run that "hit" function
 		body.hit(2)
+		
+func _shout() -> void:
+	pass
