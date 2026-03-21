@@ -1,7 +1,5 @@
 [gd_resource type="Theme" format=3 uid="uid://cksxsyva51k6f"]
 
-[ext_resource type="FontFile" uid="uid://dpckyyj14vjhg" path="res://assets/# OLD - GET RID OF ASAP/comic_sans.ttf" id="3_fxun5"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_afcv2"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u0li1"]
@@ -45,7 +43,6 @@ texture_margin_bottom = 68.0
 modulate_color = Color(0.89059, 0.89059, 0.89059, 1)
 
 [resource]
-default_font = ExtResource("3_fxun5")
 default_font_size = 16
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_hover_color = Color(0.588235, 0.917647, 0.94902, 1)

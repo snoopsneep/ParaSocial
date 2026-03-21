@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://03s4l0q2exir"]
 
 [ext_resource type="Script" uid="uid://hjootcnsb0l" path="res://scenes/Generic/vessel.gd" id="1_mdnlw"]
+[ext_resource type="Texture2D" uid="uid://bqs36joili8hc" path="res://assets/Graphics/Miscellaneous/shadow.png" id="2_isfs0"]
+[ext_resource type="Texture2D" uid="uid://ru5b6l52lgin" path="res://assets/Graphics/Miscellaneous/questionMark.png" id="3_ej3k3"]
 
 [node name="Vessel" type="CharacterBody2D" unique_id=517857439]
 collision_layer = 34
@@ -8,14 +10,30 @@ collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_mdnlw")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=416849066]
-texture_filter = 1
-region_rect = Rect2(0, 187, 16, 16)
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1127750345]
+modulate = Color(1, 1, 1, 0.47058824)
+texture = ExtResource("2_isfs0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=137211241]
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1569272056]
+texture_filter = 1
+speed_scale = 0.0
+
+[node name="FootCollider" type="CollisionShape2D" parent="." unique_id=137211241]
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=492537815]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1693199414]
+
+[node name="Interactable" type="Sprite2D" parent="." unique_id=1058585514]
+visible = false
+position = Vector2(0, -392)
+texture = ExtResource("3_ej3k3")
 
 [node name="InteractRange" type="Area2D" parent="." unique_id=768744904]
 collision_layer = 16
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange" unique_id=2035168185]
+
+[connection signal="area_entered" from="InteractRange" to="." method="_interactables_check"]
+[connection signal="area_exited" from="InteractRange" to="." method="_interactables_check"]

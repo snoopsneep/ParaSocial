@@ -4,37 +4,118 @@
 [ext_resource type="Script" uid="uid://b6gekfcngs8rt" path="res://scenes/Characters/Rat/rat.gd" id="1_r0al0"]
 [ext_resource type="Texture2D" uid="uid://gggrfdakrly3" path="res://assets/Graphics/Sprites/Characters/Rat/colorratgirl.png" id="3_d0t3x"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0vx5"]
+atlas = ExtResource("3_d0t3x")
+region = Rect2(1400, 0, 1400, 578)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnbxi"]
+atlas = ExtResource("3_d0t3x")
+region = Rect2(2800, 0, 1400, 578)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e610t"]
+atlas = ExtResource("3_d0t3x")
+region = Rect2(4200, 0, 1400, 578)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkkh3"]
+atlas = ExtResource("3_d0t3x")
+region = Rect2(0, 0, 1400, 578)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b0bwi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0vx5")
+}],
+"loop": true,
+"name": &"DownLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnbxi")
+}],
+"loop": true,
+"name": &"DownRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e610t")
+}],
+"loop": true,
+"name": &"UpLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkkh3")
+}],
+"loop": true,
+"name": &"UpRight",
+"speed": 5.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ukx8"]
-radius = 53.6
+radius = 28.8
 height = 165.59998
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_40vo1"]
+radius = 128.0
+height = 400.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_d0t3x"]
-radius = 670.64
+radius = 244.80522
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s0vx5"]
+radius = 814.6184
 
 [node name="Rat" unique_id=517857439 instance=ExtResource("1_kv8t8")]
 scale = Vector2(0.25, 0.25)
 collision_layer = 32
 script = ExtResource("1_r0al0")
 max_health = 4
+speed = 700.0
 
-[node name="Sprite2D" parent="." index="0" unique_id=416849066]
-texture = ExtResource("3_d0t3x")
-region_enabled = true
-region_rect = Rect2(1452, -40, 740, 632)
+[node name="Shadow" parent="." index="0" unique_id=1127750345]
+z_index = -1
+position = Vector2(12, 96)
+scale = Vector2(2.5, 2.5)
 
-[node name="CollisionShape2D" parent="." index="1" unique_id=137211241]
-position = Vector2(92, -0.99999994)
+[node name="Sprite" parent="." index="1" unique_id=1569272056]
+sprite_frames = SubResource("SpriteFrames_b0bwi")
+animation = &"DownLeft"
+
+[node name="FootCollider" parent="." index="2" unique_id=137211241]
+visible = false
+position = Vector2(20, 80)
 rotation = 1.5707964
 scale = Vector2(2.5, 2.5)
 shape = SubResource("CapsuleShape2D_6ukx8")
 
-[node name="InteractRange" parent="." index="2" unique_id=768744904]
-collision_mask = 1
+[node name="Hurtbox" parent="." index="3" unique_id=492537815]
+visible = false
 
-[node name="CollisionShape2D" parent="InteractRange" index="0" unique_id=2035168185]
-position = Vector2(88, 0)
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1693199414]
+position = Vector2(32, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_40vo1")
+
+[node name="Interactable" parent="." index="4" unique_id=1058585514]
+position = Vector2(-8, -280)
+
+[node name="CollisionShape2D" parent="InteractRange" parent_id_path=PackedInt32Array(768744904) index="0" unique_id=2035168185]
+position = Vector2(0, 4.7683716e-07)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("CircleShape2D_d0t3x")
 
-[connection signal="body_entered" from="InteractRange" to="." method="_on_interact_range_body_entered"]
-[connection signal="body_exited" from="InteractRange" to="." method="_on_interact_range_body_exited"]
+[node name="ScaredRange" type="Area2D" parent="." index="6" unique_id=1978285645]
+collision_layer = 16
+collision_mask = 35
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScaredRange" index="0" unique_id=1741206265]
+position = Vector2(7.6293945e-06, 0)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CircleShape2D_s0vx5")
+
+[connection signal="body_entered" from="ScaredRange" to="." method="_on_interact_range_body_entered"]
+[connection signal="body_exited" from="ScaredRange" to="." method="_on_interact_range_body_exited"]

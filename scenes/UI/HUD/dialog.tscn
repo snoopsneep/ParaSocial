@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bnycp4a5bxi3b" path="res://scenes/UI/HUD/dialog.gd" id="2_cd52i"]
 
 [node name="Dialog" type="Control" unique_id=156659926]
+process_mode = 3
 layout_mode = 3
 anchor_top = 0.667
 anchor_right = 1.0
@@ -64,19 +65,21 @@ size_flags_vertical = 8
 [node name="Choice0" type="Button" parent="Box/MarginContainer/Choices" unique_id=2134836656]
 layout_mode = 2
 size_flags_horizontal = 6
-text = "123456789012345"
+text = "Yes"
 
 [node name="Choice1" type="Button" parent="Box/MarginContainer/Choices" unique_id=235566731]
 layout_mode = 2
 size_flags_horizontal = 6
-text = "123456789012345"
+text = "No"
 
 [node name="Choice2" type="Button" parent="Box/MarginContainer/Choices" unique_id=665934919]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 6
 text = "123456789012345"
 
 [node name="Choice3" type="Button" parent="Box/MarginContainer/Choices" unique_id=687316779]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 6
 text = "123456789012345"

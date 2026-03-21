@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkcuo1tl40hgh"
-path="res://.godot/imported/fireTable.PNG-bb356befedc61418c01ff3f6a538b282.ctex"
+path="res://.godot/imported/fireTable.PNG-6645ac7fefae3d6577a94c55d6b63365.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Church/Kitchen/Final colors/fireTable.PNG"
-dest_files=["res://.godot/imported/fireTable.PNG-bb356befedc61418c01ff3f6a538b282.ctex"]
+source_file="res://assets/Graphics/Environments/Church/Kitchen/Final colours/fireTable.PNG"
+dest_files=["res://.godot/imported/fireTable.PNG-6645ac7fefae3d6577a94c55d6b63365.ctex"]
 
 [params]
 

@@ -13,6 +13,12 @@ var level: int = 0
 # if true, the player's movement is disabled.
 var player_disabled: bool = false
 
+# what should the game over layer's title/text be when the game starts/restarts?
+# should the button be visible? (usually used for restarting stuff)
+var game_over_title: String = ""
+var game_over_text: String = ""
+var game_over_button: bool = false
+
 #region progress flags
 # if true, the potato has been collected
 var got_potato: bool = false
@@ -33,11 +39,11 @@ var lit_pot: bool = false
 var food_cooked: bool = false
 #endregion
 
-func _physics_process(_delta):
-	if Input.is_action_just_pressed("Debug Action 2"):
-		get_tree().paused = !get_tree().paused
+func restart_game():
+	get_tree().reload_current_scene() # restart the game
+	get_tree().paused = false # unpause the game
 
-
+#region saving & loading
 # saving your game
 func save():
 	# access the save file with the FileAccess class
@@ -89,3 +95,4 @@ func load_game():
 	# actually set all of the variables to the data from the json
 	# (its a dictionary so you access it like one, remember?)
 	level = json.data["level"]
+#endregion

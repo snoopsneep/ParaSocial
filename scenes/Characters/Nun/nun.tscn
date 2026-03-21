@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://dg36a566fbwjr"]
+
+[ext_resource type="PackedScene" uid="uid://03s4l0q2exir" path="res://scenes/Generic/vessel.tscn" id="1_lbdmt"]
+[ext_resource type="Script" uid="uid://nox20beqvty4" path="res://scenes/Characters/Nun/nun.gd" id="2_3wma4"]
+[ext_resource type="Texture2D" uid="uid://cdp38ma8w25fr" path="res://assets/Graphics/Sprites/Characters/Nun/colornungirl.png" id="2_wb02y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wma4"]
+atlas = ExtResource("2_wb02y")
+region = Rect2(1500, 0, 1500, 2422)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxxry"]
+atlas = ExtResource("2_wb02y")
+region = Rect2(3000, 0, 1500, 2422)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muy1r"]
+atlas = ExtResource("2_wb02y")
+region = Rect2(4500, 0, 1500, 2422)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rs6pa"]
+atlas = ExtResource("2_wb02y")
+region = Rect2(0, 0, 1500, 2422)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1juo7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wma4")
+}],
+"loop": true,
+"name": &"DownLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxxry")
+}],
+"loop": true,
+"name": &"DownRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muy1r")
+}],
+"loop": true,
+"name": &"UpLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rs6pa")
+}],
+"loop": true,
+"name": &"UpRight",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_11kop"]
+radius = 250.00006
+height = 1139.9999
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x6nh8"]
+radius = 467.00003
+height = 2317.9995
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wb02y"]
+radius = 2169.6404
+
+[node name="Nun" unique_id=517857439 instance=ExtResource("1_lbdmt")]
+scale = Vector2(0.118, 0.118)
+script = ExtResource("2_3wma4")
+max_health = 7
+speed = 500.0
+
+[node name="Shadow" parent="." index="0" unique_id=1127750345]
+position = Vector2(2.999954, -18.999939)
+scale = Vector2(7, 7)
+
+[node name="Sprite" parent="." index="1" unique_id=1569272056]
+position = Vector2(2.999954, -988.99994)
+sprite_frames = SubResource("SpriteFrames_1juo7")
+animation = &"UpRight"
+
+[node name="FootCollider" parent="." index="2" unique_id=137211241]
+visible = false
+position = Vector2(2.999954, 1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_11kop")
+
+[node name="Hurtbox" parent="." index="3" unique_id=492537815]
+visible = false
+position = Vector2(2.999954, -988.99994)
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1693199414]
+shape = SubResource("CapsuleShape2D_x6nh8")
+
+[node name="Interactable" parent="." index="4" unique_id=1058585514]
+position = Vector2(-33.898304, -2466.1018)
+scale = Vector2(4, 4)
+
+[node name="InteractRange" parent="." index="5" unique_id=768744904]
+visible = false
+position = Vector2(2.999954, -988.99994)
+
+[node name="CollisionShape2D" parent="InteractRange" index="0" unique_id=2035168185]
+position = Vector2(-2.9999542, 988.99994)
+shape = SubResource("CircleShape2D_wb02y")

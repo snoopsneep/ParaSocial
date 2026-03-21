@@ -10,6 +10,12 @@ class_name WorldEvent extends Area2D
 
 @export var one_shot: bool = false
 
+@export var compatible_vessels: Dictionary = {
+	StringName("Statue") : false,
+	StringName("Nun") : true,
+	StringName("Rat") : false
+}
+
 ## Emits when the event is triggered.
 signal triggered(this_event: WorldEvent)
 
@@ -31,6 +37,6 @@ func trigger():
 ## Contains the actual scripting of the event. Is called from [Game] after verifying that it's valid
 ##
 ## Override to implement the event. If not overridden, will push an error that says "Invalid event!"
-func run_event(_manager: EventManager):
+func run_event(_manager: EventManager, _curr_vessel: Vessel = null):
 	push_warning("Invalid event!")
 	end_event.emit()

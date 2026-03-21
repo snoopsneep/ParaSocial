@@ -20,7 +20,7 @@ var curr_vessel: CharacterBody2D
 ## If [code]true[/code], the player is currently controlling a parasite
 var is_parasite: bool = false
 
-signal parasite(pos,vel) ## Emits when the parasite is spawned.
+signal parasite(pos,z_index) ## Emits when the parasite is spawned.
 signal hurt(hp,max_hp) ## Emits when the player takes damage.
 
 func _ready():
@@ -52,8 +52,8 @@ func _physics_process(_delta):
 			else: # if they ARE currently just the parasite
 				curr_vessel.possess() # run the parasite's possess function
 
-		# if the player presses interact (and isn't the parasite rn)
-		if Input.is_action_just_pressed("Interact") and not is_parasite:
+		# if the player presses interact
+		if Input.is_action_just_pressed("Interact"):
 			curr_vessel.interact()
 
 		# always set the Player node's position (and the camera's position by extension)
@@ -63,7 +63,7 @@ func _physics_process(_delta):
 ## Used when the player leaves a vessel. Emits the [signal Player.parasite] signal
 ## which links to [method Game.spawn_parasite].
 func leave_vessel():
-	parasite.emit(curr_vessel.position)
+	parasite.emit(curr_vessel.position,curr_vessel.z_index)
 
 # TODO: make this documentation connect to the Vessel.hurt signal when you make that class
 ## Method that catches the [code]Vessel.hurt[/code] signal and passes it with
@@ -81,6 +81,8 @@ func new_vessel(body,is_para = false):
 		# disconnect signals from old vessel before changing!!
 		curr_vessel.disconnect("hurt", pass_hurt)
 		curr_vessel.disconnect("boot", leave_vessel)
+		# remove it from the player layer
+		curr_vessel.set_collision_layer_value(1, false)
 		# tell the old vessel it ISN'T the vessel anymore!!
 		curr_vessel.is_vessel = false
 	# change curr_vessel to the new vessel!!
@@ -90,13 +92,16 @@ func new_vessel(body,is_para = false):
 	# connect the new vessel's signals
 	curr_vessel.connect("hurt", pass_hurt)
 	curr_vessel.connect("boot", leave_vessel)
+	# add it to the player layer
+	curr_vessel.set_collision_layer_value(1, true)
 	# if the vessel's dead, revive it with half health
-	if curr_vessel.health == 0:
+	if curr_vessel.health <= 0 and curr_vessel is not Parasite:
 		curr_vessel.health = floor(curr_vessel.max_health / 2)
 	# pass the health value up to the Game node to update the display
 	pass_hurt(curr_vessel.health,curr_vessel.max_health)
 	# if the new vessel is the parasite (because, yes, the parasite is a vessel)
 	if is_para:
+		pass_hurt(1,curr_vessel.max_health)
 		# connect the parasite's signal for possessing stuff
 		curr_vessel.connect("new_vessel", new_vessel)
 		# tell this node that we're the parasite now!!

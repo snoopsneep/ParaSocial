@@ -23,7 +23,7 @@ config/icon="res://Assets/# OLD - GET RID OF ASAP/icon.svg"
 
 [autoload]
 
-Global="*res://Scenes/Managers/global.tscn"
+Global="*uid://bqade8r8dnpjb"
 
 [display]
 
@@ -40,6 +40,7 @@ enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
 [global_group]
 
 Events=""
+Enemies=""
 
 [input]
 

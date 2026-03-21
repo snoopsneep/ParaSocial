@@ -9,6 +9,10 @@ signal finished_typing
 ## Emits when a choice is chosen.
 signal selected(choice)
 
+# true if waiting for player to make a choice (so advance_text doesn't break
+# choice selections)
+var waiting_choice: bool = false
+
 # an array that holds the current lines of dialog as Strings,
 # forced to forgo strict typing for reasons i don't quite understand
 var _lines
@@ -28,7 +32,8 @@ var _typing_time: float = 0
 
 func _input(_event: InputEvent):
 	if (Global.player_disabled # if player control is disabled
-		and Input.is_action_just_pressed("Primary Action")
+		and (Input.is_action_just_pressed("Primary Action")
+		or Input.is_action_just_pressed("Interact"))
 	):
 		# you can click or press E to advance text
 		advance_text()
@@ -96,6 +101,7 @@ func display_multiline(lines, speaker: String = "") -> Signal:
 ## choices, stored as Strings in an [Array].
 ## Please note: If options are too long, text will start looking wonky.
 func display_choices(line: String, choices) -> int:
+	waiting_choice = true
 	# set the current array of lines to an array with just the one line
 	_lines = [line]
 	# set the speaker name
@@ -119,7 +125,6 @@ func display_choices(line: String, choices) -> int:
 					_choice_buttons[i].text = _choice_buttons[i].text.substr(0,10)
 		else:
 			_choice_buttons[i].visible = false
-	_choice_buttons[0].grab_focus()
 	return await selected
 
 ## Opens the dialog box, making it visible.
@@ -136,7 +141,7 @@ func advance_text():
 	if _dialog.visible_characters < _dialog.get_total_character_count():
 		# skips the typing animation
 		_dialog.visible_characters = _dialog.get_total_character_count()
-	else: #if the animation's already done,
+	elif !waiting_choice: #if the animation's already done,
 		# skips to the next line
 		_curr_line += 1
 		# makes sure a "next line to skip to" even exists
@@ -152,3 +157,4 @@ func advance_text():
 func _on_option_pressed(index: int):
 	close()
 	selected.emit(index)
+	waiting_choice = false

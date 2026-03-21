@@ -16,23 +16,21 @@ var para_scene: PackedScene = preload("res://scenes/Characters/Parasite/parasite
 ## Handy reference variable pointing to the player scene.
 @onready var player: Player = $Player
 
+## Handy reference variable pointing to the EventManager.
+@onready var event_manager = $EventManager
+
 func _ready():
 	#region set up room debug values
 	$Map/Kitchen.modulate = Color(1,1,1,0)
 	$Map/Kitchen.visible = true
-	$"Map/Dining Room".modulate = Color(1,1,1,0.5)
+	$"Map/Dining Room".modulate = Color(1,1,1,0)
 	$"Map/Dining Room".visible = true
-	$"Map/Main Hall".modulate = Color(1,1,1,1)
+	$"Map/Main Hall".modulate = Color(1,1,1,0)
 	$"Map/Main Hall".visible = true
 	$Map/Hallway.modulate = Color(1,1,1,0.5)
 	$Map/Hallway.visible = true
-	$Map/Chapel.modulate = Color(1,1,1,0)
+	$Map/Chapel.modulate = Color(1,1,1,1)
 	$Map/Chapel.visible = true
-	for i in $Characters.get_children():
-		if i.name == "Captain":
-			i.z_index = 2
-		else:
-			i.z_index = 3
 	#endregion
 
 	# set up event triggers
@@ -44,38 +42,29 @@ func _ready():
 # fps is. might lag the game - i don't actually know the difference between
 # _process and _physics_process is, truthfully) -Ian
 func _physics_process(_delta):
-	if Input.is_action_just_pressed("Debug Action 1"):
+	# TEMP: press escape to reload game, just for playtest
+	if Input.is_action_just_pressed("Pause"):
 		get_tree().reload_current_scene()
 
-## Creates a new projectile starting from [param source], heading in direction [param dir],
-## and damages the player if [member if_evil] is [code]true[/code].
-##
-## Made to connect to signals.
-func enemy_projectile(source,dir,is_evil):
-	var new_proj = projectile.instantiate()
-	new_proj.position = source
-	new_proj.rotation_degrees = rad_to_deg(dir.angle())
-	new_proj.direction = dir
-	new_proj.is_evil = is_evil
-	$Projectiles.add_child(new_proj)
-
-## Spawns a new parasite at location [param source].
+## Spawns a new parasite at location [param source] with z_index [param z_ind].
 ##
 ## Made to connect to signals like [signal Player.parasite].
-func spawn_parasite(source):
+func spawn_parasite(source, z_ind):
 	var new_para: CharacterBody2D = para_scene.instantiate()
-	source.y -= 1.5
+	source.y -= 10
 	new_para.position = source
-	$Characters.add_child(new_para)
+	new_para.z_index = z_ind
+	$Characters.call_deferred("add_child", new_para)
 	player.new_vessel(new_para,true)
 
 func start_event(event: WorldEvent):
-	if event is WorldTeleport:
-		$Player.curr_vessel.position = event.destination
 	Global.player_disabled = true # TODO: make this optional! with a parameter!!
-	event.run_event($EventManager)
+	event.run_event(event_manager, player.curr_vessel)
 
 func end_event():
+	# stall a lil so the player doesn't instantly attack when they progress
+	# the dialog
+	await get_tree().create_timer(0.15).timeout
 	Global.player_disabled = false
 
 # recieves signals to update the hp display, and then does that.

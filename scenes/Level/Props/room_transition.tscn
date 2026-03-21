@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://vuvidyufolfg"]
 
-[ext_resource type="Script" uid="uid://uumty3q3wxvh" path="res://Scenes/Level/Props/room_transition.gd" id="1_l03ml"]
+[ext_resource type="Script" uid="uid://uumty3q3wxvh" path="res://scenes/Level/Props/room_transition.gd" id="1_l03ml"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_7ig6f"]
 a = Vector2(83, 45)
