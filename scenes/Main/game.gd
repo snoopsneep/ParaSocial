@@ -33,6 +33,15 @@ func _ready():
 	$Map/Chapel.visible = true
 	#endregion
 
+	#region reset global progress flags
+	Global.got_potato = false
+	Global.used_potato = false
+	Global.got_cheese = false
+	Global.used_cheese = false
+	Global.lit_pot = false
+	Global.food_cooked = false
+	#endregion
+
 	# set up event triggers
 	for i in get_tree().get_nodes_in_group("Events"):
 		i.triggered.connect(start_event)
