@@ -5,6 +5,7 @@ class_name Enemy extends Vessel
 
 @export var enemy_speed: float = 250.0
 @export var vessel_speed: float = 300.0
+@export var damage: int = 4
 
 ## Reference to attack cooldown timer
 @onready var atk_cooldown = $"Attack Cooldown"
@@ -200,7 +201,7 @@ func _on_attack_area_entered(body: Node2D) -> void:
 	# if the node detected is (inherits from) a Vessel
 	if body.get_parent() is Vessel and body != self:
 		# run that "hit" function
-		body.get_parent().hit(2)
+		body.get_parent().hit(damage)
 
 # HACK: this'll probably have to work differently for the final build
 # right now it just makes every enemy (besides the hungry quest guy) aggro

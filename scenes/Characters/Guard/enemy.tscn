@@ -184,7 +184,8 @@ script = ExtResource("1_cgdn4")
 default_sprite = "DownRight"
 enemy_speed = 200.0
 vessel_speed = 500.0
-max_health = 5
+damage = 4
+max_health = 10
 speed = 250.0
 
 [node name="Shadow" parent="." index="0" unique_id=1127750345]

@@ -90,11 +90,13 @@ func _on_up_atk_anim_finished():
 func _on_atk_area_entered(body: Area2D):
 	# if the node detected is (inherits from) a Vessel
 	if body.get_parent() is Vessel and body.get_parent() is not Nun:
-		# charge state 1 & 2 deal 1 damage, charge state 3 deals 2 damage
-		if atk_chrg == 1:
-			body.get_parent().hit(atk_chrg)
-		else:
-			body.get_parent().hit(atk_chrg - 1)
+		match atk_chrg:
+			1:
+				body.get_parent().hit(1)
+			2:
+				body.get_parent().hit(3)
+			3:
+				body.get_parent().hit(8)
 
 func _wind_up():
 	winding_up = true
