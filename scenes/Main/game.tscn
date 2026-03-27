@@ -51,7 +51,6 @@
 [ext_resource type="PackedScene" uid="uid://c7rddg2fnhrra" path="res://scenes/Characters/Rat/rat.tscn" id="38_x2ju3"]
 [ext_resource type="PackedScene" uid="uid://dg36a566fbwjr" path="res://scenes/Characters/Nun/nun.tscn" id="39_x2ju3"]
 [ext_resource type="Script" uid="uid://ckps7bv6qrj7d" path="res://scenes/Characters/Guard/enemy.gd" id="42_ov3mu"]
-[ext_resource type="Texture2D" uid="uid://bqs36joili8hc" path="res://assets/Graphics/Miscellaneous/shadow.png" id="43_23cl6"]
 [ext_resource type="Texture2D" uid="uid://c7hr1s4ce4rny" path="res://assets/Graphics/Sprites/Characters/Guard/gaurdgirl.png" id="44_k765p"]
 [ext_resource type="Texture2D" uid="uid://bg7rcmup0k88f" path="res://assets/Graphics/Sprites/Characters/Guard/headgirl.png" id="45_bv45s"]
 [ext_resource type="Texture2D" uid="uid://yvaepboua7q1" path="res://assets/Graphics/Sprites/Characters/Guard/potatogirl.png" id="46_srh6f"]
@@ -60,6 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://dydxhyq1tx216" path="res://assets/Graphics/Miscellaneous/sword_slash.png" id="47_ubx2l"]
 [ext_resource type="Texture2D" uid="uid://ru5b6l52lgin" path="res://assets/Graphics/Miscellaneous/questionMark.png" id="49_8u8kr"]
 [ext_resource type="FontFile" uid="uid://c3yqski6aq7s4" path="res://assets/Graphics/Fonts/gravord.ttf" id="49_timmx"]
+[ext_resource type="Script" uid="uid://c84qyu8e3jj70" path="res://scenes/Main/pause_menu.gd" id="60_srh6f"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_dgtgp"]
 a = Vector2(411.34595, -237.5)
@@ -1055,7 +1055,6 @@ speed = 250.0
 modulate = Color(1, 1, 1, 0.47058824)
 position = Vector2(0, 25)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("43_23cl6")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Characters/HungryLeader" unique_id=1569272056]
 texture_filter = 1
@@ -1173,6 +1172,9 @@ position = Vector2(-87, -118)
 default_sprite = "Potato"
 vessel_speed = 400.0
 
+[node name="Shadow" parent="Characters/PotatoEnemy" index="0" unique_id=1127750345]
+texture = null
+
 [node name="GuardInteract" parent="Characters/PotatoEnemy" index="6" unique_id=753610390]
 script = ExtResource("36_rcjdb")
 
@@ -1214,6 +1216,7 @@ script = ExtResource("47_dgtgp")
 metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="ColorRect" parent="UI Layer/GameOver" unique_id=1413332420]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1223,6 +1226,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Title" type="Label" parent="UI Layer/GameOver" unique_id=1061428074]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -1241,6 +1245,7 @@ horizontal_alignment = 1
 uppercase = true
 
 [node name="Text" type="Label" parent="UI Layer/GameOver" unique_id=1357533195]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -1282,6 +1287,83 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_byunq")
 disabled = true
 text = "Retry"
 
+[node name="PauseMenu" type="Control" parent="UI Layer" unique_id=1059181712]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("60_srh6f")
+
+[node name="Background" type="ColorRect" parent="UI Layer/PauseMenu" unique_id=1271514712]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1239.0
+offset_bottom = 678.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="UI Layer/PauseMenu" unique_id=185733647]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.2
+anchor_right = 0.5
+anchor_bottom = 0.3
+offset_left = 307.5
+offset_top = 111.00001
+offset_right = 932.5
+offset_bottom = 229.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Paused!"
+label_settings = SubResource("LabelSettings_0cho6")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Text" type="Label" parent="UI Layer/PauseMenu" unique_id=901162251]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 87.0
+offset_top = 219.0
+offset_right = 1153.0
+offset_bottom = 461.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is the pause menu, text goes here."
+label_settings = SubResource("LabelSettings_k3cor")
+horizontal_alignment = 1
+
+[node name="resume" type="Button" parent="UI Layer/PauseMenu" unique_id=649435932]
+visible = false
+layout_mode = 0
+offset_left = 122.0
+offset_top = 479.0
+offset_right = 359.0
+offset_bottom = 631.0
+disabled = true
+text = "Resume"
+
+[node name="restart" type="Button" parent="UI Layer/PauseMenu" unique_id=1361879109]
+visible = false
+layout_mode = 0
+offset_left = 857.0
+offset_top = 479.0
+offset_right = 1115.0
+offset_bottom = 626.0
+disabled = true
+text = "Restart"
+
 [connection signal="hurt" from="Player" to="." method="_on_update_hp"]
 [connection signal="parasite" from="Player" to="." method="spawn_parasite"]
 [connection signal="area_entered" from="Characters/HungryLeader/Attack" to="Characters/HungryLeader" method="_on_attack_area_entered"]
@@ -1292,6 +1374,8 @@ text = "Retry"
 [connection signal="area_entered" from="Characters/HungryLeader/InteractRange" to="Characters/HungryLeader" method="_interactables_check"]
 [connection signal="area_exited" from="Characters/HungryLeader/InteractRange" to="Characters/HungryLeader" method="_interactables_check"]
 [connection signal="pressed" from="UI Layer/GameOver/Button" to="UI Layer/GameOver" method="_on_button_pressed"]
+[connection signal="pressed" from="UI Layer/PauseMenu/resume" to="UI Layer/PauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="UI Layer/PauseMenu/restart" to="UI Layer/PauseMenu" method="_on_restart_pressed"]
 
 [editable path="Map/Kitchen/Colliders/BottomRightWall1"]
 [editable path="Map/Kitchen/Colliders/BottomLeftWall1"]

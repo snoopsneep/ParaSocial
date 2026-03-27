@@ -95,11 +95,12 @@ height = 438.0
 [node name="Statue" unique_id=517857439 instance=ExtResource("1_kr50t")]
 collision_layer = 32
 script = ExtResource("1_gsdjt")
-max_health = 20
+max_health = 30
 speed = 300.0
 
 [node name="Shadow" parent="." index="0" unique_id=1127750345]
 position = Vector2(0, 18)
+texture = null
 
 [node name="Sprite" parent="." index="1" unique_id=1569272056]
 position = Vector2(0, -133)

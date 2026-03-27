@@ -51,9 +51,7 @@ func _ready():
 # fps is. might lag the game - i don't actually know the difference between
 # _process and _physics_process is, truthfully) -Ian
 func _physics_process(_delta):
-	# TEMP: press escape to reload game, just for playtest
-	if Input.is_action_just_pressed("Pause"):
-		get_tree().reload_current_scene()
+	pass
 
 ## Spawns a new parasite at location [param source] with z_index [param z_ind].
 ##

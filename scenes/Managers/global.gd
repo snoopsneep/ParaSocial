@@ -39,6 +39,8 @@ var lit_pot: bool = false
 var food_cooked: bool = false
 #endregion
 
+@onready var pause_menu = $"UI Layer/PauseMenu"
+
 func restart_game():
 	get_tree().reload_current_scene() # restart the game
 	get_tree().paused = false # unpause the game
