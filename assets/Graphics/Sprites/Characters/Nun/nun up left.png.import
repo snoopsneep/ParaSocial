@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dskddkafnnmn5"
-path="res://.godot/imported/Box_Orange_Rounded.png-d9e226c98d6f576f7b011c3c9ec2f775.ctex"
+uid="uid://rxk66y0cu05e"
+path="res://.godot/imported/nun up left.png-c6d796bc1fd86a4f00306df85197d2bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Resources/dialog/Box_Orange_Rounded.png"
-dest_files=["res://.godot/imported/Box_Orange_Rounded.png-d9e226c98d6f576f7b011c3c9ec2f775.ctex"]
+source_file="res://assets/Graphics/Sprites/Characters/Nun/nun up left.png"
+dest_files=["res://.godot/imported/nun up left.png-c6d796bc1fd86a4f00306df85197d2bb.ctex"]
 
 [params]
 

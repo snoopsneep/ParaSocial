@@ -53,9 +53,9 @@ func _ready():
 
 	# set initial target location to first patrol spot
 	desired_location = patrol_route[0]
-	
+
 	actor_setup.call_deferred()
-	
+
 	super()
 
 func _physics_process(_delta):
@@ -160,7 +160,7 @@ func pause(wait_time):
 	# r % range + min * seconds
 	# Generates a number from min to (min + max - 1), multiplies seconds.
 	wait.wait_time = (randi() % 5 + 1) * wait_time
-	
+
 	wait.start()
 # part of the above pause function
 func _on_pause_timer_timeout() -> void:
@@ -168,12 +168,12 @@ func _on_pause_timer_timeout() -> void:
 	if state == "pause":
 		state = "patrol"
 		patrol_iterate()
-	
+
 func patrol_iterate():
 	patrol_index += 1
 	# if index is beyond scope, reset it
 	if patrol_index == patrol_route.size():
-		patrol_index = 0 
+		patrol_index = 0
 	# set next location along path
 	set_move_target(patrol_route[patrol_index])
 
@@ -182,16 +182,16 @@ func patrol_iterate():
 func call_guard(location : Vector2):
 	state = "called"
 	set_move_target(location)
-	
+
 # The following checks if the guard should become aggressive
 func check_aggro(): # leaving this seperate incase it needs to be called elsewhere
 	# variables for raycasting
 	var space_state = get_world_2d().direct_space_state
 	var query
 	var result
-	
+
 	var bodies = range.get_overlapping_bodies() # get list of all bodies in range
-	
+
 	for body in bodies:
 		if body.is_vessel and body.is_aggro: # if is player and is aggro
 			# do a raycast

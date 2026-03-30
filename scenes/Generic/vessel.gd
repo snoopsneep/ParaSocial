@@ -20,6 +20,9 @@ var can_vessel: bool = false
 ## If [code]true[/code], will be attacked if it's the current vessel.
 var is_aggro: bool = true
 
+## If true, the z_index is currently controlled by an object
+var z_slave: bool = false
+
 ## Emits when the vessel takes damage. Passes the current and max hp.
 signal hurt(hp,max_hp)
 ## Emits when the vessel kicks the player out.
@@ -37,6 +40,16 @@ func _physics_process(_delta):
 		$Interactable.visible = false
 
 	$Hurtbox.collision_layer = collision_layer
+	$Hurtbox.set_collision_layer_value(8,true)
+
+	# if there's any areas overlapping my sprite
+	for i in $Hurtbox.get_overlapping_areas():
+		# and they're in the sprites collision layer
+		# (and not already being controlled)
+		if (i.get_collision_layer_value(8) and
+		!i.get_parent().z_slave):
+			# put them on the same z_index as me
+			i.get_parent().z_index = z_index
 
 	# setting the sprite of the vessel based on movement
 	if velocity:

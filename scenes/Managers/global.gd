@@ -2,10 +2,6 @@ extends Node
 # This Global script handles saving and loading. You've gotta update the
 # saved variables when you actually have stuff to save.
 
-#TODO: rethink how this works for scene switching
-# storing a reference to the menu scene for switching
-var menu: PackedScene = preload("res://scenes/UI/Title/main_menu.tscn")
-
 #TODO: add whatever variables you actually need to save
 # save file/progression related variables
 var level: int = 0
@@ -38,8 +34,6 @@ var lit_pot: bool = false
 # if true, food has been cooked in the pot
 var food_cooked: bool = false
 #endregion
-
-@onready var pause_menu = $"UI Layer/PauseMenu"
 
 func restart_game():
 	get_tree().reload_current_scene() # restart the game

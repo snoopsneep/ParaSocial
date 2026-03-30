@@ -2,29 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://03s4l0q2exir" path="res://scenes/Generic/vessel.tscn" id="1_lbdmt"]
 [ext_resource type="Script" uid="uid://nox20beqvty4" path="res://scenes/Characters/Nun/nun.gd" id="2_3wma4"]
-[ext_resource type="Texture2D" uid="uid://cdp38ma8w25fr" path="res://assets/Graphics/Sprites/Characters/Nun/colornungirl.png" id="2_wb02y"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3wma4"]
-atlas = ExtResource("2_wb02y")
-region = Rect2(1500, 0, 1500, 2422)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wxxry"]
-atlas = ExtResource("2_wb02y")
-region = Rect2(3000, 0, 1500, 2422)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_muy1r"]
-atlas = ExtResource("2_wb02y")
-region = Rect2(4500, 0, 1500, 2422)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rs6pa"]
-atlas = ExtResource("2_wb02y")
-region = Rect2(0, 0, 1500, 2422)
+[ext_resource type="Texture2D" uid="uid://ck414fgulcq6j" path="res://assets/Graphics/Sprites/Characters/Nun/nun down left.png" id="3_muy1r"]
+[ext_resource type="Texture2D" uid="uid://beejaoqh3gowa" path="res://assets/Graphics/Sprites/Characters/Nun/nun down right.png" id="4_rs6pa"]
+[ext_resource type="Texture2D" uid="uid://rxk66y0cu05e" path="res://assets/Graphics/Sprites/Characters/Nun/nun up left.png" id="5_1juo7"]
+[ext_resource type="Texture2D" uid="uid://dvdytq6245wsy" path="res://assets/Graphics/Sprites/Characters/Nun/nun up right.png" id="6_11kop"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1juo7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3wma4")
+"texture": ExtResource("3_muy1r")
 }],
 "loop": true,
 "name": &"DownLeft",
@@ -32,7 +19,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wxxry")
+"texture": ExtResource("4_rs6pa")
 }],
 "loop": true,
 "name": &"DownRight",
@@ -40,7 +27,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_muy1r")
+"texture": ExtResource("5_1juo7")
 }],
 "loop": true,
 "name": &"UpLeft",
@@ -48,7 +35,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rs6pa")
+"texture": ExtResource("6_11kop")
 }],
 "loop": true,
 "name": &"UpRight",
@@ -79,16 +66,14 @@ scale = Vector2(7, 7)
 [node name="Sprite" parent="." index="1" unique_id=1569272056]
 position = Vector2(2.999954, -988.99994)
 sprite_frames = SubResource("SpriteFrames_1juo7")
-animation = &"UpRight"
+animation = &"DownLeft"
 
 [node name="FootCollider" parent="." index="2" unique_id=137211241]
-visible = false
 position = Vector2(2.999954, 1)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_11kop")
 
 [node name="Hurtbox" parent="." index="3" unique_id=492537815]
-visible = false
 position = Vector2(2.999954, -988.99994)
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1693199414]

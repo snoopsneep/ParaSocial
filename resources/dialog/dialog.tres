@@ -1,7 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://dlj40uugp24a7"]
 
-[ext_resource type="Texture2D" uid="uid://dskddkafnnmn5" path="res://assets/Resources/dialog/Box_Orange_Rounded.png" id="1_p46k5"]
-[ext_resource type="SystemFont" uid="uid://cfp4mh82o1qwg" path="res://assets/Resources/dialog/new_system_font.tres" id="2_kmrm1"]
+[ext_resource type="FontFile" uid="uid://c3yqski6aq7s4" path="res://assets/Graphics/Fonts/gravord.ttf" id="1_3rfa4"]
+[ext_resource type="Texture2D" uid="uid://bd1elck7ixnl5" path="res://resources/dialog/Box_Rounded.png" id="2_a5xsl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trtic"]
 
@@ -13,31 +13,30 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ssvqc"]
 
-[sub_resource type="SystemFont" id="SystemFont_dinhu"]
-font_names = PackedStringArray("Mario Party Hudson")
-subpixel_positioning = 0
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kvpfn"]
-texture = ExtResource("1_p46k5")
+texture = ExtResource("2_a5xsl")
 texture_margin_left = 256.0
 texture_margin_top = 256.0
 texture_margin_right = 256.0
 texture_margin_bottom = 256.0
 
 [resource]
-default_font = ExtResource("2_kmrm1")
 default_font_size = 28
 Button/colors/font_hover_color = Color(1, 0.480669, 0.101098, 1)
 Button/colors/font_hover_pressed_color = Color(0.840768, 0.586193, 0.406618, 1)
 Button/colors/font_pressed_color = Color(0, 0.623529, 1, 1)
 Button/constants/outline_size = 5
+Button/font_sizes/font_size = 52
+Button/fonts/font = ExtResource("1_3rfa4")
 Button/styles/disabled = SubResource("StyleBoxEmpty_trtic")
 Button/styles/focus = SubResource("StyleBoxEmpty_ir15t")
 Button/styles/hover = SubResource("StyleBoxEmpty_ca42v")
 Button/styles/normal = SubResource("StyleBoxEmpty_rysoc")
 Button/styles/pressed = SubResource("StyleBoxEmpty_ssvqc")
 HBoxContainer/constants/separation = 32
-Label/font_sizes/font_size = 48
-Label/fonts/font = SubResource("SystemFont_dinhu")
+Label/font_sizes/font_size = 64
+Label/fonts/font = ExtResource("1_3rfa4")
 Panel/styles/panel = SubResource("StyleBoxTexture_kvpfn")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/font_sizes/normal_font_size = 38
+RichTextLabel/fonts/normal_font = ExtResource("1_3rfa4")

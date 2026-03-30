@@ -19,7 +19,7 @@ config/version="1.0"
 run/main_scene="uid://cvy2uhs0vm4mn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=60
-config/icon="res://Assets/# OLD - GET RID OF ASAP/icon.svg"
+config/icon="uid://c4d1fgdqtltgb"
 
 [autoload]
 
@@ -135,10 +135,11 @@ alt_right={
 2d_physics/layer_4="Projectiles"
 2d_physics/layer_5="Areas/Events"
 2d_physics/layer_6="Vessels"
+2d_physics/layer_8="Hurtboxes/Sprites"
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+environment/defaults/default_clear_color=Color(0.5306541, 0.53065413, 0.5306541, 1)

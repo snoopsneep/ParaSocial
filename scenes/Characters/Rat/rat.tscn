@@ -77,7 +77,6 @@ max_health = 4
 speed = 700.0
 
 [node name="Shadow" parent="." index="0" unique_id=1127750345]
-z_index = -1
 position = Vector2(12, 96)
 scale = Vector2(2.5, 2.5)
 
