@@ -184,13 +184,15 @@ script = ExtResource("1_cgdn4")
 default_sprite = "DownRight"
 enemy_speed = 200.0
 vessel_speed = 500.0
-damage = 4
+damage = null
+patrol_route = null
 max_health = 10
 speed = 250.0
 
 [node name="Shadow" parent="." index="0" unique_id=1127750345]
 position = Vector2(0, 25)
 scale = Vector2(0.6, 0.6)
+texture = null
 
 [node name="Sprite" parent="." index="1" unique_id=1569272056]
 position = Vector2(0, -125)
@@ -263,11 +265,14 @@ one_shot = true
 wait_time = 10.0
 one_shot = true
 
-[node name="Interactable" parent="." index="10" unique_id=1058585514]
+[node name="PauseTimer" type="Timer" parent="." index="10" unique_id=592442626]
+one_shot = true
+
+[node name="Interactable" parent="." index="11" unique_id=1058585514]
 position = Vector2(-5, -249)
 scale = Vector2(0.7, 0.7)
 
-[node name="InteractRange" parent="." index="11" unique_id=768744904]
+[node name="InteractRange" parent="." index="12" unique_id=768744904]
 visible = false
 
 [node name="CollisionShape2D" parent="InteractRange" index="0" unique_id=2035168185]
@@ -275,8 +280,13 @@ position = Vector2(-18.999998, 19.999998)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("CircleShape2D_frww3")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="13" unique_id=92654818]
+path_desired_distance = 4.0
+target_desired_distance = 4.0
+
 [connection signal="area_entered" from="Attack" to="." method="_on_attack_area_entered"]
 [connection signal="animation_finished" from="Attack/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
 [connection signal="timeout" from="Death Timer" to="." method="_on_revive"]
+[connection signal="timeout" from="PauseTimer" to="." method="_on_pause_timer_timeout"]

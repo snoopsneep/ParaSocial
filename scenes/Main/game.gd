@@ -21,16 +21,16 @@ var para_scene: PackedScene = preload("res://scenes/Characters/Parasite/parasite
 
 func _ready():
 	#region set up room debug values
-	$Map/Kitchen.modulate = Color(1,1,1,0)
-	$Map/Kitchen.visible = true
-	$"Map/Dining Room".modulate = Color(1,1,1,0)
-	$"Map/Dining Room".visible = true
-	$"Map/Main Hall".modulate = Color(1,1,1,0)
-	$"Map/Main Hall".visible = true
-	$Map/Hallway.modulate = Color(1,1,1,0.5)
-	$Map/Hallway.visible = true
-	$Map/Chapel.modulate = Color(1,1,1,1)
-	$Map/Chapel.visible = true
+	$Map/Church/Kitchen.modulate = Color(1,1,1,0)
+	$Map/Church/Kitchen.visible = true
+	$"Map/Church/Dining Room".modulate = Color(1,1,1,0)
+	$"Map/Church/Dining Room".visible = true
+	$"Map/Church/Main Hall".modulate = Color(1,1,1,0)
+	$"Map/Church/Main Hall".visible = true
+	$Map/Church/Hallway.modulate = Color(1,1,1,0.5)
+	$Map/Church/Hallway.visible = true
+	$Map/Church/Chapel.modulate = Color(1,1,1,1)
+	$Map/Church/Chapel.visible = true
 	#endregion
 
 	#region reset global progress flags
