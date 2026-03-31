@@ -54,7 +54,10 @@
 [ext_resource type="Texture2D" uid="uid://d0yx6jlitcc3m" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_p1_topCornerGrave.png" id="47_73cm8"]
 [ext_resource type="Theme" uid="uid://dlj40uugp24a7" path="res://resources/dialog/dialog.tres" id="47_bjq35"]
 [ext_resource type="Script" uid="uid://caet86rltnkgl" path="res://scenes/UI/game_over.gd" id="47_dgtgp"]
+[ext_resource type="Texture2D" uid="uid://d01cbao7mvnjm" path="res://assets/Graphics/Environments/Graveyard/Shack/Exterior/Exterior.PNG" id="47_srh6f"]
 [ext_resource type="Texture2D" uid="uid://c2xh04i4hm13o" path="res://assets/Graphics/Environments/Graveyard/Mausoleum/mausoleum.png" id="48_jkr68"]
+[ext_resource type="Texture2D" uid="uid://d2fohwpw5vkoe" path="res://assets/Graphics/Environments/Graveyard/Shack/Exterior/Exterior_light.PNG" id="48_ubx2l"]
+[ext_resource type="Texture2D" uid="uid://d0cnp83wahjty" path="res://assets/Graphics/Environments/Graveyard/Shack/Interior/InteriorFull.PNG" id="49_8u8kr"]
 [ext_resource type="FontFile" uid="uid://c3yqski6aq7s4" path="res://assets/Graphics/Fonts/gravord.ttf" id="49_timmx"]
 [ext_resource type="Script" uid="uid://c84qyu8e3jj70" path="res://scenes/UI/pause_menu.gd" id="60_srh6f"]
 
@@ -214,10 +217,43 @@ b = Vector2(10, -5)
 a = Vector2(479, -274.99997)
 b = Vector2(-1520, 881)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_23cl6"]
+a = Vector2(-1731, 1169)
+b = Vector2(1071, -450)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_k765p"]
+a = Vector2(-1051, -423)
+b = Vector2(827, 656)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bv45s"]
+a = Vector2(-1755, 1364)
+b = Vector2(2032, -820)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_srh6f"]
+a = Vector2(-1314, -519)
+b = Vector2(788, 691)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ubx2l"]
+a = Vector2(-3103, -2038)
+b = Vector2(4203, 2182)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8u8kr"]
+a = Vector2(-3904, 1808)
+b = Vector2(2851, -2103)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wy1rp"]
+a = Vector2(-1289, -503)
+b = Vector2(1161, 901)
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_srh6f"]
 vertices = PackedVector2Array(1371.4063, 477.7422, -403.0625, 1508.4688, -1723.9766, 760.8281, 238.53125, -392.1172, 451.40625, -243.21094, 956.0625, -525.77344)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 0, 4)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1744, 761, -403, 1520, 1384, 482, 961, -540, 452, -255, 239, -404)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ubx2l"]
+vertices = PackedVector2Array(19879.313, 3188.6875, 21763, 4262.1094, 15209.969, 8098.422, 18651.078, 3980.8516, 10413.5625, 5324.75, 12001.383, 4353.8203, 17886.148, 3502.6328, 16604.07, 1293.5313, 18494.633, 2364.0938, 17867.86, 2825.039, 12761.32, 3540.8828)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5, 6), PackedInt32Array(7, 8, 9), PackedInt32Array(6, 5, 10, 7, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(10394, 5325, 11995, 4346, 12755, 3533, 16604, 1282, 18513, 2363, 17878, 2830, 17896, 3497, 18651, 3969, 19879, 3177, 21783, 4262, 15210, 8110)])
 
 [sub_resource type="LabelSettings" id="LabelSettings_em1bs"]
 font = ExtResource("5_gf1f2")
@@ -931,7 +967,7 @@ texture = ExtResource("43_srh6f")
 [node name="Grass" type="Node2D" parent="Map/Graveyard/Grounds/Graphics" unique_id=1754127535]
 
 [node name="Sprite2D" type="Sprite2D" parent="Map/Graveyard/Grounds/Graphics/Grass" unique_id=1808754393]
-position = Vector2(17262, 4681)
+position = Vector2(17284, 4863)
 texture = ExtResource("44_ubx2l")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Map/Graveyard/Grounds/Graphics/Grass" unique_id=1394913175]
@@ -948,11 +984,101 @@ texture = ExtResource("46_wy1rp")
 position = Vector2(18553, 5581)
 texture = ExtResource("47_73cm8")
 
-[node name="mausoleum" type="Node2D" parent="Map/Graveyard/Grounds/Graphics" unique_id=957675052]
+[node name="Buildings" type="Node2D" parent="Map/Graveyard/Grounds/Graphics" unique_id=957675052]
 
-[node name="Sprite2D" type="Sprite2D" parent="Map/Graveyard/Grounds/Graphics/mausoleum" unique_id=106735460]
+[node name="Mausoleum" type="Sprite2D" parent="Map/Graveyard/Grounds/Graphics/Buildings" unique_id=106735460]
 position = Vector2(18786, 2944)
 texture = ExtResource("48_jkr68")
+
+[node name="SHACK" type="Sprite2D" parent="Map/Graveyard/Grounds/Graphics/Buildings" unique_id=1345493231]
+position = Vector2(10984, 3694)
+texture = ExtResource("47_srh6f")
+
+[node name="Shacklight" type="Sprite2D" parent="Map/Graveyard/Grounds/Graphics/Buildings" unique_id=1298501568]
+position = Vector2(10975, 3696)
+texture = ExtResource("48_ubx2l")
+
+[node name="Colliders" type="Node2D" parent="Map/Graveyard/Grounds" unique_id=11171246]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/Graveyard/Grounds/Colliders" unique_id=12389027]
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/Grounds/Colliders/StaticBody2D" unique_id=167487559]
+position = Vector2(9675, 2802)
+shape = SubResource("SegmentShape2D_23cl6")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Map/Graveyard/Grounds/Colliders" unique_id=1574790032]
+position = Vector2(11790, 2780)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/Grounds/Colliders/StaticBody2D2" unique_id=370411702]
+shape = SubResource("SegmentShape2D_k765p")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Map/Graveyard/Grounds/Colliders" unique_id=740918235]
+position = Vector2(14594, 2030)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/Grounds/Colliders/StaticBody2D3" unique_id=1764508233]
+shape = SubResource("SegmentShape2D_bv45s")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Map/Graveyard/Grounds/Colliders" unique_id=1760337340]
+position = Vector2(17932, 1738)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/Grounds/Colliders/StaticBody2D4" unique_id=1552046593]
+shape = SubResource("SegmentShape2D_srh6f")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Map/Graveyard/Grounds/Colliders" unique_id=1986218300]
+position = Vector2(11028, 6002)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/Grounds/Colliders/StaticBody2D5" unique_id=514259094]
+shape = SubResource("SegmentShape2D_ubx2l")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Map/Graveyard/Grounds/Colliders" unique_id=1559000757]
+position = Vector2(19087, 6383)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/Grounds/Colliders/StaticBody2D6" unique_id=2057661990]
+shape = SubResource("SegmentShape2D_8u8kr")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Map/Graveyard/Grounds/Colliders" unique_id=581535098]
+position = Vector2(20813, 3402)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/Grounds/Colliders/StaticBody2D7" unique_id=1252998054]
+shape = SubResource("SegmentShape2D_wy1rp")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Map/Graveyard/Grounds/Colliders" unique_id=247198196]
+position = Vector2(18692, 3224)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Graveyard/Grounds/Colliders/StaticBody2D8" unique_id=1542852657]
+polygon = PackedVector2Array(591, -1163, -444, -620, -710, -294, -683, 295, -85, 630, 892, 63, 902, -475)
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Map/Graveyard/Grounds/Colliders" unique_id=742707701]
+position = Vector2(11014, 4007)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Graveyard/Grounds/Colliders/StaticBody2D9" unique_id=372620027]
+polygon = PackedVector2Array(191, 716, 757, 380, 781, -174, 510, -433, -489, -999, -796, -420, -760, 166)
+
+[node name="Shack" type="Node2D" parent="Map" unique_id=1315983624]
+
+[node name="Graphics" type="Node2D" parent="Map/Shack" unique_id=479973115]
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Shack/Graphics" unique_id=1921780757]
+position = Vector2(12449, 2361)
+texture = ExtResource("49_8u8kr")
 
 [node name="Player" type="Node2D" parent="." unique_id=714933004 node_paths=PackedStringArray("first_vessel")]
 script = ExtResource("3_em1bs")
@@ -967,7 +1093,7 @@ y_sort_enabled = true
 [node name="Statue" parent="Characters" unique_id=1731815557 instance=ExtResource("3_e3dby")]
 z_index = 4
 z_as_relative = false
-position = Vector2(3219, 394)
+position = Vector2(14379, 3438)
 
 [node name="Rat" parent="Characters" unique_id=752411575 instance=ExtResource("38_x2ju3")]
 z_index = 2
@@ -981,9 +1107,16 @@ position = Vector2(2854, 444.99997)
 [node name="Enemy" parent="Characters" unique_id=517857439 instance=ExtResource("25_uuwcm")]
 z_index = 3
 z_as_relative = false
-position = Vector2(-357, 1412)
-damage = 4
-patrol_route = [Vector2(-421, 868), Vector2(713, 81)]
+position = Vector2(13579.001, 7003)
+patrol_route = [Vector2(15171, 7813), Vector2(17602, 6307), Vector2(14513, 4505), Vector2(12330, 6126)]
+
+[node name="Enemy2" parent="Characters" unique_id=1739128683 instance=ExtResource("25_uuwcm")]
+position = Vector2(11661, 4681)
+patrol_route = [Vector2(11661, 4681)]
+
+[node name="Enemy3" parent="Characters" unique_id=383718327 instance=ExtResource("25_uuwcm")]
+position = Vector2(18039, 3929)
+patrol_route = [Vector2(18039, 3929)]
 
 [node name="Projectiles" type="Node2D" parent="." unique_id=458874184]
 
@@ -991,6 +1124,9 @@ patrol_route = [Vector2(-421, 868), Vector2(713, 81)]
 visible = false
 position = Vector2(85, 10)
 navigation_polygon = SubResource("NavigationPolygon_srh6f")
+
+[node name="graveyard nav" type="NavigationRegion2D" parent="." unique_id=2146172451]
+navigation_polygon = SubResource("NavigationPolygon_ubx2l")
 
 [node name="UI Layer" type="CanvasLayer" parent="." unique_id=1325080115]
 layer = 2

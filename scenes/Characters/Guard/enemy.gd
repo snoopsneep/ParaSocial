@@ -20,7 +20,6 @@ var state = "patrol"
 # called = moving to called location.
 # aggro = agressive
 var aggro_target = null
-@onready var range = $"Range"
 
 ## Reference to navagent used to navigate mesh
 @onready var nav = $"NavigationAgent2D"
@@ -91,27 +90,23 @@ func _physics_process(_delta):
 	$Hurtbox.collision_layer = collision_layer
 
 	# if it's an enemy
-	if !is_vessel:
+	if !is_vessel and !dead:
 		if state != "pause":
 			move()
-		check_aggro()
+		if state != "aggro":
+			check_aggro()
+		if state == "aggro":
+			act_aggro()
 
 	# runs the animation code from Vessel
 	super(_delta)
-
-# needs to be its own function so the "await" works properly
-## The attack that the vessel does when it's an enemy.
-func enemy_attack():
-	# look at, set collider disbled to false and sprite visible to true
-	# set sprite play to default
-	# ATK cooldown
-	pass ## TODO: make the attack logic (see above)
 
 ## Customized hit function deletes the vessel if it dies with the player in it,
 ## but knocks the enemy unconscious if it's killed as an enemy.
 func hit(dmg = 1):
 	if dmg_cooldown.is_stopped():
 		health -= dmg
+		state = "aggro"
 		if health <= 0:
 			if is_vessel:
 				boot.emit()
@@ -155,7 +150,6 @@ func move():
 	move_and_slide()
 
 func pause(wait_time):
-	state = "pause"
 	# the below calculation decides wait time as follows:
 	# r % range + min * seconds
 	# Generates a number from min to (min + max - 1), multiplies seconds.
@@ -165,8 +159,9 @@ func pause(wait_time):
 # part of the above pause function
 func _on_pause_timer_timeout() -> void:
 	print("my break is up!")
-	if state == "pause":
+	if state != "aggro": # If not aggro, change to patrol
 		state = "patrol"
+	if state != "called": # if not called, iterate patrol
 		patrol_iterate()
 
 func patrol_iterate():
@@ -190,23 +185,51 @@ func check_aggro(): # leaving this seperate incase it needs to be called elsewhe
 	var query
 	var result
 
-	var bodies = range.get_overlapping_bodies() # get list of all bodies in range
+	var bodies = _range.get_overlapping_bodies() # get list of all bodies in range
 
 	for body in bodies:
 		if body.is_vessel and body.is_aggro: # if is player and is aggro
-			# do a raycast
-			query = PhysicsRayQueryParameters2D.create(self.global_position, body.global_position)
-			result = space_state.intersect_ray(query)
-			# and if you collide with target object, aggro
-			# if result[Object] == body:
-				# print("I see you!")
-				# TODO: This broke as I was working on stuff, need to redo it!
-# extention of above code, for ease of use
-func shout(bodies, call_to):
+			space_state = get_world_2d().direct_space_state # Pulls required info for raycast
+			## this decides the start and end pos of the ray. Enemy POS, player POS.
+			query = PhysicsRayQueryParameters2D.create(position, body.position)
+			result = space_state.intersect_ray(query) # call the raycast
+			if "collider" in result:
+				# check if obj hit is player...
+				if result.collider == body:
+					# ...change state to aggro
+					print("I SEE YOU!")
+					aggro_target = body
+					state = "aggro"
+					# TODO: call shout
+func shout(bodies, _call_to):
 	for body in bodies:
 		pass
 		# TODO: Replace this with code that reads if body is guard,
 		# then preforms a CALL function to them to player position.
-
-func _on_range_body_exited(body: Node2D) -> void:
-	pass
+		
+func act_aggro(): # move to player, call attack!
+	call_guard(aggro_target.position)
+	if atk_cooldown.is_stopped():
+		enemy_attack()
+func enemy_attack():
+	# start the attack cooasldown
+	atk_cooldown.start()
+	# aim at the target
+	_attack.look_at(aggro_target.position)
+	# delay the attack slightly, so the player can actually dodge
+	await get_tree().create_timer(0.2).timeout
+	if !dead:
+		_attack_collider.disabled = false # un-disable (enable) the attack collider
+		_attack_sprite.visible = true # make the sprite visible
+		_attack_sprite.play("default") # make the sprite animation play
+# this is the damage function!
+func _on_attack_area_entered(body: Node2D) -> void:
+	# if the node detected is (inherits from) a Vessel
+	if body.get_parent() is Vessel and body != self:
+		# run that "hit" function
+		body.get_parent().hit(damage)
+# when animation (attack) ends
+func _on_animated_sprite_2d_animation_finished() -> void:
+	_attack_collider.disabled = true # re-disable the attack collider
+	_attack_sprite.stop() # stop the sprite animation (just in case)
+	_attack_sprite.visible = false # make the attack sprite invisible again

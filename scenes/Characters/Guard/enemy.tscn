@@ -184,8 +184,8 @@ script = ExtResource("1_cgdn4")
 default_sprite = "DownRight"
 enemy_speed = 200.0
 vessel_speed = 500.0
-damage = null
-patrol_route = null
+damage = 4
+patrol_route = [Vector2(0, 0)]
 max_health = 10
 speed = 250.0
 
