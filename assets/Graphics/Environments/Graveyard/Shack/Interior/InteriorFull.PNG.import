@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0cnp83wahjty"
-path="res://.godot/imported/InteriorFull.PNG-531e65796b486d888ccdf9a2460c35b5.ctex"
+uid="uid://jqt018ha8kqf"
+path="res://.godot/imported/InteriorFull.png-45f3f37421f04dc878a28a26fee9dc25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Graveyard/Shack/Interior/InteriorFull.PNG"
-dest_files=["res://.godot/imported/InteriorFull.PNG-531e65796b486d888ccdf9a2460c35b5.ctex"]
+source_file="res://assets/Graphics/Environments/Graveyard/Shack/Interior/InteriorFull.png"
+dest_files=["res://.godot/imported/InteriorFull.png-45f3f37421f04dc878a28a26fee9dc25.ctex"]
 
 [params]
 

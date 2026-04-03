@@ -4,6 +4,9 @@ extends Control
 @onready var text = $Text
 @onready var button = $Button
 
+# signal that emits when the fade finishes
+signal done_fading
+
 func _ready():
 	modulate = Color(1,1,1,1)
 	visible = true
@@ -12,10 +15,10 @@ func _ready():
 	button.visible = Global.game_over_button
 	fade_in()
 
-func to_black(new_title: String, new_text: String, time: float = 1.0):
+func to_black(new_title: String, new_text: String, button_visible: bool, time: float = 1.0):
 	get_tree().paused = true # pause the game
 	visible = true # make the game over screen visible
-	button.visible = true # make sure the button's visible if it isn't!!
+	button.visible = button_visible # make sure the button's visible if it isn't!!
 	title.text = new_title # set the title text
 	text.text = new_text # set the body text
 	var fade_tween: Tween = get_tree().create_tween() # make a new tween
@@ -24,7 +27,8 @@ func to_black(new_title: String, new_text: String, time: float = 1.0):
 	# tween the modulate of the game over screen to fade it in
 	fade_tween.tween_property(self, "modulate", Color(1,1,1,1), time)
 	await fade_tween.finished # once it's faded in
-	$Button.disabled = false # enable the button
+	$Button.disabled = !button_visible # enable the button
+	done_fading.emit()
 
 func fade_in(time: float = 1.0):
 	$Button.disabled = true # disable the button
@@ -36,6 +40,7 @@ func fade_in(time: float = 1.0):
 	await fade_tween.finished # once it's faded out
 	get_tree().paused = false # unpauses the game
 	visible = false # hide the game over screen
+	done_fading.emit()
 
 func game_over():
 	var random_tip: String
@@ -50,13 +55,13 @@ func game_over():
 	]
 	# pick a random tip to show
 	random_tip = tips_arr[randi_range(0,tips_arr.size() - 1)]
-	to_black("GAME OVER", random_tip)
+	to_black("GAME OVER", random_tip, true)
 
 func puzzle_victory():
-	to_black("YOU ESCAPED!", "Congratulations! You completed the PUZZLE ROUTE of the game!\nPlease fill out the feedback form, or start again to find the other route.\nThanks for playing!")
+	to_black("YOU ESCAPED!", "Congratulations! You completed the PUZZLE ROUTE of the game!\nPlease fill out the feedback form, or start again to find the other route.\nThanks for playing!", true)
 
 func combat_victory():
-	to_black("YOU ESCAPED!", "Congratulations! You completed the COMBAT ROUTE of the game!\nPlease fill out the feedback form, or start again to find the other route.\nThanks for playing!")
+	to_black("YOU ESCAPED!", "Congratulations! You completed the COMBAT ROUTE of the game!\nPlease fill out the feedback form, or start again to find the other route.\nThanks for playing!", true)
 
 func _on_button_pressed():
 	Global.game_over_title = title.text

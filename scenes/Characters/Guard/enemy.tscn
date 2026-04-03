@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dydxhyq1tx216" path="res://assets/Graphics/Miscellaneous/sword_slash.png" id="5_2j8a8"]
 [ext_resource type="Texture2D" uid="uid://yvaepboua7q1" path="res://assets/Graphics/Sprites/Characters/Guard/potatogirl.png" id="5_qwxbv"]
 [ext_resource type="PackedScene" uid="uid://dvm0l187x12a4" path="res://scenes/Generic/event.tscn" id="7_88cui"]
-[ext_resource type="Script" uid="uid://cn8sfg0gvq7ar" path="res://scenes/Level/Events/generic_guard.gd" id="8_re3jj"]
+[ext_resource type="Script" uid="uid://cn8sfg0gvq7ar" path="res://scenes/Level/Events/Playtest Demo/generic_guard.gd" id="8_re3jj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p18xb"]
 atlas = ExtResource("3_2j8a8")
@@ -246,6 +246,7 @@ collision_layer = 16
 shape = SubResource("CircleShape2D_2kaab")
 
 [node name="GuardInteract" parent="." index="6" unique_id=753610390 instance=ExtResource("7_88cui")]
+process_mode = 3
 script = ExtResource("8_re3jj")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="GuardInteract" index="1" unique_id=428322290]

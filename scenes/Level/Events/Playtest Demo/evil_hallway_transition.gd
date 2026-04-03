@@ -22,15 +22,15 @@ func trigger(body: Node2D, first_run: bool = false):
 		other_room = room_1
 
 	body.z_index = curr_room.z_index
+	other_room.actors_in_room.erase(body)
+	curr_room.actors_in_room.append(body)
 	if (body is Vessel and body.is_vessel) or first_run:
 		if !first_run:
-			# reveal the current room (and the rooms around it)
-			# this also fades the previous room out naturally!
-			curr_room.reveal_room()
-			# hide all the rooms connected to the one we're NOT in
-			for i in other_room.connected_rooms:
-				if i != curr_room: # besides the current room, of course
-					get_tree().create_tween().tween_property(i, "modulate", Color(1,1,1,0), 0.5)
+				# fully reveal the current room
+				curr_room.reveal_room()
+				# make the room you just left the previewed one
+				other_room.preview_room()
+
 		if curr_room == room_1: # hallway
 			$"../../Colliders/TopRightWall1".process_mode = Node.PROCESS_MODE_DISABLED
 			$"../../Colliders/TopRightWall1Point5".process_mode = Node.PROCESS_MODE_DISABLED

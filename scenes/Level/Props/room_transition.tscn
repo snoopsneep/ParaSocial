@@ -6,6 +6,9 @@
 a = Vector2(83, 45)
 b = Vector2(-79, -46)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_l03ml"]
+radius = 297.10773
+
 [node name="RoomTransition" type="Area2D" unique_id=549578245]
 collision_layer = 16
 collision_mask = 43
@@ -20,4 +23,12 @@ position = Vector2(45, -45)
 [node name="Marker2D2" type="Marker2D" parent="." unique_id=786649644]
 position = Vector2(-45, 45)
 
+[node name="ShowNextRoom" type="Area2D" parent="." unique_id=977292801]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShowNextRoom" unique_id=770446660]
+shape = SubResource("CircleShape2D_l03ml")
+
 [connection signal="body_exited" from="." to="." method="trigger"]
+[connection signal="body_entered" from="ShowNextRoom" to="." method="_show_next_room"]
+[connection signal="body_exited" from="ShowNextRoom" to="." method="_hide_next_room"]

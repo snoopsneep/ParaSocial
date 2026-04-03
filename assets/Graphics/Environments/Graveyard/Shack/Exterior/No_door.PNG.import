@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu756rwsnpx0l"
-path="res://.godot/imported/Rough_interior.PNG-dc1159c6cda66df4f5ef6a4eec28cdfd.ctex"
+uid="uid://cx80lr5v1j4b3"
+path="res://.godot/imported/No_door.PNG-1247772f3283ae8050d905006a1663fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Graveyard/Shack/Rough_interior.PNG"
-dest_files=["res://.godot/imported/Rough_interior.PNG-dc1159c6cda66df4f5ef6a4eec28cdfd.ctex"]
+source_file="res://assets/Graphics/Environments/Graveyard/Shack/Exterior/No_door.PNG"
+dest_files=["res://.godot/imported/No_door.PNG-1247772f3283ae8050d905006a1663fa.ctex"]
 
 [params]
 

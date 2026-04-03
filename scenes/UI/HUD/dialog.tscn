@@ -55,7 +55,6 @@ scroll_active = false
 shortcut_keys_enabled = false
 
 [node name="Choices" type="HBoxContainer" parent="Box/MarginContainer" unique_id=86805000]
-visible = false
 layout_mode = 0
 offset_top = 127.0
 offset_right = 1084.0

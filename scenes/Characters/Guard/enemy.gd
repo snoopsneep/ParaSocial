@@ -89,14 +89,24 @@ func _physics_process(_delta):
 			set_collision_mask_value(2, false)
 	$Hurtbox.collision_layer = collision_layer
 
-	# if it's an enemy
+	# if it's an enemy (and not dead)
 	if !is_vessel and !dead:
-		if state != "pause":
+		if state != "pause" and wait.is_stopped():
 			move()
 		if state != "aggro":
 			check_aggro()
 		if state == "aggro":
 			act_aggro()
+	elif is_vessel: # if it's being controlled by the player (and probably dead)
+		# if the player uses the primary action
+		if Input.is_action_just_pressed("Primary Action") and atk_cooldown.is_stopped():
+			if atk_cooldown.is_stopped(): # and the attack isn't on cooldown
+				_attack.look_at(get_global_mouse_position())
+				_attack_collider.disabled = false # un-disable (enable) the attack collider
+				_attack_sprite.visible = true # make the sprite visible
+				_attack_sprite.play("default") # make the sprite animation play
+				# start the attack cooasldown
+				atk_cooldown.start()
 
 	# runs the animation code from Vessel
 	super(_delta)
@@ -136,8 +146,8 @@ func set_move_target(target):
 func move():
 	# this function runs when it reaches its destination
 	if nav.is_navigation_finished():
-		print("I have reached my destination!")
-		print(patrol_index)
+		#print("I have reached my destination!")
+		#print(patrol_index)
 		if state == "called":
 			pause(0.2) # between 0.2 - 1.0 seconds
 		else:
@@ -147,6 +157,10 @@ func move():
 	var next_path_position: Vector2 = nav.get_next_path_position()
 
 	velocity = current_agent_position.direction_to(next_path_position) * speed
+	if ((current_agent_position.distance_to(next_path_position) < speed) and
+	(patrol_route.size() == 1) and
+	state == "patrol"):
+		velocity = Vector2(0,0)
 	move_and_slide()
 
 func pause(wait_time):
@@ -156,9 +170,10 @@ func pause(wait_time):
 	wait.wait_time = (randi() % 5 + 1) * wait_time
 
 	wait.start()
+
 # part of the above pause function
 func _on_pause_timer_timeout() -> void:
-	print("my break is up!")
+	#print("my break is up!")
 	if state != "aggro": # If not aggro, change to patrol
 		state = "patrol"
 	if state != "called": # if not called, iterate patrol
@@ -197,20 +212,22 @@ func check_aggro(): # leaving this seperate incase it needs to be called elsewhe
 				# check if obj hit is player...
 				if result.collider == body:
 					# ...change state to aggro
-					print("I SEE YOU!")
+					#print("I SEE YOU!")
 					aggro_target = body
 					state = "aggro"
 					# TODO: call shout
+
 func shout(bodies, _call_to):
 	for body in bodies:
 		pass
 		# TODO: Replace this with code that reads if body is guard,
 		# then preforms a CALL function to them to player position.
-		
+
 func act_aggro(): # move to player, call attack!
 	call_guard(aggro_target.position)
 	if atk_cooldown.is_stopped():
 		enemy_attack()
+
 func enemy_attack():
 	# start the attack cooasldown
 	atk_cooldown.start()
@@ -222,12 +239,14 @@ func enemy_attack():
 		_attack_collider.disabled = false # un-disable (enable) the attack collider
 		_attack_sprite.visible = true # make the sprite visible
 		_attack_sprite.play("default") # make the sprite animation play
+
 # this is the damage function!
 func _on_attack_area_entered(body: Node2D) -> void:
 	# if the node detected is (inherits from) a Vessel
 	if body.get_parent() is Vessel and body != self:
 		# run that "hit" function
 		body.get_parent().hit(damage)
+
 # when animation (attack) ends
 func _on_animated_sprite_2d_animation_finished() -> void:
 	_attack_collider.disabled = true # re-disable the attack collider

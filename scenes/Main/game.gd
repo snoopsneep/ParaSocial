@@ -27,7 +27,7 @@ func _ready():
 	$"Map/Church/Dining Room".visible = true
 	$"Map/Church/Main Hall".modulate = Color(1,1,1,0)
 	$"Map/Church/Main Hall".visible = true
-	$Map/Church/Hallway.modulate = Color(1,1,1,0.5)
+	$Map/Church/Hallway.modulate = Color(1,1,1,0)
 	$Map/Church/Hallway.visible = true
 	$Map/Church/Chapel.modulate = Color(1,1,1,1)
 	$Map/Church/Chapel.visible = true
@@ -51,7 +51,16 @@ func _ready():
 # fps is. might lag the game - i don't actually know the difference between
 # _process and _physics_process is, truthfully) -Ian
 func _physics_process(_delta):
-	pass
+	if Input.is_action_just_pressed("Debug Action 1"):
+		if $Player/GameCamera.zoom == Vector2(0.75,0.75):
+			$Player/GameCamera.zoom = Vector2(0.5,0.5)
+		elif $Player/GameCamera.zoom == Vector2(0.5,0.5):
+			$Player/GameCamera.zoom = Vector2(0.25,0.25)
+		elif $Player/GameCamera.zoom == Vector2(0.25,0.25):
+			$Player/GameCamera.zoom = Vector2(0.75,0.75)
+	elif Input.is_action_just_pressed("Debug Action 2"):
+		$Map/Graveyard/ShackExterior/Colliders/Door/CollisionShape2D.disabled = true
+		$Map/Graveyard/ShackExterior/Graphics/SHACK/Door.visible = false
 
 ## Spawns a new parasite at location [param source] with z_index [param z_ind].
 ##

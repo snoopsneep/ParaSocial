@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://beejaoqh3gowa" path="res://assets/Graphics/Sprites/Characters/Nun/nun down right.png" id="4_rs6pa"]
 [ext_resource type="Texture2D" uid="uid://rxk66y0cu05e" path="res://assets/Graphics/Sprites/Characters/Nun/nun up left.png" id="5_1juo7"]
 [ext_resource type="Texture2D" uid="uid://dvdytq6245wsy" path="res://assets/Graphics/Sprites/Characters/Nun/nun up right.png" id="6_11kop"]
+[ext_resource type="PackedScene" uid="uid://dvm0l187x12a4" path="res://scenes/Generic/event.tscn" id="7_1juo7"]
+[ext_resource type="Script" uid="uid://dktqgfuuxsp8a" path="res://scenes/Level/Events/nun_interact.gd" id="8_1juo7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1juo7"]
 animations = [{
@@ -66,7 +68,7 @@ scale = Vector2(7, 7)
 [node name="Sprite" parent="." index="1" unique_id=1569272056]
 position = Vector2(2.999954, -988.99994)
 sprite_frames = SubResource("SpriteFrames_1juo7")
-animation = &"DownLeft"
+animation = &"UpRight"
 
 [node name="FootCollider" parent="." index="2" unique_id=137211241]
 position = Vector2(2.999954, 1)
@@ -79,11 +81,25 @@ position = Vector2(2.999954, -988.99994)
 [node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1693199414]
 shape = SubResource("CapsuleShape2D_x6nh8")
 
-[node name="Interactable" parent="." index="4" unique_id=1058585514]
+[node name="NunInteract" parent="." index="4" unique_id=753610390 instance=ExtResource("7_1juo7")]
+position = Vector2(0, -16.949158)
+script = ExtResource("8_1juo7")
+compatible_vessels = {
+&"Nun": false,
+&"Rat": false,
+&"Statue": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NunInteract" index="1" unique_id=2105438925]
+position = Vector2(8.881784e-14, 20.833332)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_11kop")
+
+[node name="Interactable" parent="." index="5" unique_id=1058585514]
 position = Vector2(-33.898304, -2466.1018)
 scale = Vector2(4, 4)
 
-[node name="InteractRange" parent="." index="5" unique_id=768744904]
+[node name="InteractRange" parent="." index="6" unique_id=768744904]
 visible = false
 position = Vector2(2.999954, -988.99994)
 

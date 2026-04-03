@@ -1,6 +1,8 @@
 class_name Vessel extends CharacterBody2D
 ## The abstract Vessel class, to be extended by all other Vessels.
 
+@onready var sprite: AnimatedSprite2D = $Sprite
+
 ## The vessel's current health.
 var health: int
 
@@ -68,20 +70,20 @@ func _physics_process(_delta):
 
 		if _display_left:
 			if _display_up:
-				$Sprite.play("UpLeft")
+				sprite.play("UpLeft")
 			else:
-				$Sprite.play("DownLeft")
+				sprite.play("DownLeft")
 		else: # moving right
 			if _display_up:
-				$Sprite.play("UpRight")
+				sprite.play("UpRight")
 			else:
-				$Sprite.play("DownRight")
+				sprite.play("DownRight")
 
 ## Triggers when the Vessel takes damage.
 func hit(dmg = 1):
 	health -= dmg
 	if health <= 0:
-		$Sprite2D.visible = false
+		sprite.visible = false
 		$CollisionShape2D.disabled = true
 		boot.emit()
 	hurt.emit(health,max_health)
