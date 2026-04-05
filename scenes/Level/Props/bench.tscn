@@ -17,6 +17,7 @@ visible = false
 polygon = PackedVector2Array(-203, -74, 129, 120, 214, 70, -116, -123)
 
 [node name="SpriteBoundaries" type="Area2D" parent="." unique_id=1776424411]
+visible = false
 collision_layer = 0
 collision_mask = 128
 

@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://03s4l0q2exir" path="res://scenes/Generic/vessel.tscn" id="1_cf675"]
 [ext_resource type="Script" uid="uid://ckps7bv6qrj7d" path="res://scenes/Characters/Guard/enemy.gd" id="1_cgdn4"]
-[ext_resource type="Texture2D" uid="uid://c7hr1s4ce4rny" path="res://assets/Graphics/Sprites/Characters/Guard/gaurdgirl.png" id="3_2j8a8"]
-[ext_resource type="Texture2D" uid="uid://bg7rcmup0k88f" path="res://assets/Graphics/Sprites/Characters/Guard/headgirl.png" id="4_2j8a8"]
-[ext_resource type="Texture2D" uid="uid://dydxhyq1tx216" path="res://assets/Graphics/Miscellaneous/sword_slash.png" id="5_2j8a8"]
-[ext_resource type="Texture2D" uid="uid://yvaepboua7q1" path="res://assets/Graphics/Sprites/Characters/Guard/potatogirl.png" id="5_qwxbv"]
+[ext_resource type="Texture2D" uid="uid://dk0pgjwld152a" path="res://assets/Graphics/Sprites/Characters/Guard/gaurdgirl.png" id="3_2j8a8"]
+[ext_resource type="Texture2D" uid="uid://co72jkvjk4gks" path="res://assets/Graphics/Sprites/Characters/Guard/headgirl.png" id="4_2j8a8"]
+[ext_resource type="Texture2D" uid="uid://cejlb2jfqt07h" path="res://assets/Graphics/Miscellaneous/sword_slash.png" id="5_2j8a8"]
+[ext_resource type="Texture2D" uid="uid://bwipthywd7cqt" path="res://assets/Graphics/Sprites/Characters/Guard/potatogirl.png" id="5_qwxbv"]
 [ext_resource type="PackedScene" uid="uid://dvm0l187x12a4" path="res://scenes/Generic/event.tscn" id="7_88cui"]
 [ext_resource type="Script" uid="uid://cn8sfg0gvq7ar" path="res://scenes/Level/Events/Playtest Demo/generic_guard.gd" id="8_re3jj"]
 

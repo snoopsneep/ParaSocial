@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0jff6ypken6m"
-path="res://.godot/imported/chapel_leftWall(1).png-fe6f18fe1e1072acef29202b11cc6ac0.ctex"
+uid="uid://cfgythxuawgrg"
+path="res://.godot/imported/graveTwins.png-7652437712b06fd27936c7b10e0dd156.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Church/Chapel/chapel_leftWall(1).png"
-dest_files=["res://.godot/imported/chapel_leftWall(1).png-fe6f18fe1e1072acef29202b11cc6ac0.ctex"]
+source_file="res://assets/Graphics/Sprites/Objects/Graveyard/graveTwins.png"
+dest_files=["res://.godot/imported/graveTwins.png-7652437712b06fd27936c7b10e0dd156.ctex"]
 
 [params]
 

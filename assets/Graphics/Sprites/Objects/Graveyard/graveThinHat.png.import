@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq1kacc1746vr"
-path="res://.godot/imported/mainHall_rafterStates.png-77939344f8d275b75d95e6512e3aae42.ctex"
+uid="uid://dxytvlcbh1rqc"
+path="res://.godot/imported/graveThinHat.png-81c5bee13d8dd947f7d9a8d211dbb07d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Church/Main Hall/mainHall_rafterStates.png"
-dest_files=["res://.godot/imported/mainHall_rafterStates.png-77939344f8d275b75d95e6512e3aae42.ctex"]
+source_file="res://assets/Graphics/Sprites/Objects/Graveyard/graveThinHat.png"
+dest_files=["res://.godot/imported/graveThinHat.png-81c5bee13d8dd947f7d9a8d211dbb07d.ctex"]
 
 [params]
 

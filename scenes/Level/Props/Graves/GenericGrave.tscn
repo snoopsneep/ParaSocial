@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://g0o87v6tgsoa"]
+
+[ext_resource type="Script" uid="uid://bq6ykg0tcvs3g" path="res://scenes/Level/Props/Graves/grave.gd" id="1_65r64"]
+[ext_resource type="PackedScene" uid="uid://dvm0l187x12a4" path="res://scenes/Generic/event.tscn" id="3_e8ln0"]
+[ext_resource type="Script" uid="uid://dq3vgrbj1d0ij" path="res://scenes/Level/Events/GraveInteract.gd" id="4_v5kux"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_65r64"]
+
+[node name="Grave" type="StaticBody2D" unique_id=70036307]
+z_index = 5
+collision_layer = 4
+collision_mask = 39
+script = ExtResource("1_65r64")
+room_z_index = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1697843649]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=275975587]
+
+[node name="SpriteBoundaries" type="Area2D" parent="." unique_id=1776424411]
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="SpriteBoundaries" unique_id=57674299]
+
+[node name="LeftPoint" type="Marker2D" parent="." unique_id=2031971629]
+visible = false
+position = Vector2(-114, 61)
+gizmo_extents = 400.0
+
+[node name="Middle" type="Marker2D" parent="." unique_id=1786056407]
+visible = false
+position = Vector2(-12, 83)
+gizmo_extents = 400.0
+
+[node name="RightPoint" type="Marker2D" parent="." unique_id=935884414]
+visible = false
+position = Vector2(104, 93)
+gizmo_extents = 400.0
+
+[node name="GraveInteract" parent="." unique_id=753610390 instance=ExtResource("3_e8ln0")]
+script = ExtResource("4_v5kux")
+compatible_vessels = {
+&"Gravedigger": true,
+&"Nun": true,
+&"Rat": false,
+&"Statue": true
+}
+
+[node name="CollisionShape2D" parent="GraveInteract" index="0" unique_id=18997285]
+visible = false
+position = Vector2(-13, 83)
+shape = SubResource("CircleShape2D_65r64")
+
+[connection signal="area_entered" from="SpriteBoundaries" to="." method="_on_sprite_overlap"]
+[connection signal="area_exited" from="SpriteBoundaries" to="." method="_on_sprite_exited"]
+
+[editable path="GraveInteract"]

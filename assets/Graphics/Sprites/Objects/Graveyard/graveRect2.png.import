@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nnro4qugovse"
-path="res://.godot/imported/chapel_lighting.png-304f01e578fbb738b1a5a113c15f586d.ctex"
+uid="uid://6fuyvblg6mao"
+path="res://.godot/imported/graveRect2.png-8e5b00462783c6fc9238929a4a9944a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Church/Chapel/chapel_lighting.png"
-dest_files=["res://.godot/imported/chapel_lighting.png-304f01e578fbb738b1a5a113c15f586d.ctex"]
+source_file="res://assets/Graphics/Sprites/Objects/Graveyard/graveRect2.png"
+dest_files=["res://.godot/imported/graveRect2.png-8e5b00462783c6fc9238929a4a9944a5.ctex"]
 
 [params]
 

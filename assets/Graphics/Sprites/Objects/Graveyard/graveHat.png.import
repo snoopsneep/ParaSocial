@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd4qeubvd3740"
-path="res://.godot/imported/chapel_beamOverlap.png-ddf143d8625f944d52a415da898763c7.ctex"
+uid="uid://nml8hj306v6f"
+path="res://.godot/imported/graveHat.png-3117fc73dc8dde1eaf006914ad314ada.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Church/Chapel/chapel_beamOverlap.png"
-dest_files=["res://.godot/imported/chapel_beamOverlap.png-ddf143d8625f944d52a415da898763c7.ctex"]
+source_file="res://assets/Graphics/Sprites/Objects/Graveyard/graveHat.png"
+dest_files=["res://.godot/imported/graveHat.png-3117fc73dc8dde1eaf006914ad314ada.ctex"]
 
 [params]
 

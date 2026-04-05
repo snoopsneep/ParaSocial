@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://d32fw1nmou6rf"]
+
+[ext_resource type="PackedScene" uid="uid://g0o87v6tgsoa" path="res://scenes/Level/Props/Graves/GenericGrave.tscn" id="1_74yyx"]
+[ext_resource type="Texture2D" uid="uid://cfgythxuawgrg" path="res://assets/Graphics/Sprites/Objects/Graveyard/graveTwins.png" id="2_74yyx"]
+
+[node name="TwinGraves" unique_id=70036307 instance=ExtResource("1_74yyx")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1697843649]
+texture = ExtResource("2_74yyx")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=275975587]
+visible = false
+polygon = PackedVector2Array(71, 207, 145, 164, -67, 47, -142, 86)
+
+[node name="CollisionShape2D" parent="SpriteBoundaries" parent_id_path=PackedInt32Array(1776424411) index="0" unique_id=57674299]
+visible = false
+polygon = PackedVector2Array(70, 206, 144, 165, 143, 144, 128, -52, 102, -95, -54, -195, -129, -154, -129, 59, -144, 68, -143, 84)
+
+[node name="LeftPoint" parent="." index="3" unique_id=2031971629]
+position = Vector2(-167, 71)
+
+[node name="Middle" parent="." index="4" unique_id=1786056407]
+position = Vector2(5, 125)
+
+[node name="RightPoint" parent="." index="5" unique_id=935884414]
+position = Vector2(167, 152)
+
+[editable path="GraveInteract"]

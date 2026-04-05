@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6ktnl5gsn2ru"
-path="res://.godot/imported/mainHall_rafterTriangle.png-51841dff530a2a112b40dc49e40a0334.ctex"
+uid="uid://bji04mmd4dfnm"
+path="res://.godot/imported/graveRound.png-4f7337461b090c74f41e22f8d850b390.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Church/Main Hall/mainHall_rafterTriangle.png"
-dest_files=["res://.godot/imported/mainHall_rafterTriangle.png-51841dff530a2a112b40dc49e40a0334.ctex"]
+source_file="res://assets/Graphics/Sprites/Objects/Graveyard/graveRound.png"
+dest_files=["res://.godot/imported/graveRound.png-4f7337461b090c74f41e22f8d850b390.ctex"]
 
 [params]
 

@@ -2,29 +2,29 @@
 
 [ext_resource type="Script" uid="uid://dlvjtln05lyyn" path="res://scenes/Characters/Parasite/parasite.gd" id="1_3wf0h"]
 [ext_resource type="PackedScene" uid="uid://03s4l0q2exir" path="res://scenes/Generic/vessel.tscn" id="1_gpx1o"]
-[ext_resource type="Texture2D" uid="uid://b7ckf8wkhcthv" path="res://assets/Graphics/Sprites/Characters/Parasite/parasitegirl.png" id="3_req1l"]
+[ext_resource type="Texture2D" uid="uid://bgd5kdxvdsfe7" path="res://assets/Graphics/Sprites/Characters/Parasite/parasitegirlfin.png" id="3_0sde2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kxels"]
-atlas = ExtResource("3_req1l")
+[sub_resource type="AtlasTexture" id="AtlasTexture_req1l"]
+atlas = ExtResource("3_0sde2")
 region = Rect2(2810, 0, 2810, 4200)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4bwke"]
-atlas = ExtResource("3_req1l")
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxels"]
+atlas = ExtResource("3_0sde2")
 region = Rect2(5620, 0, 2810, 4200)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ytth1"]
-atlas = ExtResource("3_req1l")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bwke"]
+atlas = ExtResource("3_0sde2")
 region = Rect2(8430, 0, 2810, 4200)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_477la"]
-atlas = ExtResource("3_req1l")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytth1"]
+atlas = ExtResource("3_0sde2")
 region = Rect2(0, 0, 2810, 4200)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8so8x"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kxels")
+"texture": SubResource("AtlasTexture_req1l")
 }],
 "loop": true,
 "name": &"DownLeft",
@@ -32,7 +32,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4bwke")
+"texture": SubResource("AtlasTexture_kxels")
 }],
 "loop": true,
 "name": &"DownRight",
@@ -40,7 +40,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ytth1")
+"texture": SubResource("AtlasTexture_4bwke")
 }],
 "loop": true,
 "name": &"UpLeft",
@@ -48,7 +48,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_477la")
+"texture": SubResource("AtlasTexture_ytth1")
 }],
 "loop": true,
 "name": &"UpRight",
@@ -78,7 +78,7 @@ scale = Vector2(5, 5)
 [node name="Sprite" parent="." index="1" unique_id=1569272056]
 position = Vector2(7.6293945e-06, -1610)
 sprite_frames = SubResource("SpriteFrames_8so8x")
-animation = &"DownRight"
+animation = &"UpRight"
 
 [node name="FootCollider" parent="." index="2" unique_id=137211241]
 position = Vector2(-2.2737368e-13, -9.536743e-07)

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b8t0hjly3p28m"]
+
+[ext_resource type="PackedScene" uid="uid://g0o87v6tgsoa" path="res://scenes/Level/Props/Graves/GenericGrave.tscn" id="1_85imk"]
+[ext_resource type="Texture2D" uid="uid://6fuyvblg6mao" path="res://assets/Graphics/Sprites/Objects/Graveyard/graveRect2.png" id="2_85imk"]
+
+[node name="LargeRectGrave" unique_id=70036307 instance=ExtResource("1_85imk")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1697843649]
+texture = ExtResource("2_85imk")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=275975587]
+visible = false
+polygon = PackedVector2Array(54, 156, 110, 123, -51, 40, -105, 66)
+
+[node name="CollisionShape2D" parent="SpriteBoundaries" parent_id_path=PackedInt32Array(1776424411) index="0" unique_id=57674299]
+visible = false
+polygon = PackedVector2Array(53, 156, 111, 122, 109, -74, -42, -162, -103, -128, -106, 65)
+
+[node name="LeftPoint" parent="." index="3" unique_id=2031971629]
+position = Vector2(-122, 51)
+
+[node name="Middle" parent="." index="4" unique_id=1786056407]
+position = Vector2(-12, 86)
+
+[node name="RightPoint" parent="." index="5" unique_id=935884414]
+position = Vector2(139, 108)
+
+[editable path="GraveInteract"]

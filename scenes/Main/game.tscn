@@ -52,6 +52,7 @@
 [ext_resource type="Texture2D" uid="uid://d0yx6jlitcc3m" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_p1_topCornerGrave.png" id="47_73cm8"]
 [ext_resource type="Theme" uid="uid://dlj40uugp24a7" path="res://resources/dialog/dialog.tres" id="47_bjq35"]
 [ext_resource type="Script" uid="uid://caet86rltnkgl" path="res://scenes/UI/game_over.gd" id="47_dgtgp"]
+[ext_resource type="PackedScene" uid="uid://bdguhi7rv5h5f" path="res://scenes/Level/Props/Graves/RoundGrave.tscn" id="47_jkr68"]
 [ext_resource type="Script" uid="uid://bldlak5ybl6yi" path="res://scenes/Level/Events/to_church.gd" id="48_bv45s"]
 [ext_resource type="Texture2D" uid="uid://c2xh04i4hm13o" path="res://assets/Graphics/Environments/Graveyard/Mausoleum/mausoleum.png" id="48_jkr68"]
 [ext_resource type="Texture2D" uid="uid://cx0pytnptue11" path="res://assets/Graphics/Environments/Graveyard/Shack/Interior/Resized_interior.PNG" id="48_srh6f"]
@@ -1002,6 +1003,8 @@ shape = SubResource("SegmentShape2D_vip5v")
 
 [node name="Events" type="Node2D" parent="Map/Church/Chapel" unique_id=1480865722]
 
+[node name="Objects" type="Node2D" parent="Map/Church/Chapel" unique_id=2008570413]
+
 [node name="Graveyard" type="Node2D" parent="Map" unique_id=2101462850]
 position = Vector2(3000.9998, 1525)
 scale = Vector2(0.8, 0.8)
@@ -1166,6 +1169,11 @@ collision_mask = 15
 shape = SubResource("SegmentShape2D_ywckj")
 
 [node name="Objects" type="Node2D" parent="Map/Graveyard/Grounds" unique_id=1183634035]
+
+[node name="RoundGrave" parent="Map/Graveyard/Grounds/Objects" unique_id=1762020382 instance=ExtResource("47_jkr68")]
+position = Vector2(19102.5, 5131.2495)
+grave_row = 4
+room_z_index = 0
 
 [node name="Events" type="Node2D" parent="Map/Graveyard/Grounds" unique_id=1657358014]
 
@@ -1348,6 +1356,7 @@ position = Vector2(85, 10)
 navigation_polygon = SubResource("NavigationPolygon_srh6f")
 
 [node name="graveyard nav" type="NavigationRegion2D" parent="." unique_id=2146172451]
+visible = false
 position = Vector2(3003, 1514)
 scale = Vector2(0.8, 0.8)
 navigation_polygon = SubResource("NavigationPolygon_ubx2l")

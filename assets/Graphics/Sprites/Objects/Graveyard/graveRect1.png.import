@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ubidgv8vrryn"
-path="res://.godot/imported/Background.PNG-b19b9ce0ffbad9bf29124a7659732e14.ctex"
+uid="uid://doothod47imdy"
+path="res://.godot/imported/graveRect1.png-eae66a3923e497a74d2d64a17f08c11e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Graveyard/Shack/Interior/Background.PNG"
-dest_files=["res://.godot/imported/Background.PNG-b19b9ce0ffbad9bf29124a7659732e14.ctex"]
+source_file="res://assets/Graphics/Sprites/Objects/Graveyard/graveRect1.png"
+dest_files=["res://.godot/imported/graveRect1.png-eae66a3923e497a74d2d64a17f08c11e.ctex"]
 
 [params]
 

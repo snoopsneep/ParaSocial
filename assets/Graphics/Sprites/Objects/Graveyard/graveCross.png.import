@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b80bxakhs5man"
-path="res://.godot/imported/chapel_floor(1).png-1db9f4284d74543de2e40975c5e5baf7.ctex"
+uid="uid://ceqg2s5n4kpng"
+path="res://.godot/imported/graveCross.png-30d14093772bd3f3f5a027c9f4964cbd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Church/Chapel/chapel_floor(1).png"
-dest_files=["res://.godot/imported/chapel_floor(1).png-1db9f4284d74543de2e40975c5e5baf7.ctex"]
+source_file="res://assets/Graphics/Sprites/Objects/Graveyard/graveCross.png"
+dest_files=["res://.godot/imported/graveCross.png-30d14093772bd3f3f5a027c9f4964cbd.ctex"]
 
 [params]
 

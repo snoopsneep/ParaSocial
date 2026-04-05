@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://djqa2qq37mj02"]
+
+[ext_resource type="PackedScene" uid="uid://g0o87v6tgsoa" path="res://scenes/Level/Props/Graves/GenericGrave.tscn" id="1_ptf1f"]
+[ext_resource type="Texture2D" uid="uid://ceqg2s5n4kpng" path="res://assets/Graphics/Sprites/Objects/Graveyard/graveCross.png" id="2_ptf1f"]
+
+[node name="CrossGrave" unique_id=70036307 instance=ExtResource("1_ptf1f")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1697843649]
+texture = ExtResource("2_ptf1f")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=275975587]
+visible = false
+polygon = PackedVector2Array(13, 138, 85, 96, -26, 35, -99, 74)
+
+[node name="CollisionShape2D" parent="SpriteBoundaries" parent_id_path=PackedInt32Array(1776424411) index="0" unique_id=57674299]
+visible = false
+polygon = PackedVector2Array(13, 138, 85, 96, 85, 74, 36, 46, 26, 19, 34, -66, 36, -100, 14, -121, -15, -126, -32, -107, -39, 19, -96, 53, -99, 74)
+
+[editable path="GraveInteract"]
