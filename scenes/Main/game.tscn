@@ -18,9 +18,7 @@
 [ext_resource type="Script" uid="uid://3yxdyvs81lko" path="res://scenes/Level/Events/kitchen_pot.gd" id="10_21jsj"]
 [ext_resource type="Texture2D" uid="uid://dwgqv1j0rijei" path="res://assets/Graphics/Environments/Church/Hallway/halldoorless.png" id="10_g8xql"]
 [ext_resource type="Texture2D" uid="uid://xp4olhnu6yw4" path="res://assets/Graphics/Environments/Church/Dining Room/diningRoom_rightWall_door.png" id="11_lm4ja"]
-[ext_resource type="Texture2D" uid="uid://bymrpc4ju6fka" path="res://assets/Graphics/Environments/Church/Chapel/chapel_floor_2.png" id="12_oxav3"]
 [ext_resource type="Texture2D" uid="uid://cik60an76l7jr" path="res://assets/Graphics/Environments/Church/Chapel/chapel_rightWall.png" id="13_6lv7u"]
-[ext_resource type="Texture2D" uid="uid://clk6wol4qpl6r" path="res://assets/Graphics/Environments/Church/Chapel/chapel_leftWall_doorOpen.png" id="14_8k4wh"]
 [ext_resource type="Texture2D" uid="uid://dfrcuro1i6xtj" path="res://assets/Graphics/Environments/Church/Chapel/chapel_leftWall.png" id="15_mg4hm"]
 [ext_resource type="PackedScene" uid="uid://dvm0l187x12a4" path="res://scenes/Generic/event.tscn" id="16_4dod6"]
 [ext_resource type="Texture2D" uid="uid://cr7fgn2pgngmv" path="res://assets/Graphics/Environments/Church/Dining Room/diningRoom_lighting.png" id="17_srh6f"]
@@ -45,9 +43,12 @@
 [ext_resource type="PackedScene" uid="uid://dg36a566fbwjr" path="res://scenes/Characters/Nun/nun.tscn" id="39_x2ju3"]
 [ext_resource type="PackedScene" uid="uid://fqp8x2ofqjst" path="res://scenes/Level/Props/bench.tscn" id="40_k765p"]
 [ext_resource type="Texture2D" uid="uid://cemiy2w74icx5" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_p2_base.png" id="42_bv45s"]
-[ext_resource type="Texture2D" uid="uid://b7a646sa5s0rw" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_p1_ base.png" id="43_srh6f"]
+[ext_resource type="PackedScene" uid="uid://cool8pcf7de6g" path="res://scenes/Level/Props/Graves/SmallRectGrave.tscn" id="42_qegdi"]
+[ext_resource type="PackedScene" uid="uid://b8t0hjly3p28m" path="res://scenes/Level/Props/Graves/LargeRectGrave.tscn" id="43_yabqj"]
+[ext_resource type="PackedScene" uid="uid://djqa2qq37mj02" path="res://scenes/Level/Props/Graves/CrossGrave.tscn" id="44_ttmum"]
 [ext_resource type="Texture2D" uid="uid://de7omamocfs4j" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_p1_grassTexture.png" id="44_ubx2l"]
 [ext_resource type="Texture2D" uid="uid://0oxvn8voxxfy" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_p2_grassTexture.png" id="45_8u8kr"]
+[ext_resource type="PackedScene" uid="uid://dhgolkh1vewl0" path="res://scenes/Level/Props/Graves/HatGrave.tscn" id="46_st0p2"]
 [ext_resource type="Texture2D" uid="uid://crvaqc1k2lw7b" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_p1_graves.png" id="46_wy1rp"]
 [ext_resource type="Texture2D" uid="uid://d0yx6jlitcc3m" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_p1_topCornerGrave.png" id="47_73cm8"]
 [ext_resource type="Theme" uid="uid://dlj40uugp24a7" path="res://resources/dialog/dialog.tres" id="47_bjq35"]
@@ -59,7 +60,10 @@
 [ext_resource type="Texture2D" uid="uid://d2fohwpw5vkoe" path="res://assets/Graphics/Environments/Graveyard/Shack/Exterior/Exterior_light.PNG" id="48_ubx2l"]
 [ext_resource type="Texture2D" uid="uid://cx80lr5v1j4b3" path="res://assets/Graphics/Environments/Graveyard/Shack/Exterior/No_door.PNG" id="49_srh6f"]
 [ext_resource type="FontFile" uid="uid://c3yqski6aq7s4" path="res://assets/Graphics/Fonts/gravord.ttf" id="49_timmx"]
+[ext_resource type="PackedScene" uid="uid://d32fw1nmou6rf" path="res://scenes/Level/Props/Graves/TwinGraves.tscn" id="49_ywckj"]
+[ext_resource type="PackedScene" uid="uid://dvorfeptuesjk" path="res://scenes/Level/Props/Graves/FancyGrave.tscn" id="50_k4cmf"]
 [ext_resource type="Texture2D" uid="uid://c4ecnqabkcpjq" path="res://assets/Graphics/Environments/Graveyard/Shack/Exterior/Exterior_new_colours.PNG" id="50_ubx2l"]
+[ext_resource type="PackedScene" uid="uid://be3d4w264egdr" path="res://scenes/Level/Props/Graves/ThinHatGrave.tscn" id="51_ry740"]
 [ext_resource type="Script" uid="uid://b66ye4764wger" path="res://scenes/Level/Events/into_shack.gd" id="51_ubx2l"]
 [ext_resource type="Script" uid="uid://c84qyu8e3jj70" path="res://scenes/UI/pause_menu.gd" id="60_srh6f"]
 
@@ -953,13 +957,11 @@ actors_in_room = [NodePath("../../../Characters/Statue"), NodePath("../../../Cha
 
 [node name="Floor" type="Sprite2D" parent="Map/Church/Chapel/Graphics" unique_id=1612319555]
 z_index = -3
-texture = ExtResource("12_oxav3")
 
 [node name="RightWall" type="Sprite2D" parent="Map/Church/Chapel/Graphics" unique_id=728660148]
 texture = ExtResource("13_6lv7u")
 
 [node name="LeftWall" type="Sprite2D" parent="Map/Church/Chapel/Graphics" unique_id=956080290]
-texture = ExtResource("14_8k4wh")
 
 [node name="LeftDoor" type="Sprite2D" parent="Map/Church/Chapel/Graphics/LeftWall" unique_id=1211869875]
 visible = false
@@ -1028,7 +1030,6 @@ texture = ExtResource("42_bv45s")
 
 [node name="Sprite2D" type="Sprite2D" parent="Map/Graveyard/Grounds/Graphics/Ground" unique_id=1194009257]
 position = Vector2(17354, 4676)
-texture = ExtResource("43_srh6f")
 
 [node name="Grass" type="Node2D" parent="Map/Graveyard/Grounds/Graphics" unique_id=1754127535]
 
@@ -1049,6 +1050,108 @@ texture = ExtResource("46_wy1rp")
 [node name="Sprite2D2" type="Sprite2D" parent="Map/Graveyard/Grounds/Graphics/Gravestones" unique_id=410217102]
 position = Vector2(18553, 5581)
 texture = ExtResource("47_73cm8")
+
+[node name="SmallRectGrave" parent="Map/Graveyard/Grounds/Graphics/Gravestones" unique_id=1264892716 instance=ExtResource("42_qegdi")]
+position = Vector2(14922.5, 6819.9995)
+grave_name = "Cicilia Mason"
+grave_dates = "1387 - 1447"
+grave_inscription = "A beloved mother, faithful until the end."
+grave_row = 11
+
+[node name="LargeRectGrave" parent="Map/Graveyard/Grounds/Graphics/Gravestones" unique_id=1273286228 instance=ExtResource("43_yabqj")]
+position = Vector2(14723.75, 7259.9995)
+grave_name = "Rowan Maxwell"
+grave_dates = "1442 - 1447"
+grave_row = 12
+
+[node name="CrossGrave" parent="Map/Graveyard/Grounds/Graphics/Gravestones" unique_id=1588018634 instance=ExtResource("44_ttmum")]
+position = Vector2(14202.5, 6957.5)
+grave_name = "Juliana Maxwell"
+grave_dates = "1423 - 1447"
+grave_row = 12
+
+[node name="RoundGrave" parent="Map/Graveyard/Grounds/Graphics/Gravestones" unique_id=1201907948 instance=ExtResource("47_jkr68")]
+position = Vector2(13660, 6677.4995)
+grave_name = "Louis Maxwell"
+grave_dates = "1422 - 1447"
+grave_row = 12
+
+[node name="HatGrave" parent="Map/Graveyard/Grounds/Graphics/Gravestones" unique_id=1954643157 instance=ExtResource("46_st0p2")]
+position = Vector2(15453.75, 4722.5)
+grave_name = "Albert Hart"
+grave_dates = "1423 - 1446"
+grave_inscription = "In Faustine's care."
+grave_row = 7
+
+[node name="HatGrave2" parent="Map/Graveyard/Grounds/Graphics/Gravestones" unique_id=1534935909 instance=ExtResource("46_st0p2")]
+position = Vector2(15157.5, 6356.2495)
+grave_name = "Piers Mason"
+grave_dates = "1385 - 1417"
+grave_inscription = "A beloved father and husband."
+grave_row = 10
+
+[node name="CrossGrave2" parent="Map/Graveyard/Grounds/Graphics/Gravestones" unique_id=826094563 instance=ExtResource("44_ttmum")]
+position = Vector2(14855, 3216.2495)
+grave_name = "Briar Green"
+grave_dates = "1442 - 1442"
+grave_inscription = "Born sleeping."
+grave_row = 5
+
+[node name="ThinHatGrave" parent="Map/Graveyard/Grounds/Graphics/Gravestones" unique_id=1284485235 instance=ExtResource("51_ry740")]
+position = Vector2(14322.5, 2907.4998)
+grave_name = "Rose Green"
+grave_dates = "1425 - 1442"
+grave_inscription = "Tragically lost."
+grave_row = 5
+
+[node name="HatGrave4" parent="Map/Graveyard/Grounds/Graphics/Gravestones" unique_id=1378809980 instance=ExtResource("46_st0p2")]
+position = Vector2(13607.5, 3067.4998)
+grave_name = "Gavin Green"
+grave_dates = "1395 - 1433"
+grave_inscription = "In Faustine's care."
+grave_row = 6
+
+[node name="FancyGrave" parent="Map/Graveyard/Grounds/Graphics/Gravestones" unique_id=1387051175 instance=ExtResource("50_k4cmf")]
+position = Vector2(14100, 3344.9995)
+grave_name = "Regina Green"
+grave_dates = "1401 - 1432"
+grave_inscription = "In Faustine may we prosper."
+grave_row = 6
+
+[node name="LargeRectGrave2" parent="Map/Graveyard/Grounds/Graphics/Gravestones" unique_id=368529730 instance=ExtResource("43_yabqj")]
+position = Vector2(14937.5, 4419.9995)
+grave_name = "Miriam Hart"
+grave_dates = "1424 - 1450"
+grave_inscription = "In worship, we live forever."
+grave_row = 7
+
+[node name="CrossGrave3" parent="Map/Graveyard/Grounds/Graphics/Gravestones" unique_id=2028658754 instance=ExtResource("44_ttmum")]
+position = Vector2(14641.25, 6057.4995)
+grave_name = "Helena Bates"
+grave_dates = "1380 - 1415"
+grave_inscription = "In worship, we live forever."
+grave_row = 10
+
+[node name="FancyGrave2" parent="Map/Graveyard/Grounds/Graphics/Gravestones" unique_id=794499677 instance=ExtResource("50_k4cmf")]
+position = Vector2(15336.25, 5846.2495)
+grave_name = "Gregory Bates "
+grave_dates = "1342 - 1372"
+grave_inscription = "In Faustine's care."
+grave_row = 9
+
+[node name="SmallRectGrave2" parent="Map/Graveyard/Grounds/Graphics/Gravestones" unique_id=614954336 instance=ExtResource("42_qegdi")]
+position = Vector2(15882.5, 6213.7495)
+grave_name = "Amelia Bates"
+grave_dates = "1344 - 1371"
+grave_inscription = "In Faustine may we prosper."
+grave_row = 9
+
+[node name="RoundGrave2" parent="Map/Graveyard/Grounds/Graphics/Gravestones" unique_id=690430354 instance=ExtResource("47_jkr68")]
+position = Vector2(13873.75, 3829.9995)
+grave_name = "Emmeline Hart"
+grave_dates = "1408 - 1429"
+grave_inscription = "In worship, we live forever."
+grave_row = 7
 
 [node name="Buildings" type="Node2D" parent="Map/Graveyard/Grounds/Graphics" unique_id=957675052]
 
@@ -1170,11 +1273,6 @@ shape = SubResource("SegmentShape2D_ywckj")
 
 [node name="Objects" type="Node2D" parent="Map/Graveyard/Grounds" unique_id=1183634035]
 
-[node name="RoundGrave" parent="Map/Graveyard/Grounds/Objects" unique_id=1762020382 instance=ExtResource("47_jkr68")]
-position = Vector2(19102.5, 5131.2495)
-grave_row = 4
-room_z_index = 0
-
 [node name="Events" type="Node2D" parent="Map/Graveyard/Grounds" unique_id=1657358014]
 
 [node name="ToChurch" parent="Map/Graveyard/Grounds/Events" unique_id=2081750918 node_paths=PackedStringArray("destination_room", "nun") instance=ExtResource("16_4dod6")]
@@ -1194,6 +1292,487 @@ compatible_vessels = {
 [node name="CollisionShape2D" parent="Map/Graveyard/Grounds/Events/ToChurch" index="0" unique_id=18997285]
 position = Vector2(-3.0768764, -21.538464)
 shape = SubResource("CircleShape2D_v2gm8")
+
+[node name="RoundGrave" parent="Map/Graveyard/Grounds" unique_id=1170488017 instance=ExtResource("47_jkr68")]
+position = Vector2(17460, 5912.5)
+grave_name = "Arne Heath"
+grave_dates = "1370 - 1405"
+grave_inscription = "Loving father and husband."
+grave_row = 7
+
+[node name="SmallRectGrave" parent="Map/Graveyard/Grounds" unique_id=2099409939 instance=ExtResource("42_qegdi")]
+position = Vector2(16983.75, 5631.25)
+grave_name = "Dahlia Heath"
+grave_dates = "1374 - 1406"
+grave_inscription = "Mother, Wife, and faithful worshipper of Goddess Faustine."
+grave_row = 7
+
+[node name="TwinGraves" parent="Map/Graveyard/Grounds" unique_id=1104499255 instance=ExtResource("49_ywckj")]
+position = Vector2(16492.5, 5280)
+grave_name = "Frederick and Hilary Heath"
+grave_dates = "1390 - 1427 and 1392 - 1422"
+grave_inscription = "In Faustine's care."
+grave_row = 7
+
+[node name="FancyGrave" parent="Map/Graveyard/Grounds" unique_id=1019668986 instance=ExtResource("50_k4cmf")]
+position = Vector2(15947.5, 4994.9995)
+grave_name = "Lawrence Heath"
+grave_dates = "1392 - 1417"
+grave_inscription = "In Faustine may we prosper."
+grave_row = 7
+
+[node name="HatGrave" parent="Map/Graveyard/Grounds" unique_id=571817724 instance=ExtResource("46_st0p2")]
+position = Vector2(13391.25, 5911.25)
+grave_name = "Thomas Heath"
+grave_dates = "1410 - 1447"
+grave_row = 11
+
+[node name="TwinGraves2" parent="Map/Graveyard/Grounds" unique_id=1745222572 instance=ExtResource("49_ywckj")]
+position = Vector2(15696.25, 6617.4995)
+grave_name = "Iris and Robert Baker"
+grave_dates = "1420 - 1447 and 1419 - 1447"
+grave_row = 10
+
+[node name="RoundGrave3" parent="Map/Graveyard/Grounds" unique_id=1683101678 instance=ExtResource("47_jkr68")]
+position = Vector2(20521.248, 3697.4995)
+scale = Vector2(1.2499999, 1.2499999)
+grave_name = "Ruth Hart"
+grave_dates = "1425 - 1447"
+grave_inscription = "A devout follower of Goddess Faustine."
+grave_row = 1
+
+[node name="RoundGrave2" parent="Map/Graveyard/Grounds" unique_id=2145797333 instance=ExtResource("47_jkr68")]
+position = Vector2(15400, 7099.9995)
+grave_name = "Peter Todd"
+grave_dates = "1412 - 1447"
+grave_row = 11
+
+[node name="TwinGraves3" parent="Map/Graveyard/Grounds" unique_id=1534192156 instance=ExtResource("49_ywckj")]
+position = Vector2(14432.5, 6469.9995)
+grave_name = "William and Annora Roth"
+grave_dates = "1419 - 1447 and 1421 - 1447"
+grave_row = 11
+
+[node name="LargeRectGrave2" parent="Map/Graveyard/Grounds" unique_id=393854340 instance=ExtResource("43_yabqj")]
+position = Vector2(21446.25, 4233.7495)
+grave_name = "Aubrey Lovell"
+grave_dates = "1404 - 1447"
+grave_row = 1
+
+[node name="FancyGrave2" parent="Map/Graveyard/Grounds" unique_id=2144043901 instance=ExtResource("50_k4cmf")]
+position = Vector2(21022.5, 3952.4995)
+grave_name = "Willow Mullins"
+grave_dates = "1415 - 1447"
+grave_inscription = "A devout follower of Goddess Faustine."
+grave_row = 1
+
+[node name="FancyGrave3" parent="Map/Graveyard/Grounds" unique_id=149722359 instance=ExtResource("50_k4cmf")]
+position = Vector2(13882.5, 6184.9995)
+grave_name = "Walter Roth"
+grave_dates = "1421 - 1447"
+grave_row = 11
+
+[node name="LargeRectGrave3" parent="Map/Graveyard/Grounds" unique_id=172509091 instance=ExtResource("43_yabqj")]
+position = Vector2(20056.25, 3428.7495)
+grave_name = "Mira Austin"
+grave_dates = "1417 - 1447"
+grave_inscription = "Faustine's loyal servant."
+grave_row = 1
+
+[node name="SmallRectGrave2" parent="Map/Graveyard/Grounds" unique_id=893920983 instance=ExtResource("42_qegdi")]
+position = Vector2(13160, 6381.2495)
+grave_name = "Henry Austin"
+grave_dates = "1421 - 1447"
+grave_row = 12
+
+[node name="SmallRectGrave3" parent="Map/Graveyard/Grounds" unique_id=1568844943 instance=ExtResource("42_qegdi")]
+position = Vector2(12722.5, 6134.9995)
+grave_name = "Sibyl Austin"
+grave_dates = "1419 - 1447"
+grave_row = 12
+
+[node name="ThinHatGrave" parent="Map/Graveyard/Grounds" unique_id=169100801 instance=ExtResource("51_ry740")]
+position = Vector2(16170, 4560)
+grave_name = "Tristan Austin"
+grave_dates = "1415 - 1445"
+grave_inscription = "In worship, we live forever."
+grave_row = 6
+
+[node name="RoundGrave4" parent="Map/Graveyard/Grounds" unique_id=1351800738 instance=ExtResource("47_jkr68")]
+position = Vector2(14833.75, 5612.5)
+grave_name = "Daisy Todd"
+grave_dates = "1413 - 1444"
+grave_inscription = "In Faustine's care."
+grave_row = 9
+
+[node name="CrossGrave2" parent="Map/Graveyard/Grounds" unique_id=432565637 instance=ExtResource("44_ttmum")]
+position = Vector2(20325, 4166.25)
+grave_name = "Robin Lovell"
+grave_dates = "1405 - 1444"
+grave_inscription = "May she be rewarded for her devotion."
+grave_row = 2
+
+[node name="SmallRectGrave4" parent="Map/Graveyard/Grounds" unique_id=185445535 instance=ExtResource("42_qegdi")]
+position = Vector2(15221.25, 5188.75)
+grave_name = "Agnes Todd"
+grave_dates = "1413 - 1443"
+grave_inscription = "In Faustine may we prosper."
+grave_row = 8
+
+[node name="HatGrave2" parent="Map/Graveyard/Grounds" unique_id=1664663131 instance=ExtResource("46_st0p2")]
+position = Vector2(20840, 4463.7495)
+grave_name = "Frida Mason"
+grave_dates = "1426 - 1442"
+grave_inscription = "Faustine's loyal servant."
+grave_row = 2
+
+[node name="ThinHatGrave2" parent="Map/Graveyard/Grounds" unique_id=652180284 instance=ExtResource("51_ry740")]
+position = Vector2(19795, 3858.7495)
+grave_name = "Ursula Watson"
+grave_dates = "1404 - 1444"
+grave_inscription = "A devout follower of Goddess Faustine"
+grave_row = 2
+
+[node name="HatGrave3" parent="Map/Graveyard/Grounds" unique_id=1461674127 instance=ExtResource("46_st0p2")]
+position = Vector2(19077.5, 4016.2495)
+grave_name = "Elizabeth Young"
+grave_dates = "1423 - 1442"
+grave_inscription = "A loyal servant in life and in death."
+grave_row = 3
+
+[node name="FancyGrave5" parent="Map/Graveyard/Grounds" unique_id=852256605 instance=ExtResource("50_k4cmf")]
+position = Vector2(19571.25, 4288.7495)
+grave_name = "Emery Reid"
+grave_dates = "1385 - 1417"
+grave_inscription = "Faustine's loyal servant."
+grave_row = 3
+
+[node name="TwinGraves4" parent="Map/Graveyard/Grounds" unique_id=355399731 instance=ExtResource("49_ywckj")]
+position = Vector2(20117.5, 4578.7495)
+grave_name = "Catherine and Adelaide Bates"
+grave_dates = "1361 - 1398 and 1363 - 1386"
+grave_inscription = "May they be rewarded for their devotion."
+grave_row = 3
+
+[node name="LargeRectGrave" parent="Map/Graveyard/Grounds" unique_id=115527340 instance=ExtResource("43_yabqj")]
+position = Vector2(14585, 2482.5002)
+grave_name = "Edith Watson"
+grave_dates = "1405 - 1445"
+grave_inscription = "In Faustiine may we prosper."
+grave_row = 4
+
+[node name="RoundGrave5" parent="Map/Graveyard/Grounds" unique_id=1300455849 instance=ExtResource("47_jkr68")]
+position = Vector2(15048.75, 2769.9998)
+grave_name = "Pascal Watson"
+grave_dates = "1406 - 1443"
+grave_inscription = "In Faustine's care."
+grave_row = 4
+
+[node name="FancyGrave6" parent="Map/Graveyard/Grounds" unique_id=1655531478 instance=ExtResource("50_k4cmf")]
+position = Vector2(15552.5, 3003.7498)
+grave_name = "Faye Watson"
+grave_dates = "1406 - 1434"
+grave_inscription = "In Faustine may we prosper."
+grave_row = 4
+
+[node name="TwinGraves5" parent="Map/Graveyard/Grounds" unique_id=1959819160 instance=ExtResource("49_ywckj")]
+position = Vector2(14646.25, 3627.4995)
+grave_name = "Harper and Jordan Hart"
+grave_dates = "1403 - 1431 and 1407 - 1431"
+grave_inscription = "In Faustine's care."
+grave_row = 6
+
+[node name="SmallRectGrave6" parent="Map/Graveyard/Grounds" unique_id=2033482252 instance=ExtResource("42_qegdi")]
+position = Vector2(13375, 3537.4995)
+grave_name = "Esther Hart"
+grave_dates = "1423 - 1430"
+grave_inscription = "In worship, we live forever."
+grave_row = 7
+
+[node name="FancyGrave4" parent="Map/Graveyard/Grounds" unique_id=467378689 instance=ExtResource("50_k4cmf")]
+position = Vector2(14688.75, 4822.4995)
+grave_name = "Adrian Todd"
+grave_dates = "1392 - 1421"
+grave_inscription = "In Faustine's care."
+grave_row = 8
+
+[node name="LargeRectGrave4" parent="Map/Graveyard/Grounds" unique_id=7530612 instance=ExtResource("43_yabqj")]
+position = Vector2(14370, 5327.5)
+grave_name = "Aria Todd"
+grave_dates = "1395 - 1423"
+grave_inscription = "In Faustine may we prosper."
+grave_row = 9
+
+[node name="HatGrave4" parent="Map/Graveyard/Grounds" unique_id=1934621304 instance=ExtResource("46_st0p2")]
+position = Vector2(17217.5, 5166.25)
+grave_name = "Marion Baker"
+grave_dates = "1421 - 1444"
+grave_inscription = "In worship, we live forever."
+grave_row = 6
+
+[node name="TwinGraves6" parent="Map/Graveyard/Grounds" unique_id=973175632 instance=ExtResource("49_ywckj")]
+position = Vector2(17758.75, 5428.75)
+grave_name = "Edward and Evelyn Baker"
+grave_dates = "1400 - 1430 and 1402 - 1436"
+grave_inscription = "In worship, we live forever."
+grave_row = 6
+
+[node name="TwinGraves7" parent="Map/Graveyard/Grounds" unique_id=204194637 instance=ExtResource("49_ywckj")]
+position = Vector2(15910, 3778.7495)
+grave_name = "Serena and Harold Watson"
+grave_dates = "1388 - 1408 and 1387 - 1419"
+grave_inscription = "In worship, we live forever."
+grave_row = 5
+
+[node name="SmallRectGrave7" parent="Map/Graveyard/Grounds" unique_id=1562118122 instance=ExtResource("42_qegdi")]
+position = Vector2(15136.25, 3976.2495)
+grave_name = "Theodore Austin"
+grave_dates = "1402 - 1440"
+grave_inscription = "In Faustine may we prosper."
+grave_row = 6
+
+[node name="RoundGrave6" parent="Map/Graveyard/Grounds" unique_id=2052114841 instance=ExtResource("47_jkr68")]
+position = Vector2(15613.75, 4256.2495)
+grave_name = "Margaret Austin"
+grave_dates = "1400 - 1431"
+grave_inscription = "In Faustine's care."
+grave_row = 6
+
+[node name="CrossGrave" parent="Map/Graveyard/Grounds" unique_id=25339124 instance=ExtResource("44_ttmum")]
+position = Vector2(16701.25, 4868.7495)
+grave_name = "Matilda Austin"
+grave_dates = "1415 - 1426"
+grave_inscription = "In worship, we live forever."
+grave_row = 6
+
+[node name="RoundGrave7" parent="Map/Graveyard/Grounds" unique_id=403881756 instance=ExtResource("47_jkr68")]
+position = Vector2(13555, 5447.5)
+grave_name = "Harold Lovell"
+grave_dates = "1385 - 1420"
+grave_inscription = "In Faustine's care."
+grave_row = 10
+
+[node name="ThinHatGrave3" parent="Map/Graveyard/Grounds" unique_id=906601374 instance=ExtResource("51_ry740")]
+position = Vector2(14107.5, 5748.7495)
+grave_name = "Rachel Lovell"
+grave_dates = "1388 - 1422"
+grave_inscription = "In Faustine may we prosper"
+grave_row = 10
+
+[node name="CrossGrave3" parent="Map/Graveyard/Grounds" unique_id=55358839 instance=ExtResource("44_ttmum")]
+position = Vector2(16403.75, 6506.2495)
+grave_name = "Edmund Bates"
+grave_dates = "1363 - 1388"
+grave_inscription = "In worship, we live forever."
+grave_row = 9
+
+[node name="LargeRectGrave5" parent="Map/Graveyard/Grounds" unique_id=93016906 instance=ExtResource("43_yabqj")]
+position = Vector2(16782.5, 6069.9995)
+grave_name = "Wynn Bates"
+grave_dates = "1380 - 1415"
+grave_inscription = "In Faustine's care."
+grave_row = 8
+
+[node name="RoundGrave8" parent="Map/Graveyard/Grounds" unique_id=563514479 instance=ExtResource("47_jkr68")]
+position = Vector2(15722.5, 5486.25)
+grave_name = "Arthur Maxwell"
+grave_dates = "1402 - 1439"
+grave_inscription = "In Faustine's care"
+grave_row = 8
+
+[node name="CrossGrave4" parent="Map/Graveyard/Grounds" unique_id=683049217 instance=ExtResource("44_ttmum")]
+position = Vector2(16261.249, 5766.2495)
+grave_name = "Eleanor Maxwell"
+grave_dates = "1404 - 1436"
+grave_inscription = "In Faustine may we prosper."
+grave_row = 8
+
+[node name="HatGrave5" parent="Map/Graveyard/Grounds" unique_id=1035783808 instance=ExtResource("46_st0p2")]
+position = Vector2(15368.75, 3509.9995)
+grave_inscription = "It's blank"
+grave_row = 5
+
+[node name="SmallRectGrave5" parent="Map/Graveyard/Grounds" unique_id=537116332 instance=ExtResource("42_qegdi")]
+position = Vector2(16092.5, 3371.2495)
+grave_name = "Bernard Young"
+grave_dates = "1405 - 1439"
+grave_inscription = "In Faustine may we prosper."
+grave_row = 4
+
+[node name="CrossGrave5" parent="Map/Graveyard/Grounds" unique_id=824592680 instance=ExtResource("44_ttmum")]
+position = Vector2(16616.25, 3662.4995)
+grave_name = "Stephen Young"
+grave_dates = "1408 - 1441"
+grave_inscription = "In Faustine's care."
+grave_row = 4
+
+[node name="HatGrave6" parent="Map/Graveyard/Grounds" unique_id=1865143833 instance=ExtResource("46_st0p2")]
+position = Vector2(17091.25, 3939.9995)
+grave_name = "Genevieve Young"
+grave_dates = "1422 - 1442"
+grave_inscription = "A beautiful wife and mother."
+grave_row = 4
+
+[node name="LargeRectGrave6" parent="Map/Graveyard/Grounds" unique_id=1179198905 instance=ExtResource("43_yabqj")]
+position = Vector2(16430, 4133.7495)
+grave_name = "Cecil Roth"
+grave_dates = "1400 - 1430"
+grave_inscription = "In Faustine's care."
+grave_row = 5
+
+[node name="RoundGrave9" parent="Map/Graveyard/Grounds" unique_id=735861014 instance=ExtResource("47_jkr68")]
+position = Vector2(16895, 4422.4995)
+grave_name = "Lily Roth"
+grave_dates = "1402 - 1436"
+grave_inscription = "In worship, we live forever."
+grave_row = 5
+
+[node name="FancyGrave7" parent="Map/Graveyard/Grounds" unique_id=1041802660 instance=ExtResource("50_k4cmf")]
+position = Vector2(17397.5, 4657.4995)
+grave_name = "Phillip Mullins"
+grave_dates = "1402 - 1437"
+grave_inscription = "In Faustine's care."
+grave_row = 5
+
+[node name="SmallRectGrave8" parent="Map/Graveyard/Grounds" unique_id=1027852322 instance=ExtResource("42_qegdi")]
+position = Vector2(17942.5, 5022.4995)
+grave_name = "Richard Mullins"
+grave_dates = "1399 - 1440"
+grave_inscription = "In Faustine may we prosper."
+grave_row = 5
+
+[node name="CrossGrave6" parent="Map/Graveyard/Grounds" unique_id=498811990 instance=ExtResource("44_ttmum")]
+position = Vector2(18461.248, 5316.2495)
+grave_name = "Joan Mullins"
+grave_dates = "1400 - 1440"
+grave_inscription = "In worship, we live forever."
+grave_row = 5
+
+[node name="RoundGrave10" parent="Map/Graveyard/Grounds" unique_id=1120671082 instance=ExtResource("47_jkr68")]
+position = Vector2(19100, 5131.25)
+grave_name = "Bertram Mullins"
+grave_dates = "1397 - 1430"
+grave_inscription = "In Faustine's care."
+grave_row = 4
+
+[node name="SmallRectGrave9" parent="Map/Graveyard/Grounds" unique_id=1409944006 instance=ExtResource("42_qegdi")]
+position = Vector2(18621.25, 4848.7495)
+grave_name = "Francesca Mullins"
+grave_dates = "1399 - 1434"
+grave_inscription = "In Faustine may we prosper."
+grave_row = 4
+
+[node name="TwinGraves8" parent="Map/Graveyard/Grounds" unique_id=1231870000 instance=ExtResource("49_ywckj")]
+position = Vector2(18130, 4498.7495)
+grave_name = "Jasmine and Martin Mullins"
+grave_dates = "1380 - 1411 and 1380 - 1410"
+grave_inscription = "In worship, we live forever."
+grave_row = 4
+
+[node name="FancyGrave8" parent="Map/Graveyard/Grounds" unique_id=740082589 instance=ExtResource("50_k4cmf")]
+position = Vector2(17585, 4213.7495)
+grave_name = "Michael Maxwell"
+grave_dates = "1377 - 1407"
+grave_inscription = "In Faustine's care."
+grave_row = 4
+
+[node name="LargeRectGrave7" parent="Map/Graveyard/Grounds" unique_id=1565977776 instance=ExtResource("43_yabqj")]
+position = Vector2(16498.75, 1376.2499)
+grave_name = "Anika Reid"
+grave_dates = "1350 - 1397"
+grave_inscription = "In Faustine may we prosper"
+grave_row = 1
+
+[node name="RoundGrave11" parent="Map/Graveyard/Grounds" unique_id=1376053901 instance=ExtResource("47_jkr68")]
+position = Vector2(16966.25, 1669.9999)
+grave_name = "Geoffrey Reid"
+grave_dates = "1345 - 1388"
+grave_inscription = "In Faustine's care."
+grave_row = 1
+
+[node name="FancyGrave9" parent="Map/Graveyard/Grounds" unique_id=1072914404 instance=ExtResource("50_k4cmf")]
+position = Vector2(17466.25, 1899.9999)
+grave_name = "Percival Reid"
+grave_dates = "1367 - 1400"
+grave_inscription = "In worship, we live forever."
+grave_row = 1
+
+[node name="SmallRectGrave10" parent="Map/Graveyard/Grounds" unique_id=880091489 instance=ExtResource("42_qegdi")]
+position = Vector2(18008.75, 2263.7502)
+grave_name = "Cecilia Reid"
+grave_dates = "1369 - 1401"
+grave_inscription = "In Faustine's care."
+grave_row = 1
+
+[node name="TwinGraves9" parent="Map/Graveyard/Grounds" unique_id=111315291 instance=ExtResource("49_ywckj")]
+position = Vector2(17823.75, 2669.9998)
+grave_name = "Paul and Deirdre Reid"
+grave_dates = "1388 - 1424 and 1390 - 1424"
+grave_inscription = "In Faustine may we prosper."
+grave_row = 2
+
+[node name="HatGrave7" parent="Map/Graveyard/Grounds" unique_id=1299272457 instance=ExtResource("46_st0p2")]
+position = Vector2(17287.5, 2408.7502)
+grave_name = "Carolyne Reid"
+grave_dates = "1406 - 1440"
+grave_inscription = "In worship, we live forever."
+grave_row = 2
+
+[node name="CrossGrave7" parent="Map/Graveyard/Grounds" unique_id=647614751 instance=ExtResource("44_ttmum")]
+position = Vector2(16768.75, 2113.75)
+grave_name = "Freya Brown"
+grave_dates = "1380 - 1411"
+grave_inscription = "In Faustine's care."
+grave_row = 2
+
+[node name="ThinHatGrave4" parent="Map/Graveyard/Grounds" unique_id=1263971081 instance=ExtResource("51_ry740")]
+position = Vector2(16241.25, 1803.7499)
+grave_name = "Nigel Brown"
+grave_dates = "1380 - 1410"
+grave_inscription = "In worship, we live forever."
+grave_row = 2
+
+[node name="RoundGrave12" parent="Map/Graveyard/Grounds" unique_id=1524827092 instance=ExtResource("47_jkr68")]
+position = Vector2(17528.75, 3152.4998)
+grave_name = "Amina Brown"
+grave_dates = "1399 - 1434"
+grave_inscription = "In Faustine may we prosper."
+grave_row = 3
+
+[node name="SmallRectGrave11" parent="Map/Graveyard/Grounds" unique_id=1917918665 instance=ExtResource("42_qegdi")]
+position = Vector2(17053.75, 2871.2498)
+grave_name = "Marvin Brown"
+grave_dates = "1397 - 1430"
+grave_inscription = "In Faustine's care."
+grave_row = 3
+
+[node name="TwinGraves10" parent="Map/Graveyard/Grounds" unique_id=1146661325 instance=ExtResource("49_ywckj")]
+position = Vector2(16561.25, 2521.25)
+grave_name = "Christabelle and Alfred Brown"
+grave_dates = "1400 - 1440 and 1399 - 1440"
+grave_inscription = "In Faustine may we prosper."
+grave_row = 3
+
+[node name="FancyGrave10" parent="Map/Graveyard/Grounds" unique_id=1301340086 instance=ExtResource("50_k4cmf")]
+position = Vector2(16016.25, 2236.25)
+grave_name = "Irma Brown"
+grave_dates = "1402 - 1437"
+grave_inscription = "In worship, we live forever."
+grave_row = 3
+
+[node name="HatGrave8" parent="Map/Graveyard/Grounds" unique_id=1853647085 instance=ExtResource("46_st0p2")]
+position = Vector2(15520, 1966.2499)
+grave_name = "Constance Brown"
+grave_dates = "1415 - 1447"
+grave_inscription = "In Faustine may we prosper."
+grave_row = 3
+
+[node name="CrossGrave8" parent="Map/Graveyard/Grounds" unique_id=2145068510 instance=ExtResource("44_ttmum")]
+position = Vector2(14413.75, 4113.7495)
+grave_name = "Finn Hart"
+grave_dates = "1406 - 1433"
+grave_inscription = "In Faustine's care."
+grave_row = 7
 
 [node name="ShackInterior" type="Node2D" parent="Map/Graveyard" unique_id=1315983624]
 script = ExtResource("3_7ig6f")
@@ -1351,12 +1930,10 @@ patrol_route = [Vector2(16264, 4030.0002)]
 [node name="Projectiles" type="Node2D" parent="." unique_id=458874184]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1648048668]
-visible = false
 position = Vector2(85, 10)
 navigation_polygon = SubResource("NavigationPolygon_srh6f")
 
 [node name="graveyard nav" type="NavigationRegion2D" parent="." unique_id=2146172451]
-visible = false
 position = Vector2(3003, 1514)
 scale = Vector2(0.8, 0.8)
 navigation_polygon = SubResource("NavigationPolygon_ubx2l")
