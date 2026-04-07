@@ -1096,6 +1096,8 @@ texture = ExtResource("47_73cm8")
 position = Vector2(18786, 2944)
 texture = ExtResource("48_jkr68")
 
+[node name="Church Door" type="Sprite2D" parent="Map/Graveyard/Grounds/Graphics/Buildings" unique_id=2054021578]
+
 [node name="Leafs" type="Node2D" parent="Map/Graveyard/Grounds/Graphics" unique_id=679323089]
 
 [node name="Leafpile" type="Sprite2D" parent="Map/Graveyard/Grounds/Graphics/Leafs" unique_id=172640330]
