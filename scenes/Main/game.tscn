@@ -42,21 +42,21 @@
 [ext_resource type="Texture2D" uid="uid://bymrpc4ju6fka" path="res://assets/Graphics/Environments/Church/Chapel/chapel_floor_2.png" id="35_ttmum"]
 [ext_resource type="Texture2D" uid="uid://clk6wol4qpl6r" path="res://assets/Graphics/Environments/Church/Chapel/chapel_leftWall_doorOpen.png" id="37_st0p2"]
 [ext_resource type="PackedScene" uid="uid://c7rddg2fnhrra" path="res://scenes/Characters/Rat/rat.tscn" id="38_x2ju3"]
-[ext_resource type="Texture2D" uid="uid://cwraepp60q1el" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_background_p2_base.png" id="39_c5hcr"]
+[ext_resource type="Texture2D" uid="uid://bdaou07vhnfl0" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_bgd_p2_base.png" id="39_c5hcr"]
 [ext_resource type="PackedScene" uid="uid://dg36a566fbwjr" path="res://scenes/Characters/Nun/nun.tscn" id="39_x2ju3"]
-[ext_resource type="Texture2D" uid="uid://sotqpbdoykx" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_background_p2_lighting.png" id="40_6gu5k"]
+[ext_resource type="Texture2D" uid="uid://6imcxjgymj31" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_bgd_p2_lighting.png" id="40_6gu5k"]
 [ext_resource type="PackedScene" uid="uid://fqp8x2ofqjst" path="res://scenes/Level/Props/bench.tscn" id="40_k765p"]
 [ext_resource type="Texture2D" uid="uid://4gd5txw3gw84" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_bgd_p2_shadows.png" id="41_bf74x"]
 [ext_resource type="Texture2D" uid="uid://cemiy2w74icx5" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_p2_base.png" id="42_bv45s"]
-[ext_resource type="Texture2D" uid="uid://bcyala5siptme" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_background_p1_base.png" id="42_jcrwi"]
+[ext_resource type="Texture2D" uid="uid://df185pkx8ts7u" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_bgd_p1_base.png" id="42_jcrwi"]
 [ext_resource type="PackedScene" uid="uid://cool8pcf7de6g" path="res://scenes/Level/Props/Graves/SmallRectGrave.tscn" id="42_qegdi"]
-[ext_resource type="Texture2D" uid="uid://t6jsdpaplcky" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_background_p1_lighting.png" id="43_2w7fw"]
+[ext_resource type="Texture2D" uid="uid://bvhbvnvw2fb1q" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_bgd_p1_lighting.png" id="43_2w7fw"]
 [ext_resource type="PackedScene" uid="uid://b8t0hjly3p28m" path="res://scenes/Level/Props/Graves/LargeRectGrave.tscn" id="43_yabqj"]
-[ext_resource type="Texture2D" uid="uid://5y3r1tjec3um" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_background_p1_shadows.png" id="44_jw632"]
+[ext_resource type="Texture2D" uid="uid://bsqhiln3031qy" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_bgd_p1_shadows.png" id="44_jw632"]
 [ext_resource type="PackedScene" uid="uid://djqa2qq37mj02" path="res://scenes/Level/Props/Graves/CrossGrave.tscn" id="44_ttmum"]
 [ext_resource type="Texture2D" uid="uid://de7omamocfs4j" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_p1_grassTexture.png" id="44_ubx2l"]
 [ext_resource type="Texture2D" uid="uid://0oxvn8voxxfy" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_p2_grassTexture.png" id="45_8u8kr"]
-[ext_resource type="Texture2D" uid="uid://b7a646sa5s0rw" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_p1_ base.png" id="46_kxak1"]
+[ext_resource type="Texture2D" uid="uid://ct1ct1kiqyeik" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_p1_base.png" id="46_kxak1"]
 [ext_resource type="PackedScene" uid="uid://dhgolkh1vewl0" path="res://scenes/Level/Props/Graves/HatGrave.tscn" id="46_st0p2"]
 [ext_resource type="Texture2D" uid="uid://crvaqc1k2lw7b" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_p1_graves.png" id="46_wy1rp"]
 [ext_resource type="Texture2D" uid="uid://d0yx6jlitcc3m" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_p1_topCornerGrave.png" id="47_73cm8"]
@@ -79,7 +79,7 @@
 [ext_resource type="Texture2D" uid="uid://d4djsavqccbyl" path="res://assets/Graphics/Environments/Graveyard/Grounds/Leaves/Light.PNG" id="54_hbikf"]
 [ext_resource type="Texture2D" uid="uid://ctd77813a6c18" path="res://assets/Graphics/Environments/Graveyard/Grounds/Leaves/Shadow.PNG" id="55_vamxk"]
 [ext_resource type="Script" uid="uid://c84qyu8e3jj70" path="res://scenes/UI/pause_menu.gd" id="60_srh6f"]
-[ext_resource type="Script" uid="uid://b3uonhf2rgqku" path="res://scenes/Generic/igniteLeaf.gd" id="65_2by47"]
+[ext_resource type="Script" uid="uid://b3uonhf2rgqku" path="res://scenes/Level/Events/igniteLeaf.gd" id="65_2by47"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_dgtgp"]
 a = Vector2(411.34595, -237.5)
@@ -1107,12 +1107,10 @@ texture = ExtResource("52_ndhd5")
 script = ExtResource("53_v874h")
 
 [node name="Light" type="Sprite2D" parent="Map/Graveyard/Grounds/Graphics/Leafs/Leafpile" unique_id=7266739]
-visible = false
 position = Vector2(227.49998, 66.250305)
 texture = ExtResource("54_hbikf")
 
 [node name="Shadow" type="Sprite2D" parent="Map/Graveyard/Grounds/Graphics/Leafs/Leafpile" unique_id=1060837838]
-visible = false
 position = Vector2(-632.49994, -881.24963)
 texture = ExtResource("55_vamxk")
 
@@ -2105,7 +2103,6 @@ navigation_polygon = SubResource("NavigationPolygon_ubx2l")
 
 [node name="UI Layer" type="CanvasLayer" parent="." unique_id=1325080115]
 layer = 2
-visible = false
 
 [node name="UI" type="Control" parent="UI Layer" unique_id=1444161011]
 layout_mode = 3
@@ -2123,7 +2120,6 @@ text = "15/15 HP"
 label_settings = SubResource("LabelSettings_em1bs")
 
 [node name="Dialog" parent="UI Layer" unique_id=156659926 instance=ExtResource("32_x53fh")]
-visible = false
 typing_speed = 75.0
 
 [node name="PauseMenu" type="Control" parent="UI Layer" unique_id=1059181712]

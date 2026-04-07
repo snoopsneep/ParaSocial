@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://qeeqyl4ctwkp"]
+
+[ext_resource type="PackedScene" uid="uid://dvm0l187x12a4" path="res://scenes/Generic/event.tscn" id="1_3pl4v"]
+[ext_resource type="Script" uid="uid://8mg8oec6cm2r" path="res://scenes/Generic/note.gd" id="2_br203"]
+[ext_resource type="Script" uid="uid://cs8kccqb2huxb" path="res://resources/page.gd" id="3_br203"]
+[ext_resource type="Texture2D" uid="uid://dvrq76od1gxlo" path="res://assets/Graphics/Sprites/Objects/Church/Paper.PNG" id="4_gj55u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r0c6t"]
+radius = 62.072536
+
+[node name="Note" unique_id=753610390 instance=ExtResource("1_3pl4v")]
+script = ExtResource("2_br203")
+pages = Array[ExtResource("3_br203")]([])
+compatible_vessels = {
+&"Gravedigger": true,
+&"Nun": true,
+&"Rat": false,
+&"Statue": true
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=549788469]
+position = Vector2(29, 10)
+texture = ExtResource("4_gj55u")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=18997285]
+shape = SubResource("CircleShape2D_r0c6t")

@@ -12,6 +12,8 @@ signal selected(choice)
 # true if waiting for player to make a choice (so advance_text doesn't break
 # choice selections)
 var waiting_choice: bool = false
+# true if there's a note on screen
+var viewing_note: bool = false
 
 # an array that holds the current lines of dialog as Strings,
 # forced to forgo strict typing for reasons i don't quite understand
@@ -26,9 +28,15 @@ var _typing_time: float = 0
 @export var typing_speed: float = 1.5
 
 # obligatory handy @onready variables
+@onready var _text_box = $TextBox
 @onready var _speaker: Label = $TextBox/BoxContainer/Name
 @onready var _dialog: RichTextLabel = $TextBox/BoxContainer/Dialog
 @onready var _choice_buttons: Array[Node] = $TextBox/BoxContainer/Choices.get_children()
+@onready var _cg: TextureRect = $CG
+@onready var _note = $Note
+@onready var _note_date = $Note/VBoxContainer/Date
+@onready var _note_text = $Note/VBoxContainer/NoteText
+@onready var _note_signature = $Note/VBoxContainer/Signature
 
 func _input(_event: InputEvent):
 	if (Global.player_disabled # if player control is disabled
@@ -53,6 +61,7 @@ func next_line():
 	_dialog.visible_characters = 0
 	# opens the dialog box, making it actually visible
 	open()
+	show_box()
 	# while loop that increases the visible characters until they're all visible
 	while _dialog.visible_characters < _dialog.get_total_character_count():
 		# typing time adds delta time every frame, effectively storing how long the typing has gone on
@@ -127,18 +136,13 @@ func display_choices(line: String, choices) -> int:
 			_choice_buttons[i].visible = false
 	return await selected
 
-## Opens the dialog box, making it visible.
-func open():
-	visible = true
-
-## Closes the dialog box, hiding it.
-func close():
-	visible = false
-
 # advance the text, skipping the animation or closing the box.
 func advance_text():
 	# if the animation isn't done yet
-	if _dialog.visible_characters < _dialog.get_total_character_count():
+	if viewing_note:
+		close()
+		finished.emit()
+	elif _dialog.visible_characters < _dialog.get_total_character_count():
 		# skips the typing animation
 		_dialog.visible_characters = _dialog.get_total_character_count()
 	elif !waiting_choice: #if the animation's already done,
@@ -153,6 +157,87 @@ func advance_text():
 			close()
 			# and emit the finished signal
 			finished.emit()
+
+## Opens the dialog, making it visible.
+func open():
+	visible = true
+	Global.can_pause = false
+	show_box()
+
+## Closes the dialog, hiding it.
+func close():
+	visible = false
+	Global.can_pause = false
+
+func show_box():
+	_text_box.visible = true
+
+func hide_box():
+	_text_box.visible = false
+
+func show_cg(new_img: Texture2D = null):
+	if new_img != null:
+		_cg.texture = new_img
+	get_tree().create_tween().tween_property(_cg, "modulate", Color(1,1,1,1), 0.5)
+
+func hide_cg():
+	get_tree().create_tween().tween_property(_cg, "modulate", Color(1,1,1,0), 0.5)
+
+func show_note(new_page: Page) -> Signal:
+	var new_date = new_page.date
+	var new_text = new_page.text
+	var new_sig = new_page.signature
+
+	open()
+	hide_box()
+
+	if new_date == "":
+		_note_date.visible = false
+	else:
+		_note_date.visible = true
+		_note_date.text = new_date
+
+	_note_text.text = new_text
+
+	if new_sig == "":
+		_note_signature.visible = false
+	else:
+		_note_signature.visible = true
+		_note_signature.text = "- " + new_sig
+
+	_note.visible = true
+	viewing_note = true
+	return finished
+
+func flip_note(new_page: Page) -> Signal:
+	var new_date = new_page.date
+	var new_text = new_page.text
+	var new_sig = new_page.signature
+
+	open()
+	hide_box()
+
+	if new_date == "":
+		_note_date.visible = false
+	else:
+		_note_date.visible = true
+		_note_date.text = new_date
+
+	_note_text.text = new_text
+
+	if new_sig == "":
+		_note_signature.visible = false
+	else:
+		_note_signature.visible = true
+		_note_signature.text = "- " + new_sig
+
+	return finished
+
+func hide_note():
+	open()
+	hide_box()
+	_note.visible = false
+	viewing_note = false
 
 func _on_option_pressed(index: int):
 	close()

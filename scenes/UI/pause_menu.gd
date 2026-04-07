@@ -1,7 +1,7 @@
 extends Control
 
 func _input(event):
-	if event.is_action_pressed("Pause"):
+	if event.is_action_pressed("Pause") and Global.can_pause:
 		toggle_pause()
 
 func toggle_pause():

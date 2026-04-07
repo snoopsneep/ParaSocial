@@ -15,6 +15,9 @@ var game_over_title: String = ""
 var game_over_text: String = ""
 var game_over_button: bool = false
 
+# if true, the player can currently pause
+var can_pause: bool = true
+
 #region progress flags
 # if true, the potato has been collected
 var got_potato: bool = false

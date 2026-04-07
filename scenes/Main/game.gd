@@ -51,16 +51,7 @@ func _ready():
 # fps is. might lag the game - i don't actually know the difference between
 # _process and _physics_process is, truthfully) -Ian
 func _physics_process(_delta):
-	if Input.is_action_just_pressed("Debug Action 1"):
-		if $Player/GameCamera.zoom == Vector2(0.75,0.75):
-			$Player/GameCamera.zoom = Vector2(0.5,0.5)
-		elif $Player/GameCamera.zoom == Vector2(0.5,0.5):
-			$Player/GameCamera.zoom = Vector2(0.25,0.25)
-		elif $Player/GameCamera.zoom == Vector2(0.25,0.25):
-			$Player/GameCamera.zoom = Vector2(0.75,0.75)
-	elif Input.is_action_just_pressed("Debug Action 2"):
-		$Map/Graveyard/ShackExterior/Colliders/Door/CollisionShape2D.disabled = true
-		$Map/Graveyard/ShackExterior/Graphics/SHACK/Door.visible = false
+	pass
 
 ## Spawns a new parasite at location [param source] with z_index [param z_ind].
 ##

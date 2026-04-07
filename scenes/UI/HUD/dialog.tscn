@@ -2,7 +2,10 @@
 
 [ext_resource type="Theme" uid="uid://dlj40uugp24a7" path="res://resources/dialog/dialog.tres" id="1_yo5md"]
 [ext_resource type="Script" uid="uid://bnycp4a5bxi3b" path="res://scenes/UI/HUD/dialog.gd" id="2_cd52i"]
+[ext_resource type="Texture2D" uid="uid://cewoj3lhh6b44" path="res://assets/Graphics/Miscellaneous/finCG1.png" id="3_2el7u"]
 [ext_resource type="Texture2D" uid="uid://eo7go2opwv7a" path="res://assets/Graphics/UI/Miscellaneous/textbox.png" id="3_aij1x"]
+[ext_resource type="Texture2D" uid="uid://drjfehb8urbbv" path="res://assets/Graphics/UI/Miscellaneous/note.png" id="4_tc4ve"]
+[ext_resource type="FontFile" uid="uid://ckwxxn4psd7lh" path="res://assets/Graphics/Fonts/TexgyrechorusMediumitalic-XJ2Z.otf" id="5_tc4ve"]
 
 [node name="Dialog" type="Control" unique_id=156659926]
 process_mode = 3
@@ -17,14 +20,78 @@ script = ExtResource("2_cd52i")
 typing_speed = 30.0
 
 [node name="CG" type="TextureRect" parent="." unique_id=609758950]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("3_2el7u")
+
+[node name="Note" type="TextureRect" parent="." unique_id=1738174689]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_tc4ve")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Note" unique_id=1051516154]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.08
+anchor_right = 0.65
+anchor_bottom = 0.92
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Date" type="RichTextLabel" parent="Note/VBoxContainer" unique_id=1020980167]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -6
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("5_tc4ve")
+theme_override_font_sizes/normal_font_size = 21
+text = "3/8/1447"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+
+[node name="NoteText" type="RichTextLabel" parent="Note/VBoxContainer" unique_id=1673608625]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -6
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("5_tc4ve")
+theme_override_font_sizes/normal_font_size = 21
+text = "	Regardless, my sisters and I got to work praying, urging Faustine to protect us and lend us Her generosity. As I kneeled before the statue though, even in the shelter of Her might, I couldn’t shake the feeling of great dread… I hope to hear no more of this."
+fit_content = true
+scroll_active = false
+
+[node name="Signature" type="RichTextLabel" parent="Note/VBoxContainer" unique_id=173284983]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -6
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("5_tc4ve")
+theme_override_font_sizes/normal_font_size = 21
+text = "- Sister Aubrey"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="TextBox" type="TextureRect" parent="." unique_id=589256151]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

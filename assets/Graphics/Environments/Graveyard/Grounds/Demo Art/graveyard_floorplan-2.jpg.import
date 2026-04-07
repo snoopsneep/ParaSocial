@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q3vholcrcfx5"
-path="res://.godot/imported/cemetery_p4.png-1785ea28f60ff67330cae7d90aba89c4.ctex"
+uid="uid://dap5e6kg4goun"
+path="res://.godot/imported/graveyard_floorplan-2.jpg-80521db92d53603b43d8cda70fd5705d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Graveyard/Grounds/cemetery_p4.png"
-dest_files=["res://.godot/imported/cemetery_p4.png-1785ea28f60ff67330cae7d90aba89c4.ctex"]
+source_file="res://assets/Graphics/Environments/Graveyard/Grounds/Demo Art/graveyard_floorplan-2.jpg"
+dest_files=["res://.godot/imported/graveyard_floorplan-2.jpg-80521db92d53603b43d8cda70fd5705d.ctex"]
 
 [params]
 

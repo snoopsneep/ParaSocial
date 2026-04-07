@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://8vwqmnh3qiee" path="res://scenes/Generic/event.gd" id="1_wkl86"]
 
 [node name="Event" type="Area2D" unique_id=753610390 groups=["Events"]]
+process_mode = 3
 collision_layer = 16
 script = ExtResource("1_wkl86")
 compatible_vessels = {

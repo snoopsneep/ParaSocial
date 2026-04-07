@@ -8,7 +8,5 @@ var fireTexture = load("res://assets/Graphics/Environments/Graveyard/Grounds/Lea
 func ignite():
 	leafLight.visible = true
 	leafShade.visible = true
-	
+
 	texture = fireTexture
-	
-	
