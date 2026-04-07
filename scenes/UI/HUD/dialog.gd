@@ -26,9 +26,9 @@ var _typing_time: float = 0
 @export var typing_speed: float = 1.5
 
 # obligatory handy @onready variables
-@onready var _speaker: Label = $Box/MarginContainer/VBoxContainer/Name
-@onready var _dialog: RichTextLabel = $Box/MarginContainer/VBoxContainer/Dialog
-@onready var _choice_buttons: Array[Node] = $Box/MarginContainer/Choices.get_children()
+@onready var _speaker: Label = $TextBox/BoxContainer/Name
+@onready var _dialog: RichTextLabel = $TextBox/BoxContainer/Dialog
+@onready var _choice_buttons: Array[Node] = $TextBox/BoxContainer/Choices.get_children()
 
 func _input(_event: InputEvent):
 	if (Global.player_disabled # if player control is disabled

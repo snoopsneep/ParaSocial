@@ -2,11 +2,12 @@
 
 [ext_resource type="Theme" uid="uid://dlj40uugp24a7" path="res://resources/dialog/dialog.tres" id="1_yo5md"]
 [ext_resource type="Script" uid="uid://bnycp4a5bxi3b" path="res://scenes/UI/HUD/dialog.gd" id="2_cd52i"]
+[ext_resource type="Texture2D" uid="uid://eo7go2opwv7a" path="res://assets/Graphics/UI/Miscellaneous/textbox.png" id="3_aij1x"]
 
 [node name="Dialog" type="Control" unique_id=156659926]
 process_mode = 3
 layout_mode = 3
-anchor_top = 0.667
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -15,82 +16,94 @@ theme = ExtResource("1_yo5md")
 script = ExtResource("2_cd52i")
 typing_speed = 30.0
 
-[node name="Box" type="Panel" parent="." unique_id=1469294604]
+[node name="CG" type="TextureRect" parent="." unique_id=609758950]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 2.0
-anchor_bottom = 2.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
 
-[node name="MarginContainer" type="Control" parent="Box" unique_id=1335651177]
+[node name="TextBox" type="TextureRect" parent="." unique_id=589256151]
 layout_mode = 1
-anchor_left = 0.08
-anchor_top = 0.15
-anchor_right = 0.92
-anchor_bottom = 0.85
-offset_top = 0.07199097
-offset_bottom = 0.072021484
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2, 2)
+texture = ExtResource("3_aij1x")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Box/MarginContainer" unique_id=1833866134]
+[node name="BoxContainer" type="Control" parent="TextBox" unique_id=1238274566]
+layout_mode = 1
+anchor_left = 0.035
+anchor_top = 0.7
+anchor_right = 0.965
+anchor_bottom = 0.975
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="TextBox/BoxContainer" unique_id=1623607900]
 layout_mode = 0
-offset_right = 1084.0
-offset_bottom = 167.0
-
-[node name="Name" type="Label" parent="Box/MarginContainer/VBoxContainer" unique_id=1034675762]
-layout_mode = 2
+offset_right = 1201.0
+offset_bottom = 61.0
 size_flags_vertical = 0
 text = "Narrator:"
 
-[node name="Dialog" type="RichTextLabel" parent="Box/MarginContainer/VBoxContainer" unique_id=22776981]
-layout_mode = 2
+[node name="Dialog" type="RichTextLabel" parent="TextBox/BoxContainer" unique_id=1200754925]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.4
+anchor_right = 1.0
+anchor_bottom = 1.0
 size_flags_vertical = 0
-text = "This is one of the text boxes in the game. It has quite a bit of text in it, because I'm testing how many lines of text I can display while still having the choices look good. Can I have a whole three lines? Will it still look okay??????"
+text = "This is one of the text boxes in the game. It has quite a bit of text in it, because I'm testing how many lines of text I can display while still having the choices look good. I don't really know what to write here, but I feel like there should be more text in this box."
 fit_content = true
 scroll_active = false
 shortcut_keys_enabled = false
 
-[node name="Choices" type="HBoxContainer" parent="Box/MarginContainer" unique_id=86805000]
-layout_mode = 0
-offset_top = 127.0
-offset_right = 1084.0
-offset_bottom = 167.0
+[node name="Choices" type="HBoxContainer" parent="TextBox/BoxContainer" unique_id=1936464676]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
 size_flags_vertical = 8
 
-[node name="Choice0" type="Button" parent="Box/MarginContainer/Choices" unique_id=2134836656]
+[node name="Choice0" type="Button" parent="TextBox/BoxContainer/Choices" unique_id=829259529]
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 38
 text = "Yes"
 
-[node name="Choice1" type="Button" parent="Box/MarginContainer/Choices" unique_id=235566731]
+[node name="Choice1" type="Button" parent="TextBox/BoxContainer/Choices" unique_id=260117784]
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 38
 text = "No"
 
-[node name="Choice2" type="Button" parent="Box/MarginContainer/Choices" unique_id=665934919]
+[node name="Choice2" type="Button" parent="TextBox/BoxContainer/Choices" unique_id=2125036886]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 38
 text = "123456789012345"
 
-[node name="Choice3" type="Button" parent="Box/MarginContainer/Choices" unique_id=687316779]
+[node name="Choice3" type="Button" parent="TextBox/BoxContainer/Choices" unique_id=339845372]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 38
 text = "123456789012345"
 
-[node name="Choice4" type="Button" parent="Box/MarginContainer/Choices" unique_id=2080605536]
+[node name="Choice4" type="Button" parent="TextBox/BoxContainer/Choices" unique_id=1185356364]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 38
 text = "123456789012345"
 
-[connection signal="pressed" from="Box/MarginContainer/Choices/Choice0" to="." method="_on_option_pressed" binds= [0]]
-[connection signal="pressed" from="Box/MarginContainer/Choices/Choice1" to="." method="_on_option_pressed" binds= [1]]
-[connection signal="pressed" from="Box/MarginContainer/Choices/Choice2" to="." method="_on_option_pressed" binds= [2]]
-[connection signal="pressed" from="Box/MarginContainer/Choices/Choice3" to="." method="_on_option_pressed" binds= [3]]
-[connection signal="pressed" from="Box/MarginContainer/Choices/Choice4" to="." method="_on_option_pressed" binds= [4]]
+[connection signal="pressed" from="TextBox/BoxContainer/Choices/Choice0" to="." method="_on_option_pressed" binds= [0]]
+[connection signal="pressed" from="TextBox/BoxContainer/Choices/Choice1" to="." method="_on_option_pressed" binds= [1]]
+[connection signal="pressed" from="TextBox/BoxContainer/Choices/Choice2" to="." method="_on_option_pressed" binds= [2]]

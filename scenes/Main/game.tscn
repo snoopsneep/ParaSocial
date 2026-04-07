@@ -685,7 +685,6 @@ position = Vector2(13.636364, 27.272728)
 shape = SubResource("CircleShape2D_rcjdb")
 
 [node name="Main Hall" type="Node2D" parent="Map/Church" unique_id=1643553789 node_paths=PackedStringArray("connected_rooms")]
-visible = false
 z_index = 3
 z_as_relative = false
 position = Vector2(1, -1)
