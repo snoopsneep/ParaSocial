@@ -39,7 +39,9 @@
 [ext_resource type="Texture2D" uid="uid://gnjx0s50xuiw" path="res://assets/Graphics/Environments/Church/Main Hall/mainHall_hangingLights.png" id="31_srh6f"]
 [ext_resource type="Texture2D" uid="uid://dmg3nn5xf2hmg" path="res://assets/Graphics/Environments/Church/Main Hall/mainHall_moonlight.png" id="32_ubx2l"]
 [ext_resource type="PackedScene" uid="uid://cfivdlgkt4jbt" path="res://scenes/UI/HUD/dialog.tscn" id="32_x53fh"]
+[ext_resource type="PackedScene" uid="uid://qeeqyl4ctwkp" path="res://scenes/Generic/note.tscn" id="35_bf74x"]
 [ext_resource type="Texture2D" uid="uid://bymrpc4ju6fka" path="res://assets/Graphics/Environments/Church/Chapel/chapel_floor_2.png" id="35_ttmum"]
+[ext_resource type="Script" uid="uid://cs8kccqb2huxb" path="res://resources/page.gd" id="36_jcrwi"]
 [ext_resource type="Texture2D" uid="uid://clk6wol4qpl6r" path="res://assets/Graphics/Environments/Church/Chapel/chapel_leftWall_doorOpen.png" id="37_st0p2"]
 [ext_resource type="PackedScene" uid="uid://c7rddg2fnhrra" path="res://scenes/Characters/Rat/rat.tscn" id="38_x2ju3"]
 [ext_resource type="Texture2D" uid="uid://bdaou07vhnfl0" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_bgd_p2_base.png" id="39_c5hcr"]
@@ -78,6 +80,7 @@
 [ext_resource type="Script" uid="uid://djrxiohdwmurd" path="res://scenes/Main/leafpile.gd" id="53_v874h"]
 [ext_resource type="Texture2D" uid="uid://d4djsavqccbyl" path="res://assets/Graphics/Environments/Graveyard/Grounds/Leaves/Light.PNG" id="54_hbikf"]
 [ext_resource type="Texture2D" uid="uid://ctd77813a6c18" path="res://assets/Graphics/Environments/Graveyard/Grounds/Leaves/Shadow.PNG" id="55_vamxk"]
+[ext_resource type="PackedScene" uid="uid://8y3fpv34gmjg" path="res://rose.tscn" id="58_jcrwi"]
 [ext_resource type="Script" uid="uid://c84qyu8e3jj70" path="res://scenes/UI/pause_menu.gd" id="60_srh6f"]
 [ext_resource type="Script" uid="uid://b3uonhf2rgqku" path="res://scenes/Level/Events/igniteLeaf.gd" id="65_2by47"]
 
@@ -103,6 +106,15 @@ b = Vector2(-460, 281.24988)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wg3cc"]
 radius = 117.92477
+
+[sub_resource type="Resource" id="Resource_bf74x"]
+script = ExtResource("36_jcrwi")
+date = "19/10/1447"
+text = "	She collapsed today. Crumpled like a leaf before the statue. Her head cracked open on the base, splattering the thing with crimson. It stood there, unfazed, speckled with fresh blood. Blood that seeped through the floorboards, oozing into the earth below. Blood that coated my hands and robes as I kneeled shrieking beside her. So much blood from such a small body. It wouldn’t stop. It will never stop. In her coffin now, she bleeds. Bleeds until the box overflows with thick, sticky crimson. And still it doesn’t stop. She will never let it stop. I know in my heart that She looks upon us with that same unfazed expression, drenched in the blood of us all, uncaring and merciless all the while.
+
+	I can’t enter that room anymore. Father Mason insisted he would clean it. He didn’t leave the room for hours, his sobs echoing through the vacant halls of the church. I think he, too, knows that She isn’t coming to save us. He called the guard to watch over our graveyard, rightfully worried that his mother’s grave may be desecrated. He hasn’t left his office since. A handful of my sisters still hold strong, but my fight is gone. I wish the best for you all."
+signature = "Sister Aubrey"
+metadata/_custom_type_script = "uid://cs8kccqb2huxb"
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_3lby3"]
 a = Vector2(240.7691, -142.30762)
@@ -137,6 +149,25 @@ radius = 278.59015
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v2gm8"]
 radius = 58.01963
+
+[sub_resource type="Resource" id="Resource_jcrwi"]
+script = ExtResource("36_jcrwi")
+date = "11/10/1447"
+text = "	The once-bustling halls of the church have fallen silent. It seems all the enthusiasm to pray disappeared alongside the dwindling food supply. Discouraging as it is that nothing has changed for the better, I can’t help but resent the so-called followers who have given up so quickly. Don’t they know that the only way we can be saved is through Faustine? Don’t they know that our Goddess works in mysterious ways, that Her prosperity is not always granted immediately? Surely it’s all a test. A test to weed out Her most devout of followers… and I don’t intend to fail. Myself, the other nuns, Father Mason and his mother… We will be greatly rewarded for our lasting devotion. Even as our bones ache from kneeling, even as our guts twist and turn, eating us from the inside out, we will stay faithful."
+metadata/_custom_type_script = "uid://cs8kccqb2huxb"
+
+[sub_resource type="Resource" id="Resource_2by47"]
+script = ExtResource("36_jcrwi")
+text = "	The violence outside has been a good excuse not to leave the chapel; there’s really not much more we can do than pray. We’ve locked up all the graveyard’s gates, but I’ve still heard Father Mason shouting at nasty crooks to stay away, the evil thugs somehow finding the strength to scale the fence. I worry for our recently buried, that their corpses will be desecrated by these evildoers. It’s not hard to pick out a grave that’s been recently dug–our groundskeeper has been greatly overworked since this famine began, and between the number of bodies to bury and his own starvation, the most recent graves have certainly suffered aesthetically.
+
+	Outside the graveyard’s gates, too, the havoc seems endless. Bloodcurdling screams frequently echo through trashed alleyways, sourced from the few brave–or stupid–enough to venture outside. Rotting, rigid corpses lean against walls, nearly indistinguishable from the living homeless forced to seek shelter beside them. More and more have turned to crime, their hunger growing greater than their morals."
+metadata/_custom_type_script = "uid://cs8kccqb2huxb"
+
+[sub_resource type="Resource" id="Resource_ndhd5"]
+script = ExtResource("36_jcrwi")
+text = "	Through it all, the priest’s mother remains particularly devoted, earning my utmost respect. She can hardly stand, but she stays kneeling, head bowed, frail little arms clasped together and shaking. She shakes like it’s freezing, thin skin sagging from brittle bone. Weak, heaving breaths rattle out from overworked lungs as she sways on her knees in a dizzying motion, shrill, whispering mantras leaving her lips all the while. The only time they stop is when she eats, which is rare. We’ve been lessening our own rations to give to her, but it’s still a pitiful sum. Father Mason keeps urging her to lay down in the nunnery. He says her prayers will do as much good from her bed, but she shoos him away with a weak, trembling hand. She says her faith will keep her alive."
+signature = "Sister Willow"
+metadata/_custom_type_script = "uid://cs8kccqb2huxb"
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_2kbrn"]
 a = Vector2(7150, -4203.846)
@@ -175,6 +206,22 @@ radius = 507.80185
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rcjdb"]
 radius = 230.92499
+
+[sub_resource type="Resource" id="Resource_v874h"]
+script = ExtResource("36_jcrwi")
+date = "29/9/1447"
+text = "	Hope has been dwindling for some time now, as our situation has refused to improve. Despite all our prayers, things have gotten even worse. It seems our cattle, weak and underfed for some time now, have fallen ill. Their stiff, stinking corpses litter the fields, their still-living brothers forced to trudge between their rotting remains.
+
+	Since the horrible news broke, the number of churchgoers has steadily diminished. Sister Mira says surely they must be praying from home, but I’m not so certain. This situation has tested all of our faiths, and I fear the less devout may be giving up on our Goddess completely.
+
+	Some people still come to the church to pray, but their prayers are hushed and the spark in their eyes vacant. They sulk through the halls like dreary widows, soles dragging, faces downturned. I’m occasionally offered a sad, pained smile, but there’s never a sliver of life behind it. I worry deeply for our community, and selfishly, for my own life. How can we expect Faustine to grant Her generosity to a community of fickle disbelievers? Selfish as it is, I hope She recognizes my faith, even if She gives up on the others."
+metadata/_custom_type_script = "uid://cs8kccqb2huxb"
+
+[sub_resource type="Resource" id="Resource_hbikf"]
+script = ExtResource("36_jcrwi")
+text = "	One steadfast member of the community, though, is Father Mason’s mother. She rarely leaves the statue, even as she looks weaker and weaker by the day. It’s like she’s praying her very soul away to our Goddess, the life left in her escaping through hushed, whispered mantras. I know Father Mason is worried about her… They’ve always been very close. He’s mentioned that his faith began with his mother, her great devotion always an inspiration to him. I think she’s been an inspiration to us all, even as things look dimmer and dimmer."
+signature = "Sister Aubrey"
+metadata/_custom_type_script = "uid://cs8kccqb2huxb"
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_28322"]
 a = Vector2(6, -151)
@@ -227,6 +274,20 @@ b = Vector2(-79, -46)
 [sub_resource type="CircleShape2D" id="CircleShape2D_bv45s"]
 radius = 354.13275
 
+[sub_resource type="Resource" id="Resource_2w7fw"]
+script = ExtResource("36_jcrwi")
+date = "8/9/1447"
+text = "	There has been a notable shift in our community… I’ve never seen a bigger line when distributing food to the less fortunate. Much worse, the amount of bread our funds were able to purchase was far smaller than the regular portion. 
+
+	It worries me, but our community is a strong and faithful one. The numbers at mass have been staggering, with people even having to sit on the floor, the pews overflowing with churchgoers. With crops dwindling, the people are eager to worship, hopeful that Faustine will grant us prosperity in this trying time. My fellow sisters have hardly left the statue, our knees raw and tender from praying. There are always people in the pews, lending their pleas as well. With this many prayers, Faustine will surely come to our aid."
+metadata/_custom_type_script = "uid://cs8kccqb2huxb"
+
+[sub_resource type="Resource" id="Resource_vamxk"]
+script = ExtResource("36_jcrwi")
+text = "	Even with us nuns praying nearly nonstop, our most devout worshipper may not be a nun at all, but the priest’s dear mother. An old, frail thing, but strong of heart and mind. She’s always been a regular churchgoer, but lately she’s been spending days praying in front of the statue with little time for breaks. Father Mason has requested that she be taken into our care; old as she is, she doesn’t need any more reason to fall ill, and this blossoming famine is making her extra susceptible. We are grateful to have her around–she’s a sweet old woman. I hope Faustine will value her many years of devotion, deeming her worthy of a blessing. She may be our greatest hope."
+signature = "Sister Mira"
+metadata/_custom_type_script = "uid://cs8kccqb2huxb"
+
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ocr4w"]
 a = Vector2(202, -116)
 b = Vector2(-1520, 881)
@@ -238,6 +299,22 @@ b = Vector2(10, -5)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_qkk1r"]
 a = Vector2(479, -274.99997)
 b = Vector2(-1520, 881)
+
+[sub_resource type="Resource" id="Resource_jw632"]
+script = ExtResource("36_jcrwi")
+date = "3/8/1447"
+text = "	A curious thing occurred today as my sisters and I were cleaning up around the church. I had been scrubbing an exceptionally stubborn stain when the main hall doors swung open with great force. A panting, sweating man rushed in in a panic, his eyes wild. He clutched a plant in his hand, knuckles white around its thin stem. 
+
+	“A great disaster” he proclaimed was coming as he waved the crop around frantically, the wild motion causing its colours to blur together. But when he stilled, I could see clearly the brown, thick scabs on its surface. Nasty, raised ridges, rough to the touch. A blight, he called it. And it wasn’t just this plant that it’d consumed. 
+
+	He begged us to pray–pray as quickly and as deeply as we could, in hopes that Faustine might hear our pleas. I still don’t know what to make of it. Educated as I am, I don’t know much about farming, and this crazed man was hard to take seriously. Could it have just been some raving fool looking for attention? Could blemishes like this be a normal occurrence for crops?"
+metadata/_custom_type_script = "uid://cs8kccqb2huxb"
+
+[sub_resource type="Resource" id="Resource_kxak1"]
+script = ExtResource("36_jcrwi")
+text = "	Regardless, my sisters and I got to work praying, urging Faustine to protect us and lend us Her generosity. As I kneeled before the statue though, even in the shelter of Her might, I couldn’t shake the feeling of great dread… I hope to hear no more of this."
+signature = "Sister Aubrey"
+metadata/_custom_type_script = "uid://cs8kccqb2huxb"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aw75u"]
 radius = 196.22119
@@ -468,6 +545,10 @@ compatible_vessels = {
 position = Vector2(-94.99999, -139.99998)
 shape = SubResource("CircleShape2D_wg3cc")
 
+[node name="Note" parent="Map/Church/Kitchen/Events" unique_id=1429878494 instance=ExtResource("35_bf74x")]
+position = Vector2(0, -2.4999998)
+pages = Array[ExtResource("36_jcrwi")]([SubResource("Resource_bf74x")])
+
 [node name="Dining Room" type="Node2D" parent="Map/Church" unique_id=1380382872 node_paths=PackedStringArray("connected_rooms")]
 z_index = 2
 z_as_relative = false
@@ -597,6 +678,10 @@ compatible_vessels = {
 position = Vector2(-3.0768764, -21.538464)
 shape = SubResource("CircleShape2D_v2gm8")
 
+[node name="Note" parent="Map/Church/Dining Room/Events" unique_id=1991127895 instance=ExtResource("35_bf74x")]
+position = Vector2(-336.92313, -617.6924)
+pages = Array[ExtResource("36_jcrwi")]([SubResource("Resource_jcrwi"), SubResource("Resource_2by47"), SubResource("Resource_ndhd5")])
+
 [node name="Hallway" type="Node2D" parent="Map/Church" unique_id=1299980803 node_paths=PackedStringArray("connected_rooms", "actors_in_room")]
 z_index = 2
 z_as_relative = false
@@ -704,6 +789,11 @@ compatible_vessels = {
 [node name="CollisionShape2D" parent="Map/Church/Hallway/Events/MouseHole" index="0" unique_id=18997285]
 position = Vector2(13.636364, 27.272728)
 shape = SubResource("CircleShape2D_rcjdb")
+
+[node name="Note" parent="Map/Church/Hallway/Events" unique_id=534802546 instance=ExtResource("35_bf74x")]
+z_as_relative = false
+position = Vector2(918.1828, -5359.091)
+pages = Array[ExtResource("36_jcrwi")]([SubResource("Resource_v874h"), SubResource("Resource_hbikf")])
 
 [node name="Main Hall" type="Node2D" parent="Map/Church" unique_id=1643553789 node_paths=PackedStringArray("connected_rooms")]
 z_index = 3
@@ -961,6 +1051,10 @@ shape = SubResource("SegmentShape2D_xoy7o")
 [node name="CollisionShape2D" parent="Map/Church/Main Hall/Events/ToDining/ShowNextRoom" parent_id_path=PackedInt32Array(1042482541, 977292801) index="0" unique_id=770446660]
 shape = SubResource("CircleShape2D_bv45s")
 
+[node name="Note" parent="Map/Church/Main Hall/Events" unique_id=1232946094 instance=ExtResource("35_bf74x")]
+position = Vector2(358, 678)
+pages = Array[ExtResource("36_jcrwi")]([SubResource("Resource_2w7fw"), SubResource("Resource_vamxk")])
+
 [node name="Chapel" type="Node2D" parent="Map/Church" unique_id=1748118598 node_paths=PackedStringArray("connected_rooms", "actors_in_room")]
 z_index = 4
 z_as_relative = false
@@ -1022,6 +1116,10 @@ scale = Vector2(1, -1)
 shape = SubResource("SegmentShape2D_vip5v")
 
 [node name="Events" type="Node2D" parent="Map/Church/Chapel" unique_id=1480865722]
+
+[node name="Note1" parent="Map/Church/Chapel/Events" unique_id=442319060 instance=ExtResource("35_bf74x")]
+position = Vector2(-130, 348)
+pages = Array[ExtResource("36_jcrwi")]([SubResource("Resource_jw632"), SubResource("Resource_kxak1")])
 
 [node name="Objects" type="Node2D" parent="Map/Church/Chapel" unique_id=2008570413]
 
@@ -1122,6 +1220,57 @@ position = Vector2(-79.99999, 477.50024)
 rotation = -1.5642596
 shape = SubResource("CapsuleShape2D_aw75u")
 debug_color = Color(0.95427436, 1.347661e-06, 0.5517831, 0.41960785)
+
+[node name="rose" parent="Map/Graveyard/Grounds/Graphics/Leafs" unique_id=1270211973 instance=ExtResource("58_jcrwi")]
+position = Vector2(20248.75, 4297.4995)
+rotation = -0.36600542
+
+[node name="rose2" parent="Map/Graveyard/Grounds/Graphics/Leafs" unique_id=1643769880 instance=ExtResource("58_jcrwi")]
+position = Vector2(19001.25, 4170.001)
+rotation = 0.467236
+
+[node name="rose3" parent="Map/Graveyard/Grounds/Graphics/Leafs" unique_id=825400005 instance=ExtResource("58_jcrwi")]
+position = Vector2(16415, 1542.4996)
+rotation = 1.8298542
+
+[node name="rose4" parent="Map/Graveyard/Grounds/Graphics/Leafs" unique_id=967476198 instance=ExtResource("58_jcrwi")]
+position = Vector2(16687.5, 2256.2502)
+rotation = -2.6378703
+
+[node name="rose5" parent="Map/Graveyard/Grounds/Graphics/Leafs" unique_id=718212599 instance=ExtResource("58_jcrwi")]
+position = Vector2(17207.5, 2558.7495)
+rotation = -0.80893785
+
+[node name="rose6" parent="Map/Graveyard/Grounds/Graphics/Leafs" unique_id=1327753407 instance=ExtResource("58_jcrwi")]
+position = Vector2(14946.249, 3376.2498)
+
+[node name="rose7" parent="Map/Graveyard/Grounds/Graphics/Leafs" unique_id=574873458 instance=ExtResource("58_jcrwi")]
+position = Vector2(14248.749, 3055)
+rotation = -0.30203733
+
+[node name="rose8" parent="Map/Graveyard/Grounds/Graphics/Leafs" unique_id=1936377915 instance=ExtResource("58_jcrwi")]
+position = Vector2(13303.75, 3677.5)
+
+[node name="rose9" parent="Map/Graveyard/Grounds/Graphics/Leafs" unique_id=125286284 instance=ExtResource("58_jcrwi")]
+position = Vector2(14602.499, 5010)
+
+[node name="rose10" parent="Map/Graveyard/Grounds/Graphics/Leafs" unique_id=420119499 instance=ExtResource("58_jcrwi")]
+position = Vector2(15571.25, 4390)
+
+[node name="rose11" parent="Map/Graveyard/Grounds/Graphics/Leafs" unique_id=1199266815 instance=ExtResource("58_jcrwi")]
+position = Vector2(14793.75, 5747.5)
+
+[node name="rose12" parent="Map/Graveyard/Grounds/Graphics/Leafs" unique_id=1502132907 instance=ExtResource("58_jcrwi")]
+position = Vector2(17526.25, 4380)
+
+[node name="rose13" parent="Map/Graveyard/Grounds/Graphics/Leafs" unique_id=2069696392 instance=ExtResource("58_jcrwi")]
+position = Vector2(17891.25, 5186.25)
+
+[node name="rose14" parent="Map/Graveyard/Grounds/Graphics/Leafs" unique_id=349495784 instance=ExtResource("58_jcrwi")]
+position = Vector2(16427.5, 5495)
+
+[node name="rose15" parent="Map/Graveyard/Grounds/Graphics/Leafs" unique_id=182476952 instance=ExtResource("58_jcrwi")]
+position = Vector2(16948.75, 5780)
 
 [node name="Colliders" type="Node2D" parent="Map/Graveyard/Grounds" unique_id=11171246]
 visible = false

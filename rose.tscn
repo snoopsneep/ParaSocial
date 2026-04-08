@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://8y3fpv34gmjg"]
+
+[ext_resource type="Texture2D" uid="uid://bkdhh3uwl1ogv" path="res://assets/Graphics/Environments/Graveyard/Grounds/Rose.PNG" id="1_2iw54"]
+
+[node name="rose" type="Sprite2D" unique_id=1270211973]
+scale = Vector2(3, 3)
+texture = ExtResource("1_2iw54")
