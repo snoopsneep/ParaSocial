@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2us1qhtgokha"
-path="res://.godot/imported/graveyard_bgd_p1_lighting.png-f0457d303ffec8496a00285a3fbf492b.ctex"
+uid="uid://cewar40mcwbfa"
+path="res://.godot/imported/nunpraying.png-2d987d40ff4c337011c8b74bedbb0ebf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_bgd_p1_lighting.png"
-dest_files=["res://.godot/imported/graveyard_bgd_p1_lighting.png-f0457d303ffec8496a00285a3fbf492b.ctex"]
+source_file="res://assets/Graphics/Sprites/Characters/Nun/nunpraying.png"
+dest_files=["res://.godot/imported/nunpraying.png-2d987d40ff4c337011c8b74bedbb0ebf.ctex"]
 
 [params]
 

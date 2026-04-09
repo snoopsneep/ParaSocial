@@ -19,23 +19,23 @@ var game_over_button: bool = false
 var can_pause: bool = true
 
 #region progress flags
-# if true, the potato has been collected
-var got_potato: bool = false
+# changes to true after the opening cutscene
+var intro_finished: bool = false
 
-# if true, potato has been put in pot
-var used_potato: bool = false
+# changes to true after the player kills or distracts the shack guards
+var guards_distracted: bool = false
 
-# if true, the cheese has been collected
-var got_cheese: bool = false
+# changes to true after the player digs up the mausoleum key
+var has_key: bool = false
 
-# if true, cheese has been put in pot
-var used_cheese: bool = false
+# changes to true after the player reads the note for the priest quest
+var read_priest_note: bool = false
 
-# if true, pot in the kitchen is lit
-var lit_pot: bool = false
+# changes to true after the player triggers the cutscene in the mausoleum
+var mausoleum_visited: bool = false
 
-# if true, food has been cooked in the pot
-var food_cooked: bool = false
+# changes to true after the player recruits the priest
+var priest_recruited: bool = false
 #endregion
 
 func restart_game():

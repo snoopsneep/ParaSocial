@@ -4,9 +4,6 @@ class_name Game extends Node2D
 ## The "main game" scene - should probably be split into an abstract "Level" scene
 ## and then two individual scenes that inherit "Level".
 
-## PackedScene of the enemy's projectile scene, so the game can generate them at runtime.
-var projectile: PackedScene = preload("res://scenes/Characters/Guard/enemy_projectile.tscn")
-
 ## PackedScene of the parasite scene, so the game can spawn them at runtime.
 var para_scene: PackedScene = preload("res://scenes/Characters/Parasite/parasite.tscn")
 
@@ -34,12 +31,12 @@ func _ready():
 	#endregion
 
 	#region reset global progress flags
-	Global.got_potato = false
-	Global.used_potato = false
-	Global.got_cheese = false
-	Global.used_cheese = false
-	Global.lit_pot = false
-	Global.food_cooked = false
+	Global.intro_finished = false
+	Global.guards_distracted = false
+	Global.has_key = false
+	Global.read_priest_note = false
+	Global.mausoleum_visited = false
+	Global.priest_recruited = false
 	#endregion
 
 	# set up event triggers

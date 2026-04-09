@@ -35,8 +35,7 @@ func _physics_process(_delta):
 
 
 # if true, actor is behind object
-# (only returns true if actor is above right & between right and middle OR
-# if actor is between right and left, but above the middle point)
+# (basic y sort)
 func check_overlap(hitbox: Node2D) -> bool:
 	var pos: Vector2 = hitbox.get_parent().global_position
 	if position.y < pos.y: # if the actor is behind

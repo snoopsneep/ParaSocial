@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bkyqtnj56p47q"
-path="res://.godot/imported/ps_sound_ratWoodWalking_01.mp3-ebd8f3e699faa3180d2d1c8d138968b6.mp3str"
+path="res://.godot/imported/ps_sound_ratWoodWalking_01.mp3-49eaeb2feeeca6172ae77269b1065b8a.mp3str"
 
 [deps]
 
-source_file="res://assets/Audio/Characters/Generic/ps_sound_ratWoodWalking_01.mp3"
-dest_files=["res://.godot/imported/ps_sound_ratWoodWalking_01.mp3-ebd8f3e699faa3180d2d1c8d138968b6.mp3str"]
+source_file="res://Assets/Audio/Characters/Generic/ps_sound_ratWoodWalking_01.mp3"
+dest_files=["res://.godot/imported/ps_sound_ratWoodWalking_01.mp3-49eaeb2feeeca6172ae77269b1065b8a.mp3str"]
 
 [params]
 

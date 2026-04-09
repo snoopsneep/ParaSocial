@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2us1qhtgokha"
-path="res://.godot/imported/graveyard_bgd_p1_lighting.png-f0457d303ffec8496a00285a3fbf492b.ctex"
+uid="uid://6x0lauylavkb"
+path="res://.godot/imported/graveyard_p1_base-small-small-small.png-4aa0c0e514142cdf1706ee6342f6ab1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_bgd_p1_lighting.png"
-dest_files=["res://.godot/imported/graveyard_bgd_p1_lighting.png-f0457d303ffec8496a00285a3fbf492b.ctex"]
+source_file="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_p1_base-small-small-small.png"
+dest_files=["res://.godot/imported/graveyard_p1_base-small-small-small.png-4aa0c0e514142cdf1706ee6342f6ab1b.ctex"]
 
 [params]
 

@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://bquje6jxx4ik0"]
+
+[ext_resource type="Texture2D" uid="uid://sxxb5dkjgv3u" path="res://assets/Graphics/Environments/Graveyard/Grounds/Leaves/Onfire2.PNG" id="1_2uxkb"]
+[ext_resource type="Texture2D" uid="uid://6tiqdwmy8t1a" path="res://assets/Graphics/Environments/Graveyard/Grounds/Leaves/Normal.PNG" id="1_v3be1"]
+[ext_resource type="Script" uid="uid://djrxiohdwmurd" path="res://scenes/Level/Props/leafpile.gd" id="2_x6ok7"]
+[ext_resource type="Texture2D" uid="uid://d4djsavqccbyl" path="res://assets/Graphics/Environments/Graveyard/Grounds/Leaves/Light.PNG" id="3_8x03k"]
+[ext_resource type="Texture2D" uid="uid://ctd77813a6c18" path="res://assets/Graphics/Environments/Graveyard/Grounds/Leaves/Shadow.PNG" id="4_2uxkb"]
+[ext_resource type="PackedScene" uid="uid://dvm0l187x12a4" path="res://scenes/Generic/event.tscn" id="6_jgyv4"]
+[ext_resource type="Script" uid="uid://b3uonhf2rgqku" path="res://scenes/Level/Events/igniteLeaf.gd" id="7_d58f6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_stohp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2uxkb")
+}],
+"loop": true,
+"name": &"burn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v3be1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aw75u"]
+radius = 196.22119
+height = 1072.5586
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4adgc"]
+radius = 196.22119
+height = 1072.5586
+
+[node name="Leaf Pile" type="StaticBody2D" unique_id=822916376]
+script = ExtResource("2_x6ok7")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1719349191]
+position = Vector2(84, -601)
+sprite_frames = SubResource("SpriteFrames_stohp")
+
+[node name="Light" type="Sprite2D" parent="Sprite" unique_id=533653903]
+visible = false
+position = Vector2(227.49998, 66.250305)
+texture = ExtResource("3_8x03k")
+
+[node name="Smoke" type="Sprite2D" parent="Sprite" unique_id=1832384426]
+visible = false
+z_index = 10
+position = Vector2(-632.49994, -881.24963)
+texture = ExtResource("4_2uxkb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=424075656]
+visible = false
+position = Vector2(4.0000076, -123.499756)
+rotation = -1.5642596
+shape = SubResource("CapsuleShape2D_aw75u")
+debug_color = Color(0.95427436, 1.347661e-06, 0.5517831, 0.41960785)
+
+[node name="Ignite Leaf" parent="." unique_id=753610390 instance=ExtResource("6_jgyv4")]
+visible = false
+position = Vector2(-81, 475)
+script = ExtResource("7_d58f6")
+compatible_vessels = {
+&"Gravedigger": true,
+&"Nun": true,
+&"Rat": false,
+&"Statue": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ignite Leaf" unique_id=583256659]
+rotation = 1.5748234
+shape = SubResource("CapsuleShape2D_4adgc")
+
+[node name="SpriteBoundaries" type="Area2D" parent="." unique_id=1784079386]
+visible = false
+position = Vector2(84, -601)
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpriteBoundaries" unique_id=1023654317]
+position = Vector2(6, 0)
+polygon = PackedVector2Array(414, 246, 594, 552, 526, 759, 188, 903, -295, 916, -706, 722, -759, 561, -631, 414, -519, 84, -351, -276, -246, -442, -59, -504, 145, -395, 331, -31)

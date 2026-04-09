@@ -16,6 +16,8 @@ class_name Player extends Node2D
 ## Holds a reference to the vessel the player is currently controlling.
 var curr_vessel: CharacterBody2D
 
+@export var curr_room: Room
+
 # can probably be replaced by a simple "if curr_vessel is type Parasite"
 ## If [code]true[/code], the player is currently controlling a parasite
 var is_parasite: bool = false

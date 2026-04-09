@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://fqp8x2ofqjst"]
 
-[ext_resource type="Texture2D" uid="uid://dqc745ktc8wyg" path="res://assets/Graphics/Environments/Church/Main Hall/bench1.png" id="1_o8cjk"]
+[ext_resource type="Texture2D" uid="uid://dqgtja8qdap6u" path="res://assets/Graphics/Sprites/Objects/Church/bench1.png" id="1_o8cjk"]
 [ext_resource type="Script" uid="uid://dumucmsbbiu27" path="res://scenes/Level/Props/bench.gd" id="1_xt7bo"]
 
 [node name="Bench" type="StaticBody2D" unique_id=70036307]

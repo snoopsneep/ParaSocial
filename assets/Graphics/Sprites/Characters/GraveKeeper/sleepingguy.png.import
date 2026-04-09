@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2us1qhtgokha"
-path="res://.godot/imported/graveyard_bgd_p1_lighting.png-f0457d303ffec8496a00285a3fbf492b.ctex"
+uid="uid://21qe3n8lacjt"
+path="res://.godot/imported/sleepingguy.png-c92df60c0a5c9ed21efc1ab053cc9bdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_bgd_p1_lighting.png"
-dest_files=["res://.godot/imported/graveyard_bgd_p1_lighting.png-f0457d303ffec8496a00285a3fbf492b.ctex"]
+source_file="res://assets/Graphics/Sprites/Characters/GraveKeeper/sleepingguy.png"
+dest_files=["res://.godot/imported/sleepingguy.png-c92df60c0a5c9ed21efc1ab053cc9bdb.ctex"]
 
 [params]
 

@@ -52,8 +52,8 @@ height = 1139.9999
 radius = 467.00003
 height = 2317.9995
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wb02y"]
-radius = 2169.6404
+[sub_resource type="CircleShape2D" id="CircleShape2D_j3sl2"]
+radius = 167.08777
 
 [node name="Nun" unique_id=517857439 instance=ExtResource("1_lbdmt")]
 scale = Vector2(0.118, 0.118)
@@ -101,8 +101,8 @@ scale = Vector2(4, 4)
 
 [node name="InteractRange" parent="." index="6" unique_id=768744904]
 visible = false
-position = Vector2(2.999954, -988.99994)
+position = Vector2(-466.10168, -466.10168)
 
 [node name="CollisionShape2D" parent="InteractRange" index="0" unique_id=2035168185]
-position = Vector2(-2.9999542, 988.99994)
-shape = SubResource("CircleShape2D_wb02y")
+scale = Vector2(7, 7)
+shape = SubResource("CircleShape2D_j3sl2")

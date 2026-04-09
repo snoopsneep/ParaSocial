@@ -11,6 +11,7 @@ class_name Statue extends Vessel
 @onready var atk_cooldown = $"Attack Cooldown"
 @onready var atk_delay = $"Attack Delay"
 @onready var dmg_cooldown = $"Damage Cooldown"
+@onready var interact_range = $InteractRange
 
 # a bunch of private reference variables to the attack nodes
 #region attack access variables
@@ -44,7 +45,7 @@ func _physics_process(_delta):
 			atk_chrg = 1
 			atk_cooldown.stop()
 			winding_up = false
-			modulate = Color(1,1,1,1)
+			sprite.modulate = Color(1,1,1,1)
 
 	# if the player is in this vessel (yes again. sorry. you can fix it if you want)
 	if is_vessel and !Global.player_disabled:
@@ -58,7 +59,7 @@ func _physics_process(_delta):
 			_wind_up()
 		if Input.is_action_just_released("Primary Action") and winding_up:
 			# reset color!
-			modulate = Color(1,1,1,1)
+			sprite.modulate = Color(1,1,1,1)
 			# Run the attack
 			_attack.look_at(get_global_mouse_position())
 			if atk_chrg == 1:
@@ -75,8 +76,16 @@ func _physics_process(_delta):
 	super(_delta)
 	if _display_left:
 		$Hurtbox/CollisionShape2D2.position.x = 80.0
+		if _display_up: # upleft
+			interact_range.position = Vector2(-76,-64)
+		else: # downleft
+			interact_range.position = Vector2(-76,69)
 	else:
 		$Hurtbox/CollisionShape2D2.position.x = -78.0
+		if _display_up: # upright
+			interact_range.position = Vector2(75,-64)
+		else: # downright
+			interact_range.position = Vector2(75,69)
 
 func _on_up_atk_anim_finished():
 	_attack_collider.disabled = true # re-disable the attack collider
@@ -106,7 +115,7 @@ func _wind_up():
 	else:
 		atk_cooldown.wait_time = 1.5
 	# set color!
-	modulate = Color(1.0, (0.9 - (atk_chrg*0.15)), (0.9 - (atk_chrg*0.15)), 1.0)
+	sprite.modulate = Color(1.0, (0.9 - (atk_chrg*0.15)), (0.9 - (atk_chrg*0.15)), 1.0)
 	atk_cooldown.start()
 
 func _on_attack_cooldown_timeout() -> void:
@@ -121,8 +130,6 @@ func hit(dmg = 1):
 		if health <= 0:
 			if is_vessel:
 				boot.emit()
-				queue_free()
-			else:
-				modulate = Color(0.561, 0.0, 0.549)
+			queue_free()
 		dmg_cooldown.start()
 		hurt.emit(health,max_health)

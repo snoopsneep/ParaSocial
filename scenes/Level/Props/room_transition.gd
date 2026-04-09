@@ -23,6 +23,7 @@ func trigger(body: Node2D):
 	body.z_index = curr_room.z_index
 	other_room.actors_in_room.erase(body)
 	curr_room.actors_in_room.append(body)
+	%Player.curr_room = curr_room
 	if (body is Vessel and body.is_vessel):
 			# fully reveal the current room
 			curr_room.reveal_room()
@@ -30,6 +31,7 @@ func trigger(body: Node2D):
 			other_room.preview_room()
 
 func _show_next_room(body: Node2D):
+	print(body)
 	if body is Vessel and body.is_vessel:
 		var other_room: Room # the room on the other side of the door
 		# if the body is closer to marker 1 (aka room 1)
@@ -42,6 +44,7 @@ func _show_next_room(body: Node2D):
 
 
 func _hide_next_room(body: Node2D):
+	print(body)
 	if body is Vessel and body.is_vessel:
 		var other_room: Room # the room on the other side of the door
 		# if the body is closer to marker 1 (aka room 1)

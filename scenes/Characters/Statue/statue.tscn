@@ -88,9 +88,8 @@ animations = [{
 radius = 12.0
 height = 52.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3lyig"]
-radius = 219.0
-height = 438.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_j3sl2"]
+radius = 167.08777
 
 [node name="Statue" unique_id=517857439 instance=ExtResource("1_kr50t")]
 collision_layer = 32
@@ -163,11 +162,10 @@ position = Vector2(-8, -401)
 
 [node name="InteractRange" parent="." index="9" unique_id=768744904]
 visible = false
-position = Vector2(0, 26)
+position = Vector2(-76, 69)
 
 [node name="CollisionShape2D" parent="InteractRange" index="0" unique_id=2035168185]
-position = Vector2(-3, -116)
-shape = SubResource("CapsuleShape2D_3lyig")
+shape = SubResource("CircleShape2D_j3sl2")
 
 [connection signal="area_entered" from="Attack" to="." method="_on_atk_area_entered"]
 [connection signal="animation_finished" from="Attack/AnimatedSprite2D" to="." method="_on_up_atk_anim_finished"]

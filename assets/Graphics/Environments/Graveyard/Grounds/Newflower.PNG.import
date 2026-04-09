@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2us1qhtgokha"
-path="res://.godot/imported/graveyard_bgd_p1_lighting.png-f0457d303ffec8496a00285a3fbf492b.ctex"
+uid="uid://c6wf4f8w1mppv"
+path="res://.godot/imported/Newflower.PNG-75a0242ae3a0f39c283cd071098fad4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_bgd_p1_lighting.png"
-dest_files=["res://.godot/imported/graveyard_bgd_p1_lighting.png-f0457d303ffec8496a00285a3fbf492b.ctex"]
+source_file="res://assets/Graphics/Environments/Graveyard/Grounds/Newflower.PNG"
+dest_files=["res://.godot/imported/Newflower.PNG-75a0242ae3a0f39c283cd071098fad4c.ctex"]
 
 [params]
 

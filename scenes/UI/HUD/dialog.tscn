@@ -2,9 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://dlj40uugp24a7" path="res://resources/dialog/dialog.tres" id="1_yo5md"]
 [ext_resource type="Script" uid="uid://bnycp4a5bxi3b" path="res://scenes/UI/HUD/dialog.gd" id="2_cd52i"]
-[ext_resource type="Texture2D" uid="uid://cewoj3lhh6b44" path="res://assets/Graphics/Miscellaneous/finCG1.png" id="3_2el7u"]
+[ext_resource type="Texture2D" uid="uid://nop37x24jyr2" path="res://assets/Graphics/CGs/finCG1.png" id="3_2el7u"]
 [ext_resource type="Texture2D" uid="uid://eo7go2opwv7a" path="res://assets/Graphics/UI/Miscellaneous/textbox.png" id="3_aij1x"]
-[ext_resource type="Texture2D" uid="uid://drjfehb8urbbv" path="res://assets/Graphics/UI/Miscellaneous/note.png" id="4_tc4ve"]
+[ext_resource type="Texture2D" uid="uid://hh6c4rf3es2y" path="res://assets/Graphics/UI/Miscellaneous/note-small.png" id="4_tc4ve"]
 [ext_resource type="FontFile" uid="uid://ckwxxn4psd7lh" path="res://assets/Graphics/Fonts/TexgyrechorusMediumitalic-XJ2Z.otf" id="5_tc4ve"]
 
 [node name="Dialog" type="Control" unique_id=156659926]

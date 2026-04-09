@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2us1qhtgokha"
-path="res://.godot/imported/graveyard_bgd_p1_lighting.png-f0457d303ffec8496a00285a3fbf492b.ctex"
+uid="uid://d0dahe0t56jhk"
+path="res://.godot/imported/butcherpraying.png-2ccff8ae15e2fed128195ba29417f024.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_bgd_p1_lighting.png"
-dest_files=["res://.godot/imported/graveyard_bgd_p1_lighting.png-f0457d303ffec8496a00285a3fbf492b.ctex"]
+source_file="res://assets/Graphics/Sprites/Characters/Butcher-Mausoleum Guy/butcherpraying.png"
+dest_files=["res://.godot/imported/butcherpraying.png-2ccff8ae15e2fed128195ba29417f024.ctex"]
 
 [params]
 
