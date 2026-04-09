@@ -2,8 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://sxxb5dkjgv3u" path="res://assets/Graphics/Environments/Graveyard/Grounds/Leaves/Onfire2.PNG" id="1_2uxkb"]
 [ext_resource type="Texture2D" uid="uid://6tiqdwmy8t1a" path="res://assets/Graphics/Environments/Graveyard/Grounds/Leaves/Normal.PNG" id="1_v3be1"]
+[ext_resource type="AudioStream" uid="uid://cp2unwfj7pweo" path="res://assets/Audio/World/ps_sound_fireIgnite_01.mp3" id="2_d58f6"]
 [ext_resource type="Script" uid="uid://djrxiohdwmurd" path="res://scenes/Level/Props/leafpile.gd" id="2_x6ok7"]
 [ext_resource type="Texture2D" uid="uid://d4djsavqccbyl" path="res://assets/Graphics/Environments/Graveyard/Grounds/Leaves/Light.PNG" id="3_8x03k"]
+[ext_resource type="AudioStream" uid="uid://dohs8wv3pyarp" path="res://assets/Audio/World/ps_sound_fireCrackle_01.mp3" id="3_stohp"]
 [ext_resource type="Texture2D" uid="uid://ctd77813a6c18" path="res://assets/Graphics/Environments/Graveyard/Grounds/Leaves/Shadow.PNG" id="4_2uxkb"]
 [ext_resource type="PackedScene" uid="uid://dvm0l187x12a4" path="res://scenes/Generic/event.tscn" id="6_jgyv4"]
 [ext_resource type="Script" uid="uid://b3uonhf2rgqku" path="res://scenes/Level/Events/igniteLeaf.gd" id="7_d58f6"]
@@ -37,6 +39,16 @@ height = 1072.5586
 
 [node name="Leaf Pile" type="StaticBody2D" unique_id=822916376]
 script = ExtResource("2_x6ok7")
+
+[node name="IgniteSound" type="AudioStreamPlayer" parent="." unique_id=1350009863]
+stream = ExtResource("2_d58f6")
+bus = &"Sounds"
+
+[node name="BurningSound" type="AudioStreamPlayer2D" parent="." unique_id=1181793498]
+scale = Vector2(1.0000001, 1.0000001)
+stream = ExtResource("3_stohp")
+volume_db = 24.0
+bus = &"Sounds"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1719349191]
 position = Vector2(84, -601)

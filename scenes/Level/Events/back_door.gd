@@ -10,6 +10,8 @@ func run_event(manager: EventManager, curr_vessel: Vessel = null):
 	var choice = await manager.dialog.display_choices("Would you like to go outside?", ["Yes", "No"])
 	if choice == 0: # yes
 		manager.game_over.to_black("","",false)
+		manager.fade_track_out(true)
+		manager.fade_track_in(false)
 		await manager.game_over.done_fading
 		if curr_vessel is not Nun: # if you're not the nun, move her too
 			nun.global_position = nun_destination

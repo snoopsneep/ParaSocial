@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlq8rb5c2d1j3"
-path="res://.godot/imported/halldoors.png-15ff756bf8b949d9bd38562c646506fe.ctex"
+uid="uid://2pmg555dh82j"
+path="res://.godot/imported/Hall_rendered.PNG-7a81e4a2800f8ef04153cc41e85e8aef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Church/Hallway/halldoors.png"
-dest_files=["res://.godot/imported/halldoors.png-15ff756bf8b949d9bd38562c646506fe.ctex"]
+source_file="res://assets/Graphics/Environments/Church/Hallway/Hall_rendered.PNG"
+dest_files=["res://.godot/imported/Hall_rendered.PNG-7a81e4a2800f8ef04153cc41e85e8aef.ctex"]
 
 [params]
 

@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://bsa2bislxf6v3"]
+
+[ext_resource type="PackedScene" uid="uid://03s4l0q2exir" path="res://scenes/Generic/vessel.tscn" id="1_d68n5"]
+[ext_resource type="Script" uid="uid://nox20beqvty4" path="res://scenes/Characters/Nun/nun.gd" id="2_e26p4"]
+[ext_resource type="Texture2D" uid="uid://bs12r1fw4diob" path="res://assets/Graphics/Sprites/Characters/GraveKeeper/gravekeeper.png" id="3_laoog"]
+[ext_resource type="Script" uid="uid://10jg30al56ce" path="res://scenes/Level/Events/gd_interact.gd" id="5_laoog"]
+[ext_resource type="PackedScene" uid="uid://dvm0l187x12a4" path="res://scenes/Generic/event.tscn" id="7_1qiaw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uihdc"]
+atlas = ExtResource("3_laoog")
+region = Rect2(2810, 0, 2810, 4200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsjo3"]
+atlas = ExtResource("3_laoog")
+region = Rect2(5620, 0, 2810, 4200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cbwl"]
+atlas = ExtResource("3_laoog")
+region = Rect2(8430, 0, 2810, 4200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yarrb"]
+atlas = ExtResource("3_laoog")
+region = Rect2(0, 0, 2810, 4200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1juo7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uihdc")
+}],
+"loop": true,
+"name": &"DownLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsjo3")
+}],
+"loop": true,
+"name": &"DownRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cbwl")
+}],
+"loop": true,
+"name": &"UpLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yarrb")
+}],
+"loop": true,
+"name": &"UpRight",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_11kop"]
+radius = 261.71185
+height = 836.5083
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x6nh8"]
+radius = 467.00003
+height = 2317.9995
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j3sl2"]
+radius = 167.08777
+
+[node name="Gravedigger" unique_id=517857439 instance=ExtResource("1_d68n5")]
+scale = Vector2(0.118, 0.118)
+script = ExtResource("2_e26p4")
+max_health = 7
+speed = 500.0
+
+[node name="Shadow" parent="." index="0" unique_id=1127750345]
+position = Vector2(2.999954, -18.999939)
+scale = Vector2(7, 7)
+
+[node name="Sprite" parent="." index="1" unique_id=1569272056]
+position = Vector2(-8.474576, -1364.4067)
+sprite_frames = SubResource("SpriteFrames_1juo7")
+animation = &"UpLeft"
+
+[node name="FootCollider" parent="." index="2" unique_id=137211241]
+position = Vector2(2.999954, 1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_11kop")
+
+[node name="Hurtbox" parent="." index="3" unique_id=492537815]
+position = Vector2(2.999954, -988.99994)
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1693199414]
+shape = SubResource("CapsuleShape2D_x6nh8")
+
+[node name="GDInteract" parent="." index="4" unique_id=753610390 instance=ExtResource("7_1qiaw")]
+position = Vector2(0, -16.949158)
+script = ExtResource("5_laoog")
+compatible_vessels = {
+&"Nun": true,
+&"Rat": false,
+&"Statue": false
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GDInteract" index="1" unique_id=2105438925]
+position = Vector2(8.881784e-14, 20.833332)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_11kop")
+
+[node name="Interactable" parent="." index="5" unique_id=1058585514]
+position = Vector2(-33.898304, -2466.1018)
+scale = Vector2(4, 4)
+
+[node name="InteractRange" parent="." index="6" unique_id=768744904]
+visible = false
+position = Vector2(-466.10168, -466.10168)
+
+[node name="CollisionShape2D" parent="InteractRange" index="0" unique_id=2035168185]
+scale = Vector2(7, 7)
+shape = SubResource("CircleShape2D_j3sl2")

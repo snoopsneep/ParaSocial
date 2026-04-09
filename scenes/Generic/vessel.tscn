@@ -21,11 +21,14 @@ speed_scale = 0.0
 [node name="FootCollider" type="CollisionShape2D" parent="." unique_id=137211241]
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=492537815]
+collision_mask = 129
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1693199414]
 
 [node name="Interactable" type="Sprite2D" parent="." unique_id=1058585514]
 visible = false
+z_index = 300
+z_as_relative = false
 position = Vector2(0, -392)
 texture = ExtResource("3_ej3k3")
 

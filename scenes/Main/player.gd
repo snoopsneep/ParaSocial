@@ -108,6 +108,8 @@ func new_vessel(body,is_para = false):
 		curr_vessel.connect("new_vessel", new_vessel)
 		# tell this node that we're the parasite now!!
 		is_parasite = true
+		$ParasiteSound.play()
 	else:
 		# tell this node that we're NOT the parasite anymore!!
 		is_parasite = false
+		$PossessSound.play()

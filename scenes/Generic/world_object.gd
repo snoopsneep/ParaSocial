@@ -12,26 +12,44 @@ func _ready():
 	z_index = room_z_index
 
 func _physics_process(_delta):
+	var swapped_this_frame: int = 0
+
 	# make sure everything around it has the correct z-index
 	for i in range(in_front.size()):
+		i -= swapped_this_frame
 		# if it's not in front anymore
 		if check_overlap(in_front[i]):
 			var add_n_remove = in_front[i]
 			# remove it and add it again (to see if its in front)
 			_on_sprite_exited(add_n_remove)
 			_on_sprite_overlap(add_n_remove)
+			if !in_front.has(add_n_remove):
+				swapped_this_frame += 1
+			else:
+				in_front[i].get_parent().z_index = z_index - 1
+				in_front[i].get_parent().z_slave = true
 		else:
 			in_front[i].get_parent().z_index = z_index + 1
+			in_front[i].get_parent().z_slave = true
 
+	swapped_this_frame = 0
 	for i in range(behind.size()):
+		i -= swapped_this_frame
 		# if it's not behind anymore
 		if !check_overlap(behind[i]):
 			var add_n_remove = behind[i]
 			# remove it and add it again (to see if its in front)
 			_on_sprite_exited(add_n_remove)
 			_on_sprite_overlap(add_n_remove)
+			# if it's not in front anymore
+			if !behind.has(add_n_remove):
+				swapped_this_frame += 1
+			else:
+				behind[i].get_parent().z_index = z_index - 1
+				behind[i].get_parent().z_slave = true
 		else:
 			behind[i].get_parent().z_index = z_index - 1
+			behind[i].get_parent().z_slave = true
 
 
 # if true, actor is behind object

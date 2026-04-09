@@ -9,6 +9,7 @@ collision_mask = 39
 script = ExtResource("1_xt7bo")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1697843649]
+position = Vector2(431, -144)
 texture = ExtResource("1_o8cjk")
 offset = Vector2(-425, 100)
 

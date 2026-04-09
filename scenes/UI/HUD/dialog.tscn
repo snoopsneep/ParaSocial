@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://nop37x24jyr2" path="res://assets/Graphics/CGs/finCG1.png" id="3_2el7u"]
 [ext_resource type="Texture2D" uid="uid://eo7go2opwv7a" path="res://assets/Graphics/UI/Miscellaneous/textbox.png" id="3_aij1x"]
 [ext_resource type="Texture2D" uid="uid://hh6c4rf3es2y" path="res://assets/Graphics/UI/Miscellaneous/note-small.png" id="4_tc4ve"]
+[ext_resource type="AudioStream" uid="uid://bqy0t6nwp1brg" path="res://assets/Audio/UI/page_flipping_SPX.mp3" id="5_h1arg"]
 [ext_resource type="FontFile" uid="uid://ckwxxn4psd7lh" path="res://assets/Graphics/Fonts/TexgyrechorusMediumitalic-XJ2Z.otf" id="5_tc4ve"]
+[ext_resource type="AudioStream" uid="uid://jd7gkneqh5ea" path="res://assets/Audio/UI/ps_sound_ text.mp3" id="7_derc2"]
 
 [node name="Dialog" type="Control" unique_id=156659926]
 process_mode = 3
@@ -40,6 +42,10 @@ grow_vertical = 2
 texture = ExtResource("4_tc4ve")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="PageSound" type="AudioStreamPlayer" parent="Note" unique_id=625544339]
+stream = ExtResource("5_h1arg")
+bus = &"Sounds"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Note" unique_id=1051516154]
 layout_mode = 1
@@ -99,6 +105,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_aij1x")
+
+[node name="TextSound" type="AudioStreamPlayer" parent="TextBox" unique_id=584418291]
+stream = ExtResource("7_derc2")
+bus = &"Sounds"
 
 [node name="BoxContainer" type="Control" parent="TextBox" unique_id=1238274566]
 layout_mode = 1

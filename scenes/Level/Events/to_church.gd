@@ -10,6 +10,8 @@ func run_event(manager: EventManager, curr_vessel: Vessel = null):
 	var choice = await manager.dialog.display_choices("Would you like to go inside?", ["Yes", "No"])
 	if choice == 0: # yes
 		manager.game_over.to_black("","",false)
+		manager.fade_track_out(false)
+		manager.fade_track_in(true)
 		await manager.game_over.done_fading
 		curr_vessel.global_position = destination
 		curr_vessel.sprite.play("DownRight")

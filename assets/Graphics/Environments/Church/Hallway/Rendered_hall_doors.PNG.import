@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by65kf5nh6a33"
-path="res://.godot/imported/chapel_beamStates.png-8109dbee1d17724d83ecd475e4af4ddb.ctex"
+uid="uid://cngmnqpbhg57"
+path="res://.godot/imported/Rendered_hall_doors.PNG-3cdff84276f2963a22d84284f05e4044.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Church/Chapel/Demo Art/chapel_beamStates.png"
-dest_files=["res://.godot/imported/chapel_beamStates.png-8109dbee1d17724d83ecd475e4af4ddb.ctex"]
+source_file="res://assets/Graphics/Environments/Church/Hallway/Rendered_hall_doors.PNG"
+dest_files=["res://.godot/imported/Rendered_hall_doors.PNG-3cdff84276f2963a22d84284f05e4044.ctex"]
 
 [params]
 

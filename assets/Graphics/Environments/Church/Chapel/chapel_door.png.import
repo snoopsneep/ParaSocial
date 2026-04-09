@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfx1g4glnpn7v"
-path="res://.godot/imported/chapel_fullRafters.png-cedd6c2c23c693c30b5e6c5bb36d3eb3.ctex"
+uid="uid://dij5tqeftxqge"
+path="res://.godot/imported/chapel_door.png-3faa6735f9ec3b4e8c5a161a8f9e2a6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Church/Chapel/Demo Art/chapel_fullRafters.png"
-dest_files=["res://.godot/imported/chapel_fullRafters.png-cedd6c2c23c693c30b5e6c5bb36d3eb3.ctex"]
+source_file="res://assets/Graphics/Environments/Church/Chapel/chapel_door.png"
+dest_files=["res://.godot/imported/chapel_door.png-3faa6735f9ec3b4e8c5a161a8f9e2a6b.ctex"]
 
 [params]
 

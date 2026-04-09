@@ -1,8 +1,5 @@
 extends WorldEvent
 
-@export var shackman1: Enemy
-@export var shackman2: Enemy
-
 var ignited: bool = false
 
 func run_event(manager: EventManager, curr_vessel: Vessel = null):

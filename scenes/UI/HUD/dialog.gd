@@ -62,6 +62,9 @@ func next_line():
 	# opens the dialog box, making it actually visible
 	open()
 	show_box()
+	# start playing the dialog sound
+	$TextBox/TextSound.play()
+	$TextBox/TextSound.seek(randf_range(0, $TextBox/TextSound.stream.get_length()))
 	# while loop that increases the visible characters until they're all visible
 	while _dialog.visible_characters < _dialog.get_total_character_count():
 		# typing time adds delta time every frame, effectively storing how long the typing has gone on
@@ -72,6 +75,8 @@ func next_line():
 		_dialog.visible_characters = typing_speed * _typing_time
 		# wait for the next frame, allowing other stuff to run in the background
 		await get_tree().process_frame
+	# stop playing the dialog sound
+	$TextBox/TextSound.stop()
 	# reset _typing_time after the loop
 	_typing_time = 0
 	# signal that it's finished typing
@@ -191,6 +196,9 @@ func show_note(new_page: Page) -> Signal:
 	open()
 	hide_box()
 
+	$Note/PageSound.pitch_scale = 1 + randf_range(-0.15,0.15)
+	$Note/PageSound.play()
+
 	if new_date == "":
 		_note_date.visible = false
 	else:
@@ -217,6 +225,9 @@ func flip_note(new_page: Page) -> Signal:
 	open()
 	hide_box()
 
+	$Note/PageSound.pitch_scale = 1 + randf_range(-0.15,0.15)
+	$Note/PageSound.play()
+
 	if new_date == "":
 		_note_date.visible = false
 	else:
@@ -236,6 +247,8 @@ func flip_note(new_page: Page) -> Signal:
 func hide_note():
 	open()
 	hide_box()
+	$Note/PageSound.pitch_scale = 1 + randf_range(-0.15,0.45)
+	$Note/PageSound.play()
 	_note.visible = false
 	viewing_note = false
 

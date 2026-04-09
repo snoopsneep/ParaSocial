@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf2sn0crsk7gk"
-path="res://.godot/imported/chapel_rafters-2.png-8133aa67378e8d8696e3c93a04619f56.ctex"
+uid="uid://dhkjql3d40elv"
+path="res://.godot/imported/Hall_light.PNG-1bbf1e7216db1a34bdf7e8c46370fd63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Graphics/Environments/Church/Chapel/chapel_rafters-2.png"
-dest_files=["res://.godot/imported/chapel_rafters-2.png-8133aa67378e8d8696e3c93a04619f56.ctex"]
+source_file="res://assets/Graphics/Environments/Church/Hallway/Hall_light.PNG"
+dest_files=["res://.godot/imported/Hall_light.PNG-1bbf1e7216db1a34bdf7e8c46370fd63.ctex"]
 
 [params]
 

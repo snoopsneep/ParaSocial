@@ -11,3 +11,5 @@ func ignite():
 	smoke.visible = true
 	sprite.play("burn")
 	ignited = true
+	$IgniteSound.play()
+	$BurningSound.play()
