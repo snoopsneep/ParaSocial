@@ -74,25 +74,19 @@ script = ExtResource("2_e26p4")
 max_health = 7
 speed = 500.0
 
-[node name="Shadow" parent="." index="0" unique_id=1127750345]
+[node name="Shadow" parent="." index="1" unique_id=1127750345]
 position = Vector2(2.999954, -18.999939)
 scale = Vector2(7, 7)
 
-[node name="Sprite" parent="." index="1" unique_id=1569272056]
+[node name="Sprite" parent="." index="2" unique_id=1569272056]
 position = Vector2(-8.474576, -1364.4067)
 sprite_frames = SubResource("SpriteFrames_1juo7")
-animation = &"UpLeft"
+animation = &"DownRight"
 
-[node name="FootCollider" parent="." index="2" unique_id=137211241]
+[node name="FootCollider" parent="." index="3" unique_id=137211241]
 position = Vector2(2.999954, 1)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_11kop")
-
-[node name="Hurtbox" parent="." index="3" unique_id=492537815]
-position = Vector2(2.999954, -988.99994)
-
-[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1693199414]
-shape = SubResource("CapsuleShape2D_x6nh8")
 
 [node name="GDInteract" parent="." index="4" unique_id=753610390 instance=ExtResource("7_1qiaw")]
 position = Vector2(0, -16.949158)
@@ -108,11 +102,17 @@ position = Vector2(8.881784e-14, 20.833332)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_11kop")
 
-[node name="Interactable" parent="." index="5" unique_id=1058585514]
+[node name="Hurtbox" parent="." index="5" unique_id=492537815]
+position = Vector2(2.999954, -988.99994)
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1693199414]
+shape = SubResource("CapsuleShape2D_x6nh8")
+
+[node name="Interactable" parent="." index="6" unique_id=1058585514]
 position = Vector2(-33.898304, -2466.1018)
 scale = Vector2(4, 4)
 
-[node name="InteractRange" parent="." index="6" unique_id=768744904]
+[node name="InteractRange" parent="." index="7" unique_id=768744904]
 visible = false
 position = Vector2(-466.10168, -466.10168)
 

@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://brcesq6ppar7j"]
+
+[ext_resource type="Script" uid="uid://3b8fuaupposg" path="res://scenes/Level/Props/shack.gd" id="1_pffho"]
+[ext_resource type="Texture2D" uid="uid://cx0pytnptue11" path="res://assets/Graphics/Environments/Graveyard/Shack/Interior/Resized_interior.PNG" id="2_2ig1o"]
+[ext_resource type="Texture2D" uid="uid://cx80lr5v1j4b3" path="res://assets/Graphics/Environments/Graveyard/Shack/Exterior/No_door.PNG" id="2_ieaw2"]
+[ext_resource type="Texture2D" uid="uid://c4ecnqabkcpjq" path="res://assets/Graphics/Environments/Graveyard/Shack/Exterior/Exterior_new_colours.PNG" id="3_2ig1o"]
+[ext_resource type="Texture2D" uid="uid://d2fohwpw5vkoe" path="res://assets/Graphics/Environments/Graveyard/Shack/Exterior/Exterior_light.PNG" id="4_pffho"]
+[ext_resource type="PackedScene" uid="uid://dvm0l187x12a4" path="res://scenes/Generic/event.tscn" id="6_wruop"]
+[ext_resource type="Script" uid="uid://b66ye4764wger" path="res://scenes/Level/Events/into_shack.gd" id="7_oqfft"]
+[ext_resource type="Script" uid="uid://dyaw5n1iqy0l3" path="res://scenes/Level/Events/shack_door.gd" id="7_w2dr4"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ieaw2"]
+a = Vector2(-142.00006, 69.00003)
+b = Vector2(119, -78.000015)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wruop"]
+radius = 14.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wruop"]
+a = Vector2(-124.85387, -72.253174)
+b = Vector2(132.95189, 80.27948)
+
+[node name="Shack" type="StaticBody2D" unique_id=70036307]
+z_as_relative = false
+collision_layer = 4
+collision_mask = 39
+script = ExtResource("1_pffho")
+
+[node name="Interior" type="Node2D" parent="." unique_id=352951725]
+z_index = 2
+z_as_relative = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Interior" unique_id=886761635]
+position = Vector2(154, -379)
+scale = Vector2(0.97, 0.97)
+texture = ExtResource("2_2ig1o")
+
+[node name="Exterior" type="Node2D" parent="." unique_id=905389324]
+z_index = 4
+z_as_relative = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Exterior" unique_id=467012065]
+position = Vector2(154, -384.00024)
+texture = ExtResource("2_ieaw2")
+
+[node name="Door" type="Sprite2D" parent="Exterior/Sprite2D" unique_id=940021126]
+texture = ExtResource("3_2ig1o")
+
+[node name="Shacklight" type="Sprite2D" parent="Exterior" unique_id=40052475]
+z_index = 10
+position = Vector2(154, -384.00024)
+scale = Vector2(0.99999976, 0.99999976)
+texture = ExtResource("4_pffho")
+
+[node name="Door" type="StaticBody2D" parent="." unique_id=1842907432]
+position = Vector2(691, 290)
+scale = Vector2(0.99999976, 0.99999976)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=153180744]
+shape = SubResource("SegmentShape2D_ieaw2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=645964770]
+polygon = PackedVector2Array(551, 360, 376, 468, -580, -90, -33, -405, 939, 139, 810, 215, 804, 211, 916, 147, -34, -397, -556, -95, 389, 455, 546, 354)
+
+[node name="SpriteBoundaries" type="Area2D" parent="." unique_id=1776424411]
+visible = false
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="SpriteBoundaries" unique_id=57674299]
+visible = false
+polygon = PackedVector2Array(379, 457, 942, 139, 967, -432, 684, -677, -308, -1253, -622, -665, -582, -95)
+
+[node name="ShackDoor" parent="." unique_id=753610390 instance=ExtResource("6_wruop")]
+position = Vector2(652, 216)
+script = ExtResource("7_w2dr4")
+compatible_vessels = {
+&"Gravedigger": false,
+&"Nun": true,
+&"Rat": false,
+&"Statue": true
+}
+
+[node name="CollisionShape2D" parent="ShackDoor" index="0" unique_id=18997285]
+position = Vector2(20, 57)
+shape = SubResource("CircleShape2D_wruop")
+
+[node name="IntoShack" type="Area2D" parent="." unique_id=108798896]
+position = Vector2(685, 284)
+rotation = 2.0943952
+collision_layer = 16
+collision_mask = 32
+script = ExtResource("7_oqfft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IntoShack" unique_id=1668382760]
+shape = SubResource("SegmentShape2D_wruop")
+
+[node name="InteriorBounds" type="Area2D" parent="IntoShack" unique_id=1106859035]
+collision_layer = 16
+collision_mask = 32
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="IntoShack/InteriorBounds" unique_id=317024914]
+polygon = PackedVector2Array(295.52817, 183.86975, -232.7436, -123.12366, -229.76326, 964.0383, 291.77643, 1263.3716)
+
+[node name="LeftPoint" type="Marker2D" parent="." unique_id=2031971629]
+position = Vector2(-673, -76)
+gizmo_extents = 400.0
+
+[node name="Middle" type="Marker2D" parent="." unique_id=1786056407]
+position = Vector2(73, -42)
+gizmo_extents = 400.0
+
+[node name="RightPoint" type="Marker2D" parent="." unique_id=935884414]
+position = Vector2(974, 122)
+gizmo_extents = 400.0
+
+[connection signal="area_entered" from="SpriteBoundaries" to="." method="_on_sprite_overlap"]
+[connection signal="area_exited" from="SpriteBoundaries" to="." method="_on_sprite_exited"]
+[connection signal="body_entered" from="IntoShack" to="IntoShack" method="entered"]
+[connection signal="body_exited" from="IntoShack" to="IntoShack" method="trigger"]
+
+[editable path="ShackDoor"]

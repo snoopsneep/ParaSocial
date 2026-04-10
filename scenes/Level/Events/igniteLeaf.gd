@@ -3,7 +3,7 @@ extends WorldEvent
 var ignited: bool = false
 
 func run_event(manager: EventManager, curr_vessel: Vessel = null):
-	if Global.guards_distracted:
+	if Global.guards_distracted and !ignited:
 		await manager.dialog.display_line("A large, dry pile of leaves. I have no use for these.")
 	if ignited:
 		await manager.dialog.display_line("You should probably leave before somebody catches you here.")
@@ -19,6 +19,9 @@ func run_event(manager: EventManager, curr_vessel: Vessel = null):
 				await manager.dialog.display_line("You hold the flame close to the pile, watching as the embers dance across the first few leaves. Before you know it...")
 				get_parent().ignite()
 				ignited = true
+				#region debug
+				Global.guards_distracted = true
+				#endregion
 				await manager.dialog.display_line("The pile erupts in flames! You'd better get out of here while you can...")
 			else: # no
 				await manager.dialog.display_line("You contain your urges, and leave the pile as it is.")

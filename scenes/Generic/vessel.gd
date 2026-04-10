@@ -24,6 +24,8 @@ var is_aggro: bool = true
 
 ## If true, the z_index is currently controlled by an object
 var z_slave: bool = false
+# stupid dogshit bandaid solution
+var in_shed: bool = false
 
 ## Emits when the vessel takes damage. Passes the current and max hp.
 signal hurt(hp,max_hp)
@@ -49,7 +51,7 @@ func _physics_process(_delta):
 		# and they're in the sprites collision layer
 		# (and not already being controlled)
 		if (i.get_collision_layer_value(8) and
-		!i.get_parent().z_slave):
+		!i.get_parent().z_slave) and !in_shed:
 			# put them on the same z_index as me
 			i.get_parent().z_index = z_index
 
@@ -91,12 +93,14 @@ func _physics_process(_delta):
 
 ## Triggers when the Vessel takes damage.
 func hit(dmg = 1):
-	health -= dmg
-	if health <= 0:
-		sprite.visible = false
-		$CollisionShape2D.disabled = true
-		boot.emit()
-	hurt.emit(health,max_health)
+	pass # don't let anyone else take damage
+	#health -= dmg
+	#if health <= 0:
+	#	sprite.visible = false
+	#	$FootCollider.set_deferred("disabled", true)
+	#	$Hurtbox/CollisionShape2D.set_deferred("disabled", true)
+	#	boot.emit()
+	#hurt.emit(health,max_health)
 
 ## Triggers when the player hits the interact button.
 func interact():

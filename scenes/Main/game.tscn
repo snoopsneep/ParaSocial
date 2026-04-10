@@ -66,22 +66,19 @@
 [ext_resource type="Theme" uid="uid://dlj40uugp24a7" path="res://resources/dialog/dialog.tres" id="47_bjq35"]
 [ext_resource type="Script" uid="uid://caet86rltnkgl" path="res://scenes/UI/game_over.gd" id="47_dgtgp"]
 [ext_resource type="PackedScene" uid="uid://bdguhi7rv5h5f" path="res://scenes/Level/Props/Graves/RoundGrave.tscn" id="47_jkr68"]
+[ext_resource type="PackedScene" uid="uid://bvf2pqiqa77fr" path="res://scenes/Level/Props/plinth.tscn" id="47_ndhd5"]
 [ext_resource type="Texture2D" uid="uid://7a44r53pnap6" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_bgd_p2_lighting-small-small-small.png" id="47_qu7pk"]
-[ext_resource type="Texture2D" uid="uid://cx0pytnptue11" path="res://assets/Graphics/Environments/Graveyard/Shack/Interior/Resized_interior.PNG" id="48_srh6f"]
-[ext_resource type="Texture2D" uid="uid://d2fohwpw5vkoe" path="res://assets/Graphics/Environments/Graveyard/Shack/Exterior/Exterior_light.PNG" id="48_ubx2l"]
 [ext_resource type="Texture2D" uid="uid://sxo5kev2kxt5" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_bgd_p1_base-small-small-small.png" id="48_vgxvf"]
 [ext_resource type="Texture2D" uid="uid://cf7hk2x4fk8ga" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_bgd_p1_shadows-small-small.png" id="49_jw632"]
-[ext_resource type="Texture2D" uid="uid://cx80lr5v1j4b3" path="res://assets/Graphics/Environments/Graveyard/Shack/Exterior/No_door.PNG" id="49_srh6f"]
 [ext_resource type="FontFile" uid="uid://c3yqski6aq7s4" path="res://assets/Graphics/Fonts/gravord.ttf" id="49_timmx"]
 [ext_resource type="PackedScene" uid="uid://d32fw1nmou6rf" path="res://scenes/Level/Props/Graves/TwinGraves.tscn" id="49_ywckj"]
 [ext_resource type="PackedScene" uid="uid://dvorfeptuesjk" path="res://scenes/Level/Props/Graves/FancyGrave.tscn" id="50_k4cmf"]
-[ext_resource type="Texture2D" uid="uid://c4ecnqabkcpjq" path="res://assets/Graphics/Environments/Graveyard/Shack/Exterior/Exterior_new_colours.PNG" id="50_ubx2l"]
 [ext_resource type="PackedScene" uid="uid://be3d4w264egdr" path="res://scenes/Level/Props/Graves/ThinHatGrave.tscn" id="51_ry740"]
-[ext_resource type="Script" uid="uid://b66ye4764wger" path="res://scenes/Level/Events/into_shack.gd" id="51_ubx2l"]
 [ext_resource type="PackedScene" uid="uid://bquje6jxx4ik0" path="res://scenes/Level/Props/leafpile.tscn" id="52_jfl2n"]
 [ext_resource type="PackedScene" uid="uid://8y3fpv34gmjg" path="res://rose.tscn" id="58_jcrwi"]
 [ext_resource type="Script" uid="uid://c84qyu8e3jj70" path="res://scenes/UI/pause_menu.gd" id="60_srh6f"]
 [ext_resource type="PackedScene" uid="uid://cjb4h4n0rllsn" path="res://scenes/Level/Props/mausoleum.tscn" id="66_vamxk"]
+[ext_resource type="PackedScene" uid="uid://brcesq6ppar7j" path="res://scenes/Level/Props/shack.tscn" id="68_kxak1"]
 [ext_resource type="AudioStream" uid="uid://x10iqcdeepsw" path="res://assets/Audio/Characters/Parasite/new_vessel.mp3" id="68_qu7pk"]
 [ext_resource type="AudioStream" uid="uid://dpv6pdf830uhq" path="res://assets/Audio/Characters/Parasite/parasite.mp3" id="69_c5hcr"]
 [ext_resource type="PackedScene" uid="uid://bsa2bislxf6v3" path="res://scenes/Characters/Gravedigger/gravedigger.tscn" id="72_vgxvf"]
@@ -315,34 +312,6 @@ b = Vector2(2851, -2103)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_wy1rp"]
 a = Vector2(-1289, -503)
 b = Vector2(1161, 901)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_qsjuo"]
-a = Vector2(-125, 65)
-b = Vector2(107.5, -68.75049)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_k4cmf"]
-a = Vector2(-278.75, -152.5)
-b = Vector2(681.25, 402.5005)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_ry740"]
-a = Vector2(-278.75, -152.5)
-b = Vector2(680, 403.75)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_i57xu"]
-a = Vector2(-108.75195, 57.5)
-b = Vector2(72.49805, -51.25)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_ncbl8"]
-a = Vector2(-75.00098, 36.25)
-b = Vector2(73.74805, -50)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_jkr68"]
-a = Vector2(-308.75, 173.75)
-b = Vector2(256.25, -155.00049)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_nennx"]
-a = Vector2(-106.16943, -61.390625)
-b = Vector2(125.45459, 74.793945)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ubx2l"]
 vertices = PackedVector2Array(19879.313, 3188.6875, 21763, 4262.1094, 15209.969, 8098.422, 18651.078, 3980.8516, 10413.5625, 5324.75, 12001.383, 4353.8203, 17886.148, 3502.6328, 16604.07, 1293.5313, 18494.633, 2364.0938, 17867.86, 2825.039, 12761.32, 3540.8828)
@@ -653,6 +622,7 @@ shape = SubResource("CircleShape2D_v2gm8")
 [node name="Objects" type="Node2D" parent="Map/Church/Dining Room" unique_id=1548692139]
 
 [node name="DiningTable" parent="Map/Church/Dining Room/Objects" unique_id=1286496774 instance=ExtResource("26_hbikf")]
+z_index = 2
 position = Vector2(-340.7693, -657.6923)
 bench_specific_z_index = 4
 room_z_index = 2
@@ -763,6 +733,7 @@ position = Vector2(13.636364, 27.272728)
 shape = SubResource("CircleShape2D_rcjdb")
 
 [node name="Main Hall" type="Node2D" parent="Map/Church" unique_id=1643553789 node_paths=PackedStringArray("connected_rooms")]
+visible = false
 z_index = 3
 z_as_relative = false
 position = Vector2(1, -1)
@@ -1078,40 +1049,47 @@ pages = Array[ExtResource("36_jcrwi")]([SubResource("Resource_jw632"), SubResour
 
 [node name="Objects" type="Node2D" parent="Map/Church/Chapel" unique_id=2008570413]
 
+[node name="Plinth" parent="Map/Church/Chapel/Objects" unique_id=1049196478 instance=ExtResource("47_ndhd5")]
+z_index = 4
+position = Vector2(577.00006, 137.00002)
+scale = Vector2(0.1, 0.1)
+bench_specific_z_index = 5
+room_z_index = 4
+
 [node name="Bench" parent="Map/Church/Chapel/Objects" unique_id=912544155 instance=ExtResource("40_k765p")]
 z_index = 1
 position = Vector2(520, 532)
-bench_specific_z_index = 7
+bench_specific_z_index = 9
 room_z_index = 4
 
 [node name="Bench2" parent="Map/Church/Chapel/Objects" unique_id=1679208177 instance=ExtResource("40_k765p")]
 z_index = 1
 position = Vector2(-40, 205)
-bench_specific_z_index = 5
+bench_specific_z_index = 7
 room_z_index = 4
 
 [node name="Bench3" parent="Map/Church/Chapel/Objects" unique_id=1752845825 instance=ExtResource("40_k765p")]
 z_index = 1
 position = Vector2(244, 689)
-bench_specific_z_index = 11
+bench_specific_z_index = 13
 room_z_index = 4
 
 [node name="Bench4" parent="Map/Church/Chapel/Objects" unique_id=1046658777 instance=ExtResource("40_k765p")]
 z_index = 1
 position = Vector2(-316, 362)
-bench_specific_z_index = 9
+bench_specific_z_index = 11
 room_z_index = 4
 
 [node name="Bench5" parent="Map/Church/Chapel/Objects" unique_id=2109730177 instance=ExtResource("40_k765p")]
 z_index = 1
 position = Vector2(-73, 865)
-bench_specific_z_index = 15
+bench_specific_z_index = 17
 room_z_index = 4
 
 [node name="Bench6" parent="Map/Church/Chapel/Objects" unique_id=1792037415 instance=ExtResource("40_k765p")]
 z_index = 1
 position = Vector2(-633, 538)
-bench_specific_z_index = 13
+bench_specific_z_index = 15
 room_z_index = 4
 
 [node name="Graveyard" type="Node2D" parent="Map" unique_id=2101462850]
@@ -1121,7 +1099,7 @@ scale = Vector2(0.8, 0.8)
 [node name="Grounds" type="Node2D" parent="Map/Graveyard" unique_id=1998329655 node_paths=PackedStringArray("actors_in_room")]
 z_index = 1
 script = ExtResource("3_7ig6f")
-actors_in_room = [NodePath("../../../Characters/Enemy"), NodePath("../../../Characters/Shackman1"), NodePath("../../../Characters/Shackman2")]
+actors_in_room = [NodePath("../../../Characters/Enemy"), NodePath("../../../Characters/Shackman1"), NodePath("../../../Characters/Shackman2"), NodePath("../../../Characters/Gravedigger")]
 
 [node name="Graphics" type="Node2D" parent="Map/Graveyard/Grounds" unique_id=227855513]
 
@@ -2004,124 +1982,15 @@ nun = NodePath("../../../../../../Characters/Nun")
 
 [node name="Events" type="Node2D" parent="Map/Graveyard/Grounds" unique_id=1657358014]
 
-[node name="ShackInterior" type="Node2D" parent="Map/Graveyard" unique_id=1315983624]
-position = Vector2(560.00024, 263.74997)
-script = ExtResource("3_7ig6f")
-
-[node name="Graphics" type="Node2D" parent="Map/Graveyard/ShackInterior" unique_id=479973115]
-
-[node name="Sprite2D" type="Sprite2D" parent="Map/Graveyard/ShackInterior/Graphics" unique_id=1921780757]
-position = Vector2(10988.75, 3870)
-scale = Vector2(0.97, 0.97)
-texture = ExtResource("48_srh6f")
-
-[node name="Colliders" type="Node2D" parent="Map/Graveyard/ShackInterior" unique_id=284276764]
-
-[node name="Events" type="Node2D" parent="Map/Graveyard/ShackInterior" unique_id=1539663919]
-
-[node name="Props" type="Node2D" parent="Map/Graveyard/ShackInterior" unique_id=1507017331]
-
-[node name="ShackExterior" type="Node2D" parent="Map/Graveyard" unique_id=389830828]
-z_index = 1
-position = Vector2(560.00024, 288.74997)
-script = ExtResource("3_7ig6f")
-
-[node name="Graphics" type="Node2D" parent="Map/Graveyard/ShackExterior" unique_id=1616460062]
-
-[node name="SHACK" type="Sprite2D" parent="Map/Graveyard/ShackExterior/Graphics" unique_id=366289493]
-position = Vector2(10985, 3864.9998)
-texture = ExtResource("49_srh6f")
-
-[node name="Door" type="Sprite2D" parent="Map/Graveyard/ShackExterior/Graphics/SHACK" unique_id=1585621465]
-texture = ExtResource("50_ubx2l")
-
-[node name="Shacklight" type="Sprite2D" parent="Map/Graveyard/ShackExterior/Graphics" unique_id=675806464]
-z_index = 6
-position = Vector2(10985, 3864.9998)
-scale = Vector2(0.99999976, 0.99999976)
-texture = ExtResource("48_ubx2l")
-
-[node name="Colliders" type="Node2D" parent="Map/Graveyard/ShackExterior" unique_id=1542174749]
-
-[node name="Door" type="StaticBody2D" parent="Map/Graveyard/ShackExterior/Colliders" unique_id=87353075]
-visible = false
-position = Vector2(11515, 4543.7495)
-scale = Vector2(0.99999976, 0.99999976)
-collision_layer = 4
-collision_mask = 15
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/ShackExterior/Colliders/Door" unique_id=1062472340]
-shape = SubResource("SegmentShape2D_qsjuo")
-
-[node name="Shack1" type="StaticBody2D" parent="Map/Graveyard/ShackExterior/Colliders" unique_id=1942001796]
-position = Vector2(10733.75, 4206.2495)
-scale = Vector2(0.9999998, 0.9999998)
-collision_layer = 4
-collision_mask = 15
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/ShackExterior/Colliders/Shack1" unique_id=467829758]
-position = Vector2(-207.50005, 107.500015)
-shape = SubResource("SegmentShape2D_k4cmf")
-
-[node name="Shack2" type="StaticBody2D" parent="Map/Graveyard/ShackExterior/Colliders" unique_id=1743997523]
-position = Vector2(11298.75, 3879.9995)
-scale = Vector2(0.9999998, 0.9999998)
-collision_layer = 4
-collision_mask = 15
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/ShackExterior/Colliders/Shack2" unique_id=706802316]
-position = Vector2(-208.75005, 105.00002)
-shape = SubResource("SegmentShape2D_ry740")
-
-[node name="Shack3" type="StaticBody2D" parent="Map/Graveyard/ShackExterior/Colliders" unique_id=183519800]
-position = Vector2(11316.251, 4658.7495)
-scale = Vector2(0.9999997, 0.9999997)
-collision_layer = 4
-collision_mask = 15
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/ShackExterior/Colliders/Shack3" unique_id=1236662351]
-shape = SubResource("SegmentShape2D_i57xu")
-
-[node name="Shack5" type="StaticBody2D" parent="Map/Graveyard/ShackExterior/Colliders" unique_id=1979875178]
-position = Vector2(11697.501, 4438.7495)
-scale = Vector2(0.9999997, 0.9999997)
-collision_layer = 4
-collision_mask = 15
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/ShackExterior/Colliders/Shack5" unique_id=999976927]
-shape = SubResource("SegmentShape2D_ncbl8")
-
-[node name="Shack4" type="StaticBody2D" parent="Map/Graveyard/ShackExterior/Colliders" unique_id=1371913589]
-position = Vector2(10556.25, 3987.4995)
-scale = Vector2(0.9999998, 0.9999998)
-collision_layer = 4
-collision_mask = 15
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/ShackExterior/Colliders/Shack4" unique_id=2127454902]
-shape = SubResource("SegmentShape2D_jkr68")
-
-[node name="Events" type="Node2D" parent="Map/Graveyard/ShackExterior" unique_id=1187301086]
-
-[node name="IntoShack" parent="Map/Graveyard/ShackExterior/Events" unique_id=549578245 node_paths=PackedStringArray("room_1", "room_2") instance=ExtResource("18_y72l8")]
-position = Vector2(11516.25, 4536.2495)
-rotation = 2.0943952
-script = ExtResource("51_ubx2l")
-room_1 = NodePath("../..")
-room_2 = NodePath("../../../ShackInterior")
-
-[node name="CollisionShape2D" parent="Map/Graveyard/ShackExterior/Events/IntoShack" index="0" unique_id=40191430]
-shape = SubResource("SegmentShape2D_nennx")
-
-[node name="Marker2D" parent="Map/Graveyard/ShackExterior/Events/IntoShack" index="1" unique_id=1258179268]
-position = Vector2(4.9311523, -76.45938)
-
-[node name="Marker2D2" parent="Map/Graveyard/ShackExterior/Events/IntoShack" index="2" unique_id=786649644]
-position = Vector2(-21.213999, 75.75667)
+[node name="Shack" parent="Map/Graveyard" unique_id=830200802 node_paths=PackedStringArray("actors_in_room") instance=ExtResource("68_kxak1")]
+position = Vector2(11545, 4434.9995)
+room_z_index = 1
+actors_in_room = [NodePath("../../../Characters/Gravedigger")]
 
 [node name="Player" type="Node2D" parent="." unique_id=714933004 node_paths=PackedStringArray("first_vessel", "curr_room")]
 unique_name_in_owner = true
 script = ExtResource("3_em1bs")
-first_vessel = NodePath("../Characters/Nun")
+first_vessel = NodePath("../Characters/Statue")
 curr_room = NodePath("../Map/Church/Chapel")
 
 [node name="PossessSound" type="AudioStreamPlayer" parent="Player" unique_id=1775966610]
@@ -2142,13 +2011,13 @@ y_sort_enabled = true
 [node name="Statue" parent="Characters" unique_id=1731815557 instance=ExtResource("3_e3dby")]
 z_index = 4
 z_as_relative = false
-position = Vector2(4288, -212)
+position = Vector2(4090, -130)
 speed = 350.0
 
 [node name="Nun" parent="Characters" unique_id=1209905237 instance=ExtResource("39_x2ju3")]
 z_index = 4
 z_as_relative = false
-position = Vector2(4084, -58.00003)
+position = Vector2(3977.9998, 69)
 
 [node name="Rat" parent="Characters" unique_id=752411575 instance=ExtResource("38_x2ju3")]
 z_index = 2
@@ -2164,17 +2033,17 @@ patrol_route = [Vector2(12757.001, 6408), Vector2(14115, 5286), Vector2(16573, 6
 
 [node name="Shackman1" parent="Characters" unique_id=1739128683 instance=ExtResource("25_uuwcm")]
 unique_name_in_owner = true
-position = Vector2(12983.001, 5448)
+position = Vector2(13060, 5262)
 patrol_route = [Vector2(12780, 5506)]
 
 [node name="Shackman2" parent="Characters" unique_id=383718327 instance=ExtResource("25_uuwcm")]
 unique_name_in_owner = true
-position = Vector2(12677, 5652)
+position = Vector2(12653, 5494)
 patrol_route = [Vector2(12745, 5786)]
 
 [node name="Gravedigger" parent="Characters" unique_id=1734323390 instance=ExtResource("72_vgxvf")]
-z_index = 4
-position = Vector2(3297.9998, 477)
+z_index = 3
+position = Vector2(12142, 4967)
 
 [node name="graveyard nav" type="NavigationRegion2D" parent="." unique_id=2146172451]
 visible = false
@@ -2429,4 +2298,5 @@ text = "Retry"
 [editable path="Map/Graveyard/Grounds/Objects/Leafpile"]
 [editable path="Map/Graveyard/Grounds/Objects/Mausoleum"]
 [editable path="Map/Graveyard/Grounds/Objects/Mausoleum/ToChurch"]
-[editable path="Map/Graveyard/ShackExterior/Events/IntoShack"]
+[editable path="Map/Graveyard/Shack"]
+[editable path="Map/Graveyard/Shack/ShackDoor"]
