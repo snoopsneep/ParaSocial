@@ -2,10 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://03s4l0q2exir" path="res://scenes/Generic/vessel.tscn" id="1_cf675"]
 [ext_resource type="Script" uid="uid://ckps7bv6qrj7d" path="res://scenes/Characters/Guard/enemy.gd" id="1_cgdn4"]
+[ext_resource type="AudioStream" uid="uid://d3m4f2o287rmn" path="res://assets/Audio/Characters/Generic/ps_sound_running_01.mp3" id="3_0lu6n"]
 [ext_resource type="Texture2D" uid="uid://dk0pgjwld152a" path="res://assets/Graphics/Sprites/Characters/Guard/gaurdgirl.png" id="3_2j8a8"]
+[ext_resource type="AudioStream" uid="uid://c042787sm02hj" path="res://assets/Audio/Characters/Guard/ps_sound_swordSlice_01.mp3" id="3_v7xeh"]
 [ext_resource type="Texture2D" uid="uid://co72jkvjk4gks" path="res://assets/Graphics/Sprites/Characters/Guard/headgirl.png" id="4_2j8a8"]
+[ext_resource type="AudioStream" uid="uid://bg8m2a7cqtuqa" path="res://assets/Audio/Characters/Guard/freesound_community-footstep-grass-leaf-38778.mp3" id="4_6efiu"]
+[ext_resource type="AudioStream" uid="uid://f07r6ithc85n" path="res://assets/Audio/Characters/Guard/ps_sound_fatalSword_01.mp3" id="4_p18xb"]
 [ext_resource type="Texture2D" uid="uid://cejlb2jfqt07h" path="res://assets/Graphics/Miscellaneous/sword_slash.png" id="5_2j8a8"]
+[ext_resource type="AudioStream" uid="uid://ehwe7lri05nw" path="res://assets/Audio/Characters/Guard/ps_sound_guardCollapse_01.mp3" id="5_28w5n"]
 [ext_resource type="Texture2D" uid="uid://bwipthywd7cqt" path="res://assets/Graphics/Sprites/Characters/Guard/potatogirl.png" id="5_qwxbv"]
+[ext_resource type="AudioStream" uid="uid://doxdkld0ktwto" path="res://assets/Audio/Characters/Guard/ps_sound_guardDying_01.mp3" id="6_v7xeh"]
 [ext_resource type="PackedScene" uid="uid://dvm0l187x12a4" path="res://scenes/Generic/event.tscn" id="7_88cui"]
 [ext_resource type="Script" uid="uid://cn8sfg0gvq7ar" path="res://scenes/Level/Events/generic_guard.gd" id="8_re3jj"]
 
@@ -87,10 +93,6 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7x6ft"]
 radius = 29.0
 height = 108.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ghogs"]
-radius = 46.0
-height = 246.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qwxbv"]
 atlas = ExtResource("5_2j8a8")
@@ -174,6 +176,10 @@ radius = 230.3343
 radius = 29.0
 height = 108.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ghogs"]
+radius = 46.0
+height = 246.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_frww3"]
 radius = 98.02937
 
@@ -189,30 +195,49 @@ patrol_route = [Vector2(0, 0)]
 max_health = 10
 speed = 250.0
 
-[node name="Shadow" parent="." index="0" unique_id=1127750345]
+[node name="HitSound" type="AudioStreamPlayer2D" parent="Sounds" parent_id_path=PackedInt32Array(2050725486) index="0" unique_id=1595234776]
+stream = ExtResource("3_v7xeh")
+volume_db = -4.437
+max_polyphony = 3
+bus = &"Sounds"
+
+[node name="WhiffSound" type="AudioStreamPlayer2D" parent="Sounds" parent_id_path=PackedInt32Array(2050725486) index="1" unique_id=499484832]
+stream = ExtResource("4_p18xb")
+volume_db = -2.499
+bus = &"Sounds"
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="Sounds" parent_id_path=PackedInt32Array(2050725486) index="2" unique_id=1829982240]
+stream = ExtResource("5_28w5n")
+volume_db = -2.499
+max_polyphony = 3
+bus = &"Sounds"
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="Sounds" parent_id_path=PackedInt32Array(2050725486) index="3" unique_id=1769862519]
+stream = ExtResource("6_v7xeh")
+volume_db = 6.021
+bus = &"Sounds"
+
+[node name="WalkSound" parent="Sounds" parent_id_path=PackedInt32Array(2050725486) index="4" unique_id=78210695]
+stream = ExtResource("3_0lu6n")
+
+[node name="GrassWalkSound" parent="Sounds" parent_id_path=PackedInt32Array(2050725486) index="5" unique_id=544779443]
+stream = ExtResource("4_6efiu")
+
+[node name="Shadow" parent="." index="1" unique_id=1127750345]
 position = Vector2(0, 25)
 scale = Vector2(0.6, 0.6)
 texture = null
 
-[node name="Sprite" parent="." index="1" unique_id=1569272056]
+[node name="Sprite" parent="." index="2" unique_id=1569272056]
 position = Vector2(0, -125)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_ghogs")
 animation = &"Potato"
 
-[node name="FootCollider" parent="." index="2" unique_id=137211241]
+[node name="FootCollider" parent="." index="3" unique_id=137211241]
 position = Vector2(0, 21)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_7x6ft")
-
-[node name="Hurtbox" parent="." index="3" unique_id=492537815]
-visible = false
-collision_layer = 2
-collision_mask = 16
-
-[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1693199414]
-position = Vector2(0, -70)
-shape = SubResource("CapsuleShape2D_ghogs")
 
 [node name="Attack" type="Area2D" parent="." index="4" unique_id=169906770]
 position = Vector2(9.536743e-07, -107)
@@ -268,21 +293,30 @@ one_shot = true
 [node name="PauseTimer" type="Timer" parent="." index="10" unique_id=592442626]
 one_shot = true
 
-[node name="Interactable" parent="." index="11" unique_id=1058585514]
+[node name="Hurtbox" parent="." index="11" unique_id=492537815]
+visible = false
+collision_layer = 2
+collision_mask = 16
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1693199414]
+position = Vector2(0, -70)
+shape = SubResource("CapsuleShape2D_ghogs")
+
+[node name="Interactable" parent="." index="12" unique_id=1058585514]
 position = Vector2(-5, -249)
 scale = Vector2(0.7, 0.7)
 
-[node name="InteractRange" parent="." index="12" unique_id=768744904]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="13" unique_id=92654818]
+path_desired_distance = 4.0
+target_desired_distance = 4.0
+
+[node name="InteractRange" parent="." index="14" unique_id=768744904]
 visible = false
 
 [node name="CollisionShape2D" parent="InteractRange" index="0" unique_id=2035168185]
 position = Vector2(-18.999998, 19.999998)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("CircleShape2D_frww3")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="13" unique_id=92654818]
-path_desired_distance = 4.0
-target_desired_distance = 4.0
 
 [connection signal="area_entered" from="Attack" to="." method="_on_attack_area_entered"]
 [connection signal="animation_finished" from="Attack/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -13,7 +13,7 @@ func run_event(manager: EventManager, curr_vessel: Vessel = null):
 				for i in range(1,pages.size()):
 					await manager.dialog.flip_note(pages[i])
 			manager.dialog.hide_note()
-		curr_vessel.visible = false
+		curr_vessel.visible = true
 	else: # player is NOT a rat
 		manager.dialog.display_line("There appears to be a small mousehole at the base of the wall here. However, you're too big to investigate further.")
 		await manager.dialog.finished

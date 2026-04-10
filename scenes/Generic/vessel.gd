@@ -55,6 +55,11 @@ func _physics_process(_delta):
 
 	# setting the sprite of the vessel based on movement
 	if velocity:
+		if !$Sounds/WalkSound.playing and !$Sounds/GrassWalkSound.playing:
+			if position.x > 7000:
+				$Sounds/GrassWalkSound.play()
+			else:
+				$Sounds/WalkSound.play()
 		if velocity.x < 0: # moving left
 			_display_left = true
 		if velocity.x > 0: # moving right
@@ -78,6 +83,11 @@ func _physics_process(_delta):
 				sprite.play("UpRight")
 			else:
 				sprite.play("DownRight")
+	else:
+		if $Sounds/WalkSound.playing:
+			$Sounds/WalkSound.stop()
+		if $Sounds/GrassWalkSound.playing:
+			$Sounds/GrassWalkSound.stop()
 
 ## Triggers when the Vessel takes damage.
 func hit(dmg = 1):

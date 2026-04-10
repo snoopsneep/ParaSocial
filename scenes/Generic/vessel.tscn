@@ -1,14 +1,29 @@
 [gd_scene format=3 uid="uid://03s4l0q2exir"]
 
 [ext_resource type="Script" uid="uid://hjootcnsb0l" path="res://scenes/Generic/vessel.gd" id="1_mdnlw"]
+[ext_resource type="AudioStream" uid="uid://b0seu4ljo8l7s" path="res://assets/Audio/Characters/Nun/ps_sound_running_01.mp3" id="2_30jxm"]
 [ext_resource type="Texture2D" uid="uid://bqs36joili8hc" path="res://assets/Graphics/Miscellaneous/shadow.png" id="2_isfs0"]
 [ext_resource type="Texture2D" uid="uid://ru5b6l52lgin" path="res://assets/Graphics/Miscellaneous/questionMark.png" id="3_ej3k3"]
+[ext_resource type="AudioStream" uid="uid://bfxn3vjt6681y" path="res://assets/Audio/Characters/Nun/freesound_community-footstep-grass-leaf-38778.mp3" id="3_i8cv2"]
 
 [node name="Vessel" type="CharacterBody2D" unique_id=517857439]
 collision_layer = 34
 collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_mdnlw")
+
+[node name="Sounds" type="Node2D" parent="." unique_id=2050725486]
+
+[node name="WalkSound" type="AudioStreamPlayer2D" parent="Sounds" unique_id=78210695]
+stream = ExtResource("2_30jxm")
+bus = &"Sounds"
+parameters/looping = true
+
+[node name="GrassWalkSound" type="AudioStreamPlayer2D" parent="Sounds" unique_id=544779443]
+stream = ExtResource("3_i8cv2")
+volume_db = 12.041
+bus = &"Sounds"
+parameters/looping = true
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1127750345]
 modulate = Color(1, 1, 1, 0.47058824)

@@ -17,6 +17,7 @@ func _ready():
 
 func to_black(new_title: String, new_text: String, button_visible: bool, time: float = 1.0):
 	get_tree().paused = true # pause the game
+	Global.can_pause = false
 	visible = true # make the game over screen visible
 	button.visible = button_visible # make sure the button's visible if it isn't!!
 	title.text = new_title # set the title text
@@ -31,6 +32,7 @@ func to_black(new_title: String, new_text: String, button_visible: bool, time: f
 	done_fading.emit()
 
 func fade_in(time: float = 1.0):
+	Global.can_pause = false
 	$Button.disabled = true # disable the button
 	var fade_tween = get_tree().create_tween() # make a new tween
 	# make that tween run when the game is paused
@@ -40,6 +42,7 @@ func fade_in(time: float = 1.0):
 	await fade_tween.finished # once it's faded out
 	get_tree().paused = false # unpauses the game
 	visible = false # hide the game over screen
+	Global.can_pause = true
 	done_fading.emit()
 
 func game_over():
@@ -56,6 +59,7 @@ func game_over():
 	# pick a random tip to show
 	random_tip = tips_arr[randi_range(0,tips_arr.size() - 1)]
 	to_black("GAME OVER", random_tip, true)
+	$GameOverSound.play()
 
 func puzzle_victory():
 	to_black("YOU ESCAPED!", "Congratulations! You completed the PUZZLE ROUTE of the game!\nPlease fill out the feedback form, or start again to find the other route.\nThanks for playing!", true)

@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://30l1od0148ss" path="res://assets/Graphics/Environments/Church/Kitchen/Final colours/normalRoom.PNG" id="4_3lby3"]
 [ext_resource type="AudioStream" uid="uid://ds7o1f5apmvps" path="res://assets/Audio/Music/yard_theme.mp3" id="4_6gu5k"]
 [ext_resource type="Texture2D" uid="uid://cj430dtqfy61j" path="res://assets/Graphics/Environments/Church/Dining Room/diningRoom_leftWall.png" id="5_kb4no"]
+[ext_resource type="AudioStream" uid="uid://w4xrim3xa410" path="res://assets/Audio/World/ps_sound_doorOpen_01.mp3" id="5_kxak1"]
+[ext_resource type="AudioStream" uid="uid://baqjm2qvvcigf" path="res://assets/Audio/World/ps_sound_windAmbient_01.mp3" id="5_v874h"]
 [ext_resource type="Texture2D" uid="uid://dggllukeueo8a" path="res://assets/Graphics/Environments/Church/Kitchen/Final colours/fireRoom.PNG" id="5_wg3cc"]
 [ext_resource type="Texture2D" uid="uid://dq0muy44ft3x6" path="res://assets/Graphics/Environments/Church/Kitchen/Final colours/Door.PNG" id="5_x2ju3"]
 [ext_resource type="Texture2D" uid="uid://cbfcxug7g4quh" path="res://assets/Graphics/Environments/Church/Kitchen/Final colours/Light.PNG" id="6_rcjdb"]
@@ -20,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://xp4olhnu6yw4" path="res://assets/Graphics/Environments/Church/Dining Room/diningRoom_rightWall_door.png" id="11_lm4ja"]
 [ext_resource type="Texture2D" uid="uid://vdth6drk7oyd" path="res://assets/Graphics/Environments/Church/Chapel/chapel_rightWall.png" id="13_6lv7u"]
 [ext_resource type="Texture2D" uid="uid://dbh6jbxrqkxy6" path="res://assets/Graphics/Environments/Church/Chapel/chapel_leftWall.png" id="15_mg4hm"]
+[ext_resource type="PackedScene" uid="uid://dpr3qpe26dhxc" path="res://scenes/Level/Props/kitchen_table.tscn" id="15_vamxk"]
 [ext_resource type="PackedScene" uid="uid://dvm0l187x12a4" path="res://scenes/Generic/event.tscn" id="16_4dod6"]
 [ext_resource type="Texture2D" uid="uid://cr7fgn2pgngmv" path="res://assets/Graphics/Environments/Church/Dining Room/diningRoom_lighting.png" id="17_srh6f"]
 [ext_resource type="Texture2D" uid="uid://bwt18gymhw5ft" path="res://assets/Graphics/Environments/Church/Main Hall/mainHall_floor.png" id="18_35532"]
@@ -34,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://b11k50xtkkwbc" path="res://assets/Graphics/Environments/Church/Main Hall/mainHall_windowWallDoor.png" id="23_pguqs"]
 [ext_resource type="Texture2D" uid="uid://dhkjql3d40elv" path="res://assets/Graphics/Environments/Church/Hallway/Hall_light.PNG" id="23_vgxvf"]
 [ext_resource type="PackedScene" uid="uid://ca2dk6w1anoii" path="res://scenes/Characters/Guard/enemy.tscn" id="25_uuwcm"]
+[ext_resource type="PackedScene" uid="uid://c6v5h5tyntgv" path="res://scenes/Level/Props/dining_table.tscn" id="26_hbikf"]
 [ext_resource type="Script" uid="uid://c41chs1bl2g38" path="res://scenes/Level/Events/Playtest Demo/evil_hallway_transition.gd" id="29_rcjdb"]
 [ext_resource type="PackedScene" uid="uid://bo7pf8iantgsg" path="res://scenes/Level/Props/world_collider.tscn" id="30_2kbrn"]
 [ext_resource type="Texture2D" uid="uid://cckkgnln046h1" path="res://assets/Graphics/Environments/Church/Main Hall/mainHall_extraFurniture.png" id="30_bv45s"]
@@ -49,6 +53,7 @@
 [ext_resource type="PackedScene" uid="uid://fqp8x2ofqjst" path="res://scenes/Level/Props/bench.tscn" id="40_k765p"]
 [ext_resource type="Texture2D" uid="uid://bnyfjqgflxmcg" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_p2_base-small-small.png" id="41_vgxvf"]
 [ext_resource type="PackedScene" uid="uid://cool8pcf7de6g" path="res://scenes/Level/Props/Graves/SmallRectGrave.tscn" id="42_qegdi"]
+[ext_resource type="PackedScene" uid="uid://dliaqsqxi58se" path="res://scenes/Level/Props/lectern.tscn" id="42_vamxk"]
 [ext_resource type="Texture2D" uid="uid://6x0lauylavkb" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_p1_base-small-small-small.png" id="42_vgxvf"]
 [ext_resource type="Texture2D" uid="uid://d2us1qhtgokha" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_bgd_p1_lighting.png" id="43_2w7fw"]
 [ext_resource type="Texture2D" uid="uid://b51qdowaydj46" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_p1_grassTexture-small-small-small.png" id="43_jfl2n"]
@@ -62,8 +67,6 @@
 [ext_resource type="Script" uid="uid://caet86rltnkgl" path="res://scenes/UI/game_over.gd" id="47_dgtgp"]
 [ext_resource type="PackedScene" uid="uid://bdguhi7rv5h5f" path="res://scenes/Level/Props/Graves/RoundGrave.tscn" id="47_jkr68"]
 [ext_resource type="Texture2D" uid="uid://7a44r53pnap6" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_bgd_p2_lighting-small-small-small.png" id="47_qu7pk"]
-[ext_resource type="Script" uid="uid://bldlak5ybl6yi" path="res://scenes/Level/Events/to_church.gd" id="48_bv45s"]
-[ext_resource type="Texture2D" uid="uid://c2xh04i4hm13o" path="res://assets/Graphics/Environments/Graveyard/Mausoleum/mausoleum.png" id="48_jkr68"]
 [ext_resource type="Texture2D" uid="uid://cx0pytnptue11" path="res://assets/Graphics/Environments/Graveyard/Shack/Interior/Resized_interior.PNG" id="48_srh6f"]
 [ext_resource type="Texture2D" uid="uid://d2fohwpw5vkoe" path="res://assets/Graphics/Environments/Graveyard/Shack/Exterior/Exterior_light.PNG" id="48_ubx2l"]
 [ext_resource type="Texture2D" uid="uid://sxo5kev2kxt5" path="res://assets/Graphics/Environments/Graveyard/Grounds/graveyard_bgd_p1_base-small-small-small.png" id="48_vgxvf"]
@@ -78,9 +81,15 @@
 [ext_resource type="PackedScene" uid="uid://bquje6jxx4ik0" path="res://scenes/Level/Props/leafpile.tscn" id="52_jfl2n"]
 [ext_resource type="PackedScene" uid="uid://8y3fpv34gmjg" path="res://rose.tscn" id="58_jcrwi"]
 [ext_resource type="Script" uid="uid://c84qyu8e3jj70" path="res://scenes/UI/pause_menu.gd" id="60_srh6f"]
-[ext_resource type="AudioStream" uid="uid://x10iqcdeepsw" path="res://assets/Audio/UI/new_vessel.mp3" id="68_qu7pk"]
-[ext_resource type="AudioStream" uid="uid://dpv6pdf830uhq" path="res://assets/Audio/UI/parasite.mp3" id="69_c5hcr"]
+[ext_resource type="PackedScene" uid="uid://cjb4h4n0rllsn" path="res://scenes/Level/Props/mausoleum.tscn" id="66_vamxk"]
+[ext_resource type="AudioStream" uid="uid://x10iqcdeepsw" path="res://assets/Audio/Characters/Parasite/new_vessel.mp3" id="68_qu7pk"]
+[ext_resource type="AudioStream" uid="uid://dpv6pdf830uhq" path="res://assets/Audio/Characters/Parasite/parasite.mp3" id="69_c5hcr"]
 [ext_resource type="PackedScene" uid="uid://bsa2bislxf6v3" path="res://scenes/Characters/Gravedigger/gravedigger.tscn" id="72_vgxvf"]
+[ext_resource type="AudioStream" uid="uid://dheu310ixrgh1" path="res://assets/Audio/UI/ps_sound_menuHover_01.mp3" id="81_jcrwi"]
+[ext_resource type="AudioStream" uid="uid://birfqlch1h8c5" path="res://assets/Audio/UI/ps_sound_menuOpen.mp3" id="81_jw632"]
+[ext_resource type="AudioStream" uid="uid://cebouqftg8ep1" path="res://assets/Audio/UI/ps_sound_menuSelect_01.mp3" id="82_2w7fw"]
+[ext_resource type="AudioStream" uid="uid://cec86s2hq6v4s" path="res://assets/Audio/UI/ps_sound_menuClose.mp3" id="82_kxak1"]
+[ext_resource type="AudioStream" uid="uid://qwfai8wy4ibs" path="res://assets/Audio/UI/ps_sound_startGame_01.mp3" id="87_ndhd5"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_dgtgp"]
 a = Vector2(411.34595, -237.5)
@@ -104,22 +113,6 @@ b = Vector2(-460, 281.24988)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wg3cc"]
 radius = 117.92477
-
-[sub_resource type="Resource" id="Resource_v874h"]
-script = ExtResource("36_jcrwi")
-date = "29/9/1447"
-text = "	Hope has been dwindling for some time now, as our situation has refused to improve. Despite all our prayers, things have gotten even worse. It seems our cattle, weak and underfed for some time now, have fallen ill. Their stiff, stinking corpses litter the fields, their still-living brothers forced to trudge between their rotting remains.
-
-	Since the horrible news broke, the number of churchgoers has steadily diminished. Sister Mira says surely they must be praying from home, but I’m not so certain. This situation has tested all of our faiths, and I fear the less devout may be giving up on our Goddess completely.
-
-	Some people still come to the church to pray, but their prayers are hushed and the spark in their eyes vacant. They sulk through the halls like dreary widows, soles dragging, faces downturned. I’m occasionally offered a sad, pained smile, but there’s never a sliver of life behind it. I worry deeply for our community, and selfishly, for my own life. How can we expect Faustine to grant Her generosity to a community of fickle disbelievers? Selfish as it is, I hope She recognizes my faith, even if She gives up on the others."
-metadata/_custom_type_script = "uid://cs8kccqb2huxb"
-
-[sub_resource type="Resource" id="Resource_hbikf"]
-script = ExtResource("36_jcrwi")
-text = "	One steadfast member of the community, though, is Father Mason’s mother. She rarely leaves the statue, even as she looks weaker and weaker by the day. It’s like she’s praying her very soul away to our Goddess, the life left in her escaping through hushed, whispered mantras. I know Father Mason is worried about her… They’ve always been very close. He’s mentioned that his faith began with his mother, her great devotion always an inspiration to him. I think she’s been an inspiration to us all, even as things look dimmer and dimmer."
-signature = "Sister Aubrey"
-metadata/_custom_type_script = "uid://cs8kccqb2huxb"
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_3lby3"]
 a = Vector2(240.7691, -142.30762)
@@ -155,36 +148,17 @@ radius = 278.59015
 [sub_resource type="CircleShape2D" id="CircleShape2D_v2gm8"]
 radius = 58.01963
 
-[sub_resource type="Resource" id="Resource_jcrwi"]
-script = ExtResource("36_jcrwi")
-date = "11/10/1447"
-text = "	The once-bustling halls of the church have fallen silent. It seems all the enthusiasm to pray disappeared alongside the dwindling food supply. Discouraging as it is that nothing has changed for the better, I can’t help but resent the so-called followers who have given up so quickly. Don’t they know that the only way we can be saved is through Faustine? Don’t they know that our Goddess works in mysterious ways, that Her prosperity is not always granted immediately? Surely it’s all a test. A test to weed out Her most devout of followers… and I don’t intend to fail. Myself, the other nuns, Father Mason and his mother… We will be greatly rewarded for our lasting devotion. Even as our bones ache from kneeling, even as our guts twist and turn, eating us from the inside out, we will stay faithful."
-metadata/_custom_type_script = "uid://cs8kccqb2huxb"
-
-[sub_resource type="Resource" id="Resource_2by47"]
-script = ExtResource("36_jcrwi")
-text = "	The violence outside has been a good excuse not to leave the chapel; there’s really not much more we can do than pray. We’ve locked up all the graveyard’s gates, but I’ve still heard Father Mason shouting at nasty crooks to stay away, the evil thugs somehow finding the strength to scale the fence. I worry for our recently buried, that their corpses will be desecrated by these evildoers. It’s not hard to pick out a grave that’s been recently dug–our groundskeeper has been greatly overworked since this famine began, and between the number of bodies to bury and his own starvation, the most recent graves have certainly suffered aesthetically.
-
-	Outside the graveyard’s gates, too, the havoc seems endless. Bloodcurdling screams frequently echo through trashed alleyways, sourced from the few brave–or stupid–enough to venture outside. Rotting, rigid corpses lean against walls, nearly indistinguishable from the living homeless forced to seek shelter beside them. More and more have turned to crime, their hunger growing greater than their morals."
-metadata/_custom_type_script = "uid://cs8kccqb2huxb"
-
-[sub_resource type="Resource" id="Resource_ndhd5"]
-script = ExtResource("36_jcrwi")
-text = "	Through it all, the priest’s mother remains particularly devoted, earning my utmost respect. She can hardly stand, but she stays kneeling, head bowed, frail little arms clasped together and shaking. She shakes like it’s freezing, thin skin sagging from brittle bone. Weak, heaving breaths rattle out from overworked lungs as she sways on her knees in a dizzying motion, shrill, whispering mantras leaving her lips all the while. The only time they stop is when she eats, which is rare. We’ve been lessening our own rations to give to her, but it’s still a pitiful sum. Father Mason keeps urging her to lay down in the nunnery. He says her prayers will do as much good from her bed, but she shoos him away with a weak, trembling hand. She says her faith will keep her alive."
-signature = "Sister Willow"
-metadata/_custom_type_script = "uid://cs8kccqb2huxb"
-
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_2kbrn"]
 a = Vector2(6797.9004, -3934.6155)
 b = Vector2(-5769.2305, 3384.6152)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ov3mu"]
 a = Vector2(563.6367, -313.63647)
-b = Vector2(-518.18115, -1009.09094)
+b = Vector2(-1431.8184, -1527.2728)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_k3cor"]
-a = Vector2(904.5459, -190.909)
-b = Vector2(-4.544922, -722.7272)
+a = Vector2(-4.5463867, -709.0909)
+b = Vector2(-18.182617, -718.1818)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_nqx0i"]
 a = Vector2(-2567.4824, 1439.5104)
@@ -342,30 +316,6 @@ b = Vector2(2851, -2103)
 a = Vector2(-1289, -503)
 b = Vector2(1161, 901)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_73cm8"]
-a = Vector2(-278.75, -152.5)
-b = Vector2(281.25, 168.75)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_qegdi"]
-a = Vector2(-22.5, 12.5)
-b = Vector2(20, -15)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_yabqj"]
-a = Vector2(60, 8.75)
-b = Vector2(20, -15)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_ttmum"]
-a = Vector2(60, 8.75)
-b = Vector2(1003.75, -537.5)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_st0p2"]
-a = Vector2(60, 8.75)
-b = Vector2(1056.25, -565)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_ywckj"]
-a = Vector2(-311.25, -176.25)
-b = Vector2(281.25, 168.75)
-
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_qsjuo"]
 a = Vector2(-125, 65)
 b = Vector2(107.5, -68.75049)
@@ -435,14 +385,26 @@ script = ExtResource("2_8tr8e")
 
 [node name="ChurchMusic" type="AudioStreamPlayer" parent="EventManager" unique_id=1372095621]
 stream = ExtResource("2_c5hcr")
-volume_db = -2.499
+volume_db = -12.041
 autoplay = true
 bus = &"Music"
+parameters/looping = true
 
 [node name="GraveyardMusic" type="AudioStreamPlayer" parent="EventManager" unique_id=946801703]
 stream = ExtResource("4_6gu5k")
-volume_db = -5.0
+volume_db = -13.979
 bus = &"Music"
+parameters/looping = true
+
+[node name="GraveyardAmbience" type="AudioStreamPlayer" parent="EventManager" unique_id=242308420]
+stream = ExtResource("5_v874h")
+volume_db = -20.0
+bus = &"Music"
+parameters/looping = true
+
+[node name="DoorSound" type="AudioStreamPlayer" parent="EventManager" unique_id=473907078]
+stream = ExtResource("5_kxak1")
+bus = &"Sounds"
 
 [node name="Map" type="Node2D" parent="." unique_id=1823456355]
 
@@ -547,9 +509,14 @@ compatible_vessels = {
 position = Vector2(-94.99999, -139.99998)
 shape = SubResource("CircleShape2D_wg3cc")
 
-[node name="Note" parent="Map/Church/Kitchen/Events" unique_id=1429878494 instance=ExtResource("35_bf74x")]
-position = Vector2(258.74997, -19.999998)
-pages = Array[ExtResource("36_jcrwi")]([SubResource("Resource_v874h"), SubResource("Resource_hbikf")])
+[node name="Objects" type="Node2D" parent="Map/Church/Kitchen" unique_id=1957663616]
+
+[node name="KitchenTable" parent="Map/Church/Kitchen/Objects" unique_id=70036307 instance=ExtResource("15_vamxk")]
+z_index = 1
+position = Vector2(187.49997, 173.74997)
+scale = Vector2(0.5, 0.5)
+bench_specific_z_index = 3
+room_z_index = 1
 
 [node name="Dining Room" type="Node2D" parent="Map/Church" unique_id=1380382872 node_paths=PackedStringArray("connected_rooms")]
 z_index = 2
@@ -660,7 +627,10 @@ position = Vector2(70, -45)
 [node name="Marker2D2" parent="Map/Church/Dining Room/Events/ToKitchen" index="2" unique_id=786649644]
 position = Vector2(-70, 45)
 
-[node name="CollisionShape2D" parent="Map/Church/Dining Room/Events/ToKitchen/ShowNextRoom" parent_id_path=PackedInt32Array(1945182630, 977292801) index="0" unique_id=770446660]
+[node name="ShowNextRoom" parent="Map/Church/Dining Room/Events/ToKitchen" index="3" unique_id=977292801]
+visible = false
+
+[node name="CollisionShape2D" parent="Map/Church/Dining Room/Events/ToKitchen/ShowNextRoom" index="0" unique_id=770446660]
 shape = SubResource("CircleShape2D_23cl6")
 
 [node name="BackDoor" parent="Map/Church/Dining Room/Events" unique_id=2014968100 node_paths=PackedStringArray("destination_room", "nun") instance=ExtResource("16_4dod6")]
@@ -680,14 +650,17 @@ compatible_vessels = {
 position = Vector2(-3.0768764, -21.538464)
 shape = SubResource("CircleShape2D_v2gm8")
 
-[node name="Note" parent="Map/Church/Dining Room/Events" unique_id=1991127895 instance=ExtResource("35_bf74x")]
-position = Vector2(-336.92313, -617.6924)
-pages = Array[ExtResource("36_jcrwi")]([SubResource("Resource_jcrwi"), SubResource("Resource_2by47"), SubResource("Resource_ndhd5")])
+[node name="Objects" type="Node2D" parent="Map/Church/Dining Room" unique_id=1548692139]
+
+[node name="DiningTable" parent="Map/Church/Dining Room/Objects" unique_id=1286496774 instance=ExtResource("26_hbikf")]
+position = Vector2(-340.7693, -657.6923)
+bench_specific_z_index = 4
+room_z_index = 2
 
 [node name="Hallway" type="Node2D" parent="Map/Church" unique_id=1299980803 node_paths=PackedStringArray("connected_rooms", "actors_in_room")]
 z_index = 2
 z_as_relative = false
-position = Vector2(3635.9998, -249)
+position = Vector2(3836, -135)
 scale = Vector2(0.22, 0.22)
 script = ExtResource("3_7ig6f")
 connected_rooms = [NodePath("../Main Hall"), NodePath("../Chapel")]
@@ -790,7 +763,6 @@ position = Vector2(13.636364, 27.272728)
 shape = SubResource("CircleShape2D_rcjdb")
 
 [node name="Main Hall" type="Node2D" parent="Map/Church" unique_id=1643553789 node_paths=PackedStringArray("connected_rooms")]
-visible = false
 z_index = 3
 z_as_relative = false
 position = Vector2(1, -1)
@@ -869,91 +841,86 @@ pages = Array[ExtResource("36_jcrwi")]([SubResource("Resource_2w7fw"), SubResour
 
 [node name="Props" type="Node2D" parent="Map/Church/Main Hall" unique_id=1676675976]
 
-[node name="Bench" parent="Map/Church/Main Hall/Props" unique_id=70036307 instance=ExtResource("40_k765p")]
+[node name="Lectern" parent="Map/Church/Main Hall/Props" unique_id=194857193 instance=ExtResource("42_vamxk")]
 z_index = 3
-z_as_relative = false
+position = Vector2(1053, -245)
+bench_specific_z_index = 4
+room_z_index = 3
+
+[node name="Bench" parent="Map/Church/Main Hall/Props" unique_id=95531632 instance=ExtResource("40_k765p")]
+z_index = 3
 position = Vector2(423, -99)
 bench_specific_z_index = 5
 room_z_index = 3
 
 [node name="Bench12" parent="Map/Church/Main Hall/Props" unique_id=1679976597 instance=ExtResource("40_k765p")]
 z_index = 3
-z_as_relative = false
 position = Vector2(1144, 314)
 bench_specific_z_index = 5
 room_z_index = 3
 
 [node name="Bench2" parent="Map/Church/Main Hall/Props" unique_id=312014472 instance=ExtResource("40_k765p")]
 z_index = 3
-z_as_relative = false
 position = Vector2(209, 27)
 bench_specific_z_index = 7
 room_z_index = 3
 
 [node name="Bench11" parent="Map/Church/Main Hall/Props" unique_id=1761842942 instance=ExtResource("40_k765p")]
 z_index = 3
-z_as_relative = false
 position = Vector2(926, 441)
 bench_specific_z_index = 7
 room_z_index = 3
 
 [node name="Bench3" parent="Map/Church/Main Hall/Props" unique_id=2128347570 instance=ExtResource("40_k765p")]
 z_index = 3
-z_as_relative = false
 position = Vector2(8, 141)
 bench_specific_z_index = 9
 room_z_index = 3
 
 [node name="Bench10" parent="Map/Church/Main Hall/Props" unique_id=1498974634 instance=ExtResource("40_k765p")]
 z_index = 3
-z_as_relative = false
 position = Vector2(728, 556)
 bench_specific_z_index = 9
 room_z_index = 3
 
 [node name="Bench4" parent="Map/Church/Main Hall/Props" unique_id=1336114976 instance=ExtResource("40_k765p")]
 z_index = 3
-z_as_relative = false
 position = Vector2(-203, 265)
 bench_specific_z_index = 11
 room_z_index = 3
 
 [node name="Bench9" parent="Map/Church/Main Hall/Props" unique_id=1306005580 instance=ExtResource("40_k765p")]
 z_index = 3
-z_as_relative = false
 position = Vector2(514, 681)
 bench_specific_z_index = 11
 room_z_index = 3
 
 [node name="Bench5" parent="Map/Church/Main Hall/Props" unique_id=1038010826 instance=ExtResource("40_k765p")]
 z_index = 3
-z_as_relative = false
 position = Vector2(-417, 389)
 bench_specific_z_index = 13
 room_z_index = 3
 
 [node name="Bench8" parent="Map/Church/Main Hall/Props" unique_id=376579719 instance=ExtResource("40_k765p")]
 z_index = 3
-z_as_relative = false
 position = Vector2(301, 804)
 bench_specific_z_index = 13
 room_z_index = 3
 
 [node name="Bench6" parent="Map/Church/Main Hall/Props" unique_id=1116335619 instance=ExtResource("40_k765p")]
 z_index = 3
-z_as_relative = false
 position = Vector2(-688, 547)
 bench_specific_z_index = 15
 room_z_index = 3
 
 [node name="Bench7" parent="Map/Church/Main Hall/Props" unique_id=925304849 instance=ExtResource("40_k765p")]
 z_index = 3
-z_as_relative = false
 position = Vector2(32, 960)
 bench_specific_z_index = 15
 room_z_index = 3
 
 [node name="Colliders" type="Node2D" parent="Map/Church/Main Hall" unique_id=1528410733]
+visible = false
 position = Vector2(-2, -28)
 
 [node name="TEMP layer thing" type="StaticBody2D" parent="Map/Church/Main Hall/Colliders" unique_id=1928944514]
@@ -1046,7 +1013,7 @@ shape = SubResource("SegmentShape2D_nh0hg")
 [node name="Chapel" type="Node2D" parent="Map/Church" unique_id=1748118598 node_paths=PackedStringArray("connected_rooms", "actors_in_room")]
 z_index = 4
 z_as_relative = false
-position = Vector2(3593, -446)
+position = Vector2(3793, -332)
 script = ExtResource("3_7ig6f")
 connected_rooms = [NodePath("../Hallway")]
 actors_in_room = [NodePath("../../../Characters/Statue"), NodePath("../../../Characters/Nun")]
@@ -1113,42 +1080,36 @@ pages = Array[ExtResource("36_jcrwi")]([SubResource("Resource_jw632"), SubResour
 
 [node name="Bench" parent="Map/Church/Chapel/Objects" unique_id=912544155 instance=ExtResource("40_k765p")]
 z_index = 1
-z_as_relative = false
 position = Vector2(520, 532)
 bench_specific_z_index = 7
 room_z_index = 4
 
 [node name="Bench2" parent="Map/Church/Chapel/Objects" unique_id=1679208177 instance=ExtResource("40_k765p")]
 z_index = 1
-z_as_relative = false
 position = Vector2(-40, 205)
 bench_specific_z_index = 5
 room_z_index = 4
 
 [node name="Bench3" parent="Map/Church/Chapel/Objects" unique_id=1752845825 instance=ExtResource("40_k765p")]
 z_index = 1
-z_as_relative = false
 position = Vector2(244, 689)
 bench_specific_z_index = 11
 room_z_index = 4
 
 [node name="Bench4" parent="Map/Church/Chapel/Objects" unique_id=1046658777 instance=ExtResource("40_k765p")]
 z_index = 1
-z_as_relative = false
 position = Vector2(-316, 362)
 bench_specific_z_index = 9
 room_z_index = 4
 
 [node name="Bench5" parent="Map/Church/Chapel/Objects" unique_id=2109730177 instance=ExtResource("40_k765p")]
 z_index = 1
-z_as_relative = false
 position = Vector2(-73, 865)
 bench_specific_z_index = 15
 room_z_index = 4
 
 [node name="Bench6" parent="Map/Church/Chapel/Objects" unique_id=1792037415 instance=ExtResource("40_k765p")]
 z_index = 1
-z_as_relative = false
 position = Vector2(-633, 538)
 bench_specific_z_index = 13
 room_z_index = 4
@@ -1228,10 +1189,6 @@ texture = ExtResource("43_2w7fw")
 
 [node name="Buildings" type="Node2D" parent="Map/Graveyard/Grounds/Graphics" unique_id=957675052]
 
-[node name="Mausoleum" type="Sprite2D" parent="Map/Graveyard/Grounds/Graphics/Buildings" unique_id=106735460]
-position = Vector2(18786, 2944)
-texture = ExtResource("48_jkr68")
-
 [node name="Church Door" type="Sprite2D" parent="Map/Graveyard/Grounds/Graphics/Buildings" unique_id=2054021578]
 position = Vector2(17872.498, 6173.7495)
 
@@ -1289,7 +1246,6 @@ position = Vector2(16427.5, 5495)
 position = Vector2(16948.75, 5780)
 
 [node name="Colliders" type="Node2D" parent="Map/Graveyard/Grounds" unique_id=11171246]
-visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Map/Graveyard/Grounds/Colliders" unique_id=12389027]
 collision_layer = 4
@@ -1346,60 +1302,6 @@ collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/Grounds/Colliders/StaticBody2D9" unique_id=1985608861]
 shape = SubResource("SegmentShape2D_wy1rp")
-
-[node name="Mausoleum1" type="StaticBody2D" parent="Map/Graveyard/Grounds/Colliders" unique_id=1374278188]
-position = Vector2(18281.25, 3671.2495)
-scale = Vector2(0.9999997, 0.9999997)
-collision_layer = 4
-collision_mask = 15
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/Grounds/Colliders/Mausoleum1" unique_id=314247726]
-shape = SubResource("SegmentShape2D_73cm8")
-
-[node name="Mausoleum2" type="StaticBody2D" parent="Map/Graveyard/Grounds/Colliders" unique_id=319957783]
-position = Vector2(18585, 3827.4995)
-scale = Vector2(0.9999997, 0.9999997)
-collision_layer = 4
-collision_mask = 15
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/Grounds/Colliders/Mausoleum2" unique_id=2104990149]
-shape = SubResource("SegmentShape2D_qegdi")
-
-[node name="Mausoleum3" type="StaticBody2D" parent="Map/Graveyard/Grounds/Colliders" unique_id=1680380219]
-position = Vector2(18585, 3827.4995)
-scale = Vector2(0.9999997, 0.9999997)
-collision_layer = 4
-collision_mask = 15
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/Grounds/Colliders/Mausoleum3" unique_id=1624949723]
-shape = SubResource("SegmentShape2D_yabqj")
-
-[node name="Mausoleum4" type="StaticBody2D" parent="Map/Graveyard/Grounds/Colliders" unique_id=982573401]
-position = Vector2(18585, 3827.4995)
-scale = Vector2(0.9999997, 0.9999997)
-collision_layer = 4
-collision_mask = 15
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/Grounds/Colliders/Mausoleum4" unique_id=1906036612]
-shape = SubResource("SegmentShape2D_ttmum")
-
-[node name="Mausoleum5" type="StaticBody2D" parent="Map/Graveyard/Grounds/Colliders" unique_id=150665836]
-position = Vector2(17942.5, 3511.2495)
-scale = Vector2(0.9999997, 0.9999997)
-collision_layer = 4
-collision_mask = 15
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/Grounds/Colliders/Mausoleum5" unique_id=260141277]
-shape = SubResource("SegmentShape2D_st0p2")
-
-[node name="Mausoleum6" type="StaticBody2D" parent="Map/Graveyard/Grounds/Colliders" unique_id=1414671114]
-position = Vector2(19308.75, 3122.5)
-scale = Vector2(0.99999964, 0.99999964)
-collision_layer = 4
-collision_mask = 15
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Graveyard/Grounds/Colliders/Mausoleum6" unique_id=1981050123]
-shape = SubResource("SegmentShape2D_ywckj")
 
 [node name="Objects" type="Node2D" parent="Map/Graveyard/Grounds" unique_id=1183634035]
 
@@ -1459,7 +1361,7 @@ scale = Vector2(1.2499996, 1.2499996)
 grave_name = "Ruth Hart"
 grave_dates = "1425 - 1447"
 grave_inscription = "A devout follower of Goddess Faustine."
-grave_row = 5
+grave_row = 13
 
 [node name="RoundGrave2" parent="Map/Graveyard/Grounds/Objects/Graves" unique_id=2145797333 instance=ExtResource("47_jkr68")]
 position = Vector2(15399.997, 7099.997)
@@ -1481,7 +1383,7 @@ position = Vector2(21446.246, 4233.7495)
 scale = Vector2(0.9999998, 0.9999998)
 grave_name = "Aubrey Lovell"
 grave_dates = "1404 - 1447"
-grave_row = 5
+grave_row = 13
 
 [node name="FancyGrave2" parent="Map/Graveyard/Grounds/Objects/Graves" unique_id=2144043901 instance=ExtResource("50_k4cmf")]
 z_as_relative = false
@@ -1490,7 +1392,7 @@ scale = Vector2(0.9999998, 0.9999998)
 grave_name = "Willow Mullins"
 grave_dates = "1415 - 1447"
 grave_inscription = "A devout follower of Goddess Faustine."
-grave_row = 5
+grave_row = 13
 
 [node name="FancyGrave3" parent="Map/Graveyard/Grounds/Objects/Graves" unique_id=149722359 instance=ExtResource("50_k4cmf")]
 position = Vector2(13882.499, 6184.998)
@@ -1506,7 +1408,7 @@ scale = Vector2(0.9999998, 0.9999998)
 grave_name = "Mira Austin"
 grave_dates = "1417 - 1447"
 grave_inscription = "Faustine's loyal servant."
-grave_row = 5
+grave_row = 13
 
 [node name="SmallRectGrave2" parent="Map/Graveyard/Grounds/Objects/Graves" unique_id=893920983 instance=ExtResource("42_qegdi")]
 position = Vector2(13159.999, 6381.249)
@@ -1544,7 +1446,7 @@ scale = Vector2(0.9999998, 0.9999998)
 grave_name = "Robin Lovell"
 grave_dates = "1405 - 1444"
 grave_inscription = "May she be rewarded for her devotion."
-grave_row = 7
+grave_row = 15
 
 [node name="SmallRectGrave4" parent="Map/Graveyard/Grounds/Objects/Graves" unique_id=185445535 instance=ExtResource("42_qegdi")]
 position = Vector2(15221.247, 5188.7485)
@@ -1560,7 +1462,7 @@ scale = Vector2(0.9999998, 0.9999998)
 grave_name = "Frida Mason"
 grave_dates = "1426 - 1442"
 grave_inscription = "Faustine's loyal servant."
-grave_row = 7
+grave_row = 15
 
 [node name="ThinHatGrave2" parent="Map/Graveyard/Grounds/Objects/Graves" unique_id=652180284 instance=ExtResource("51_ry740")]
 position = Vector2(19794.996, 3858.7495)
@@ -1568,7 +1470,7 @@ scale = Vector2(0.9999998, 0.9999998)
 grave_name = "Ursula Watson"
 grave_dates = "1404 - 1444"
 grave_inscription = "A devout follower of Goddess Faustine"
-grave_row = 7
+grave_row = 15
 
 [node name="HatGrave3" parent="Map/Graveyard/Grounds/Objects/Graves" unique_id=1461674127 instance=ExtResource("46_st0p2")]
 position = Vector2(19077.496, 4016.2495)
@@ -1576,7 +1478,7 @@ scale = Vector2(0.9999998, 0.9999998)
 grave_name = "Elizabeth Young"
 grave_dates = "1423 - 1442"
 grave_inscription = "A loyal servant in life and in death."
-grave_row = 9
+grave_row = 17
 
 [node name="FancyGrave5" parent="Map/Graveyard/Grounds/Objects/Graves" unique_id=852256605 instance=ExtResource("50_k4cmf")]
 position = Vector2(19571.246, 4288.7495)
@@ -1584,7 +1486,7 @@ scale = Vector2(0.9999998, 0.9999998)
 grave_name = "Emery Reid"
 grave_dates = "1385 - 1417"
 grave_inscription = "Faustine's loyal servant."
-grave_row = 9
+grave_row = 17
 
 [node name="TwinGraves4" parent="Map/Graveyard/Grounds/Objects/Graves" unique_id=355399731 instance=ExtResource("49_ywckj")]
 position = Vector2(20117.496, 4578.7495)
@@ -1592,7 +1494,7 @@ scale = Vector2(0.9999998, 0.9999998)
 grave_name = "Catherine and Adelaide Bates"
 grave_dates = "1361 - 1398 and 1363 - 1386"
 grave_inscription = "May they be rewarded for their devotion."
-grave_row = 9
+grave_row = 17
 
 [node name="LargeRectGrave" parent="Map/Graveyard/Grounds/Objects/Graves" unique_id=115527340 instance=ExtResource("43_yabqj")]
 position = Vector2(14584.997, 2482.4995)
@@ -2089,25 +1991,18 @@ scale = Vector2(0.4, 0.4)
 [node name="CollisionShape2D" parent="Map/Graveyard/Grounds/Objects/Leafpile" index="3" unique_id=424075656]
 visible = true
 
+[node name="Mausoleum" parent="Map/Graveyard/Grounds/Objects" unique_id=1770889129 instance=ExtResource("66_vamxk")]
+z_index = 1
+position = Vector2(18793.75, 3215)
+bench_specific_z_index = 11
+room_z_index = 1
+
+[node name="ToChurch" parent="Map/Graveyard/Grounds/Objects/Mausoleum" index="6" unique_id=753610390 node_paths=PackedStringArray("current_room", "destination_room", "nun")]
+current_room = NodePath("../../..")
+destination_room = NodePath("../../../../../Church/Dining Room")
+nun = NodePath("../../../../../../Characters/Nun")
+
 [node name="Events" type="Node2D" parent="Map/Graveyard/Grounds" unique_id=1657358014]
-
-[node name="ToChurch" parent="Map/Graveyard/Grounds/Events" unique_id=2081750918 node_paths=PackedStringArray("destination_room", "nun") instance=ExtResource("16_4dod6")]
-position = Vector2(18317.5, 3633.7495)
-scale = Vector2(1.6249998, 1.6249998)
-script = ExtResource("48_bv45s")
-destination_room = NodePath("../../../../Church/Dining Room")
-destination = Vector2(-144, -696)
-nun_destination = Vector2(25, -795.99994)
-nun = NodePath("../../../../../Characters/Nun")
-compatible_vessels = {
-&"Nun": true,
-&"Rat": false,
-&"Statue": true
-}
-
-[node name="CollisionShape2D" parent="Map/Graveyard/Grounds/Events/ToChurch" index="0" unique_id=18997285]
-position = Vector2(-3.0768764, -21.538464)
-shape = SubResource("CircleShape2D_v2gm8")
 
 [node name="ShackInterior" type="Node2D" parent="Map/Graveyard" unique_id=1315983624]
 position = Vector2(560.00024, 263.74997)
@@ -2247,19 +2142,19 @@ y_sort_enabled = true
 [node name="Statue" parent="Characters" unique_id=1731815557 instance=ExtResource("3_e3dby")]
 z_index = 4
 z_as_relative = false
-position = Vector2(4092, -323)
+position = Vector2(4288, -212)
 speed = 350.0
+
+[node name="Nun" parent="Characters" unique_id=1209905237 instance=ExtResource("39_x2ju3")]
+z_index = 4
+z_as_relative = false
+position = Vector2(4084, -58.00003)
 
 [node name="Rat" parent="Characters" unique_id=752411575 instance=ExtResource("38_x2ju3")]
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(2870, -505)
-
-[node name="Nun" parent="Characters" unique_id=1209905237 instance=ExtResource("39_x2ju3")]
-z_index = 4
-z_as_relative = false
-position = Vector2(3881, -153)
 
 [node name="Enemy" parent="Characters" unique_id=517857439 instance=ExtResource("25_uuwcm")]
 z_index = 3
@@ -2291,7 +2186,6 @@ navigation_polygon = SubResource("NavigationPolygon_ubx2l")
 layer = 2
 
 [node name="UI" type="Control" parent="UI Layer" unique_id=1444161011]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -2322,6 +2216,26 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("47_bjq35")
 script = ExtResource("60_srh6f")
+
+[node name="OpenMenu" type="AudioStreamPlayer" parent="UI Layer/PauseMenu" unique_id=1351374287]
+stream = ExtResource("81_jw632")
+max_polyphony = 6
+bus = &"Sounds"
+
+[node name="CloseMenu" type="AudioStreamPlayer" parent="UI Layer/PauseMenu" unique_id=159094618]
+stream = ExtResource("82_kxak1")
+max_polyphony = 6
+bus = &"Sounds"
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="UI Layer/PauseMenu" unique_id=1126633124]
+stream = ExtResource("81_jcrwi")
+max_polyphony = 6
+bus = &"Sounds"
+
+[node name="ButtonPress" type="AudioStreamPlayer" parent="UI Layer/PauseMenu" unique_id=1250187190]
+stream = ExtResource("82_2w7fw")
+volume_db = -5.193
+bus = &"Sounds"
 
 [node name="Background" type="ColorRect" parent="UI Layer/PauseMenu" unique_id=1271514712]
 layout_mode = 1
@@ -2388,6 +2302,10 @@ grow_vertical = 2
 theme = ExtResource("47_bjq35")
 script = ExtResource("47_dgtgp")
 metadata/_edit_use_anchors_ = true
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="UI Layer/GameOver" unique_id=65656080]
+stream = ExtResource("87_ndhd5")
+bus = &"Sounds"
 
 [node name="Background" type="ColorRect" parent="UI Layer/GameOver" unique_id=1413332420]
 layout_mode = 1
@@ -2459,8 +2377,11 @@ text = "Retry"
 
 [connection signal="hurt" from="Player" to="." method="_on_update_hp"]
 [connection signal="parasite" from="Player" to="." method="spawn_parasite"]
+[connection signal="mouse_entered" from="UI Layer/PauseMenu/VBoxContainer/Resume" to="UI Layer/PauseMenu" method="button_hover"]
 [connection signal="pressed" from="UI Layer/PauseMenu/VBoxContainer/Resume" to="UI Layer/PauseMenu" method="resume_button"]
+[connection signal="mouse_entered" from="UI Layer/PauseMenu/VBoxContainer/Settings" to="UI Layer/PauseMenu" method="button_hover"]
 [connection signal="pressed" from="UI Layer/PauseMenu/VBoxContainer/Settings" to="UI Layer/PauseMenu" method="settings_button"]
+[connection signal="mouse_entered" from="UI Layer/PauseMenu/VBoxContainer/Exit Game" to="UI Layer/PauseMenu" method="button_hover"]
 [connection signal="pressed" from="UI Layer/PauseMenu/VBoxContainer/Exit Game" to="UI Layer/PauseMenu" method="exit_button"]
 [connection signal="pressed" from="UI Layer/GameOver/Button" to="UI Layer/GameOver" method="_on_button_pressed"]
 
@@ -2506,5 +2427,6 @@ text = "Retry"
 [editable path="Map/Church/Chapel/Colliders/BottomRightWall"]
 [editable path="Map/Church/Chapel/Colliders/BottomLeftWall"]
 [editable path="Map/Graveyard/Grounds/Objects/Leafpile"]
-[editable path="Map/Graveyard/Grounds/Events/ToChurch"]
+[editable path="Map/Graveyard/Grounds/Objects/Mausoleum"]
+[editable path="Map/Graveyard/Grounds/Objects/Mausoleum/ToChurch"]
 [editable path="Map/Graveyard/ShackExterior/Events/IntoShack"]

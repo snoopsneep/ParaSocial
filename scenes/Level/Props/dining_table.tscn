@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://c6v5h5tyntgv"]
+
+[ext_resource type="Script" uid="uid://dpd81whjn4rxh" path="res://scenes/Level/Props/dining_table.gd" id="1_8eex1"]
+[ext_resource type="Texture2D" uid="uid://ch822jqfmk14x" path="res://assets/Graphics/Environments/Church/Dining Room/diningRoom_table.png" id="2_xsw3o"]
+[ext_resource type="Texture2D" uid="uid://cwv024ipt47at" path="res://assets/Graphics/Environments/Church/Dining Room/diningRoom_chairs.png" id="3_nn0vh"]
+[ext_resource type="Texture2D" uid="uid://g5bmvxp72hgl" path="res://assets/Graphics/Environments/Church/Dining Room/table_light.png" id="4_nn0vh"]
+[ext_resource type="PackedScene" uid="uid://qeeqyl4ctwkp" path="res://scenes/Generic/note.tscn" id="5_8eex1"]
+[ext_resource type="Script" uid="uid://cs8kccqb2huxb" path="res://resources/page.gd" id="6_4feuk"]
+
+[sub_resource type="Resource" id="Resource_jcrwi"]
+script = ExtResource("6_4feuk")
+date = "11/10/1447"
+text = "	The once-bustling halls of the church have fallen silent. It seems all the enthusiasm to pray disappeared alongside the dwindling food supply. Discouraging as it is that nothing has changed for the better, I can’t help but resent the so-called followers who have given up so quickly. Don’t they know that the only way we can be saved is through Faustine? Don’t they know that our Goddess works in mysterious ways, that Her prosperity is not always granted immediately? Surely it’s all a test. A test to weed out Her most devout of followers… and I don’t intend to fail. Myself, the other nuns, Father Mason and his mother… We will be greatly rewarded for our lasting devotion. Even as our bones ache from kneeling, even as our guts twist and turn, eating us from the inside out, we will stay faithful."
+metadata/_custom_type_script = "uid://cs8kccqb2huxb"
+
+[sub_resource type="Resource" id="Resource_2by47"]
+script = ExtResource("6_4feuk")
+text = "	The violence outside has been a good excuse not to leave the chapel; there’s really not much more we can do than pray. We’ve locked up all the graveyard’s gates, but I’ve still heard Father Mason shouting at nasty crooks to stay away, the evil thugs somehow finding the strength to scale the fence. I worry for our recently buried, that their corpses will be desecrated by these evildoers. It’s not hard to pick out a grave that’s been recently dug–our groundskeeper has been greatly overworked since this famine began, and between the number of bodies to bury and his own starvation, the most recent graves have certainly suffered aesthetically.
+
+	Outside the graveyard’s gates, too, the havoc seems endless. Bloodcurdling screams frequently echo through trashed alleyways, sourced from the few brave–or stupid–enough to venture outside. Rotting, rigid corpses lean against walls, nearly indistinguishable from the living homeless forced to seek shelter beside them. More and more have turned to crime, their hunger growing greater than their morals."
+metadata/_custom_type_script = "uid://cs8kccqb2huxb"
+
+[sub_resource type="Resource" id="Resource_ndhd5"]
+script = ExtResource("6_4feuk")
+text = "	Through it all, the priest’s mother remains particularly devoted, earning my utmost respect. She can hardly stand, but she stays kneeling, head bowed, frail little arms clasped together and shaking. She shakes like it’s freezing, thin skin sagging from brittle bone. Weak, heaving breaths rattle out from overworked lungs as she sways on her knees in a dizzying motion, shrill, whispering mantras leaving her lips all the while. The only time they stop is when she eats, which is rare. We’ve been lessening our own rations to give to her, but it’s still a pitiful sum. Father Mason keeps urging her to lay down in the nunnery. He says her prayers will do as much good from her bed, but she shoos him away with a weak, trembling hand. She says her faith will keep her alive."
+signature = "Sister Willow"
+metadata/_custom_type_script = "uid://cs8kccqb2huxb"
+
+[node name="DiningTable" type="StaticBody2D" unique_id=70036307]
+z_as_relative = false
+collision_layer = 4
+collision_mask = 39
+script = ExtResource("1_8eex1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1697843649]
+position = Vector2(782, 576)
+texture = ExtResource("2_xsw3o")
+offset = Vector2(-425, 100)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=772533036]
+position = Vector2(794, 571)
+texture = ExtResource("3_nn0vh")
+offset = Vector2(-425, 100)
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1096559049]
+position = Vector2(420, -139)
+texture = ExtResource("4_nn0vh")
+offset = Vector2(-425, 100)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=275975587]
+visible = false
+polygon = PackedVector2Array(-184, 241, -77, 177, -43, 191, 26, 156, 59, 99, 259, -16, 153, -77, -291, 181)
+
+[node name="SpriteBoundaries" type="Area2D" parent="." unique_id=1776424411]
+visible = false
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="SpriteBoundaries" unique_id=732899715]
+visible = false
+polygon = PackedVector2Array(-184, 241, -77, 177, -43, 195, 28, 156, 26, 120, 145, 50, 197, 89, 246, 61, 247, 18, 247, -8, 259, -15, 257, -99, 155, -160, 90, -126, 89, -155, 59, -172, 29, -131, 31.445942, -89.67934, -33, -53, -35, -112, -73, -137, -97, -89, -94.8942, -18.307419, -136, 5, -140, -21, -170, -41, -201, 2, -202, 45, -289, 97, -291, 181)
+
+[node name="LeftPoint" type="Marker2D" parent="." unique_id=2031971629]
+position = Vector2(-325, 177)
+gizmo_extents = 400.0
+
+[node name="Middle" type="Marker2D" parent="." unique_id=1786056407]
+position = Vector2(62, 50)
+gizmo_extents = 400.0
+
+[node name="RightPoint" type="Marker2D" parent="." unique_id=935884414]
+position = Vector2(284, -20)
+gizmo_extents = 400.0
+
+[node name="Note" parent="." unique_id=753610390 instance=ExtResource("5_8eex1")]
+position = Vector2(166.00002, -130)
+scale = Vector2(-0.6, 0.6)
+pages = Array[ExtResource("6_4feuk")]([SubResource("Resource_jcrwi"), SubResource("Resource_2by47"), SubResource("Resource_ndhd5")])
+
+[connection signal="area_entered" from="SpriteBoundaries" to="." method="_on_sprite_overlap"]
+[connection signal="area_exited" from="SpriteBoundaries" to="." method="_on_sprite_exited"]

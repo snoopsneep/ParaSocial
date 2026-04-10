@@ -31,7 +31,6 @@ func trigger(body: Node2D):
 			other_room.preview_room()
 
 func _show_next_room(body: Node2D):
-	print(body)
 	if body is Vessel and body.is_vessel:
 		var other_room: Room # the room on the other side of the door
 		# if the body is closer to marker 1 (aka room 1)
@@ -44,7 +43,6 @@ func _show_next_room(body: Node2D):
 
 
 func _hide_next_room(body: Node2D):
-	print(body)
 	if body is Vessel and body.is_vessel:
 		var other_room: Room # the room on the other side of the door
 		# if the body is closer to marker 1 (aka room 1)

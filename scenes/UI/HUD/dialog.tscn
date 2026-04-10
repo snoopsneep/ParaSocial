@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://bqy0t6nwp1brg" path="res://assets/Audio/UI/page_flipping_SPX.mp3" id="5_h1arg"]
 [ext_resource type="FontFile" uid="uid://ckwxxn4psd7lh" path="res://assets/Graphics/Fonts/TexgyrechorusMediumitalic-XJ2Z.otf" id="5_tc4ve"]
 [ext_resource type="AudioStream" uid="uid://jd7gkneqh5ea" path="res://assets/Audio/UI/ps_sound_ text.mp3" id="7_derc2"]
+[ext_resource type="AudioStream" uid="uid://dheu310ixrgh1" path="res://assets/Audio/UI/ps_sound_menuHover_01.mp3" id="9_voign"]
+[ext_resource type="AudioStream" uid="uid://cebouqftg8ep1" path="res://assets/Audio/UI/ps_sound_menuSelect_01.mp3" id="10_ybpgk"]
 
 [node name="Dialog" type="Control" unique_id=156659926]
 process_mode = 3
@@ -109,6 +111,17 @@ texture = ExtResource("3_aij1x")
 [node name="TextSound" type="AudioStreamPlayer" parent="TextBox" unique_id=584418291]
 stream = ExtResource("7_derc2")
 bus = &"Sounds"
+parameters/looping = true
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="TextBox" unique_id=1914140233]
+stream = ExtResource("9_voign")
+max_polyphony = 6
+bus = &"Sounds"
+
+[node name="ButtonPress" type="AudioStreamPlayer" parent="TextBox" unique_id=765435893]
+stream = ExtResource("10_ybpgk")
+volume_db = -5.193
+bus = &"Sounds"
 
 [node name="BoxContainer" type="Control" parent="TextBox" unique_id=1238274566]
 layout_mode = 1
@@ -181,6 +194,9 @@ size_flags_horizontal = 6
 theme_override_font_sizes/font_size = 38
 text = "123456789012345"
 
+[connection signal="mouse_entered" from="TextBox/BoxContainer/Choices/Choice0" to="." method="_on_option_hovered"]
 [connection signal="pressed" from="TextBox/BoxContainer/Choices/Choice0" to="." method="_on_option_pressed" binds= [0]]
+[connection signal="mouse_entered" from="TextBox/BoxContainer/Choices/Choice1" to="." method="_on_option_hovered"]
 [connection signal="pressed" from="TextBox/BoxContainer/Choices/Choice1" to="." method="_on_option_pressed" binds= [1]]
+[connection signal="mouse_entered" from="TextBox/BoxContainer/Choices/Choice2" to="." method="_on_option_hovered"]
 [connection signal="pressed" from="TextBox/BoxContainer/Choices/Choice2" to="." method="_on_option_pressed" binds= [2]]

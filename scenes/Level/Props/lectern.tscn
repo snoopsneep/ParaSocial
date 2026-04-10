@@ -1,22 +1,22 @@
-[gd_scene format=3 uid="uid://fqp8x2ofqjst"]
+[gd_scene format=3 uid="uid://dliaqsqxi58se"]
 
-[ext_resource type="Texture2D" uid="uid://dqgtja8qdap6u" path="res://assets/Graphics/Sprites/Objects/Church/bench1.png" id="1_o8cjk"]
-[ext_resource type="Script" uid="uid://dumucmsbbiu27" path="res://scenes/Level/Props/bench.gd" id="1_xt7bo"]
+[ext_resource type="Script" uid="uid://dumucmsbbiu27" path="res://scenes/Level/Props/bench.gd" id="1_06qpj"]
+[ext_resource type="Texture2D" uid="uid://lwf2xb7b5u7l" path="res://assets/Graphics/Environments/Church/Main Hall/lectern.png" id="2_06qpj"]
 
-[node name="Bench" type="StaticBody2D" unique_id=70036307]
+[node name="Lectern" type="StaticBody2D" unique_id=70036307]
 z_as_relative = false
 collision_layer = 4
 collision_mask = 39
-script = ExtResource("1_xt7bo")
+script = ExtResource("1_06qpj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1697843649]
-position = Vector2(431, -144)
-texture = ExtResource("1_o8cjk")
+position = Vector2(423, -150)
+texture = ExtResource("2_06qpj")
 offset = Vector2(-425, 100)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=275975587]
 visible = false
-polygon = PackedVector2Array(-203, -74, 129, 120, 214, 70, -116, -123)
+polygon = PackedVector2Array(9, 65, 69, 29, -29, -28, -92, 6)
 
 [node name="SpriteBoundaries" type="Area2D" parent="." unique_id=1776424411]
 visible = false
@@ -25,21 +25,21 @@ collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="SpriteBoundaries" unique_id=57674299]
 visible = false
-polygon = PackedVector2Array(130, 120, 215, 71, 215, 4, 193, 2, 179, -18, 144, -28, -119, -185, -142, -201, -151, -208, -203, -178, -204, -71, -192, -61, -171, -75, 118, 92, 119, 116)
+polygon = PackedVector2Array(9, 64, 68, 29, 69, 14, 58, 1, 59, -99, 81, -113, 80, -124, -25, -185, -78, -177, -80, -149, -65, -135, -65, -25, -93, -9, -91, 5)
 
 [node name="LeftPoint" type="Marker2D" parent="." unique_id=2031971629]
 visible = false
-position = Vector2(-244, -114)
+position = Vector2(-108, -5)
 gizmo_extents = 400.0
 
 [node name="Middle" type="Marker2D" parent="." unique_id=1786056407]
 visible = false
-position = Vector2(0, -56)
+position = Vector2(-44, 19)
 gizmo_extents = 400.0
 
 [node name="RightPoint" type="Marker2D" parent="." unique_id=935884414]
 visible = false
-position = Vector2(266, 62)
+position = Vector2(78, 22)
 gizmo_extents = 400.0
 
 [connection signal="area_entered" from="SpriteBoundaries" to="." method="_on_sprite_overlap"]

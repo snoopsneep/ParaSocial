@@ -28,6 +28,7 @@ func run_event(manager: EventManager, curr_vessel: Vessel = null):
 		var player = manager.game.player
 		player.global_position = curr_vessel.global_position
 		player.find_child("GameCamera").zoom = Vector2(0.5,0.5)
+		manager.door_sound.play()
 		manager.game_over.fade_in()
 		end_event.emit()
 	else:

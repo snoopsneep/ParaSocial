@@ -2,11 +2,17 @@
 
 [ext_resource type="Script" uid="uid://colp3haerdlg4" path="res://scenes/Characters/Statue/statue.gd" id="1_gsdjt"]
 [ext_resource type="PackedScene" uid="uid://03s4l0q2exir" path="res://scenes/Generic/vessel.tscn" id="1_kr50t"]
+[ext_resource type="AudioStream" uid="uid://b7c5ohuiuncvi" path="res://assets/Audio/Characters/Statue/ps_sound_punch_01.mp3" id="3_m0irp"]
 [ext_resource type="Texture2D" uid="uid://clwrdj6plutcb" path="res://assets/Graphics/Sprites/Characters/Statue/statue_downleft.png" id="3_rtj1y"]
 [ext_resource type="Texture2D" uid="uid://crd0qp1b5wcf8" path="res://assets/Graphics/Sprites/Characters/Statue/statue_downright.png" id="4_f0itt"]
 [ext_resource type="Texture2D" uid="uid://dd4aas64383m2" path="res://assets/Graphics/Sprites/Characters/Statue/sword_slash.png" id="4_kr50t"]
+[ext_resource type="AudioStream" uid="uid://s8pny0oc3hfc" path="res://assets/Audio/Characters/Statue/goddess_hurt.mp3" id="4_lji7o"]
+[ext_resource type="AudioStream" uid="uid://ckrleo23y0t0w" path="res://assets/Audio/Characters/Statue/whiff.mp3" id="4_ngvw2"]
+[ext_resource type="AudioStream" uid="uid://dmj2linc3hxlw" path="res://assets/Audio/Characters/Statue/ps_sound_goddessDying_01.mp3" id="5_ngvw2"]
 [ext_resource type="Texture2D" uid="uid://lwtxk4x1ads7" path="res://assets/Graphics/Sprites/Characters/Statue/statue_upleft.png" id="5_su1lb"]
 [ext_resource type="Texture2D" uid="uid://cyjg4eg6u0ql5" path="res://assets/Graphics/Sprites/Characters/Statue/statue_upright.png" id="6_6iguu"]
+[ext_resource type="AudioStream" uid="uid://btdh0d6br67ev" path="res://assets/Audio/Characters/Statue/deeper_footstep.mp3" id="7_lji7o"]
+[ext_resource type="AudioStream" uid="uid://dondy3ad0kigm" path="res://assets/Audio/Characters/Statue/ps_sound_grassWalk_01.mp3" id="8_ngvw2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s0wl0"]
 animations = [{
@@ -47,14 +53,6 @@ animations = [{
 radius = 48.0
 height = 126.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j3sl2"]
-radius = 54.0
-height = 356.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eiwe5"]
-radius = 25.0
-height = 166.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_3lyig"]
 atlas = ExtResource("4_kr50t")
 region = Rect2(0, 0, 128, 146)
@@ -88,6 +86,14 @@ animations = [{
 radius = 12.0
 height = 52.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j3sl2"]
+radius = 54.0
+height = 356.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eiwe5"]
+radius = 25.0
+height = 166.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_j3sl2"]
 radius = 167.08777
 
@@ -97,31 +103,46 @@ script = ExtResource("1_gsdjt")
 max_health = 30
 speed = 300.0
 
-[node name="Shadow" parent="." index="0" unique_id=1127750345]
+[node name="HitSound" type="AudioStreamPlayer2D" parent="Sounds" parent_id_path=PackedInt32Array(2050725486) index="0" unique_id=2042318499]
+stream = ExtResource("3_m0irp")
+volume_db = 2.923
+bus = &"Sounds"
+
+[node name="WhiffSound" type="AudioStreamPlayer2D" parent="Sounds" parent_id_path=PackedInt32Array(2050725486) index="1" unique_id=101112386]
+stream = ExtResource("4_ngvw2")
+volume_db = -1.938
+bus = &"Sounds"
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="Sounds" parent_id_path=PackedInt32Array(2050725486) index="2" unique_id=862388348]
+stream = ExtResource("4_lji7o")
+max_polyphony = 3
+bus = &"Sounds"
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="Sounds" parent_id_path=PackedInt32Array(2050725486) index="3" unique_id=1803604749]
+stream = ExtResource("5_ngvw2")
+bus = &"Sounds"
+
+[node name="WalkSound" parent="Sounds" parent_id_path=PackedInt32Array(2050725486) index="4" unique_id=78210695]
+stream = ExtResource("7_lji7o")
+volume_db = -7.959
+max_polyphony = 2
+
+[node name="GrassWalkSound" parent="Sounds" parent_id_path=PackedInt32Array(2050725486) index="5" unique_id=544779443]
+stream = ExtResource("8_ngvw2")
+
+[node name="Shadow" parent="." index="1" unique_id=1127750345]
 position = Vector2(0, 18)
 texture = null
 
-[node name="Sprite" parent="." index="1" unique_id=1569272056]
+[node name="Sprite" parent="." index="2" unique_id=1569272056]
 position = Vector2(0, -133)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_s0wl0")
 animation = &"DownLeft"
 
-[node name="FootCollider" parent="." index="2" unique_id=137211241]
+[node name="FootCollider" parent="." index="3" unique_id=137211241]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_kr50t")
-
-[node name="Hurtbox" parent="." index="3" unique_id=492537815]
-position = Vector2(0, -26)
-collision_mask = 16
-
-[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1693199414]
-position = Vector2(1, -101)
-shape = SubResource("CapsuleShape2D_j3sl2")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox" index="1" unique_id=4700186]
-position = Vector2(-78, -147)
-shape = SubResource("CapsuleShape2D_eiwe5")
 
 [node name="Attack" type="Area2D" parent="." index="4" unique_id=3543164]
 position = Vector2(0, -126.99999)
@@ -157,10 +178,22 @@ one_shot = true
 wait_time = 0.3
 one_shot = true
 
-[node name="Interactable" parent="." index="8" unique_id=1058585514]
+[node name="Hurtbox" parent="." index="8" unique_id=492537815]
+position = Vector2(0, -26)
+collision_mask = 16
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1693199414]
+position = Vector2(1, -101)
+shape = SubResource("CapsuleShape2D_j3sl2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox" index="1" unique_id=4700186]
+position = Vector2(-78, -147)
+shape = SubResource("CapsuleShape2D_eiwe5")
+
+[node name="Interactable" parent="." index="9" unique_id=1058585514]
 position = Vector2(-8, -401)
 
-[node name="InteractRange" parent="." index="9" unique_id=768744904]
+[node name="InteractRange" parent="." index="10" unique_id=768744904]
 visible = false
 position = Vector2(-76, 69)
 

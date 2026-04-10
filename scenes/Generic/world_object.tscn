@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cqcecjffi4v42" path="res://scenes/Generic/world_object.gd" id="1_mgcut"]
 
 [node name="WorldObject" type="StaticBody2D" unique_id=70036307]
+z_as_relative = false
 script = ExtResource("1_mgcut")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1697843649]

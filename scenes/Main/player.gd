@@ -65,6 +65,7 @@ func _physics_process(_delta):
 ## Used when the player leaves a vessel. Emits the [signal Player.parasite] signal
 ## which links to [method Game.spawn_parasite].
 func leave_vessel():
+	curr_vessel.velocity = Vector2(0,0)
 	parasite.emit(curr_vessel.position,curr_vessel.z_index)
 
 # TODO: make this documentation connect to the Vessel.hurt signal when you make that class

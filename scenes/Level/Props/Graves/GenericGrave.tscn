@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://g0o87v6tgsoa"]
 
 [ext_resource type="Script" uid="uid://bq6ykg0tcvs3g" path="res://scenes/Level/Props/Graves/grave.gd" id="1_65r64"]
+[ext_resource type="AudioStream" uid="uid://dcnx7pi202pip" path="res://assets/Audio/World/ps_sound_digging_01.mp3" id="2_e8ln0"]
 [ext_resource type="PackedScene" uid="uid://dvm0l187x12a4" path="res://scenes/Generic/event.tscn" id="3_e8ln0"]
 [ext_resource type="Script" uid="uid://dq3vgrbj1d0ij" path="res://scenes/Level/Events/GraveInteract.gd" id="4_v5kux"]
 
@@ -12,6 +13,10 @@ collision_layer = 4
 collision_mask = 39
 script = ExtResource("1_65r64")
 room_z_index = 1
+
+[node name="DiggingSound" type="AudioStreamPlayer" parent="." unique_id=1745851605]
+stream = ExtResource("2_e8ln0")
+bus = &"Sounds"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1697843649]
 

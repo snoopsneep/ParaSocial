@@ -105,7 +105,8 @@ func _physics_process(_delta):
 				_attack_collider.disabled = false # un-disable (enable) the attack collider
 				_attack_sprite.visible = true # make the sprite visible
 				_attack_sprite.play("default") # make the sprite animation play
-				# start the attack cooasldown
+				$Sounds/WhiffSound.play()
+				# start the attack cooldown
 				atk_cooldown.start()
 
 	# runs the animation code from Vessel
@@ -118,17 +119,30 @@ func hit(dmg = 1):
 		health -= dmg
 		state = "aggro"
 		if health <= 0:
+			velocity = Vector2(0,0)
 			if is_vessel:
 				boot.emit()
-				queue_free()
+				die()
 			else:
+				$Sounds/DeathSound.play()
 				modulate = Color(0.561, 0.0, 0.549)
 				dead = true
 				set_collision_layer_value(6, true) # make him vessel-able
 				death_timer.start()
+		else:
+			$Sounds/HurtSound.pitch_scale = 1 + randf_range(-0.15,0.33)
+			$Sounds/HurtSound.play()
 		dmg_cooldown.start()
 		hurt.emit(health,max_health)
 		## TODO: Add code to aggro when hit
+
+func die():
+	$Sounds/DeathSound.play()
+	$Sprite.visible = false
+	$FootCollider.set_deferred("disabled",true)
+	$Hurtbox/CollisionShape2D.set_deferred("disabled",true)
+	await $Sounds/DeathSound.finished
+	queue_free()
 
 # overrides interact method so you CAN'T use it to interact
 func interact():
@@ -224,9 +238,10 @@ func shout(bodies, _call_to):
 		# then preforms a CALL function to them to player position.
 
 func act_aggro(): # move to player, call attack!
-	call_guard(aggro_target.position)
-	if atk_cooldown.is_stopped():
-		enemy_attack()
+	if aggro_target:
+		call_guard(aggro_target.position)
+		if atk_cooldown.is_stopped():
+			enemy_attack()
 
 func enemy_attack():
 	# start the attack cooasldown
@@ -236,6 +251,7 @@ func enemy_attack():
 	# delay the attack slightly, so the player can actually dodge
 	await get_tree().create_timer(0.2).timeout
 	if !dead:
+		$Sounds/WhiffSound.play()
 		_attack_collider.disabled = false # un-disable (enable) the attack collider
 		_attack_sprite.visible = true # make the sprite visible
 		_attack_sprite.play("default") # make the sprite animation play
@@ -244,6 +260,7 @@ func enemy_attack():
 func _on_attack_area_entered(body: Node2D) -> void:
 	# if the node detected is (inherits from) a Vessel
 	if body.get_parent() is Vessel and body != self:
+		$Sounds/HitSound.play()
 		# run that "hit" function
 		body.get_parent().hit(damage)
 

@@ -67,6 +67,7 @@ func _physics_process(_delta):
 			_attack_collider.disabled = false # un-disable (enable) the attack collider
 			_attack_sprite.visible = true # make the sprite visible
 			_attack_sprite.play("default") # make the sprite animation play
+			$Sounds/WhiffSound.play()
 			atk_cooldown.stop()
 			winding_up = false
 			# delay between attacks is called
@@ -98,7 +99,8 @@ func _on_up_atk_anim_finished():
 # func that triggers when a hitbox collides with any of the attack colliders
 func _on_atk_area_entered(body: Area2D):
 	# if the node detected is (inherits from) a Vessel
-	if body.get_parent() is Vessel and body.get_parent() is not Nun:
+	if body.get_parent() is Enemy:
+		$Sounds/HitSound.play()
 		match atk_chrg:
 			1:
 				body.get_parent().hit(1)
@@ -130,6 +132,18 @@ func hit(dmg = 1):
 		if health <= 0:
 			if is_vessel:
 				boot.emit()
-			queue_free()
+			die()
+		else:
+			$Sounds/HurtSound.pitch_scale = 1 + randf_range(-0.45,0.25)
+			$Sounds/HurtSound.play()
 		dmg_cooldown.start()
 		hurt.emit(health,max_health)
+
+func die():
+	$Sounds/DeathSound.play()
+	visible = false
+	$FootCollider.set_deferred("disabled",true)
+	$Hurtbox/CollisionShape2D.set_deferred("disabled",true)
+	$Hurtbox/CollisionShape2D2.set_deferred("disabled",true)
+	await $Sounds/DeathSound.finished
+	queue_free()

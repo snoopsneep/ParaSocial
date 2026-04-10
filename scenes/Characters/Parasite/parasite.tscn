@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dlvjtln05lyyn" path="res://scenes/Characters/Parasite/parasite.gd" id="1_3wf0h"]
 [ext_resource type="PackedScene" uid="uid://03s4l0q2exir" path="res://scenes/Generic/vessel.tscn" id="1_gpx1o"]
 [ext_resource type="Texture2D" uid="uid://bgd5kdxvdsfe7" path="res://assets/Graphics/Sprites/Characters/Parasite/parasitegirlfin.png" id="3_0sde2"]
+[ext_resource type="AudioStream" uid="uid://17f781k8kk85" path="res://assets/Audio/Characters/Rat/ps_sound_ratWoodWalking_01.mp3" id="3_req1l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_req1l"]
 atlas = ExtResource("3_0sde2")
@@ -72,24 +73,23 @@ script = ExtResource("1_3wf0h")
 max_health = 1
 speed = 750.0
 
-[node name="Shadow" parent="." index="0" unique_id=1127750345]
+[node name="WalkSound" parent="Sounds" parent_id_path=PackedInt32Array(2050725486) index="0" unique_id=78210695]
+stream = ExtResource("3_req1l")
+volume_db = 7.959
+
+[node name="GrassWalkSound" parent="Sounds" parent_id_path=PackedInt32Array(2050725486) index="1" unique_id=544779443]
+stream = null
+
+[node name="Shadow" parent="." index="1" unique_id=1127750345]
 scale = Vector2(5, 5)
 
-[node name="Sprite" parent="." index="1" unique_id=1569272056]
+[node name="Sprite" parent="." index="2" unique_id=1569272056]
 position = Vector2(7.6293945e-06, -1610)
 sprite_frames = SubResource("SpriteFrames_8so8x")
 animation = &"UpRight"
 
-[node name="FootCollider" parent="." index="2" unique_id=137211241]
+[node name="FootCollider" parent="." index="3" unique_id=137211241]
 position = Vector2(-2.2737368e-13, -9.536743e-07)
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_ytou0")
-
-[node name="Hurtbox" parent="." index="3" unique_id=492537815]
-visible = false
-collision_mask = 16
-
-[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1693199414]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_ytou0")
 
@@ -106,7 +106,15 @@ collision_mask = 48
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" index="0" unique_id=787595796]
 shape = SubResource("CircleShape2D_bvfi0")
 
-[node name="InteractRange" parent="." index="7" unique_id=768744904]
+[node name="Hurtbox" parent="." index="6" unique_id=492537815]
+visible = false
+collision_mask = 16
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1693199414]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ytou0")
+
+[node name="InteractRange" parent="." index="8" unique_id=768744904]
 visible = false
 
 [node name="CollisionShape2D" parent="InteractRange" index="0" unique_id=2035168185]

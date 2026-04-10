@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cjb4h4n0rllsn"]
+
+[ext_resource type="Script" uid="uid://dpd81whjn4rxh" path="res://scenes/Level/Props/dining_table.gd" id="1_xvqmh"]
+[ext_resource type="Texture2D" uid="uid://c2xh04i4hm13o" path="res://assets/Graphics/Environments/Graveyard/Mausoleum/mausoleum.png" id="2_8nj8e"]
+[ext_resource type="PackedScene" uid="uid://dvm0l187x12a4" path="res://scenes/Generic/event.tscn" id="3_8nj8e"]
+[ext_resource type="Script" uid="uid://bldlak5ybl6yi" path="res://scenes/Level/Events/to_church.gd" id="4_b1arn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xvqmh"]
+radius = 26.52587
+
+[node name="Mausoleum" type="StaticBody2D" unique_id=70036307]
+z_as_relative = false
+collision_layer = 4
+collision_mask = 39
+script = ExtResource("1_xvqmh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1697843649]
+position = Vector2(417, -349)
+texture = ExtResource("2_8nj8e")
+offset = Vector2(-425, 100)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2057004731]
+polygon = PackedVector2Array(-232, 647, -192, 619, -149, 641, -93.3454, 608.83484, -97, 571, 295, 338, 337, 358, 393, 325, 392, 291, 696, 117, 738, 134, 794, 96, 202, -247, -791, 325, -731, 360, -691, 336, -287, 578, -290, 616)
+
+[node name="SpriteBoundaries" type="Area2D" parent="." unique_id=1776424411]
+visible = false
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="SpriteBoundaries" unique_id=732899715]
+polygon = PackedVector2Array(-188, 664, 787, 100, 802, -454, 486, -1147, -558, -578, -778, -321, -815, -194, -796, 318)
+
+[node name="LeftPoint" type="Marker2D" parent="." unique_id=2031971629]
+position = Vector2(-848, 298)
+gizmo_extents = 400.0
+
+[node name="Middle" type="Marker2D" parent="." unique_id=1786056407]
+position = Vector2(221, 260)
+gizmo_extents = 400.0
+
+[node name="RightPoint" type="Marker2D" parent="." unique_id=935884414]
+position = Vector2(860, 71)
+gizmo_extents = 400.0
+
+[node name="ToChurch" parent="." unique_id=753610390 instance=ExtResource("3_8nj8e")]
+position = Vector2(-388, 466)
+scale = Vector2(1.6249998, 1.6249998)
+script = ExtResource("4_b1arn")
+destination = Vector2(-144, -696)
+nun_destination = Vector2(25, -795.99994)
+compatible_vessels = {
+&"Nun": true,
+&"Rat": false,
+&"Statue": true
+}
+
+[node name="CollisionShape2D" parent="ToChurch" index="0" unique_id=18997285]
+position = Vector2(-22.769243, -18.46154)
+shape = SubResource("CircleShape2D_xvqmh")
+
+[connection signal="area_entered" from="SpriteBoundaries" to="." method="_on_sprite_overlap"]
+[connection signal="area_exited" from="SpriteBoundaries" to="." method="_on_sprite_exited"]
+
+[editable path="ToChurch"]

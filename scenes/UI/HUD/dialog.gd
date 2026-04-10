@@ -256,3 +256,7 @@ func _on_option_pressed(index: int):
 	close()
 	selected.emit(index)
 	waiting_choice = false
+	$TextBox/ButtonPress.play()
+
+func _on_option_hovered():
+	$TextBox/ButtonHover.play()

@@ -16,6 +16,7 @@ func run_event(manager: EventManager, curr_vessel: Vessel = null):
 	if curr_vessel is Gravedigger:
 		var choice = await manager.dialog.display_choices("Do you want to dig here?", ["Yes", "No"])
 		if choice == 0: # yes
+			$"../DiggingSound".play()
 			print("dug a hole!")
 		else:
 			print("did NOT dig a hole")

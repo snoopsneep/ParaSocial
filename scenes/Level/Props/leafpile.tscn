@@ -49,6 +49,7 @@ scale = Vector2(1.0000001, 1.0000001)
 stream = ExtResource("3_stohp")
 volume_db = 24.0
 bus = &"Sounds"
+parameters/looping = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1719349191]
 position = Vector2(84, -601)

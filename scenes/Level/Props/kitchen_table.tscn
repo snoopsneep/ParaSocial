@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dpr3qpe26dhxc"]
+
+[ext_resource type="Script" uid="uid://dpd81whjn4rxh" path="res://scenes/Level/Props/dining_table.gd" id="1_uk81t"]
+[ext_resource type="Texture2D" uid="uid://dreu407oyjxar" path="res://assets/Graphics/Environments/Church/Kitchen/Final colours/normalTable.PNG" id="2_ghdm2"]
+[ext_resource type="PackedScene" uid="uid://qeeqyl4ctwkp" path="res://scenes/Generic/note.tscn" id="5_h2j04"]
+[ext_resource type="Script" uid="uid://cs8kccqb2huxb" path="res://resources/page.gd" id="6_qsebc"]
+
+[sub_resource type="Resource" id="Resource_v874h"]
+script = ExtResource("6_qsebc")
+date = "29/9/1447"
+text = "	Hope has been dwindling for some time now, as our situation has refused to improve. Despite all our prayers, things have gotten even worse. It seems our cattle, weak and underfed for some time now, have fallen ill. Their stiff, stinking corpses litter the fields, their still-living brothers forced to trudge between their rotting remains.
+
+	Since the horrible news broke, the number of churchgoers has steadily diminished. Sister Mira says surely they must be praying from home, but I’m not so certain. This situation has tested all of our faiths, and I fear the less devout may be giving up on our Goddess completely.
+
+	Some people still come to the church to pray, but their prayers are hushed and the spark in their eyes vacant. They sulk through the halls like dreary widows, soles dragging, faces downturned. I’m occasionally offered a sad, pained smile, but there’s never a sliver of life behind it. I worry deeply for our community, and selfishly, for my own life. How can we expect Faustine to grant Her generosity to a community of fickle disbelievers? Selfish as it is, I hope She recognizes my faith, even if She gives up on the others."
+metadata/_custom_type_script = "uid://cs8kccqb2huxb"
+
+[sub_resource type="Resource" id="Resource_hbikf"]
+script = ExtResource("6_qsebc")
+text = "	One steadfast member of the community, though, is Father Mason’s mother. She rarely leaves the statue, even as she looks weaker and weaker by the day. It’s like she’s praying her very soul away to our Goddess, the life left in her escaping through hushed, whispered mantras. I know Father Mason is worried about her… They’ve always been very close. He’s mentioned that his faith began with his mother, her great devotion always an inspiration to him. I think she’s been an inspiration to us all, even as things look dimmer and dimmer."
+signature = "Sister Aubrey"
+metadata/_custom_type_script = "uid://cs8kccqb2huxb"
+
+[node name="KitchenTable" type="StaticBody2D" unique_id=70036307]
+z_as_relative = false
+collision_layer = 4
+collision_mask = 39
+script = ExtResource("1_uk81t")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1697843649]
+position = Vector2(56, -396)
+texture = ExtResource("2_ghdm2")
+offset = Vector2(-425, 100)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=275975587]
+visible = false
+polygon = PackedVector2Array(-176, 580, 474, 211, 91, -4, -545, 372)
+
+[node name="SpriteBoundaries" type="Area2D" parent="." unique_id=1776424411]
+visible = false
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="SpriteBoundaries" unique_id=732899715]
+visible = false
+polygon = PackedVector2Array(-179, 582, 473, 211, 500, -189, 96, -421, -572, -32, -547, 370)
+
+[node name="LeftPoint" type="Marker2D" parent="." unique_id=2031971629]
+position = Vector2(-610, 356)
+gizmo_extents = 400.0
+
+[node name="Middle" type="Marker2D" parent="." unique_id=1786056407]
+position = Vector2(131, 265)
+gizmo_extents = 400.0
+
+[node name="RightPoint" type="Marker2D" parent="." unique_id=935884414]
+position = Vector2(541, 133)
+gizmo_extents = 400.0
+
+[node name="Note" parent="." unique_id=753610390 instance=ExtResource("5_h2j04")]
+position = Vector2(-217, -168)
+scale = Vector2(1.5, 1.5)
+pages = Array[ExtResource("6_qsebc")]([SubResource("Resource_v874h"), SubResource("Resource_hbikf")])
+
+[connection signal="area_entered" from="SpriteBoundaries" to="." method="_on_sprite_overlap"]
+[connection signal="area_exited" from="SpriteBoundaries" to="." method="_on_sprite_exited"]
