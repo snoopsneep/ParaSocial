@@ -20,7 +20,7 @@ radius = 14.0
 a = Vector2(-124.85387, -72.253174)
 b = Vector2(132.95189, 80.27948)
 
-[node name="Shack" type="StaticBody2D" unique_id=70036307]
+[node name="Shack" type="StaticBody2D" unique_id=70036307 groups=["nav_mesh_thing"]]
 z_as_relative = false
 collision_layer = 4
 collision_mask = 39
@@ -36,6 +36,7 @@ scale = Vector2(0.97, 0.97)
 texture = ExtResource("2_2ig1o")
 
 [node name="Exterior" type="Node2D" parent="." unique_id=905389324]
+visible = false
 z_index = 4
 z_as_relative = false
 

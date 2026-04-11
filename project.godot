@@ -41,6 +41,7 @@ enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/
 
 Events=""
 Enemies=""
+nav_mesh_thing=""
 
 [input]
 

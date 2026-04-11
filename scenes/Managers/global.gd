@@ -22,6 +22,9 @@ var can_pause: bool = true
 # changes to true after the opening cutscene
 var intro_finished: bool = false
 
+# changes to true when the leaves are set on fire
+var fire_lit: bool = false
+
 # changes to true after the player kills or distracts the shack guards
 var guards_distracted: bool = false
 

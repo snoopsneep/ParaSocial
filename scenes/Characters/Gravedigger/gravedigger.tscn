@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bsa2bislxf6v3"]
 
 [ext_resource type="PackedScene" uid="uid://03s4l0q2exir" path="res://scenes/Generic/vessel.tscn" id="1_d68n5"]
-[ext_resource type="Script" uid="uid://nox20beqvty4" path="res://scenes/Characters/Nun/nun.gd" id="2_e26p4"]
+[ext_resource type="Script" uid="uid://dpddw5wtqgkt8" path="res://scenes/Characters/Gravedigger/gravedigger.gd" id="2_laoog"]
 [ext_resource type="Texture2D" uid="uid://bs12r1fw4diob" path="res://assets/Graphics/Sprites/Characters/GraveKeeper/gravekeeper.png" id="3_laoog"]
 [ext_resource type="Script" uid="uid://10jg30al56ce" path="res://scenes/Level/Events/gd_interact.gd" id="5_laoog"]
 [ext_resource type="PackedScene" uid="uid://dvm0l187x12a4" path="res://scenes/Generic/event.tscn" id="7_1qiaw"]
@@ -70,7 +70,7 @@ radius = 167.08777
 
 [node name="Gravedigger" unique_id=517857439 instance=ExtResource("1_d68n5")]
 scale = Vector2(0.118, 0.118)
-script = ExtResource("2_e26p4")
+script = ExtResource("2_laoog")
 max_health = 7
 speed = 500.0
 

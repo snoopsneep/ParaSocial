@@ -115,7 +115,11 @@ func interact():
 			if i is WorldEvent:
 				if self.name in i.compatible_vessels:
 					if i.compatible_vessels[self.name]:
-						interaction = i # select the current interaction
+						if i is ShackPoem:
+							if in_shed:
+								interaction = i # select the current interaction
+						else:
+							interaction = i # select the current interaction
 	if interaction == null: return # if there's still no valid interaction, bail
 	interaction.trigger()
 	velocity = Vector2(0,0)
@@ -130,4 +134,8 @@ func _interactables_check(_area):
 			if i is WorldEvent:
 				if self.name in i.compatible_vessels:
 					if i.compatible_vessels[self.name]:
-						$Interactable.visible = true
+						if i is ShackPoem:
+							if in_shed:
+								$Interactable.visible = true
+						else:
+							$Interactable.visible = true

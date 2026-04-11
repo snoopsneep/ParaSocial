@@ -71,7 +71,7 @@ scale = Vector2(7, 7)
 [node name="Sprite" parent="." index="2" unique_id=1569272056]
 position = Vector2(2.999954, -988.99994)
 sprite_frames = SubResource("SpriteFrames_1juo7")
-animation = &"DownLeft"
+animation = &"UpRight"
 
 [node name="FootCollider" parent="." index="3" unique_id=137211241]
 position = Vector2(2.999954, 1)

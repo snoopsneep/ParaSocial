@@ -19,9 +19,11 @@ func run_event(manager: EventManager, curr_vessel: Vessel = null):
 				await manager.dialog.display_line("You hold the flame close to the pile, watching as the embers dance across the first few leaves. Before you know it...")
 				get_parent().ignite()
 				ignited = true
-				#region debug
-				Global.guards_distracted = true
-				#endregion
+				Global.fire_lit = true
+				$"../../../../../../Characters/Shackman1".dead = true
+				$"../../../../../../Characters/Shackman1".position = Vector2(8233,9201)
+				$"../../../../../../Characters/Shackman2".dead = true
+				$"../../../../../../Characters/Shackman2".position = Vector2(9970,10311)
 				await manager.dialog.display_line("The pile erupts in flames! You'd better get out of here while you can...")
 			else: # no
 				await manager.dialog.display_line("You contain your urges, and leave the pile as it is.")

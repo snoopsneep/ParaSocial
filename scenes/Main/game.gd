@@ -28,10 +28,12 @@ func _ready():
 	$Map/Church/Hallway.visible = true
 	$Map/Church/Chapel.modulate = Color(1,1,1,1)
 	$Map/Church/Chapel.visible = true
+	Global.player_disabled = false
 	#endregion
 
 	#region reset global progress flags
 	Global.intro_finished = false
+	Global.fire_lit = false
 	Global.guards_distracted = false
 	Global.has_key = false
 	Global.read_priest_note = false
